@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.contact.Button.Hide" Location="AccessChecker.OpenDialog.contact.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.contact.AddConnection.Hide" Location="Mscrm.Form.contact.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.contact.Assign.Hide" Location="Mscrm.Form.contact.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.contact.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.contact.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.contact.Reports.Hide" Location="Mscrm.Form.contact.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.contact.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.contact.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.contact.RunReport.Hide" Location="Mscrm.HomepageGrid.contact.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.contact.Send.Hide" Location="Mscrm.HomepageGrid.contact.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.contact.DocumentTemplate.Hide" Location="Mscrm.SubGrid.contact.DocumentTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.contact.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.contact.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.contact.QuickCampaign.Hide" Location="Mscrm.SubGrid.contact.QuickCampaign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.contact.RunReport.Hide" Location="Mscrm.SubGrid.contact.RunReport" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

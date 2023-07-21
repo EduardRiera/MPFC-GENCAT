@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{549a8aa3-c349-4ab9-8bac-4873fa9a7a5c}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1920" solutionaction="Modified">
+      <tabs>
+        <tab name="appointment" id="{2A2A5AC4-581A-4131-BA0B-8A34943B19FC}" IsUserDefined="0" showlabel="false" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="67%" id="0">
+              <sections>
+                <section name="general information" showlabel="false" showbar="false" locklevel="0" id="{846F5D88-C043-4E1F-9BF3-90CD9093C1D7}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="1" rowspan="1" colspan="2" id="{8901DF19-82EB-4BD3-B96B-CD3D4F5710D4}" ordinalvalue="10001" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{3953269C-ABD1-4B75-8DDB-23D5BC088D64}" ordinalvalue="10002" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{9BF8162D-95A7-4390-86E1-8305ACF475B0}" ordinalvalue="10003" solutionaction="Modified">
+                        <labels>
+                          <label description="Tema" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell colspan="2" id="{E15ACF1F-BA3E-4BC5-8AE5-AA3A290E7769}" ordinalvalue="10004" solutionaction="Modified">
+                        <labels>
+                          <label description="Ubicació" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{32a30c13-1750-b89e-a057-e02b7bc06626}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10005" solutionaction="Modified" />
+                      <cell id="{3d5e803a-b0a4-46ee-8897-5fa2388f3560}" showlabel="false" ordinalvalue="20006" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{5309ad7b-e4e7-6537-5990-2b9cb81bc213}" showlabel="true" locklevel="0" colspan="2" ordinalvalue="10007" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{4c798716-37ee-dc9d-8853-90337291ed9e}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10008" solutionaction="Modified" />
+                      <cell id="{0e9894ab-e902-419f-851e-d0231122d65f}" showlabel="false" ordinalvalue="20009" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="1" rowspan="1" colspan="2" id="{5D06EDBF-8D54-4710-8C6A-81483D6F41F4}" ordinalvalue="10010" solutionaction="Modified">
+                        <labels>
+                          <label description="Referent a" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{354bd438-ba9d-e4d2-9c12-0a9a56666e5c}" showlabel="true" locklevel="0" colspan="2" visible="false" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="Organitzador" languagecode="1027" />
+                        </labels>
+                        <control id="organizer" classid="{CBFB742C-14E7-4a17-96BB-1A13F7F64AA2}" datafieldname="organizer" disabled="false" uniqueid="{9dbc20e4-ce9a-e8b9-2273-395a52c4487b}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="scheduling information" showlabel="false" showbar="false" locklevel="1" id="{A83EF0B4-92A2-4442-AF94-DC43BA1C31D3}" IsUserDefined="0" layout="varwidth" columns="1" ordinalvalue="2">
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{B4D87035-7744-4AE7-AFB5-AC85CA81642C}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Hora d'inici" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{0BF43F88-DA02-4A74-823F-1EF5014867A9}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Hora d'acabament" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{4899B6A9-00DC-46BF-B6C6-4809D6EAAA67}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Tot el dia" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{ECDDF39D-1393-4C80-941A-4F8FE486305F}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Duració" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="appointment description" showlabel="true" showbar="false" locklevel="0" id="{299BE158-E0A5-423D-9B70-BC82B5BC26B9}" IsUserDefined="0" layout="varwidth" columns="11" height="auto" ordinalvalue="3">
+                  <rows>
+                    <row>
+                      <cell auto="true" showlabel="false" locklevel="0" rowspan="14" colspan="2" id="{EA609D20-9CD9-4988-86B7-0F0C367ADD10}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Descripció" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{42B31823-0752-4F96-83F8-0F3AC9C24E31}" columns="111" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{83C1A8F6-E296-402C-836D-E41758053C08}" showlabel="true" locklevel="1" visible="false" ordinalvalue="30002" solutionaction="Modified">
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" uniqueid="{8c341136-8737-24cc-e18e-813c0c2ba263}" disabled="false" solutionaction="Modified">
+                <parameters solutionaction="Added">
+                  <AutoResolve>true</AutoResolve>
+                  <DisableMru>false</DisableMru>
+                </parameters>
+              </control>
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Cita" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari de cita per defecte actualitzat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{16654191-19ad-48ca-9e46-c4b4fbdad76f}</formid>
+    <IntroducedVersion>6.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab name="TASK_TAB" verticallayout="true" id="{ADFD103B-691E-4A92-B4CF-F844B645A1F7}" IsUserDefined="0" showlabel="false" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0" solutionaction="Modified">
+              <sections>
+                <section name="TASK" showlabel="true" showbar="false" id="{EBB3C46D-5E9B-4EBB-A9E4-B8C25D364BB3}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelposition="Left" ordinalvalue="0" solutionaction="Modified">
+                  <labels>
+                    <label description="Informació de la tasca" languagecode="1027" solutionaction="Modified" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5FD2BE87-C1CF-41A6-9AD9-4D273733422E}" showlabel="true" locklevel="0" colspan="1" labelid="{f670bd68-6ea9-4665-b504-834f4c254a07}" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Tema" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{05594fe5-489d-4deb-928c-525d0be7362d}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="Tipus de tasca" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_task_type" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="pfc_task_type" disabled="false" />
+                      </cell>
+                      <cell id="{c48fee2f-ad61-4b12-aa9f-6b5b101f4e0a}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="20001" solutionaction="Added">
+                        <labels>
+                          <label description="Referent a" languagecode="1027" />
+                        </labels>
+                        <control id="regardingobjectid" classid="{F3015350-44A2-4AA0-97B5-00166532B5E9}" datafieldname="regardingobjectid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell showlabel="true" id="{CC840E7F-65AB-4F53-B495-4AEA458370B0}" labelid="{a7a7baec-6af8-4ab9-8952-8f009923ee1d}" colspan="1" rowspan="1" ordinalvalue="20003" solutionaction="Added">
+                        <labels>
+                          <label description="Duració" languagecode="1027" />
+                        </labels>
+                        <control id="actualdurationminutes" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="actualdurationminutes" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{34941c93-b671-08a7-5b39-5d4e1443b6e0}" showlabel="true" locklevel="0" auto="true" rowspan="5" colspan="1" ordinalvalue="10004" solutionaction="Added">
+                        <labels>
+                          <label description="Descripció" languagecode="1027" />
+                        </labels>
+                        <control id="description" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="description" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{a55e29c7-72c1-4585-b5fa-31d1f3dde2e2}" ordinalvalue="20005" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{c8386133-2108-4238-abbe-6b6240faa8df}" ordinalvalue="20006" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{5f9ed2ca-b7ea-46ed-9e91-dec32cc117bf}" ordinalvalue="20007" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{14753ad8-31cd-4c31-ba88-373e2c32d3d1}" ordinalvalue="20008" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Description" showlabel="true" showbar="false" locklevel="0" id="{bde07399-10a4-ddc1-ae5c-39b7ac6a0d7c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" height="auto" labelid="{3e311b53-86ab-4733-ac24-54eba6327ebd}" ordinalvalue="1" solutionaction="Removed" />
+                <section name="task details" showlabel="false" showbar="false" locklevel="0" id="{96BF03F6-399F-42D0-8295-08E1B8890D01}" IsUserDefined="0" layout="varwidth" columns="11" labelid="{a75b944b-2152-476c-8a9c-73cfeda7c0fa}" ordinalvalue="1" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell showlabel="true" id="{E1DB7569-03E5-4B12-A5C0-4E875D1163D8}" locklevel="0" colspan="2" labelid="{1f99d1b9-9de8-4d2f-86f7-0c589f6c24df}" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell showlabel="true" id="{CC840E7F-65AB-4F53-B495-4AEA458370B0}" labelid="{a7a7baec-6af8-4ab9-8952-8f009923ee1d}" ordinalvalue="10001" solutionaction="Removed" />
+                      <cell id="{9c426b60-1a67-4a1b-bd31-1d66b241e59c}" showlabel="false" labelid="{6449a7c4-c173-4b6b-9796-ff33b8f0befd}" ordinalvalue="20002" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+                <section name="TASK_TAB_section_4" id="b8318889-88ae-48f9-81a6-7fecf40cc4d4" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" ordinalvalue="2" solutionaction="Added">
+                  <labels>
+                    <label description="Dates" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b777c5f6-a18f-4dd2-ba6c-99542aa498a0}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="Data d'inici" languagecode="1027" />
+                        </labels>
+                        <control id="scheduledstart" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="scheduledstart" disabled="false" />
+                      </cell>
+                      <cell id="{bd53cd7a-eacf-46d7-8020-18d30a8fe651}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="20001">
+                        <labels>
+                          <label description="Any" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_any" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="pfc_any" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1" solutionaction="Removed" />
+          </columns>
+        </tab>
+        <tab name="tab_2" id="7faab112-01da-4eb4-84f7-2fc45585a699" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="1" solutionaction="Added">
+          <labels>
+            <label description="Administració" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_2_section_1" id="87d145e1-dede-4846-bbe4-42cd0345254a" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" ordinalvalue="0">
+                  <labels>
+                    <label description="Nueva sección" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fe352fc7-25e0-468a-8a61-3c1310c31e61}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="Autor" languagecode="1027" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{e79ef406-a84c-4033-84ca-8be4e08174e9}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="20001">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c90796e4-e750-4cc9-a933-9a5131795c86}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002">
+                        <labels>
+                          <label description="Modificat per" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                      <cell id="{cc2136d9-4852-4a67-9d09-2211eb2a9757}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="20003">
+                        <labels>
+                          <label description="Data de modificació" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{D7EF0A4A-7B76-4B39-A2E0-4207EC3C8C2D}" columns="1111" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{0A9B5273-AD20-4A08-8990-64CB20861D81}" showlabel="true" ordinalvalue="10000">
+              <labels>
+                <label description="Prioritat" languagecode="1027" solutionaction="Added" />
+              </labels>
+            </cell>
+            <cell id="{6A04844E-9375-4428-BF70-85C6C3556B8B}" ordinalvalue="30002">
+              <labels>
+                <label description="Estat de l'activitat" languagecode="1027" solutionaction="Added" />
+              </labels>
+            </cell>
+            <cell id="{59BF22C1-8C1D-4235-8516-4647EDEAE36C}" showlabel="true" locklevel="1" ordinalvalue="40003">
+              <labels>
+                <label description="Propietari" languagecode="1027" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{55fea396-42d1-4e90-83cd-8b12db495835}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows />
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Tasca" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Task form." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

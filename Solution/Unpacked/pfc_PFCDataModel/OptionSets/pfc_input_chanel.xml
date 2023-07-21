@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="pfc_input_chanel" localizedName="Canal Entrada" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Canal Entrada" languagecode="1027" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1027" />
+  </Descriptions>
+  <options>
+    <option value="470000000" ExternalValue="" Color="">
+      <labels>
+        <label description="Espai Entitats" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000003" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Reunió amb l’entitat" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000001" ExternalValue="" Color="">
+      <labels>
+        <label description="Email" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000002" ExternalValue="" Color="">
+      <labels>
+        <label description="Altres" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

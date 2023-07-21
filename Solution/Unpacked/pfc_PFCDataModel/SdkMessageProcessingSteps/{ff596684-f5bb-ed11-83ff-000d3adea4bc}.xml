@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="MPFC.Plugins.Plugins.ContactQueryDisassociate: Disassociate of any Entity" SdkMessageProcessingStepId="{ff596684-f5bb-ed11-83ff-000d3adea4bc}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>bdfc191d-fc56-493a-a6b1-cb0c47a22ecc</SdkMessageId>
+  <PluginTypeName>MPFC.Plugins.Plugins.ContactQueryDisassociate, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b</PluginTypeName>
+  <PluginTypeId>9a1708eb-9ac5-4c7f-93b4-e669aa3b7e40</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>MPFC.Plugins.Plugins.ContactQueryDisassociate: Disassociate of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.SharePointDocument.AddLocation.Hide" Location="Mscrm.SubGrid.SharePointDocument.AddLocation" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.SharePointDocument.ChangeLocation.Hide" Location="Mscrm.SubGrid.SharePointDocument.ChangeLocation" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.SharePointDocument.EditLocation.Hide" Location="Mscrm.SubGrid.SharePointDocument.EditLocation" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.SharePointDocument.NewDocument.Hide" Location="Mscrm.SubGrid.SharePointDocument.NewDocument" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

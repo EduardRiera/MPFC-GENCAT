@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="MPFC.Plugins.Plugins.EmailCreatePreValidation: Create of email" SdkMessageProcessingStepId="{344fbf6d-e514-ee11-8f6d-000d3adf90aa}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>MPFC.Plugins.Plugins.EmailCreatePreValidation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b</PluginTypeName>
+  <PluginTypeId>ff5463c3-95c1-462c-9bb4-f2905f208461</PluginTypeId>
+  <PrimaryEntity>email</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <ImpersonatingUserIdName>Administrador delegat</ImpersonatingUserIdName>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>10</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{911521f6-d3e4-ed11-a7c7-002248a1c671}</WebResourceId>
+  <Name>pfc_script/EOT.form</Name>
+  <DisplayName>OET.form</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.15</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_scriptEOTform911521F6-D3E4-ED11-A7C7-002248A1C671</FileName>
+</WebResource>

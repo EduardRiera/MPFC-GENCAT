@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="msevtmgt_eventtype" localizedName="Conjunt d'opcions de tipus d'esdeveniment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>0.0.0.1</IntroducedVersion>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Conjunt d'opcions de tipus d'esdeveniment" languagecode="1027" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1027" />
+  </Descriptions>
+  <options>
+    <option value="100000001" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Presencial" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="100000002" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Híbrid" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="100000003" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Seminari web" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

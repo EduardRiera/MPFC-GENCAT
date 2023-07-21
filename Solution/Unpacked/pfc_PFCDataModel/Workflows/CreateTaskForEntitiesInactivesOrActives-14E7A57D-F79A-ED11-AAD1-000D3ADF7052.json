@@ -1,0 +1,553 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "ef80167d-fda7-470d-b6e3-6ce66fb5c7c0"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Inicializar_variable_Filter": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "23e546bf-52c9-480c-a320-bdd06591e86a"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Filter",
+                "type": "string",
+                "value": "<filter>"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_Condition": {
+          "runAfter": {
+            "Inicializar_variable_Filter": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f9cf4571-12e8-43dc-a293-8c5d0956ebdd"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Condition",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_Values": {
+          "runAfter": {
+            "Inicializar_variable_Condition": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "679fca14-345b-4ea3-b1a1-bbf0895ff81c"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Values",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Aplicacion_de_Filtros_1": {
+          "actions": {
+            "Extraer_Configuración": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "0a6fd52f-cda7-4877-9c46-32991df8bb28"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_settingses",
+                  "$filter": "pfc_configuration_group_name eq 'Syncro_CATENS_1' and statuscode eq 470000001"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Aplicar_a_cada_Configuración": {
+              "foreach": "@outputs('Extraer_Configuración')?['body/value']",
+              "actions": {
+                "Condición": {
+                  "actions": {
+                    "Establecer_variable_Condition_1": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "c0122328-648c-41aa-9e51-e7b5f597ba0b"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Condition",
+                        "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración')?['pfc_operator']}\"  />"
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "else": {
+                    "actions": {
+                      "Condición_2": {
+                        "actions": {
+                          "Establecer_variable": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "e2f3a49e-eba8-4ddb-9f52-e97771b09898"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "Values",
+                              "value": "@items('Aplicar_a_cada_Configuración')?['pfc_value']"
+                            }
+                          },
+                          "Establecer_variable_Condition_2": {
+                            "runAfter": {
+                              "Establecer_variable": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "d1aa26e0-a558-4a6b-8d27-f09100b2660e"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "Condition",
+                              "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración')?['pfc_operator']}\" value=\"\" >\n<value>@{replace(variables('Values'), ',', '</value><value>')}</value>\n</condition>"
+                            }
+                          }
+                        },
+                        "runAfter": {},
+                        "else": {
+                          "actions": {
+                            "Establecer_variable_Condition_3": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "01e6bfa4-c891-483a-8ce0-88ff7c21a09e"
+                              },
+                              "type": "SetVariable",
+                              "inputs": {
+                                "name": "Condition",
+                                "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración')?['pfc_operator']}\" value=\"@{items('Aplicar_a_cada_Configuración')?['pfc_value']}\" />"
+                              }
+                            }
+                          }
+                        },
+                        "expression": {
+                          "contains": [
+                            "@items('Aplicar_a_cada_Configuración')?['pfc_operator']",
+                            "in"
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "8990edb6-4cae-495b-ab24-d95e03dcfac7"
+                        },
+                        "type": "If"
+                      }
+                    }
+                  },
+                  "expression": {
+                    "contains": [
+                      "@items('Aplicar_a_cada_Configuración')?['pfc_operator']",
+                      "'null'"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ff0048d4-75b4-4766-bb3c-874aba705520"
+                  },
+                  "type": "If"
+                },
+                "Anexar_a_la_variable_de_cadena": {
+                  "runAfter": {
+                    "Condición": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "0b0c7496-67bc-4f9b-aaf1-e12a0cc25a18"
+                  },
+                  "type": "AppendToStringVariable",
+                  "inputs": {
+                    "name": "Filter",
+                    "value": "@variables('Condition')"
+                  }
+                }
+              },
+              "runAfter": {
+                "Extraer_Configuración": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a17f309d-6689-46d4-ac94-474f10e4b922"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Inicializar_variable_Values": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3db95a29-3d27-48af-88be-006573445fa6"
+          },
+          "type": "Scope"
+        },
+        "Aplicacion_de_Filtros_2": {
+          "actions": {
+            "Extraer_Configuración_2": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "0a6fd52f-cda7-4877-9c46-32991df8bb28"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_settingses",
+                  "$filter": "pfc_configuration_group_name eq 'Syncro_CATENS_2' and statuscode eq 470000001"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Aplicar_a_cada_Configuración_2": {
+              "foreach": "@outputs('Extraer_Configuración_2')?['body/value']",
+              "actions": {
+                "Condición_3": {
+                  "actions": {
+                    "Establecer_variable_Condition": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "c0122328-648c-41aa-9e51-e7b5f597ba0b"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Condition",
+                        "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_operator']}\"  />"
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "else": {
+                    "actions": {
+                      "Condición_4": {
+                        "actions": {
+                          "Establecer_variable_2": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "e2f3a49e-eba8-4ddb-9f52-e97771b09898"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "Values",
+                              "value": "@items('Aplicar_a_cada_Configuración_2')?['pfc_value']"
+                            }
+                          },
+                          "Establecer_variable_Condition_4": {
+                            "runAfter": {
+                              "Establecer_variable_2": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "d1aa26e0-a558-4a6b-8d27-f09100b2660e"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "Condition",
+                              "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_operator']}\" value=\"\" >\n<value>@{replace(variables('Values'), ',', '</value><value>')}</value>\n</condition>"
+                            }
+                          }
+                        },
+                        "runAfter": {},
+                        "else": {
+                          "actions": {
+                            "Establecer_variable_Condition_5": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "01e6bfa4-c891-483a-8ce0-88ff7c21a09e"
+                              },
+                              "type": "SetVariable",
+                              "inputs": {
+                                "name": "Condition",
+                                "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_operator']}\" value=\"@{items('Aplicar_a_cada_Configuración_2')?['pfc_value']}\" />"
+                              }
+                            }
+                          }
+                        },
+                        "expression": {
+                          "contains": [
+                            "@items('Aplicar_a_cada_Configuración_2')?['pfc_operator']",
+                            "in"
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "8990edb6-4cae-495b-ab24-d95e03dcfac7"
+                        },
+                        "type": "If"
+                      }
+                    }
+                  },
+                  "expression": {
+                    "contains": [
+                      "@items('Aplicar_a_cada_Configuración_2')?['pfc_operator']",
+                      "'null'"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ff0048d4-75b4-4766-bb3c-874aba705520"
+                  },
+                  "type": "If"
+                },
+                "Anexar_a_la_variable_de_cadena_2": {
+                  "runAfter": {
+                    "Condición_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "0b0c7496-67bc-4f9b-aaf1-e12a0cc25a18"
+                  },
+                  "type": "AppendToStringVariable",
+                  "inputs": {
+                    "name": "Filter",
+                    "value": "@variables('Condition')"
+                  }
+                }
+              },
+              "runAfter": {
+                "Extraer_Configuración_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a17f309d-6689-46d4-ac94-474f10e4b922"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Inicializar_variable_Values": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "bd669c45-73d6-48e8-82b6-3be73dd2d944"
+          },
+          "type": "Scope"
+        },
+        "Aplicacion_de_Filtros_3": {
+          "actions": {
+            "Extraer_Configuración_3": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "0a6fd52f-cda7-4877-9c46-32991df8bb28"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_settingses",
+                  "$filter": "pfc_configuration_group_name eq 'Syncro_CATENS_3' and statuscode eq 470000001"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Aplicar_a_cada_Configuración_3": {
+              "foreach": "@outputs('Extraer_Configuración_3')?['body/value']",
+              "actions": {
+                "Condición_5": {
+                  "actions": {
+                    "Establecer_variable_Condition_6": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "c0122328-648c-41aa-9e51-e7b5f597ba0b"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Condition",
+                        "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_operator']}\"  />"
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "else": {
+                    "actions": {
+                      "Condición_6": {
+                        "actions": {
+                          "Establecer_variable_3": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "e2f3a49e-eba8-4ddb-9f52-e97771b09898"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "Values",
+                              "value": "@items('Aplicar_a_cada_Configuración_3')?['pfc_value']"
+                            }
+                          },
+                          "Establecer_variable_Condition_7": {
+                            "runAfter": {
+                              "Establecer_variable_3": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "d1aa26e0-a558-4a6b-8d27-f09100b2660e"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "Condition",
+                              "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_operator']}\" value=\"\" >\n<value>@{replace(variables('Values'), ',', '</value><value>')}</value>\n</condition>"
+                            }
+                          }
+                        },
+                        "runAfter": {},
+                        "else": {
+                          "actions": {
+                            "Establecer_variable_Condition_8": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "01e6bfa4-c891-483a-8ce0-88ff7c21a09e"
+                              },
+                              "type": "SetVariable",
+                              "inputs": {
+                                "name": "Condition",
+                                "value": "<condition attribute=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_schema_name']}\" operator=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_operator']}\" value=\"@{items('Aplicar_a_cada_Configuración_3')?['pfc_value']}\" />"
+                              }
+                            }
+                          }
+                        },
+                        "expression": {
+                          "contains": [
+                            "@items('Aplicar_a_cada_Configuración_3')?['pfc_operator']",
+                            "in"
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "8990edb6-4cae-495b-ab24-d95e03dcfac7"
+                        },
+                        "type": "If"
+                      }
+                    }
+                  },
+                  "expression": {
+                    "contains": [
+                      "@items('Aplicar_a_cada_Configuración_3')?['pfc_operator']",
+                      "'null'"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ff0048d4-75b4-4766-bb3c-874aba705520"
+                  },
+                  "type": "If"
+                },
+                "Anexar_a_la_variable_de_cadena_3": {
+                  "runAfter": {
+                    "Condición_5": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "0b0c7496-67bc-4f9b-aaf1-e12a0cc25a18"
+                  },
+                  "type": "AppendToStringVariable",
+                  "inputs": {
+                    "name": "Filter",
+                    "value": "@variables('Condition')"
+                  }
+                }
+              },
+              "runAfter": {
+                "Extraer_Configuración_3": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a17f309d-6689-46d4-ac94-474f10e4b922"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Inicializar_variable_Values": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5288019a-3027-4ff8-b008-eb2a2cd1b8b8"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

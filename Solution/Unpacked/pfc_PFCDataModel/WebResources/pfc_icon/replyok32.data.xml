@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{8544571a-51c9-ed11-b597-000d3adb6fa9}</WebResourceId>
+  <Name>pfc_icon/replyok32</Name>
+  <DisplayName>ReplyOk32</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.13</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_iconreplyok328544571A-51C9-ED11-B597-000D3ADB6FA9</FileName>
+</WebResource>

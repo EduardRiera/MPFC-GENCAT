@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_tax_transcendence_operation.Button.Hide" Location="AccessChecker.OpenDialog.pfc_tax_transcendence_operation.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.Assign.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.Reports.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.RunScript.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.RunWorkflow.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_tax_transcendence_operation.SendSelected.Hide" Location="Mscrm.Form.pfc_tax_transcendence_operation.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.RunReport.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.RunScript.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.Send.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_tax_transcendence_operation.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_tax_transcendence_operation.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.modern.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.RunReport.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.RunScript.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.RunWorkflow.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_tax_transcendence_operation.SendSelected.Hide" Location="Mscrm.SubGrid.pfc_tax_transcendence_operation.SendSelected" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

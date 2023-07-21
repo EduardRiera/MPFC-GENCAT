@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="anonymousqueryapiresult">
+  <description default="Anonymous Query API result">
+    <label description="Anonymous Query API result" languagecode="1027" />
+  </description>
+  <displayname default="Anonymous Query API result">
+    <label description="Anonymous Query API result" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Anonymous Query API result</name>
+  <type>12</type>
+</customapiresponseproperty>

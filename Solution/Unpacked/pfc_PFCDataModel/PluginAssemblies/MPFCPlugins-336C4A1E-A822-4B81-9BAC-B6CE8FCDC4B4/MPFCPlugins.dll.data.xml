@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginAssemblyId="336c4a1e-a822-4b81-9bac-b6ce8fcdc4b4" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/MPFCPlugins-336C4A1E-A822-4B81-9BAC-B6CE8FCDC4B4/MPFCPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.AccountUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="f0b6c825-e070-4893-8a36-6facde69e0be" Name="MPFC.Plugins.Plugins.AccountUpdatePreOperation">
+      <FriendlyName>df33981b-f9a2-4f34-be8b-5ebb867e5346</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.AnswerCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="9f586927-b9c6-4eac-b804-b5f6f24bf0b8" Name="MPFC.Plugins.Plugins.AnswerCreatePreOperation">
+      <FriendlyName>962c8ff1-7769-4dc6-9d57-04228ffec9cb</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.AppointmentCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="b30e8ee3-39d8-4f11-a050-4b98069afd98" Name="MPFC.Plugins.Plugins.AppointmentCreatePreOperation">
+      <FriendlyName>be5c14de-3f42-4d1c-8941-d58436663ef8</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactAccountCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="82af3ce1-e1a9-4e7f-bfdd-ada3c8733b9e" Name="MPFC.Plugins.Plugins.ContactAccountCreatePreOperation">
+      <FriendlyName>72a91f4b-0e33-459a-bfef-53091abff97e</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="ca06b3d5-b0df-4177-b225-7c22dc99ca6a" Name="MPFC.Plugins.Plugins.ContactCreatePostOperation">
+      <FriendlyName>e54fe3b9-ca53-4bd1-adce-4a9e3d725311</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactCreatePreValidation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="4b257a28-9e12-46e6-ac8b-a0d6d1670fbe" Name="MPFC.Plugins.Plugins.ContactCreatePreValidation">
+      <FriendlyName>58c909a5-7f9a-4d80-a053-e690757f8b64</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactQueryAssociate, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="92d2715e-81df-4026-bf27-e2c15712627c" Name="MPFC.Plugins.Plugins.ContactQueryAssociate">
+      <FriendlyName>4c282c13-ae11-4132-8f12-47e6152c3c66</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactQueryDisassociate, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="9a1708eb-9ac5-4c7f-93b4-e669aa3b7e40" Name="MPFC.Plugins.Plugins.ContactQueryDisassociate">
+      <FriendlyName>88bb9523-8309-4991-a2c3-1773e2dabafd</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactUpdatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="0a8e1a62-4756-45f8-b48e-648ef2e9d861" Name="MPFC.Plugins.Plugins.ContactUpdatePostOperation">
+      <FriendlyName>b1f9fd76-0911-4ba5-922d-69fadda2964d</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.ContactUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="c60ba54f-295f-4640-bb7c-8ee573ed28ab" Name="MPFC.Plugins.Plugins.ContactUpdatePreOperation">
+      <FriendlyName>3917a22d-8ced-4517-8fba-194309af2a70</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.EmailCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="bfe546c8-8ca5-4917-b4cc-afdb16dddd1e" Name="MPFC.Plugins.Plugins.EmailCreatePreOperation">
+      <FriendlyName>ae483b73-6425-4263-a75a-14fc758383dc</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.EmailCreatePreValidation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="ff5463c3-95c1-462c-9bb4-f2905f208461" Name="MPFC.Plugins.Plugins.EmailCreatePreValidation">
+      <FriendlyName>adc6efc0-e350-4937-8ad5-e1d8c2c10743</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.EventPortalUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="99526d65-bf0b-4bf2-8b76-ed441ffc6923" Name="MPFC.Plugins.Plugins.EventPortalUpdatePreOperation">
+      <FriendlyName>c3732949-e900-4120-ad63-a000974cbb36</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.EventRegistrationCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="7d861960-9f22-489e-a5d1-a9e141892a36" Name="MPFC.Plugins.Plugins.EventRegistrationCreatePreOperation">
+      <FriendlyName>1d773aa7-ecda-4a79-93a9-9ed687845dbc</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.EventUpdatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="0c084421-8b92-4eda-ac60-5dbd35694290" Name="MPFC.Plugins.Plugins.EventUpdatePostOperation">
+      <FriendlyName>7cfc5578-1641-4b99-80c0-9f6c870437ce</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.FormPageUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="a58631d8-1dde-4b5d-89ef-fbecdbbac821" Name="MPFC.Plugins.Plugins.FormPageUpdatePreOperation">
+      <FriendlyName>15a79c03-dbee-428a-b0c9-fdaf82b00758</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.InformationRequirementCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="ec711d5f-b2ab-405b-b073-8b525cfce552" Name="MPFC.Plugins.Plugins.InformationRequirementCreatePostOperation">
+      <FriendlyName>9e89e9cc-9061-4e0b-ac6e-533cbede55f0</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.InformationRequirementCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="cdc51b34-6560-4196-b672-483b1c529480" Name="MPFC.Plugins.Plugins.InformationRequirementCreatePreOperation">
+      <FriendlyName>641215c2-300c-4b02-87b7-36eaca47c1ca</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.PortaSignaturesCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="aaa4f484-0cbe-46df-9478-6872773baa5d" Name="MPFC.Plugins.Plugins.PortaSignaturesCreatePostOperation">
+      <FriendlyName>97709564-90cd-4b23-9d9f-e6be6ef286f0</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="8ff8007c-1f57-4221-bdfb-7ec9f0d8a2fa" Name="MPFC.Plugins.Plugins.QueryCreatePostOperation">
+      <FriendlyName>4db8b287-eae5-435a-8196-497e76b25f8a</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="a8c93881-9e09-46e3-8fb0-09f9431faee2" Name="MPFC.Plugins.Plugins.QueryCreatePreOperation">
+      <FriendlyName>81f1af58-f68d-47e3-a797-82024d5b3d01</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryDGTCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="9302f404-57f0-49d2-892a-7ecce9727761" Name="MPFC.Plugins.Plugins.QueryDGTCreatePostOperation">
+      <FriendlyName>28f5e3dd-7674-4221-8266-6933859f65fb</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryDGTCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="af7cbdda-dd34-4793-9b09-3fff3c83dc8d" Name="MPFC.Plugins.Plugins.QueryDGTCreatePreOperation">
+      <FriendlyName>50f02283-a1a8-4a18-80d1-ed59de86e193</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryDGTUpdatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="ebd8f295-3c34-49af-a9e8-7b17b0621505" Name="MPFC.Plugins.Plugins.QueryDGTUpdatePostOperation">
+      <FriendlyName>db9d3860-5a35-4b88-b8d4-a9a0445ddb95</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryDGTUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="52e778fa-8189-4153-85f3-8fae7363d8d7" Name="MPFC.Plugins.Plugins.QueryDGTUpdatePreOperation">
+      <FriendlyName>c7fdd56c-3119-4dbb-bdc6-93c995383332</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryUpdatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="a2e887ed-f915-4e46-83ce-5c5ef0b43dde" Name="MPFC.Plugins.Plugins.QueryUpdatePostOperation">
+      <FriendlyName>bec13b08-2d8c-4ec7-bc32-2877ffa7f8e9</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.QueryUpdatePreOperationPlugin, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="fbb59b9a-f42f-4348-b97c-9449f45193b8" Name="MPFC.Plugins.Plugins.QueryUpdatePreOperationPlugin">
+      <FriendlyName>f9f25a8e-2ba6-4915-9b61-d79f5aa8bc68</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.TaxTranscendenceOperationCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="709350b0-499d-4093-8850-e6a42443f1a0" Name="MPFC.Plugins.Plugins.TaxTranscendenceOperationCreatePostOperation">
+      <FriendlyName>00e50dc3-9f30-4910-bd8d-b6a8664f18ce</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.TaxTranscendenceOperationCreatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="80c537fe-e971-4c79-b670-f3204af57351" Name="MPFC.Plugins.Plugins.TaxTranscendenceOperationCreatePreOperation">
+      <FriendlyName>5c3b0672-110b-4a22-9b61-bc2e6fb6189d</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.TaxTranscendenceOperationUpdatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="9f86018c-89c7-4fa6-975f-6df16e58a512" Name="MPFC.Plugins.Plugins.TaxTranscendenceOperationUpdatePostOperation">
+      <FriendlyName>8db85cc7-8deb-459d-bef5-21ab9a86b857</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.TaxTranscendenceOperationUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="afa7bcf9-b2fd-4fb0-8c87-8ea9a97817a9" Name="MPFC.Plugins.Plugins.TaxTranscendenceOperationUpdatePreOperation">
+      <FriendlyName>f8826d34-cd6c-47dd-a761-df406eb6a862</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.TrainingRequestCreatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="2540a263-a35d-4fe9-a3d2-c1074abb53e4" Name="MPFC.Plugins.Plugins.TrainingRequestCreatePostOperation">
+      <FriendlyName>f75a962e-0a5e-4487-98cb-719d0ad29e33</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.Plugins.Plugins.TrainingRequestUpdatePostOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="e98c419f-8868-4fef-b8a3-788c58fdf435" Name="MPFC.Plugins.Plugins.TrainingRequestUpdatePostOperation">
+      <FriendlyName>1ee54d32-3236-4e4b-b103-d4b2cb298004</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{6a735ad7-8ffb-ed11-8849-000d3adf90aa}</WebResourceId>
+  <Name>pfc_mailsendsvg</Name>
+  <DisplayName>MailSendsvg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.16</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_mailsendsvg6A735AD7-8FFB-ED11-8849-000D3ADF90AA</FileName>
+</WebResource>

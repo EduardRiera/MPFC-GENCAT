@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_departamental_agrupation.Button.Hide" Location="AccessChecker.OpenDialog.pfc_departamental_agrupation.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.AddCampaignResponse.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.AddCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.AddConnection.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.AddToQueue.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Assign.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Convert.Case.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Convert.Opportunity.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.CopySelected.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.PDFButtonId.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.PDFButtonId" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Permissions.Grant.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Permissions.GrantUCI.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Permissions.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Permissions.Sharing.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Permissions.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.PromoteToResponse.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.QueueItemDetail.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.RefreshModernButton.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.RefreshModernButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.Reports.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.RunScript.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.RunWorkflow.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.SendSelected.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.SuggestProduct.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.ViewHierarchy.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_departamental_agrupation.WordTemplate.Hide" Location="Mscrm.Form.pfc_departamental_agrupation.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.AddCampaignResponse.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.AddCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.AddConnection.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.AddToQueue.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.Assign.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.Copy.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.Copy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.ExportSelectedToExcel.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.ExportSelectedToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.RunReport.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.RunScript.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.Send.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.Sharing.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.ViewHierarchy.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_departamental_agrupation.WordTemplate.Hide" Location="Mscrm.HomepageGrid.pfc_departamental_agrupation.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.AddConnection.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.AddToQueue.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.Assign.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.AssociateParentChildCase.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.AssociateParentChildCase" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.CopySelected.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.ExportSelectedToExcel.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.ExportSelectedToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.modern.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.RunReport.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.RunScript.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.RunWorkflow.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.SendSelected.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.Sharing.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_departamental_agrupation.WordTemplate.Hide" Location="Mscrm.SubGrid.pfc_departamental_agrupation.WordTemplate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

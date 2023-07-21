@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cdd5583e-aefe-4d74-a4c8-5e0d4feb8923}</formid>
+    <IntroducedVersion>1.0.10</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{e4718f11-2da9-4c9f-8a87-b3ff74347ca8}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{0ea8a2f8-b347-4e8c-8915-334aa61f082f}" name="{0ea8a2f8-b347-4e8c-8915-334aa61f082f}" columns="11" locklevel="0" labelwidth="130" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="General" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dc821401-4bcf-49ec-a80b-073c0cc1b081}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nom" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" uniqueid="{ed12a36a-8952-8849-4430-ee3430aab44d}" disabled="false" />
+                      </cell>
+                      <cell id="{9da723c2-b080-aaa4-6c19-0a5ab23480c8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Codi" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_codeambit" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_codeambit" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="{58032110-34bb-225d-355a-c5cb18cd3b43}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Administració" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" showlabel="false" showbar="false" locklevel="0" id="{310ac901-1c66-c8d1-819e-73c6dd057146}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Secció" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{55118385-45ca-5251-d06a-474bcd5bc1c7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Autor" languagecode="1027" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{3cb1bb56-d0bb-0c03-818c-e25b1e4ae2b3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{76825d1e-a1dd-9818-d276-d9087536957c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Modificat per" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                      <cell id="{42a5206a-b597-721e-eedd-76ad83875b0b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de modificació" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navAsyncOperations" Sequence="9500" Area="ProcessCenter" Id="navAsyncOperations" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Processos de segon terme" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navProcessSessions" Sequence="9700" Area="ProcessCenter" Id="navProcessSessions" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Sessions del procés" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1027" Text="Comú" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1027" Text="Vendes" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1027" Text="Servei" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1027" Text="Màrqueting" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1027" Text="Sessions del procés" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

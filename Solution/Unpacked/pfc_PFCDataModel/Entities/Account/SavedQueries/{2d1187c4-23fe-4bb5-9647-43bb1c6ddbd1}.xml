@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2d1187c4-23fe-4bb5-9647-43bb1c6ddbd1}</savedqueryid>
+    <queryapi></queryapi>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" icon="1" preview="1">
+        <row name="result" id="accountid">
+          <cell name="pfc_catalog_code" width="100" />
+          <cell name="pfc_descriptivename" width="229" />
+          <cell name="name" width="300" />
+          <cell name="pfc_departamental_agrupationid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="account">
+          <attribute name="name" />
+          <attribute name="accountid" />
+          <order attribute="name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="name" operator="like" value="{0}" />
+            <condition attribute="pfc_catalog_code" operator="like" value="{0}" />
+            <condition attribute="pfc_departamental_agrupationid" operator="like" value="{0}" />
+            <condition attribute="pfc_acronym" operator="like" value="{0}" />
+            <condition attribute="pfc_pmp_area" operator="like" value="{0}" />
+            <condition attribute="pfc_descriptivename" operator="like" value="{0}" />
+          </filter>
+          <attribute name="pfc_catalog_code" />
+          <attribute name="pfc_descriptivename" />
+          <attribute name="pfc_departamental_agrupationid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Cerca ràpida de les entitats actives" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

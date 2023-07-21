@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="pfc_modelstypes" localizedName="Tipus de models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Tipus de models" languagecode="1027" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1027" />
+  </Descriptions>
+  <options>
+    <option value="0" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Model 111" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="1" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Model 115" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="2" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Model 123" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="3" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Model 216" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="4" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Model 303" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

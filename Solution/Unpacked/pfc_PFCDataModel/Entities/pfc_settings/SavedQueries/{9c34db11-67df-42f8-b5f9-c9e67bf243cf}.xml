@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9c34db11-67df-42f8-b5f9-c9e67bf243cf}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_settingsid">
+          <cell name="pfc_name" width="300" />
+          <cell name="pfc_configuration_group_name" width="196" />
+          <cell name="pfc_configuration_types" width="214" />
+          <cell name="pfc_field_name" width="158" />
+          <cell name="pfc_schema_name" width="205" />
+          <cell name="pfc_operator" width="132" />
+          <cell name="pfc_value" width="167" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_settings">
+          <attribute name="pfc_settingsid" />
+          <attribute name="pfc_name" />
+          <attribute name="createdon" />
+          <order attribute="pfc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="pfc_configuration_group_name" />
+          <attribute name="pfc_configuration_types" />
+          <attribute name="pfc_field_name" />
+          <attribute name="pfc_schema_name" />
+          <attribute name="pfc_value" />
+          <attribute name="pfc_operator" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Configuracions inactiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

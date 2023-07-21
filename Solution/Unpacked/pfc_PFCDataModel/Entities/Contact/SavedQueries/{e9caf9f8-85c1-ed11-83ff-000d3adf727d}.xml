@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{e9caf9f8-85c1-ed11-83ff-000d3adf727d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" icon="1" preview="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="207" />
+          <cell name="jobtitle" width="100" />
+          <cell name="emailaddress1" width="125" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="mobilephone" width="100" />
+          <cell name="preferredcontactmethodcode" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <order attribute="fullname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="preferredcontactmethodcode" />
+          <attribute name="jobtitle" />
+          <attribute name="emailaddress1" />
+          <attribute name="mobilephone" />
+          <attribute name="contactid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Contactes actius grid" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

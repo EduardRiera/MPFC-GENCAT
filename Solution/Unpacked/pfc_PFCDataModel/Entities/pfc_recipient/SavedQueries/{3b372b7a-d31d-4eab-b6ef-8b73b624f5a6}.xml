@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{3b372b7a-d31d-4eab-b6ef-8b73b624f5a6}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_recipientid">
+          <cell name="pfc_order" width="100" />
+          <cell name="pfc_name" width="300" />
+          <cell name="pfc_mail" width="100" />
+          <cell name="pfc_entity" width="100" />
+          <cell name="pfc_recipienttype" width="100" />
+          <cell name="statuscode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_recipient">
+          <attribute name="pfc_name" />
+          <order attribute="pfc_order" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="statuscode" />
+          <attribute name="pfc_order" />
+          <attribute name="pfc_mail" />
+          <attribute name="pfc_entity" />
+          <attribute name="pfc_recipienttype" />
+          <attribute name="pfc_recipientid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Recipients actiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

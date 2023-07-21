@@ -1,0 +1,36 @@
+var EventForm;
+(function (EventForm) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "msevtmgt_event";
+        function OnLoad(ec) {
+            var fc = ec.getFormContext();
+            EventForm.Functions.BusinessLogic.CopyFormSiteToJavascriptCodeField(fc);
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = EventForm.FormEvents || (EventForm.FormEvents = {}));
+})(EventForm || (EventForm = {}));
+(function (EventForm) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function CopyFormSiteToJavascriptCodeField(fc) {
+                if (!fc.getAttribute(EventForm.Constants.Fields.JavaScriptCode).getValue()) {
+                    fc.getAttribute(EventForm.Constants.Fields.JavaScriptCode).setValue(fc.getAttribute(EventForm.Constants.Fields.WebSiteForm).getValue());
+                }
+            }
+            BusinessLogic.CopyFormSiteToJavascriptCodeField = CopyFormSiteToJavascriptCodeField;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = EventForm.Functions || (EventForm.Functions = {}));
+})(EventForm || (EventForm = {}));
+(function (EventForm) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.WebSiteForm = "msevtmgt_formpagejavascriptcode";
+            Fields.JavaScriptCode = "pfc_formpagejavascriptcode";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = EventForm.Constants || (EventForm.Constants = {}));
+})(EventForm || (EventForm = {}));

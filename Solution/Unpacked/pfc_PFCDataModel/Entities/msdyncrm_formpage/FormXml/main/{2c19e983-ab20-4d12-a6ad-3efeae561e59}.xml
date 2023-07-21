@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2c19e983-ab20-4d12-a6ad-3efeae561e59}</formid>
+    <IntroducedVersion>1.0.269.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1920" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{3ba36633-ffdb-434b-9493-3a0e626de2f0}" IsUserDefined="1" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{0874ef2a-eb58-4b7b-85cd-a3947e65c8d1}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{945cfe81-2638-4bda-82e1-16b99a81fde4}" ordinalvalue="10012" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{8b8ed931-a053-6b1c-3d53-8274862cc900}" showlabel="true" locklevel="0" ordinalvalue="10011" solutionaction="Added">
+                        <labels>
+                          <label description="Codi Javascript" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_formpagejavascriptcode" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pfc_formpagejavascriptcode" disabled="false" uniqueid="{96ac5e2a-203e-3d0c-b878-cd764701b334}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="66%" id="1">
+              <sections>
+                <section showlabel="false" showbar="false" id="{1c03816e-e5d3-44b5-bea4-0d91b2a2bef3}" IsUserDefined="0" height="auto" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{2c2376ae-d60a-4425-bef8-30723187556b}" showlabel="false" locklevel="0" ordinalvalue="10001">
+                        <control id="msdyncrm_externalhostingformat_description" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_externalhostingformat_description" disabled="true" uniqueid="{BD57B3C6-BB05-4C01-8284-63D39266EC39}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{717e0bcb-c0d3-8718-c841-e9d0be944a34}" showlabel="false" locklevel="0" ordinalvalue="10002">
+                        <control id="msdyncrm_javascriptcode_compound" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_javascriptcode_compound" disabled="true" uniqueid="{181B2CA0-58F4-466C-9864-B4D798287B90}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0cb5301e-7225-4725-be2c-41963ec1d1a3}" showlabel="false" locklevel="0" ordinalvalue="10003">
+                        <control id="msdyncrm_externalformhosting_iframe" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_externalformhosting_iframe" disabled="true" uniqueid="{EF7ACDD6-EEC3-4DE5-9F34-7702118856B5}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <controlDescriptions>
+        <controlDescription forControl="{181B2CA0-58F4-466C-9864-B4D798287B90}" solutionaction="Modified">
+          <customControl formFactor="2" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_javascriptcode_compound</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_javascriptcode_compound</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_javascriptcode_compound</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{EF7ACDD6-EEC3-4DE5-9F34-7702118856B5}" solutionaction="Modified">
+          <customControl formFactor="2" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_externalformhosting_iframe</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_externalformhosting_iframe</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_externalformhosting_iframe</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{BD57B3C6-BB05-4C01-8284-63D39266EC39}" solutionaction="Modified">
+          <customControl formFactor="2" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_externalhostingformat_description</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_externalhostingformat_description</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_externalhostingformat_description</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari d'aquesta entitat" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

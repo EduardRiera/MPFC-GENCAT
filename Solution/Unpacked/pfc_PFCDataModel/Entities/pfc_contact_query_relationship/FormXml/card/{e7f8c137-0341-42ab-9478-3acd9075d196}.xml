@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e7f8c137-0341-42ab-9478-3acd9075d196}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" verticallayout="true" id="{2b22d0c8-ec2e-41b4-8b4f-f5320cd0fe51}" IsUserDefined="0">
+          <labels>
+            <label description="" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="25%">
+              <sections>
+                <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{80c11bc8-ab00-4468-a2a9-49130e5c4416}">
+                  <labels>
+                    <label description="ColorStrip" languagecode="1027" />
+                  </labels>
+                </section>
+              </sections>
+            </column>
+            <column width="75%">
+              <sections>
+                <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{4a41096d-8d91-446e-848d-7a5d09d7f863}" IsUserDefined="0">
+                  <labels>
+                    <label description="Capçalera" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f305c960-8892-43df-8c02-802dedc42c51}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Raó per a l'estat" languagecode="1027" />
+                        </labels>
+                        <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
+                      </cell>
+                      <cell id="{8cef1c40-d259-4c8c-971c-07d55d00e9b8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{abc27530-bf3a-4bc6-a85e-ec6309c924eb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{0c15fbb8-d215-4566-b49d-20c905d72a7e}" IsUserDefined="0">
+                  <labels>
+                    <label description="Detalls" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b2088ac9-11a6-45d4-9061-023aacb4b593}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Codi" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{504ba457-14b8-4f2b-a298-b2c71d56e540}" IsUserDefined="0">
+                  <labels>
+                    <label description="Peu de pàgina" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{73372a9a-fe54-4707-9730-72e7927cf42d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                      <cell id="{cd34c19d-a042-4176-b44e-c0b57948f1ae}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                      <cell id="{6fb3cff9-17dd-4236-b52b-0a389bea95df}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{93df8687-5e39-4540-a9bb-a2b29d18b2b8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Format de targeta d'aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

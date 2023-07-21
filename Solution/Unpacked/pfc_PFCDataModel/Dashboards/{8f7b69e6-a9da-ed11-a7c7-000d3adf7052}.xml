@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Formació" languagecode="1027" />
+  </LocalizedNames>
+  <FormId>{8f7b69e6-a9da-ed11-a7c7-000d3adf7052}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="dashboard">
+      <form>
+        <tabs>
+          <tab showlabel="false" verticallayout="true" id="{344f09bb-7c3b-499a-8931-82e5ab3ec081}">
+            <labels>
+              <label description="Pestanya" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section showlabel="false" showbar="false" columns="111" id="{adf8aff2-2fab-496d-ae07-4f2b7a6fd0ad}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="2" rowspan="15" showlabel="true" id="{d7eecc86-ab76-435b-8c1e-47e36d631d5a}" auto="false">
+                          <labels>
+                            <label description="Cursos Actius" languagecode="1027" />
+                          </labels>
+                          <control id="Componentad25252" uniqueid="{018bee91-059a-abde-6974-54397b927249}" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>msevtmgt_event</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>11</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                              <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" ispreviewcell="true" id="{8e549da4-e419-4ab2-b582-ce594ab53162}">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row>
+                        <cell id="{89a36192-8197-9b96-6411-03789abd7d1c}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{29b682d1-b1b1-2c4e-1926-525ebb67acb0}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{3ac0e3ee-d901-5527-b8eb-751bac483ee8}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell colspan="2" rowspan="12" showlabel="true" id="{acbf5ea4-bce1-4d57-8baa-fc528b641132}" auto="false">
+                          <labels>
+                            <label description="Cursos Actius" languagecode="1027" />
+                          </labels>
+                          <control id="Component3fafa9b" uniqueid="{675bec58-da55-e02c-cd47-d8d342856536}" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>msevtmgt_event</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                              <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{bb9162e6-d950-dd12-35e0-47b98c1e6e0b}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{cb762946-0523-2e54-e4b4-e5413a38a2b6}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{5cb3a388-54e9-6c20-138e-e9c64634eec2}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{2b9c45c1-ae02-7191-ada5-23aca53c698e}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{e365a32b-d430-1036-841a-d47a72b5e1a3}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{05c75695-6293-9e61-8222-7d6142c43407}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{953ead99-46b4-2377-b346-b3510306392a}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{405b985d-bb68-50d9-8eb0-acb51b263001}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{46b3176b-b87a-c94d-3d68-b4b33d3576ec}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{2accd839-e40c-67a6-4528-7361718a6d40}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{804d51ae-0d1c-199a-844a-91c1a936491a}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{3a929a46-526e-0d85-ad79-78c1040d2a66}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <controlDescriptions>
+          <controlDescription forControl="{018bee91-059a-abde-6974-54397b927249}">
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+              <parameters>
+                <TargetEntityType>msevtmgt_event</TargetEntityType>
+                <ChartGridMode>Grid</ChartGridMode>
+                <EnableQuickFind>true</EnableQuickFind>
+                <EnableViewPicker>true</EnableViewPicker>
+                <EnableJumpBar>true</EnableJumpBar>
+                <RecordsPerPage>8</RecordsPerPage>
+                <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                <IsUserView>false</IsUserView>
+                <ViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewIds>
+                <AutoExpand>Fixed</AutoExpand>
+                <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                <IsUserChart>false</IsUserChart>
+                <EnableChartPicker>false</EnableChartPicker>
+                <RelationshipName />
+              </parameters>
+            </customControl>
+            <customControl formFactor="0" name="MscrmControls.CalendarControl.CalendarControl">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</FilteredViewIds>
+                </data-set>
+                <QuickViewFormId0 static="true" type="SingleLine.Text">4C95C62C-27CC-4C8E-B707-FE9477F64DD3</QuickViewFormId0>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+            <customControl formFactor="1" name="MscrmControls.CalendarControl.CalendarControl">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</FilteredViewIds>
+                </data-set>
+                <QuickViewFormId0 static="true" type="SingleLine.Text">4C95C62C-27CC-4C8E-B707-FE9477F64DD3</QuickViewFormId0>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+            <customControl formFactor="2" name="MscrmControls.CalendarControl.CalendarControl">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</FilteredViewIds>
+                </data-set>
+                <QuickViewFormId0 static="true" type="SingleLine.Text">4C95C62C-27CC-4C8E-B707-FE9477F64DD3</QuickViewFormId0>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+          </controlDescription>
+          <controlDescription forControl="{675bec58-da55-e02c-cd47-d8d342856536}">
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="0">
+              <parameters>
+                <TargetEntityType>msevtmgt_event</TargetEntityType>
+                <ChartGridMode>Grid</ChartGridMode>
+                <EnableQuickFind>true</EnableQuickFind>
+                <EnableViewPicker>true</EnableViewPicker>
+                <EnableJumpBar>true</EnableJumpBar>
+                <RecordsPerPage>8</RecordsPerPage>
+                <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                <IsUserView>false</IsUserView>
+                <ViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewIds>
+                <AutoExpand>Fixed</AutoExpand>
+                <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                <IsUserChart>false</IsUserChart>
+                <EnableChartPicker>false</EnableChartPicker>
+                <RelationshipName />
+              </parameters>
+            </customControl>
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="1">
+              <parameters>
+                <TargetEntityType>msevtmgt_event</TargetEntityType>
+                <ChartGridMode>Grid</ChartGridMode>
+                <EnableQuickFind>true</EnableQuickFind>
+                <EnableViewPicker>true</EnableViewPicker>
+                <EnableJumpBar>true</EnableJumpBar>
+                <RecordsPerPage>8</RecordsPerPage>
+                <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                <IsUserView>false</IsUserView>
+                <ViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewIds>
+                <AutoExpand>Fixed</AutoExpand>
+                <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                <IsUserChart>false</IsUserChart>
+                <EnableChartPicker>false</EnableChartPicker>
+                <RelationshipName />
+              </parameters>
+            </customControl>
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="2">
+              <parameters>
+                <TargetEntityType>msevtmgt_event</TargetEntityType>
+                <ChartGridMode>Grid</ChartGridMode>
+                <EnableQuickFind>true</EnableQuickFind>
+                <EnableViewPicker>true</EnableViewPicker>
+                <EnableJumpBar>true</EnableJumpBar>
+                <RecordsPerPage>8</RecordsPerPage>
+                <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                <IsUserView>false</IsUserView>
+                <ViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewIds>
+                <AutoExpand>Fixed</AutoExpand>
+                <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                <IsUserChart>false</IsUserChart>
+                <EnableChartPicker>false</EnableChartPicker>
+                <RelationshipName />
+              </parameters>
+            </customControl>
+            <customControl name="MscrmControls.CalendarControl.CalendarControl" formFactor="-1">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <CalendarDisplayOptions0>msevtmgt_eventid</CalendarDisplayOptions0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds>{90C6947A-73D4-46F8-A1B9-658512390AC7}</FilteredViewIds>
+                </data-set>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+          </controlDescription>
+        </controlDescriptions>
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.13</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</Dashboard>

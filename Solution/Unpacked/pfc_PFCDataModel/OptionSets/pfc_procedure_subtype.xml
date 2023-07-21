@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="pfc_procedure_subtype" localizedName="Subtipus de procediment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.2</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Subtipus de procediment" languagecode="1027" />
+  </displaynames>
+  <options>
+    <option value="470000000" ExternalValue="">
+      <labels>
+        <label description="Verificació de dades" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000001" ExternalValue="">
+      <labels>
+        <label description="Comprobacio de Valors" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000002" ExternalValue="">
+      <labels>
+        <label description="Procediments de comprovació limitada" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000003" ExternalValue="">
+      <labels>
+        <label description="Gestió" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000004" ExternalValue="">
+      <labels>
+        <label description="Inspecció" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000005" ExternalValue="">
+      <labels>
+        <label description="Recursos de Reposició" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000006" ExternalValue="">
+      <labels>
+        <label description="Reclamacions Economico-Administratives" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000007" ExternalValue="">
+      <labels>
+        <label description="Procediments de constrenyiment" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000008" ExternalValue="">
+      <labels>
+        <label description="Diligencies d’embargament" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000009" ExternalValue="">
+      <labels>
+        <label description="Ajornaments/Fraccionaments" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{706ac99c-d147-44e5-8fe0-caa85fa03b1b}</formid>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{a33eb096-91d0-49e3-b6a2-ebfcd30cd6a9}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{4eb59164-5f21-4b58-aeca-f29829a3fc4c}">
+                  <labels>
+                    <label description="General" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{341fbae5-a98d-40d4-8f97-4a84c422ac59}">
+                        <labels>
+                          <label description="Nom" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6149c081-50f1-4ef1-be76-41d09254c095}">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="df9888c9-4b03-4c28-8e9e-c70d442278b7" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Administració" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="1a1e2409-4d14-4300-bdfc-2ad7933110c8" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Nueva sección" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{15990327-9afb-4b22-bff3-cc320c70a290}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Autor" languagecode="1027" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{f48c0fbc-9615-4c81-9392-033ea6754555}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5b072d23-cf0b-40bd-88f7-7b16bb1f2ded}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modificat per" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                      <cell id="{bc7986f5-4020-40b8-a6cb-b435afcae0a3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Data de modificació" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{c2e19c38-1782-4074-84fb-92101b2ff8a0}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{527f9b8b-a908-4e32-981b-0a75949090cc}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{0a8199d5-c824-42b5-a4cc-0c63b1b28ab4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{4dc7eafb-1a09-4385-85c3-39767376faff}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{6180285d-108d-48eb-8b7b-774b593ae8d4}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{1192cd89-198b-4cb2-8bb1-cd291f49fe0e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{fe1f3a8c-a128-4891-8def-a986536eaf9b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{a167e3cc-316b-488a-ab02-c424d516336f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

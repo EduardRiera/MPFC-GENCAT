@@ -1,0 +1,1287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{11660811-f8ce-ed11-b597-000d3adf7052}</formid>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form showImage="true" headerdensity="HighWithControls" shownavigationbar="true" maxWidth="1920">
+      <ancestor id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      <hiddencontrols>
+        <data id="address1_addressid" datafieldname="address1_addressid" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="address2_addressid" datafieldname="address2_addressid" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+      </hiddencontrols>
+      <tabs>
+        <tab name="General" id="{3b0b63a9-d379-689a-0ec3-e71eb4c6a841}" IsUserDefined="0" showlabel="true" expanded="true" locklevel="0" labelid="{3d74104d-1c14-4aa0-a3b1-fc17e467ee0b}">
+          <labels>
+            <label description="La meva entitat" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="ACCOUNT_INFORMATION" showlabel="false" showbar="false" id="{0eb92e6c-bcb8-0d52-a188-d81543ddb7cd}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelposition="Left" labelid="{26d8ace9-e171-40fe-8f08-a2102477b15c}" locklevel="0" celllabelalignment="Left">
+                  <labels>
+                    <label description="Identificació" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{96e383cd-0faf-40bf-8585-e2311d2fdbba}" locklevel="0" colspan="1" rowspan="1" showlabel="true" labelid="{f7fc6614-dbc2-4628-924f-9ef5af764e7c}">
+                        <labels>
+                          <label description="Codi Catàleg" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_catalog_code" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_catalog_code" disabled="true" uniqueid="{320c754c-052c-5991-9206-501099d01714}" />
+                      </cell>
+                      <cell id="{b0e82a7e-5683-d90c-308a-0d779377ea8a}" showlabel="true" locklevel="1" labelid="{b3fbbd6c-a642-4861-894a-eac8eae51fa7}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nom" languagecode="1027" />
+                        </labels>
+                        <control id="name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="name" disabled="true" uniqueid="{965a9a96-00ed-b7b5-ca3d-69a9de1be4e1}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5d701e3c-2640-4a7f-9e93-1e7068002d60}" locklevel="1" colspan="1" rowspan="1" labelid="{926422a3-c246-4279-a8f7-112f03ec9355}">
+                        <labels>
+                          <label description="NIF" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_nif" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_nif" disabled="true" />
+                      </cell>
+                      <cell id="{6dae4747-8c05-484e-9294-8f012da5fb99}" locklevel="1" colspan="1" rowspan="1" labelid="{e56ff24d-76ab-4878-9387-5e3c5d1f822c}">
+                        <labels>
+                          <label description="Tipus" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_entitytype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="pfc_entitytype" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="SUMMARY_TAB_section_3" showlabel="false" showbar="false" locklevel="0" id="{11645a8e-1b86-d155-9abc-2dd7d63eaa82}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" labelid="{80260470-8e1e-416e-942d-e043d078c2b9}">
+                  <labels>
+                    <label description="Secció" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b4fd5285-c685-4afd-afa2-f351d65659eb}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{81930e1a-95f7-4705-8afd-8f8c23534af9}" rowspan="4" colspan="1" auto="false" labelid="{54f37d37-0186-4789-9a9f-142e92c7c84d}">
+                        <labels>
+                          <label description="Contactes vinculats" languagecode="1027" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="sg_ContactesVinculats" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>10</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>pfc_contact_account</TargetEntityType>
+                            <ViewId>{893FEEC3-F7CE-ED11-B597-000D3ADF7052}</ViewId>
+                            <ViewIds>{436FE144-045A-4617-B362-04AEB6200442},{793CB532-33C8-ED11-B597-000D3ADF7052},{893FEEC3-F7CE-ED11-B597-000D3ADF7052}</ViewIds>
+                            <RelationshipName>pfc_pfc_contact_account_accountid_account</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_14" id="d1625000-b6ff-4c8a-927f-928555466f5a" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" labelid="{4cec10ae-048c-422d-816a-07b217d1bc30}">
+          <labels>
+            <label description="CATens" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_dades_registrals" id="ece1d666-c17b-479b-b5fe-f352dd765180" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{2ca77e7f-a31a-41db-bbfb-e6b88b96b286}">
+                  <labels>
+                    <label description="Dades registrals" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1a8d7fda-3892-4e11-81f8-5222bf56a57b}" locklevel="0" colspan="1" rowspan="1" labelid="{9870a324-62c3-4830-82a3-f3342d5d29ed}">
+                        <labels>
+                          <label description="Codi Registral" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_registrationcode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_registrationcode" disabled="true" />
+                      </cell>
+                      <cell id="{9866ca22-110d-4d22-8227-045ae4e2cc62}" locklevel="0" colspan="1" rowspan="1" labelid="{29e4ce3c-d2d6-4af6-ad44-8f7981bbae43}">
+                        <labels>
+                          <label description="Marca o Acrònim" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_brand_acronym" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_brand_acronym" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a40603b6-ef13-4e30-9575-8dc35c96fb15}" locklevel="0" colspan="1" rowspan="1" labelid="{4a411bf8-ed17-4c4f-b94a-0e89928302e6}">
+                        <labels>
+                          <label description="Tipus d'entitat de catàleg" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_catalogentitytype" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_catalogentitytype" disabled="true" uniqueid="{c2024a4c-743d-5a38-d720-312e1ba94cda}" />
+                      </cell>
+                      <cell id="{a06502bb-f4eb-4b79-8335-8675bfa5e294}" locklevel="0" colspan="1" rowspan="1" labelid="{833afdd5-d416-4545-a3ea-3f3e1f288ac9}">
+                        <labels>
+                          <label description="Naturalesa Jurídica (agregat)" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_legal_nature_aggregate" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_legal_nature_aggregate" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ef12d816-0977-4542-a0f1-48c2d55598e2}" locklevel="1" colspan="1" rowspan="1" labelid="{6936bbc5-36da-4473-925a-3e5538c0b7ca}">
+                        <labels>
+                          <label description="Administració d'adscripció" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_membership_administration" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_membership_administration" disabled="true" />
+                      </cell>
+                      <cell id="{04e16d22-8119-5a98-a922-0be2cc4eaac0}" showlabel="false" labelid="{24c53c26-fadb-4f24-8eaa-6ff05e5c0780}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_inventory_data" id="afe96ba9-eb81-47e4-9a33-c383b6f5a52a" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{14eaad2e-9bf5-4fc8-8fb2-e513c70bf3ca}">
+                  <labels>
+                    <label description="Dades inventari" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d3a576b8-cb86-4ad8-9076-e4c45dbb99f7}" locklevel="0" colspan="1" rowspan="1" labelid="{7da02555-89ef-47a1-9bc5-52106962b283}">
+                        <labels>
+                          <label description="Classificació d'ens" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_entity_classification" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_entity_classification" disabled="true" />
+                      </cell>
+                      <cell id="{a7b9e7ce-fce8-4f24-aad9-2f51d6c1d0bb}" locklevel="0" colspan="1" rowspan="1" labelid="{f5380537-b683-489e-a4f6-17a218b0cbc3}">
+                        <labels>
+                          <label description="Classificació Inventari Ens CCAA" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_classification_inventory_ccaa" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_classification_inventory_ccaa" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{38de3a9e-8d52-427c-8790-c835d1c584b7}" locklevel="0" colspan="1" rowspan="1" labelid="{3482ab8b-e524-4ebe-a9e5-34d5b093355c}">
+                        <labels>
+                          <label description="Codi Inventari Ens CCAA" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_ccaa_inventory_code" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_ccaa_inventory_code" disabled="true" />
+                      </cell>
+                      <cell id="{20c70228-eec2-4eeb-81af-66859492c92a}" locklevel="0" colspan="1" rowspan="1" labelid="{8346c6a7-d1c6-4b51-ab58-d09291b7b273}">
+                        <labels>
+                          <label description="Font d'alta" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_high_source" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_high_source" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e4588aa9-0c1d-4625-98bc-4188a08464de}" locklevel="0" colspan="1" rowspan="1" labelid="{7225f988-eb04-4f2a-be09-1e95d2b4ad73}">
+                        <labels>
+                          <label description="Alta des de" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_registration_from" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_registration_from" disabled="true" />
+                      </cell>
+                      <cell id="{b66622d5-4c33-4d64-82d3-ef69eaf710b7}" locklevel="0" colspan="1" rowspan="1" labelid="{3f27f37f-b26c-4739-90b5-53868fe3f79d}">
+                        <labels>
+                          <label description="Informació font d'alta" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_high_source_information" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_high_source_information" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_economic_legal_data" id="adaa6863-f16c-4d48-8cca-9676bcf92efd" IsUserDefined="0" locklevel="1" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{72aa6f05-61fc-4b15-9d34-fcfb3bb23986}">
+                  <labels>
+                    <label description="Dades Econòmico-jurídiques" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{94ffc919-6148-4deb-bc90-1e4433132b42}" locklevel="0" colspan="1" rowspan="1" labelid="{110d0c60-c360-4a7d-9dae-876a67eb791d}">
+                        <labels>
+                          <label description="Data inici" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_eco_jur_init_date" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="pfc_eco_jur_init_date" disabled="true" />
+                      </cell>
+                      <cell id="{96b9b312-30ee-4af7-8fd6-2a50f2d737f2}" showlabel="false" labelid="{104fd866-d1dc-47be-9d8f-bad52585255d}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{252e65c1-a64f-467a-b64d-678491d4582b}" showlabel="false" labelid="{323781a1-a25d-4527-9850-ea77deb7f85c}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{ae78c4ac-8641-4fd2-96a9-14af5bc23818}" locklevel="0" colspan="1" rowspan="1" labelid="{6e9490cd-208f-4eb5-a155-0700ece2a566}">
+                        <labels>
+                          <label description="Data fi" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_eco_jur_end_date" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="pfc_eco_jur_end_date" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{841681d2-68e3-4fd0-9ec6-e9d7631423df}" locklevel="0" colspan="1" rowspan="1" labelid="{6de43e89-e789-4d00-a842-4f6a35def3e6}">
+                        <labels>
+                          <label description="Sectorització SEC - Criteri Generalitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_sectorization_sec_generalitat_criterion" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_sectorization_sec_generalitat_criterion" disabled="true" />
+                      </cell>
+                      <cell id="{e56ec1a0-3499-4609-af63-de58ad8f9f58}" locklevel="0" colspan="1" rowspan="1" labelid="{032e54d9-60ee-448b-935c-5f3505e889a6}">
+                        <labels>
+                          <label description="Àmbit PMP" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_pmp_area" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_pmp_area" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_postal_data" id="834aa57c-d931-4795-8f56-9a9f161dce51" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{a5032340-67f2-4f4d-8cca-b1133e0586a9}">
+                  <labels>
+                    <label description="Dades postals" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d0289dee-23f1-46e0-b049-7cd396319483}" locklevel="0" colspan="1" rowspan="1" labelid="{ff3f09fa-1c87-4298-8ef3-4fa8b2315fb8}">
+                        <labels>
+                          <label description="Tipus vía" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_street_type" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_street_type" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{9dab68da-25ce-4101-879d-4d3048e1848e}" showlabel="false" labelid="{61befeba-5504-4631-8fde-9b08b5b599dc}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{819b22db-0cc9-4acb-92af-9fbbad9cad6b}" locklevel="0" colspan="1" rowspan="1" labelid="{6f836627-9fc9-4e61-a10b-04bf1423434f}">
+                        <labels>
+                          <label description="Nom de carrer" languagecode="1027" />
+                        </labels>
+                        <control id="address1_line1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_line1" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{5191478f-d3dd-4741-8592-e54ec5b9a7fc}" showlabel="false" labelid="{a6f41e5e-4f70-4b3d-bf24-00d842a6951f}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{083341e5-78e5-47e0-a75e-99dbd955665e}" locklevel="0" colspan="1" rowspan="1" labelid="{547e6e19-2812-4e99-9224-cf2fbecf4055}">
+                        <labels>
+                          <label description="Número de la via" languagecode="1027" />
+                        </labels>
+                        <control id="address1_line2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_line2" disabled="true" />
+                      </cell>
+                      <cell id="{13564176-a8a0-46f6-a69d-687f83af9922}" locklevel="0" colspan="1" rowspan="1" labelid="{69951d4c-3a4a-45b5-bc06-b6c0589802a3}">
+                        <labels>
+                          <label description="Localitat" languagecode="1027" />
+                        </labels>
+                        <control id="address1_city" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_city" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eb786def-fe0a-4d7e-890e-c307df85b013}" locklevel="0" colspan="1" rowspan="1" labelid="{55d2323b-203e-4ea5-a8df-99946cfe6726}">
+                        <labels>
+                          <label description="Situació" languagecode="1027" />
+                        </labels>
+                        <control id="address1_line3" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_line3" disabled="true" />
+                      </cell>
+                      <cell id="{c3433bcc-cbfb-4aa8-a689-a7879386b826}" locklevel="0" colspan="1" rowspan="1" labelid="{a5d09280-d601-4a48-a6e7-33570ff4a139}">
+                        <labels>
+                          <label description="Codi postal" languagecode="1027" />
+                        </labels>
+                        <control id="address1_postalcode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_postalcode" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bc061eb3-20f2-4049-911d-a5dda65113b7}" locklevel="0" colspan="1" rowspan="1" labelid="{e7a2f541-a4f3-4f30-9311-59866d62459a}">
+                        <labels>
+                          <label description="Lloc web" languagecode="1027" />
+                        </labels>
+                        <control id="websiteurl" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="websiteurl" disabled="true" />
+                      </cell>
+                      <cell id="{bba45749-5d0d-49af-bb07-d2c90452f851}" locklevel="0" colspan="1" rowspan="1" labelid="{0e201616-2b74-4fd0-bdf8-d7848aeca216}">
+                        <labels>
+                          <label description="Província" languagecode="1027" />
+                        </labels>
+                        <control id="address1_stateorprovince" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_stateorprovince" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d195bc20-6b65-460f-9f5d-4ea740b79f3f}" locklevel="0" colspan="1" rowspan="1" labelid="{a62e6ef5-9139-41d1-ab22-0464c29a54a7}">
+                        <labels>
+                          <label description="Adreça fitxa SAC" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_sac_address" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_sac_address" disabled="true" />
+                      </cell>
+                      <cell id="{55e97d66-6122-4a9c-aa2d-6cc256187376}" locklevel="0" colspan="1" rowspan="1" labelid="{956edc74-230d-4f1d-8db1-8e7ab537267e}">
+                        <labels>
+                          <label description="Telèfon" languagecode="1027" />
+                        </labels>
+                        <control id="address1_telephone1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_telephone1" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{aaf3a063-75ca-4735-bbee-08c606d49fdc}" showlabel="false" labelid="{964f19d6-a3bd-4ed1-8298-d009caf338e5}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{d6411273-f1f2-4477-b9aa-b66b2a4428be}" locklevel="0" colspan="1" rowspan="1" labelid="{2dc33ba2-fdd9-4200-bff0-46af3e1d8cd9}">
+                        <labels>
+                          <label description="Correu electrònic" languagecode="1027" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_participants_header_data" id="308e56d3-d70a-4070-8bd2-c20e5a3dafbe" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{5ad866c3-7a9e-4cb1-b316-8a0881be9af9}">
+                  <labels>
+                    <label description="Dades de capçalera de Partícips" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c076bb23-4985-7789-8175-4d68331b0b92}" showlabel="true" locklevel="0" labelid="{c9e59312-9dee-4901-af0a-9cec7670a909}">
+                        <labels>
+                          <label description="Via participació" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_participationmethod" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_participationmethod" disabled="true" uniqueid="{8b49beeb-cd68-a50e-9894-079562db54b6}" />
+                      </cell>
+                      <cell id="{cc7ca2a1-e643-49da-ae15-28cdc7d03b06}" locklevel="1" colspan="1" rowspan="1" labelid="{13e1975c-95fb-4c9e-9699-e06f34f952e8}">
+                        <labels>
+                          <label description="Grau de participació" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_grade_of_participation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_grade_of_participation" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1bbd0568-041b-c53b-8e18-12931753cc02}" showlabel="true" locklevel="0" labelid="{35cb76f3-862f-450a-9d53-82126924786c}">
+                        <labels>
+                          <label description="Règim jurídic singularitzat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_uniquelegalsystem" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_uniquelegalsystem" disabled="true" uniqueid="{331a8e27-59e1-d50e-da76-d8b33e44553c}" />
+                      </cell>
+                      <cell id="{9981f31c-fae9-4abc-944d-7af0d6db9d0e}" locklevel="0" colspan="1" rowspan="1" labelid="{b743ffb4-36cd-4548-b6cb-7fec3d060692}">
+                        <labels>
+                          <label description="Mesura de la participació" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_measuring_participation" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_measuring_participation" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9d2f5a61-ac84-478e-b3bc-1b52f8a803ae}" locklevel="0" colspan="1" rowspan="1" labelid="{6a952b34-efb2-4e96-8f37-32c7519afd4b}">
+                        <labels>
+                          <label description="Total % de participació Generalitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_total_participation_generalitat" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_total_participation_generalitat" disabled="true" />
+                      </cell>
+                      <cell id="{0c9cfe33-2295-427f-9bc2-42604e777c56}" locklevel="1" colspan="1" rowspan="1" labelid="{0434fa68-34ca-42dc-a0e0-21690160ae02}">
+                        <labels>
+                          <label description="Percentatge de participació" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_participation_percentage" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_participation_percentage" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dd5f09b6-55d6-43d0-a0d1-1d39fb0375df}" locklevel="0" colspan="1" rowspan="1" labelid="{3aad53be-c572-4fd8-b048-43e2a361bfaa}">
+                        <labels>
+                          <label description="Total % particip. Generalitat amb Universitats" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_total_participate_gene_uni" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_total_participate_gene_uni" disabled="true" />
+                      </cell>
+                      <cell id="{0a8b5b56-face-4ec7-9b2a-51449e72eb28}" locklevel="0" colspan="1" rowspan="7" labelid="{43e30a1d-b997-4304-85e1-9401dfb59ecd}">
+                        <labels>
+                          <label description="Observacions" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_observations" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="pfc_observations" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5bf90591-bad9-4973-a9bc-7eff38a18147}" locklevel="0" colspan="1" rowspan="1" labelid="{286126ef-9fe4-47c5-af59-4437788961e3}">
+                        <labels>
+                          <label description="Total % participació sector públic" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_total_participation_public_sector" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_total_participation_public_sector" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{02cf2c0b-183d-42e8-818e-2a92b35cf759}" showlabel="false" labelid="{bcbea5ea-0dfb-49f3-9993-da1052d08835}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{027e4b43-135f-4d54-af8d-f938b4c5bf80}" showlabel="false" labelid="{3f6ccc65-3ded-4601-9232-cde9a9a06074}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{8898e7b6-208c-442f-8dd6-16e45de16d26}" showlabel="false" labelid="{bd5aa411-ab2b-46c0-b1f6-8877e72d8f8f}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{2152c1fe-8c02-4154-80af-052317661308}" showlabel="false" labelid="{b5440f33-f50a-45c4-910c-4d6f12763816}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{2a4b04da-49f4-4dda-8cea-d7bfde4d5806}" showlabel="false" labelid="{d1e60ec6-7b57-44d6-b96c-707ce5abaedb}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_header_data_governing_body" id="5e77dc71-60d9-40a8-ba75-869f14537c8f" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{c72b3567-f938-4487-b5f7-e0a1e8d0cc80}">
+                  <labels>
+                    <label description="Dades de capçalera de l'Òrgan de govern" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7a060a0e-b662-49aa-92e4-28a968c5b686}" locklevel="0" colspan="1" rowspan="1" labelid="{f5acb79c-541f-426f-a95f-9dd21830f27d}">
+                        <labels>
+                          <label description="Òrgan de govern" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_governing_body" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_governing_body" disabled="true" />
+                      </cell>
+                      <cell id="{0a045518-115f-486b-ba49-c877b59f4cd7}" locklevel="0" colspan="1" rowspan="1" labelid="{f9c23abd-f68c-435b-aff1-2cfa5e1b0e92}">
+                        <labels>
+                          <label description="Nombre mínim de membres" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_minimum_number_of_members" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_minimum_number_of_members" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b2a962ee-fd82-4cd1-88d0-80841d246dd3}" locklevel="0" colspan="1" rowspan="1" labelid="{cfe47eb1-b2de-4010-b26c-6ecdeba09f2b}">
+                        <labels>
+                          <label description="Total membres Generalitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_total_members_generalitat" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_total_members_generalitat" disabled="true" />
+                      </cell>
+                      <cell id="{0b51504c-111d-48fc-95ae-c3a3f8dba665}" locklevel="0" colspan="1" rowspan="1" labelid="{551d0cac-a7f1-4c73-92d7-8cda8ced3696}">
+                        <labels>
+                          <label description="Nombre màxim de membres" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_maximum_number_of_members" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_maximum_number_of_members" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_12" id="3caf477b-6fec-41a0-b29e-bd6ffd0864df" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false" labelid="{68b3d248-8579-45ce-80f4-92d437ff76c5}">
+          <labels>
+            <label description="Documents" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_12_section_1" id="c0201322-a3f7-458f-bd45-1cc667dc2380" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{7342e1d9-38a4-4b5f-884e-06a0f09e1c50}">
+                  <labels>
+                    <label description="Nueva sección" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{e64e55c2-b57a-417c-a9c4-7539c163eb5a}" rowspan="4" colspan="1" auto="false" showlabel="false" labelid="{f25595e7-fec6-430e-ba34-c2f047de9383}">
+                        <labels>
+                          <label description="Documents" languagecode="1027" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>sharepointdocument</TargetEntityType>
+                            <ViewId>{A5B008AC-07D9-4554-8509-2C05767BFF51}</ViewId>
+                            <ViewIds>{A5B008AC-07D9-4554-8509-2C05767BFF51}</ViewIds>
+                            <RelationshipName>Account_SharepointDocument</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_13" id="{4d583610-7d9b-ba3e-2124-c14c84e3bb42}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false" labelid="{1b666419-85c8-4f9b-a617-67e4dae0e314}">
+          <labels>
+            <label description="Perfils Tributaris" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_13_section_1" showlabel="true" showbar="false" locklevel="0" id="{5aacb7b5-7508-9c73-99ce-db4003dbe7d3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{f078587d-0194-46f5-96b0-3b0d2a52969a}">
+                  <labels>
+                    <label description="Perfils Tributaris" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{65d14124-41ed-b9cc-396a-8029615dd0b4}" showlabel="false" colspan="1" auto="false" rowspan="6" labelid="{80e69293-6ddd-47a0-a15e-1986988965fc}">
+                        <labels>
+                          <label description="Perfils Tributaris" languagecode="1027" />
+                        </labels>
+                        <control id="PerfilTributari" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{dcb6e2ac-7991-0c5b-9d5c-a92d6546bc3d}">
+                          <parameters>
+                            <ViewId>{4222FE0C-10DA-48C3-9123-C8EB398AC07B}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>pfc_account_pfc_taxproflie_accountid</RelationshipName>
+                            <TargetEntityType>pfc_taxproflie</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{4222FE0C-10DA-48C3-9123-C8EB398AC07B}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_8" id="{ac774458-5d57-b820-e52c-c765d362257a}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" labelid="{4cfb0f73-c5f8-47b2-8cd5-95ce30f2f520}">
+          <labels>
+            <label description="Administració" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_8_section_1" showlabel="false" showbar="false" locklevel="0" id="{05dd2547-1aed-de32-bd76-474321690bd8}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{80af27c3-c7c6-4d99-8f48-fe6e44ff27f2}">
+                  <labels>
+                    <label description="Secció" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7a5296ab-1eed-e47c-e392-d1772d4d15b0}" showlabel="true" locklevel="0" labelid="{5c43997c-6d1a-421f-b4d3-5c211308b7c8}">
+                        <labels>
+                          <label description="Autor" languagecode="1027" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{749d7d13-cba4-e3b3-69c3-c1965ea9cb7a}" showlabel="true" locklevel="0" labelid="{d690e99f-ae9a-4ff2-93ad-85476f2999ce}">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2376d270-679a-60ab-3d23-d63393a088d9}" showlabel="true" locklevel="0" labelid="{6ce4be1c-5705-4c6c-bc6c-b16bb12ea9ab}">
+                        <labels>
+                          <label description="Modificat per" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                      <cell id="{35bbde88-40ac-2bd4-6b3d-34dc1a92317d}" showlabel="true" locklevel="0" labelid="{a3528071-e44f-4863-94fe-49d974cc2968}">
+                        <labels>
+                          <label description="Data de modificació" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_8_section_3" id="d20acb78-f25b-4613-a9a2-929b0e2b03a5" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{15452784-e948-49b5-9d13-b8749e63e056}">
+                  <labels>
+                    <label description="Nueva sección" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9297c59c-4a13-857e-e0a2-16b571b1479c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Responsable d'entitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_entityhead" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_entityhead" disabled="false" />
+                      </cell>
+                      <cell id="{ab85aaa0-626e-3293-d489-dca99441165a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Responsable de formació" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_trainingmanager" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_trainingmanager" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <InternalHandlers>
+            <Handler functionName="AppCommon.Account.Instance.ra_onload" libraryName="AppCommon/Account/Account_main_system_library.js" handlerUniqueId="7927DD68-5AC5-4E9A-B39A-44F62467656A" enabled="true" />
+          </InternalHandlers>
+        </event>
+      </events>
+      <header id="{d5a03552-1183-4347-a237-1f894ba449eb}" columns="111" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell locklevel="0" id="{af6301e5-29a0-4175-8278-f39f31cd8a2d}" showlabel="false" labelid="{4f23a66d-7698-47b1-8201-26712e5eaabe}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{126c3215-a914-cc3e-ace3-02ee178e1e81}" showlabel="true" locklevel="0" labelid="{8d15831d-298b-47b5-b988-7d2cd2df7895}">
+              <labels>
+                <label description="Estat" languagecode="1027" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+            </cell>
+            <cell id="{54b2d0a2-eb77-b3cd-b60a-03ea6944e98e}" showlabel="true" locklevel="1" labelid="{2c6284b6-abed-4882-be33-f5363c799cbf}" visible="false">
+              <labels>
+                <label description="Propietari" languagecode="1027" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+            <cell id="{1184e75a-5415-4515-86bc-881426c23006}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Responsable d'entitat" languagecode="1027" />
+              </labels>
+              <control id="header_pfc_entityhead" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_entityhead" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <clientresources>
+        <internalresources>
+          <clientincludes>
+            <internaljscriptfile src="$webresource:AppCommon/Account/Account_main_system_library.js" />
+          </clientincludes>
+        </internalresources>
+      </clientresources>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem RelationshipName="lead_parent_account" Sequence="0" Area="Sales" Id="navLeadParent" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Clients potencials" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_playbookinstance_account" Sequence="0" Area="Info" Id="navPlaybooks" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Quaderns d'estratègies" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="opportunity_parent_account" Sequence="1" Area="Sales" Id="navOppsParent" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Oportunitats" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="account_customer_relationship_customer" Id="navRelationships" TitleResourceId="Left_Nav_Area_Relationships" Sequence="10" Area="Info" Show="false">
+            <Privileges>
+              <Privilege Entity="" Privilege="ReadActivity" />
+            </Privileges>
+            <Titles>
+              <Title LCID="1033" Text="CustomerRelationship" />
+              <Title LCID="1025" Text="CustomerRelationship" />
+              <Title LCID="1026" Text="CustomerRelationship" />
+              <Title LCID="1027" Text="CustomerRelationship" />
+              <Title LCID="1029" Text="CustomerRelationship" />
+              <Title LCID="1030" Text="CustomerRelationship" />
+              <Title LCID="1031" Text="CustomerRelationship" />
+              <Title LCID="1032" Text="CustomerRelationship" />
+              <Title LCID="3082" Text="CustomerRelationship" />
+              <Title LCID="1061" Text="CustomerRelationship" />
+              <Title LCID="1069" Text="CustomerRelationship" />
+              <Title LCID="1035" Text="CustomerRelationship" />
+              <Title LCID="1036" Text="CustomerRelationship" />
+              <Title LCID="1110" Text="CustomerRelationship" />
+              <Title LCID="1037" Text="CustomerRelationship" />
+              <Title LCID="1081" Text="CustomerRelationship" />
+              <Title LCID="1050" Text="CustomerRelationship" />
+              <Title LCID="1038" Text="CustomerRelationship" />
+              <Title LCID="1057" Text="CustomerRelationship" />
+              <Title LCID="1040" Text="CustomerRelationship" />
+              <Title LCID="1041" Text="CustomerRelationship" />
+              <Title LCID="1087" Text="CustomerRelationship" />
+              <Title LCID="1042" Text="CustomerRelationship" />
+              <Title LCID="1063" Text="CustomerRelationship" />
+              <Title LCID="1062" Text="CustomerRelationship" />
+              <Title LCID="1086" Text="CustomerRelationship" />
+              <Title LCID="1044" Text="CustomerRelationship" />
+              <Title LCID="1043" Text="CustomerRelationship" />
+              <Title LCID="1045" Text="CustomerRelationship" />
+              <Title LCID="1046" Text="CustomerRelationship" />
+              <Title LCID="2070" Text="CustomerRelationship" />
+              <Title LCID="1048" Text="CustomerRelationship" />
+              <Title LCID="1049" Text="CustomerRelationship" />
+              <Title LCID="1051" Text="CustomerRelationship" />
+              <Title LCID="1060" Text="CustomerRelationship" />
+              <Title LCID="3098" Text="CustomerRelationship" />
+              <Title LCID="10266" Text="CustomerRelationship" />
+              <Title LCID="2074" Text="CustomerRelationship" />
+              <Title LCID="9242" Text="CustomerRelationship" />
+              <Title LCID="1053" Text="CustomerRelationship" />
+              <Title LCID="1054" Text="CustomerRelationship" />
+              <Title LCID="1055" Text="CustomerRelationship" />
+              <Title LCID="1058" Text="CustomerRelationship" />
+              <Title LCID="1066" Text="CustomerRelationship" />
+              <Title LCID="2052" Text="CustomerRelationship" />
+              <Title LCID="3076" Text="CustomerRelationship" />
+              <Title LCID="1028" Text="CustomerRelationship" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="listaccount_association" Sequence="10" Area="Marketing" Id="navListsInSFA" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Llistes de màrqueting" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="Account_CustomerAddress" Id="navAddresses" Sequence="11" Area="Info" Show="false">
+            <Privileges>
+              <Privilege Entity="" Privilege="ReadActivity" />
+            </Privileges>
+            <Titles>
+              <Title LCID="1033" Text="Addresses" />
+              <Title LCID="1025" Text="العناوين" />
+              <Title LCID="1026" Text="Адреси" />
+              <Title LCID="1027" Text="Adreces" />
+              <Title LCID="1029" Text="Adresy" />
+              <Title LCID="1030" Text="Adresser" />
+              <Title LCID="1031" Text="Adressen" />
+              <Title LCID="1032" Text="Διευθύνσεις" />
+              <Title LCID="3082" Text="Direcciones" />
+              <Title LCID="1061" Text="Aadressid" />
+              <Title LCID="1069" Text="Helbideak" />
+              <Title LCID="1035" Text="Osoitteet" />
+              <Title LCID="1036" Text="Adresses" />
+              <Title LCID="1110" Text="Enderezos" />
+              <Title LCID="1037" Text="כתובות" />
+              <Title LCID="1081" Text="पते" />
+              <Title LCID="1050" Text="Adrese" />
+              <Title LCID="1038" Text="Címek" />
+              <Title LCID="1057" Text="Alamat" />
+              <Title LCID="1040" Text="Indirizzi" />
+              <Title LCID="1041" Text="住所" />
+              <Title LCID="1087" Text="Мекенжайлар" />
+              <Title LCID="1042" Text="주소" />
+              <Title LCID="1063" Text="Adresai" />
+              <Title LCID="1062" Text="Adreses" />
+              <Title LCID="1086" Text="Alamat" />
+              <Title LCID="1044" Text="Adresser" />
+              <Title LCID="1043" Text="Adressen" />
+              <Title LCID="1045" Text="Adresy" />
+              <Title LCID="1046" Text="Endereços" />
+              <Title LCID="2070" Text="Endereços" />
+              <Title LCID="1048" Text="Adrese" />
+              <Title LCID="1049" Text="Адреса" />
+              <Title LCID="1051" Text="Adresy" />
+              <Title LCID="1060" Text="Naslovi" />
+              <Title LCID="3098" Text="Адресе" />
+              <Title LCID="10266" Text="Адресе" />
+              <Title LCID="2074" Text="Adrese" />
+              <Title LCID="9242" Text="Adrese" />
+              <Title LCID="1053" Text="Adresser" />
+              <Title LCID="1054" Text="ที่อยู่" />
+              <Title LCID="1055" Text="Adresler" />
+              <Title LCID="1058" Text="Адреси" />
+              <Title LCID="1066" Text="Địa chỉ" />
+              <Title LCID="2052" Text="地址" />
+              <Title LCID="3076" Text="地址" />
+              <Title LCID="1028" Text="地址" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="incident_customer_accounts" Sequence="11" Area="Service" Id="navService" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Casos" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="account_parent_account" Id="navSubAccts" TitleResourceId="Label_SubAccounts" Sequence="12" Area="Info" Show="false">
+            <Privileges>
+              <Privilege Entity="" Privilege="ReadActivity" />
+            </Privileges>
+            <Titles>
+              <Title LCID="1033" Text="Accounts" />
+              <Title LCID="1025" Text="الحسابات" />
+              <Title LCID="1026" Text="Акаунти" />
+              <Title LCID="1027" Text="Comptes" />
+              <Title LCID="1029" Text="Obchodní vztahy" />
+              <Title LCID="1030" Text="Firmaer" />
+              <Title LCID="1031" Text="Firmen" />
+              <Title LCID="1032" Text="Λογαριασμοί" />
+              <Title LCID="3082" Text="Cuentas" />
+              <Title LCID="1061" Text="Kontod" />
+              <Title LCID="1069" Text="Kontuak" />
+              <Title LCID="1035" Text="Asiakkaat" />
+              <Title LCID="1036" Text="Comptes" />
+              <Title LCID="1110" Text="Contas" />
+              <Title LCID="1037" Text="תיקי לקוחות" />
+              <Title LCID="1081" Text="खाते" />
+              <Title LCID="1050" Text="Kupci" />
+              <Title LCID="1038" Text="Partnerek" />
+              <Title LCID="1057" Text="Akun" />
+              <Title LCID="1040" Text="Account" />
+              <Title LCID="1041" Text="取引先企業" />
+              <Title LCID="1087" Text="Тіркелгілер" />
+              <Title LCID="1042" Text="거래처" />
+              <Title LCID="1063" Text="Klientai" />
+              <Title LCID="1062" Text="Uzņēmumi" />
+              <Title LCID="1086" Text="Akaun" />
+              <Title LCID="1044" Text="Forretningsforbindelser" />
+              <Title LCID="1043" Text="Accounts" />
+              <Title LCID="1045" Text="Klienci" />
+              <Title LCID="1046" Text="Contas" />
+              <Title LCID="2070" Text="Contas" />
+              <Title LCID="1048" Text="Conturi" />
+              <Title LCID="1049" Text="Организации" />
+              <Title LCID="1051" Text="Obchodné vzťahy" />
+              <Title LCID="1060" Text="Računi" />
+              <Title LCID="3098" Text="Пословни контакти" />
+              <Title LCID="10266" Text="Пословни контакти" />
+              <Title LCID="2074" Text="Poslovni kontakti" />
+              <Title LCID="9242" Text="Poslovni kontakti" />
+              <Title LCID="1053" Text="Konton" />
+              <Title LCID="1054" Text="บัญชี" />
+              <Title LCID="1055" Text="Firmalar" />
+              <Title LCID="1058" Text="Бізнес-партнери" />
+              <Title LCID="1066" Text="Khách hàng" />
+              <Title LCID="2052" Text="帐户" />
+              <Title LCID="3076" Text="客戶" />
+              <Title LCID="1028" Text="客戶" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="contract_customer_accounts" Sequence="20" Area="Service" Id="navContracts" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Contractes" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="quote_customer_accounts" Sequence="20" Area="Sales" Id="navQuotes" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Ofertes" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navCampaignsInSFA" Sequence="20" Area="Marketing" Id="navCampaignsInSFA" Show="false">
+            <Titles>
+              <Title LCID="1033" Text="Campaigns" />
+              <Title LCID="1025" Text="الحملات" />
+              <Title LCID="1026" Text="Кампании" />
+              <Title LCID="1027" Text="Campanyes" />
+              <Title LCID="1029" Text="Kampaně" />
+              <Title LCID="1030" Text="Kampagner" />
+              <Title LCID="1031" Text="Kampagnen" />
+              <Title LCID="1032" Text="Εκστρατείες" />
+              <Title LCID="3082" Text="Campañas" />
+              <Title LCID="1061" Text="Kampaaniad" />
+              <Title LCID="1069" Text="Kanpainak" />
+              <Title LCID="1035" Text="Kampanjat" />
+              <Title LCID="1036" Text="Campagnes" />
+              <Title LCID="1110" Text="Campañas" />
+              <Title LCID="1037" Text="קמפיינים" />
+              <Title LCID="1081" Text="अभियान" />
+              <Title LCID="1050" Text="Kampanje" />
+              <Title LCID="1038" Text="Kampányok" />
+              <Title LCID="1057" Text="Kampanye" />
+              <Title LCID="1040" Text="Campagne" />
+              <Title LCID="1041" Text="キャンペーン" />
+              <Title LCID="1087" Text="Науқандар" />
+              <Title LCID="1042" Text="캠페인" />
+              <Title LCID="1063" Text="Kampanijos" />
+              <Title LCID="1062" Text="Kampaņas" />
+              <Title LCID="1086" Text="Kempen" />
+              <Title LCID="1044" Text="Kampanjer" />
+              <Title LCID="1043" Text="Campagnes" />
+              <Title LCID="1045" Text="Kampanie" />
+              <Title LCID="1046" Text="Campanhas" />
+              <Title LCID="2070" Text="Campanhas" />
+              <Title LCID="1048" Text="Campanii" />
+              <Title LCID="1049" Text="Кампании" />
+              <Title LCID="1051" Text="Kampane" />
+              <Title LCID="1060" Text="Akcije" />
+              <Title LCID="3098" Text="Кампање" />
+              <Title LCID="10266" Text="Кампање" />
+              <Title LCID="2074" Text="Kampanje" />
+              <Title LCID="9242" Text="Kampanje" />
+              <Title LCID="1053" Text="Kampanjer" />
+              <Title LCID="1054" Text="การส่งเสริมการขาย" />
+              <Title LCID="1055" Text="Kampanyalar" />
+              <Title LCID="1058" Text="Кампанії" />
+              <Title LCID="1066" Text="Chiến dịch" />
+              <Title LCID="2052" Text="市场活动" />
+              <Title LCID="3076" Text="行銷活動" />
+              <Title LCID="1028" Text="行銷活動" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="order_customer_accounts" Sequence="30" Area="Sales" Id="navOrders" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Comandes" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="invoice_customer_accounts" Sequence="40" Area="Sales" Id="navInvoices" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Factures" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="Account_ActivityPointers" Id="navActivities" Sequence="9001">
+            <Titles>
+              <Title Text="Activitats" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="Socialprofile_customer_accounts" Id="navSocialprofiles" Sequence="9002">
+            <Titles>
+              <Title Text="Perfils socials" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="contact_customer_accounts" Id="navContacts" Sequence="9003">
+            <Titles>
+              <Title Text="Contactes" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navConnections" Id="navConnections" Sequence="9004">
+            <Titles>
+              <Title Text="Connexions" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="true" RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navAudit" Id="navAudit" Sequence="9005">
+            <Titles>
+              <Title Text="Auditories" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="pfc_pfc_query_accountid_account" Id="nav_pfc_pfc_query_accountid_account" Sequence="9007">
+            <Titles>
+              <Title Text="Consultes" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navAsyncOperations" Sequence="9500" Area="ProcessCenter" Id="navAsyncOperations" Show="false">
+            <Titles>
+              <Title LCID="1033" Text="Workflows" />
+              <Title LCID="1025" Text="عمليات سير العمل" />
+              <Title LCID="1026" Text="Работни потоци" />
+              <Title LCID="1027" Text="Fluxos de treball" />
+              <Title LCID="1029" Text="Pracovní postupy" />
+              <Title LCID="1030" Text="Arbejdsprocesser" />
+              <Title LCID="1031" Text="Workflows" />
+              <Title LCID="1032" Text="Ροές εργασιών" />
+              <Title LCID="3082" Text="Flujos de trabajo" />
+              <Title LCID="1061" Text="Töövood" />
+              <Title LCID="1069" Text="Lan-fluxuak" />
+              <Title LCID="1035" Text="Työnkulut" />
+              <Title LCID="1036" Text="Workflows" />
+              <Title LCID="1110" Text="Fluxos de traballo" />
+              <Title LCID="1037" Text="זרימות עבודה" />
+              <Title LCID="1081" Text="कार्य प्रवाह" />
+              <Title LCID="1050" Text="Tjekovi rada" />
+              <Title LCID="1038" Text="Munkafolyamatok" />
+              <Title LCID="1057" Text="Alur Kerja" />
+              <Title LCID="1040" Text="Flussi di lavoro" />
+              <Title LCID="1041" Text="ワークフロー" />
+              <Title LCID="1087" Text="Жұмыс ағындары" />
+              <Title LCID="1042" Text="워크플로" />
+              <Title LCID="1063" Text="Darbo eigos" />
+              <Title LCID="1062" Text="Darbplūsmas" />
+              <Title LCID="1086" Text="Aliran Kerja" />
+              <Title LCID="1044" Text="Arbeidsflyter" />
+              <Title LCID="1043" Text="Werkstromen" />
+              <Title LCID="1045" Text="Przepływy pracy" />
+              <Title LCID="1046" Text="Fluxos de Trabalho" />
+              <Title LCID="2070" Text="Fluxos de Trabalho" />
+              <Title LCID="1048" Text="Fluxuri de lucru" />
+              <Title LCID="1049" Text="Бизнес-процессы" />
+              <Title LCID="1051" Text="Pracovné postupy" />
+              <Title LCID="1060" Text="Poteki dela" />
+              <Title LCID="3098" Text="Токови посла" />
+              <Title LCID="10266" Text="Токови посла" />
+              <Title LCID="2074" Text="Tokovi posla" />
+              <Title LCID="9242" Text="Tokovi posla" />
+              <Title LCID="1053" Text="Arbetsflöden" />
+              <Title LCID="1054" Text="เวิร์กโฟลว์" />
+              <Title LCID="1055" Text="İş Akışları" />
+              <Title LCID="1058" Text="Робочі цикли" />
+              <Title LCID="1066" Text="Quy trình làm việc" />
+              <Title LCID="2052" Text="工作流" />
+              <Title LCID="3076" Text="工作流程" />
+              <Title LCID="1028" Text="工作流程" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="hardcoded_{B7196B13-6B9D-42CD-BD58-B19A3953126F}navProcessSessions" Sequence="9700" Area="ProcessCenter" Id="navProcessSessions" Show="false">
+            <Titles>
+              <Title LCID="1033" Text="Dialog Sessions" />
+              <Title LCID="1025" Text="جلسات عمل الحوار" />
+              <Title LCID="1026" Text="Диалогови сесии" />
+              <Title LCID="1027" Text="Sessions del diàleg" />
+              <Title LCID="1029" Text="Relace dialogů" />
+              <Title LCID="1030" Text="Dialogsessioner" />
+              <Title LCID="1031" Text="Dialogsitzungen" />
+              <Title LCID="1032" Text="Περίοδοι λειτουργίας παραθύρου διαλόγου" />
+              <Title LCID="3082" Text="Sesiones de diálogo" />
+              <Title LCID="1061" Text="Dialoogiseansid" />
+              <Title LCID="1069" Text="Elkarrizketa-saioak" />
+              <Title LCID="1035" Text="Dialogi-istunnot" />
+              <Title LCID="1036" Text="Sessions de dialogue" />
+              <Title LCID="1110" Text="Sesións de diálogo" />
+              <Title LCID="1037" Text="הפעלות דו-שיח" />
+              <Title LCID="1081" Text="संवाद सत्र" />
+              <Title LCID="1050" Text="Sesije dijaloga" />
+              <Title LCID="1038" Text="Párbeszéd-munkamenetek" />
+              <Title LCID="1057" Text="Sesi Dialog" />
+              <Title LCID="1040" Text="Sessioni di interazione" />
+              <Title LCID="1041" Text="ダイアログ セッション" />
+              <Title LCID="1087" Text="Диалог сеанстары" />
+              <Title LCID="1042" Text="대화 세션" />
+              <Title LCID="1063" Text="Dialogo seansai" />
+              <Title LCID="1062" Text="Dialogu sesijas" />
+              <Title LCID="1086" Text="Sesi Dialog" />
+              <Title LCID="1044" Text="Dialogøkter" />
+              <Title LCID="1043" Text="Dialoogvenstersessies" />
+              <Title LCID="1045" Text="Sesje dialogowe" />
+              <Title LCID="1046" Text="Sessões de Diálogo" />
+              <Title LCID="2070" Text="Sessões de Diálogo" />
+              <Title LCID="1048" Text="Sesiuni de dialog" />
+              <Title LCID="1049" Text="Сеансы диалогового окна" />
+              <Title LCID="1051" Text="Relácie dialógového okna" />
+              <Title LCID="1060" Text="Seje dialoga" />
+              <Title LCID="3098" Text="Сесије дијалога" />
+              <Title LCID="10266" Text="Сесије дијалога" />
+              <Title LCID="2074" Text="Sesije dijaloga" />
+              <Title LCID="9242" Text="Sesije dijaloga" />
+              <Title LCID="1053" Text="Dialogsessioner" />
+              <Title LCID="1054" Text="เซสชันของกล่องโต้ตอบ" />
+              <Title LCID="1055" Text="Diyalog Oturumları" />
+              <Title LCID="1058" Text="Сеанси діалогу" />
+              <Title LCID="1066" Text="Phiên hộp thoại" />
+              <Title LCID="2052" Text="对话会话" />
+              <Title LCID="3076" Text="對話方塊工作階段" />
+              <Title LCID="1028" Text="對話方塊工作階段" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_pfc_query_dgt_accountId_account" Sequence="10000" Area="Info" Id="nav_pfc_pfc_query_dgt_accountId_account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Consultes a DGT" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="Account_SharepointDocument" Id="navSPDocuments" Show="false" Sequence="10001" Area="Info">
+            <Titles>
+              <Title LCID="1027" Text="Documents" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_account_pfc_procedure_accountid" Sequence="10002" Area="Info" Id="nav_pfc_account_pfc_procedure_accountid" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Procediments" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="adx_account_badge" Sequence="10003" Area="Info" Id="nav_adx_account_badge" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Distintius" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_account_pfc_informationrequirement_accountid" Sequence="10004" Area="Info" Id="nav_pfc_account_pfc_informationrequirement_accountid" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Requeriments d'informació" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_pfc_entityambit_account" Sequence="10005" Area="Info" Id="nav_pfc_pfc_entityambit_account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Ámbit d'entitat" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="account_entitlement_Customer" Sequence="10006" Area="Info" Id="navEntitlement" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Drets" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_account_msdyn_customerasset_Account" Sequence="10007" Area="Info" Id="nav_msdyn_account_msdyn_customerasset_Account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Actius del client" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_account_msdyn_iotdevice_Account" Sequence="10008" Area="Info" Id="nav_msdyn_account_msdyn_iotdevice_Account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Dispositius d'IoT" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_salesroutingdiagnostic_account_msdyn_target" Sequence="10009" Area="Info" Id="nav_msdyn_salesroutingdiagnostic_account_msdyn_target" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="diagnòstics de l'encaminament de vendes" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_sabackupdiagnostic_account_msdyn_target" Sequence="10010" Area="Info" Id="nav_msdyn_sabackupdiagnostic_account_msdyn_target" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="diagnòstics de la còpia de seguretat de sa" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_swarm_account" Sequence="10011" Area="Info" Id="nav_msdyn_swarm_account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Eixams" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_account_msdyn_ocliveworkitem_Customer" Sequence="10012" Area="Info" Id="nav_msdyn_account_msdyn_ocliveworkitem_Customer" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Converses" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_account_msdyn_liveconversation_Customer" Sequence="10013" Area="Info" Id="nav_msdyn_account_msdyn_liveconversation_Customer" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Converses en curs (obsolet)" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="adx_invitation_assigntoaccount" Sequence="10014" Area="Info" Id="nav_adx_invitation_assigntoaccount" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Invitacions" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_account_pfc_periodicobligation_accountid" Sequence="10015" Area="Info" Id="nav_pfc_account_pfc_periodicobligation_accountid" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Obligacions periòdiques" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_account_pfc_taxproflie_accountid" Sequence="10016" Area="Info" Id="nav_pfc_account_pfc_taxproflie_accountid" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Perfils Tributaris" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_account_pfc_trainingrequest_accountid" Sequence="10017" Area="Info" Id="nav_pfc_account_pfc_trainingrequest_accountid" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Peticions de formació" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="pfc_pfc_contact_roles_accountid_account" Sequence="10018" Area="Info" Id="nav_pfc_pfc_contact_roles_accountid_account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Rols de contacte" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_account_msevtmgt_eventvendor_Account" Sequence="10019" Area="Info" Id="nav_msevtmgt_account_msevtmgt_eventvendor_Account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Proveïdors d'esdeveniments" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msevtmgt_account_msevtmgt_sponsorship_Sponsor" Sequence="10020" Area="Info" Id="nav_msevtmgt_account_msevtmgt_sponsorship_Sponsor" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Patrocinis" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msdyn_msdyn_functionallocation_account" Sequence="10021" Area="Info" Id="nav_msdyn_msdyn_functionallocation_account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Ubicacions funcionals" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msa_account_managingpartner" Sequence="100400" Area="Info" Id="nav_msa_account_managingpartner" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Comptes administrats" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="msa_contact_managingpartner" Sequence="100500" Area="Info" Id="nav_msa_contact_managingpartner" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Contactes administrats" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem RelationshipName="adx_webrole_account" Sequence="100600" Area="Info" Id="nav_adx_webrole_account" Show="false">
+            <Titles>
+              <Title LCID="1027" Text="Funcions web" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1027" Text="Comú" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1027" Text="Vendes" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1027" Text="Servei" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1027" Text="Màrqueting" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1027" Text="Sessions del procés" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+      <footer id="{203be0aa-99bc-4b32-8c60-02e4cc75ab9a}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{edb1e132-2dcb-4a57-812c-b27f7452ba80}" showlabel="false" labelid="{c159b1b8-8046-4321-8612-91cea92acb3c}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{7a5fb7cf-c9f3-4f51-b080-75689d61889f}" showlabel="false" labelid="{60004b86-39f8-43e1-8391-f484f7456b4e}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{f376100f-7b1a-4f5b-bdff-4ea4acbada2e}" showlabel="false" labelid="{982e57c6-fb4a-4c19-b168-1203c2143ad7}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <formLibraries>
+        <Library name="pfc_Account.ribbon.js" libraryUniqueId="{7d08b0b7-6d8f-458c-a7ad-4c3534ee27ce}" />
+      </formLibraries>
+      <DisplayConditions FallbackForm="true" Order="22">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{930bc681-9359-4c37-a1a9-3b1aeb8d99dc}" />
+        <Role Id="{ef636e27-b637-4cea-a17b-3d846c94fe46}" />
+        <Role Id="{46cc6083-cc43-4cad-8504-6dfdfc2150af}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Portals: La Meva Entitat" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari de la meva entitat destinat a responsables d'entitat en el portal." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

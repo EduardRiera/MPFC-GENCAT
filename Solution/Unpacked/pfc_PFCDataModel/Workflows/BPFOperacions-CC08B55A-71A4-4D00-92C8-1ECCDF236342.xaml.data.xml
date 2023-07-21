@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{cc08b55a-71a4-4d00-92c8-1eccdf236342}" Name="BPF Operacions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BPFOperacions-CC08B55A-71A4-4D00-92C8-1ECCDF236342.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>pfc_bpfoperacions</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.13</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>pfc_tax_transcendence_operation</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1027" description="BPF Operacions" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{b78a7623-5837-429e-b017-265613d53214}">
+      <label languagecode="1027" description="Inici" />
+    </steplabels>
+    <steplabels id="{5b08d9c7-9987-4860-abf9-488d0d59baf3}">
+      <label languagecode="1027" description="Responsable" />
+    </steplabels>
+    <steplabels id="{9300613a-3cdf-4daf-9266-da42ab8b22e7}">
+      <label languagecode="1027" description="Data Assignació" />
+    </steplabels>
+    <steplabels id="{646d6d6b-5c2e-48f7-89ef-219c8e4093d4}">
+      <label languagecode="1027" description="En Curs" />
+    </steplabels>
+    <steplabels id="{7ab9213b-73ee-4e30-906f-85ed7ce5eaba}">
+      <label languagecode="1027" description="Estat següent" />
+    </steplabels>
+    <steplabels id="{3eab5cb5-c642-424c-80dd-1a2166a0b28c}">
+      <label languagecode="1027" description="En Pausa" />
+    </steplabels>
+    <steplabels id="{ecf6ea02-bf78-4f3e-be31-9cbe203d675f}">
+      <label languagecode="1027" description="Estat" />
+    </steplabels>
+    <steplabels id="{70058e69-6268-4a45-94c3-f69488118084}">
+      <label languagecode="1027" description="Finalitzada" />
+    </steplabels>
+    <steplabels id="{cab080e7-dd31-4bc2-b807-20952e4b9e55}">
+      <label languagecode="1027" description="Data tancament" />
+    </steplabels>
+    <steplabels id="{a42edc9c-589f-458e-86ef-cf96cc668544}">
+      <label languagecode="1027" description="Resposta" />
+    </steplabels>
+    <steplabels id="{2e873a96-ef2d-49e5-92a8-44f87b74eae9}">
+      <label languagecode="1027" description="Data enviament" />
+    </steplabels>
+    <steplabels id="{29c706f8-7965-4716-962e-5e182023ba00}">
+      <label languagecode="1027" description="Finalitzada" />
+    </steplabels>
+    <steplabels id="{edb2c6ea-0ed2-4263-9608-1c1884a5a36c}">
+      <label languagecode="1027" description="Data tancament" />
+    </steplabels>
+  </labels>
+</Workflow>

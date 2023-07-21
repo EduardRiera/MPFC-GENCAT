@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="pfc_sessionsubjectos" localizedName="Matèria de la Sessió" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Matèria de la Sessió" languagecode="1027" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1027" />
+  </Descriptions>
+  <options>
+    <option value="470000000" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="IVA" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000001" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="IS" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000002" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="IRPF" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000003" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="IRNR" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000004" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Procediments" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000005" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Altres" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

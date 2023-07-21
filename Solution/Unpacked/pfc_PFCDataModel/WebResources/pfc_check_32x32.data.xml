@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{a862a42a-387a-ed11-81ad-000d3ab3f701}</WebResourceId>
+  <Name>pfc_check_32x32</Name>
+  <DisplayName>Check_32x32</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.2</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_check_32x32A862A42A-387A-ED11-81AD-000D3AB3F701</FileName>
+</WebResource>

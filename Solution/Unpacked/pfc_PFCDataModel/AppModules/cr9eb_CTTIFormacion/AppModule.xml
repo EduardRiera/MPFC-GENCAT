@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>cr9eb_CTTIFormacion</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="list" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_customerjourney" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_customerjourneytemplate" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingemail" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingemailtemplate" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingform" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingformtemplate" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingpage" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_marketingpagetemplate" />
+    <AppModuleComponent type="1" schemaName="msdyncrm_segment" />
+    <AppModuleComponent type="1" schemaName="msdynmkt_email" />
+    <AppModuleComponent type="1" schemaName="msdynmkt_emailtemplate" />
+    <AppModuleComponent type="1" schemaName="msdynmkt_journey" />
+    <AppModuleComponent type="1" schemaName="msdynmkt_virtualsegment" />
+    <AppModuleComponent type="1" schemaName="msevtmgt_checkin" />
+    <AppModuleComponent type="1" schemaName="msevtmgt_event" />
+    <AppModuleComponent type="1" schemaName="msevtmgt_eventregistration" />
+    <AppModuleComponent type="1" schemaName="pfc_query" />
+    <AppModuleComponent type="1" schemaName="pfc_trainingrequest" />
+    <AppModuleComponent type="26" id="{829331df-8891-ed11-aad1-000d3adead20}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001004}" />
+    <AppModuleComponent type="26" id="{87793846-ffcd-ed11-b597-002248a1c671}" />
+    <AppModuleComponent type="26" id="{8d054fa0-c051-475e-b27c-7281d32ec367}" />
+    <AppModuleComponent type="26" id="{36d55147-a5a3-4dfa-9e46-b2f4d930ecd3}" />
+    <AppModuleComponent type="26" id="{e9d2820a-8991-ed11-aad1-000d3adead20}" />
+    <AppModuleComponent type="26" id="{b30e5090-d4b1-ed11-83ff-000d3ad9cd83}" />
+    <AppModuleComponent type="26" id="{09166d44-156b-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{a31f1a51-156b-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{d58eb585-5866-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001002}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001031}" />
+    <AppModuleComponent type="26" id="{8874eb9d-f46e-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{4bb28f56-f1fa-ed11-8849-000d3adf90aa}" />
+    <AppModuleComponent type="60" id="{8f7b69e6-a9da-ed11-a7c7-000d3adf7052}" />
+    <AppModuleComponent type="60" id="{0dbd1e26-6df8-ed11-8849-000d3adf90aa}" />
+    <AppModuleComponent type="60" id="{9040028c-51b8-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="60" id="{6894d73a-a4bd-ed11-83fe-000d3adf727d}" />
+    <AppModuleComponent type="60" id="{2fa26e4a-ea60-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="60" id="{6e77626b-e693-44f0-a1c7-359b1a7a9a4c}" />
+    <AppModuleComponent type="60" id="{1664d773-3ae7-42b9-97f1-211ca0c37581}" />
+    <AppModuleComponent type="62" schemaName="cr9eb_CTTIFormacion" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{e08ab78c-3ce3-ed11-a7c7-000d3adf7052}" />
+    <Role id="{03568bc0-136f-ed11-9561-000d3ab3f701}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+    <Role id="{21544511-b5e2-ed11-a7c7-002248a1c671}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="CTTI - Comunicació" languagecode="1027" />
+  </LocalizedNames>
+</AppModule>

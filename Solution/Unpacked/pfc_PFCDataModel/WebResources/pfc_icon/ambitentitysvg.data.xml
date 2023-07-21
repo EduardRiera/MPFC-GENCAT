@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{bb34247b-95e5-ed11-a7c7-000d3adf7052}</WebResourceId>
+  <Name>pfc_icon/ambitentitysvg</Name>
+  <DisplayName>Ambit d'entitat</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.16</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_iconambitentitysvgBB34247B-95E5-ED11-A7C7-000D3ADF7052</FileName>
+</WebResource>

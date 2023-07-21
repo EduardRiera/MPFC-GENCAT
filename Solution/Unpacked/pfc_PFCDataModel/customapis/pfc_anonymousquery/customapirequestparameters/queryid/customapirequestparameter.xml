@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="queryid">
+  <description default="QueryId">
+    <label description="QueryId" languagecode="1027" />
+  </description>
+  <displayname default="QueryId">
+    <label description="QueryId" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>QueryId</name>
+  <type>10</type>
+</customapirequestparameter>

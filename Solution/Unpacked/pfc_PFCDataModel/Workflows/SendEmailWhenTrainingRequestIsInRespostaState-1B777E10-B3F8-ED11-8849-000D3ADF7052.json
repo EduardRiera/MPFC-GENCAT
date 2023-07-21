@@ -1,0 +1,173 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedoffice365_2d413"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_commondataservice_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataservice_214d2"
+        },
+        "api": {
+          "name": "shared_commondataservice"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "PortalUrl (pfc_portalurl)": {
+          "defaultValue": "https://integracio-eco-mpfc-web.powerappsportals.com/",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_portalurl"
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_agrega_una_fila": {
+          "metadata": {
+            "operationMetadataId": "e53469a3-e3be-4cb9-855f-77d2d5956600"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataservice_1",
+              "operationId": "SubscribeOnNewItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataservice"
+            },
+            "parameters": {
+              "dataset": "default.cds",
+              "table": "pfc_answers",
+              "scope": "Business unit"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Condición": {
+          "actions": {
+            "Sol·licitud_de_formació:_Obtener_una_fila_por_id_de_referent_a": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "31ce64cb-cee5-4dc5-91e8-9df9c14368e0"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_trainingrequests",
+                  "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Contacte:_Obtener_una_fila_por_id_de_persona_de_contacte": {
+              "runAfter": {
+                "Sol·licitud_de_formació:_Obtener_una_fila_por_id_de_referent_a": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6b5a7fc3-3cb9-4555-a8a6-de4d7bf82393"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@outputs('Sol·licitud_de_formació:_Obtener_una_fila_por_id_de_referent_a')?['body/_pfc_contactid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Redactar": {
+              "runAfter": {
+                "Contacte:_Obtener_una_fila_por_id_de_persona_de_contacte": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "4cbb5a7c-fbf0-4fac-b167-63e7567616f0"
+              },
+              "type": "Compose",
+              "inputs": "@{parameters('PortalUrl (pfc_portalurl)')}Formació/formacions/formation-requests/"
+            },
+            "Enviar_correo_electrónico_(V2)": {
+              "runAfter": {
+                "Redactar": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6c0d439e-8d54-425c-bf40-b75599244f03"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365_1",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "jose.racero.sanchez@avanade.com",
+                  "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                  "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nJa podeu veure la resposta a la vostra consulta @{outputs('Sol·licitud_de_formació:_Obtener_una_fila_por_id_de_referent_a')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar')}\"> Enllaç a la resposta</a></p><br>\nSalutacions.<br>\n<br>\n@{triggerOutputs()?['body/description']}<br>\n<br>\n@{outputs('Contacte:_Obtener_una_fila_por_id_de_persona_de_contacte')?['body/emailaddress1']}</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {},
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/_regardingobjectid_type']",
+              "pfc_trainingrequests"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ce650658-555a-4291-ab78-7027fa9bfb20"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

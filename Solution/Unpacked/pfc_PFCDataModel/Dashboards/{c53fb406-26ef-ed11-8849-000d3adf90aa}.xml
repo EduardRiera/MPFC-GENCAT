@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Entitats i contactes" languagecode="1027" />
+  </LocalizedNames>
+  <FormId>{c53fb406-26ef-ed11-8849-000d3adf90aa}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="dashboard">
+      <form>
+        <tabs>
+          <tab showlabel="false" verticallayout="true" id="{3b39c872-097d-4e5a-9a58-21d560a0c713}">
+            <labels>
+              <label description="Pestanya" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section showlabel="false" showbar="false" columns="1111" id="{d6fe0d49-d560-4fcd-a626-6cfaf1b486a1}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="2" rowspan="12" showlabel="true" id="{4b25df5a-00eb-4795-af0e-ed0ba5d5b603}" auto="false">
+                          <labels>
+                            <label description="Contactes responsables sense permisos" languagecode="1027" />
+                          </labels>
+                          <control id="Component64de282" uniqueid="{487a5979-7c36-d4d7-02a9-849c1b5e9318}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>contact</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                              <ViewId>{DB1B8D04-5804-EE11-8F6E-000D3ADEA4BC}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{829331DF-8891-ED11-AAD1-000D3ADEAD20}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{E365462F-1DB9-46A8-928D-BEAB1A7A2375}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="2" rowspan="12" showlabel="false" id="{921c2a3a-1e54-4f78-9306-9a20c4711b1c}" auto="false">
+                          <labels>
+                            <label description="Contactes" languagecode="1027" />
+                          </labels>
+                          <control id="Component854af29" uniqueid="{d0234179-52a4-7ad1-775d-da77952bc320}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>account</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{178F3AFD-27EF-ED11-8849-000D3ADF727D}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row>
+                        <cell colspan="2" rowspan="12" showlabel="false" ispreviewcell="true" id="{d7e91270-4341-4f7b-b0d9-f07b7b172fa1}">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                        <cell colspan="2" rowspan="12" showlabel="false" ispreviewcell="true" id="{0bc4c35b-2ba3-44d8-8211-dd4e7cc2b336}">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <controlDescriptions />
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.16</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</Dashboard>

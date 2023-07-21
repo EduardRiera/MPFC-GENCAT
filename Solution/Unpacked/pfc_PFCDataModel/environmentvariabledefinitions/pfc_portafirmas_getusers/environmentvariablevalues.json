@@ -1,0 +1,9 @@
+{
+  "environmentvariablevalues": {
+    "environmentvariablevalue": {
+      "@environmentvariablevalueid": "71931a77-ef26-ee11-9965-002248a1c671",
+      "iscustomizable": "1",
+      "value": "https://prod-76.westeurope.logic.azure.com:443/workflows/02cc0391a8ff4f09a8ad06282f64fdac/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=U8DBONcV0U9QROjHtRv-v4gsOtA7n8-wyhZM1YjXvLE"
+    }
+  }
+}

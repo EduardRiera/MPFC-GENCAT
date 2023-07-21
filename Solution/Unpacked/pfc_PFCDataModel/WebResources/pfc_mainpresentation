@@ -1,0 +1,123 @@
+"use strict";
+
+var MainPresentation = { __namespace: true };
+
+
+MainPresentation.LogicalName = "pfc_presentacion";
+
+MainPresentation.FormEvents = {
+
+    OnLoad: function (ec) {
+        let fc = ec.getFormContext();
+        MainPresentation.Functions.BusinessLogic.HideAllTabs(fc);
+    },
+    OnChange: {
+        pfc_modeltype: function (ec) {
+            let fc = ec.getFormContext();
+            var modelOP = Xrm.Page.data.entity.attributes.get("pfc_modeltype").getValue();
+            if (modelOP === 0) {
+                MainPresentation.Functions.BusinessLogic.HideAllTabs(fc);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_111, true);
+            } else {
+                MainPresentation.Functions.BusinessLogic.HideAllTabs(fc);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_303, true);
+            }
+        },
+    },
+  
+    __namespace: true
+
+}
+
+MainPresentation.Functions = {
+
+    BusinessLogic: {
+   
+        HideAllTabs(fc) {
+            var modelOP = Xrm.Page.data.entity.attributes.get("pfc_modeltype").getValue();
+            if (modelOP === 0) {
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_115, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_123, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_303, false);
+            } else if (modelOP === 4) {
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_111, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_115, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_123, false);
+            }
+            else {
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_111, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_115, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_123, false);
+                MainPresentation.Functions.BusinessLogic.ShowAndHideSectionAndFields(fc, MainPresentation.Constants.General.UI.Tabs.Model_303, false);
+            }
+        },
+
+        ShowAndHideSectionAndFields: function (fc, tabName, visibilityTab) {
+            if (tabName !== null) {
+                    let tabObj = fc.ui.tabs.get(tabName);
+                        tabObj.setVisible(visibilityTab);
+            }
+        },
+    },
+
+    __namespace: true
+}
+
+
+
+MainPresentation.Constants =
+{
+    General:
+    {
+        FormType: {
+            Create: 1,
+            Update: 2
+        },
+        UI: {
+            Tabs: {
+                Model_111: "tab_3",
+                Model_115: "tab_5",
+                Model_123: "tab_6",
+                Model_303: "tab_4"
+            }
+        }
+    },
+
+    Fields:
+    {
+        DisableReason: "idelc_disablereason"
+    },
+
+    OptionSets: {
+
+        OwnerTypeEnum: {
+            Employee:
+            {
+                Value: 1,
+                Name: "Empleado"
+            },
+            Vehicle:
+            {
+                Value: 2,
+                Name: "Vehículo"
+            },
+            Installation:
+            {
+                Value: 3,
+                Name: "Centro"
+            },
+            Substation:
+            {
+                Value: 4,
+                Name: "Subestación"
+            },
+            TCs:
+            {
+                Value: 5,
+                Name: "CTs"
+            }
+
+        }
+
+    },
+}

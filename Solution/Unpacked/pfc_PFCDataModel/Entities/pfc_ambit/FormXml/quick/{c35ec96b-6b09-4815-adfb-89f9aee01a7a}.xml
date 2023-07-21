@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{c35ec96b-6b09-4815-adfb-89f9aee01a7a}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{f2f14cd5-0c93-4846-8a1d-2a2fc8893599}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{423db2a3-de3c-4395-8f10-7aebb739c480}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8c348b35-0d10-4d2c-bb9b-7bb81b3ed462}">
+                        <labels>
+                          <label description="Name" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1fec56ba-36af-4dd3-9041-571afab1ee71}">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+  </systemform>
+</forms>

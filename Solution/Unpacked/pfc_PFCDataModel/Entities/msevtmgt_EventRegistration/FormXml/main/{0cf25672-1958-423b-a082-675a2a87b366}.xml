@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0cf25672-1958-423b-a082-675a2a87b366}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{0ac965cc-f4c1-44d5-b2a2-c7235987d6ab}" IsUserDefined="1" name="GeneralTab" locklevel="0" expanded="true" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="28%" id="0">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{b8fb35be-1401-4f23-8a93-62e520c669ad}" name="{b8fb35be-1401-4f23-8a93-62e520c669ad}" columns="1" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{17aecae2-a5a6-9d3c-d7a5-d32dbabd8a53}" showlabel="false" colspan="1" auto="false" ordinalvalue="10003" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{6629c86b-e90c-9d26-003c-2ec34de7dba2}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Added">
+                        <labels>
+                          <label description="Entitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_accountid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_accountid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="msevtmgt_EventRegistration_AttendeePass" Id="nav_msevtmgt_EventRegistration_AttendeePass" Sequence="9002" solutionaction="Added">
+            <Titles>
+              <Title Text="Passis d'assistent" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="msevtmgt_eventregistration_msevtmgt_hotelroomreservation_Attendee" Id="nav_msevtmgt_eventregistration_msevtmgt_hotelroomreservation_Attendee" Sequence="9003" solutionaction="Added">
+            <Titles>
+              <Title Text="Reserves d'habitacions d'hotel" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="msevtmgt_EventRegistration_msevtmgt_eventpurchaseattendee" Id="nav_msevtmgt_EventRegistration_msevtmgt_eventpurchaseattendee" Sequence="9004" solutionaction="Added">
+            <Titles>
+              <Title Text="Assistents de compra d'esdeveniments" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Area="Info" Show="false" RelationshipName="msevtmgt_EventRegistration_msevtmgt_Speaker" Id="nav_msevtmgt_EventRegistration_msevtmgt_Speaker" Sequence="9005" solutionaction="Added">
+            <Titles>
+              <Title Text="Ponents" LCID="1027" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+      </Navigation>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="EventManagementRealtimeLink.Handlers.EventRegistrationsOnLoadHandler.adaptEventRegistratioForRealtimeOrOutbound" libraryName="msevtmgt_EventMgmtRealtimeLink.CrmWebResource" handlerUniqueId="{45b3b0ac-d105-4702-891c-a906b2cbfb0c}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="1" solutionaction="Modified" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.qRCodeForEncodedField_drawQRCodeOnForm" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{e13b8cda-38dd-8b57-b3c1-29301088d24e}" enabled="true" parameters="{   &quot;fieldName&quot;: &quot;msevtmgt_qrcode&quot;,   &quot;webResourceId&quot;: &quot;WebResource_QRCodeWrapper&quot;, }" passExecutionContext="false" ordinalvalue="0" solutionaction="Modified" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="msevtmgt_qrcode">
+          <Handlers>
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.qRCodeForEncodedField_drawQRCodeOnForm" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{dc3ee95a-4143-7cdd-94a0-d51143a22dea}" enabled="true" parameters="{   &quot;fieldName&quot;: &quot;msevtmgt_qrcode&quot;,   &quot;webResourceId&quot;: &quot;WebResource_QRCodeWrapper&quot;, }" passExecutionContext="false" ordinalvalue="0" solutionaction="Modified" />
+          </Handlers>
+        </event>
+      </events>
+      <footer id="{6739160f-e5c0-4a7e-bd58-696481395e46}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+      <DisplayConditions FallbackForm="true" Order="0" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Registre d'esdeveniment" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari d'aquesta entitat" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,76 @@
+var Query;
+(function (Query) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "pfc_query";
+        function OnLoad(ec) {
+            var fc = ec.getFormContext();
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = Query.FormEvents || (Query.FormEvents = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function populateImageValuesinGrid(rowDataFromGrid) {
+                "use strict";
+                debugger;
+                var getRows = JSON.parse(rowDataFromGrid);
+                var currentRecordStatus = getRows.statuscode_Value;
+                var populateimageValues = "";
+                var populateTooltip = "";
+                switch (currentRecordStatus) {
+                    case 470000000:
+                        populateimageValues = "pfc_circlegray";
+                        populateTooltip = "Esborrany";
+                        break;
+                    case 470000001:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "En Curs";
+                        break;
+                    case 470000002:
+                        populateimageValues = "pfc_circleorange";
+                        populateTooltip = "Pendent Entitat";
+                        break;
+                    case 470000004:
+                        populateimageValues = "pfc_circlered";
+                        populateTooltip = "Resposta";
+                        break;
+                    case 2:
+                        populateimageValues = "pfc_circlegreen";
+                        populateTooltip = "Finalitzada";
+                        break;
+                    case 470000004:
+                        populateimageValues = "pfc_circlegreen";
+                        populateTooltip = "Cancel·lat";
+                        break;
+                    case 470000010:
+                        populateimageValues = "pfc_circlepurple";
+                        populateTooltip = "Pendent AEAT";
+                        break;
+                    case 470000011:
+                        populateimageValues = "pfc_circleblue";
+                        populateTooltip = "Pendent Consultora";
+                        break;
+                    case 470000012:
+                        populateimageValues = "pfc_circleorange";
+                        populateTooltip = "Pendent DGT";
+                        break;
+                    case 470000014:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "Anàlisi Resposta";
+                        break;
+                    case 470000015:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "Resposta Enviada";
+                        break;
+                }
+                var returnArrayValues = [populateimageValues, populateTooltip];
+                return returnArrayValues;
+            }
+            BusinessLogic.populateImageValuesinGrid = populateImageValuesinGrid;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = Query.Functions || (Query.Functions = {}));
+})(Query || (Query = {}));

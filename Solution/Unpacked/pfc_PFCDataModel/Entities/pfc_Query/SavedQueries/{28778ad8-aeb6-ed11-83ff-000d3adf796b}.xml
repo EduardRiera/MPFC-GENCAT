@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{28778ad8-aeb6-ed11-83ff-000d3adf796b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_queryid">
+          <cell name="pfc_name" width="200" />
+          <cell name="pfc_objectofthequery" width="100" />
+          <cell name="pfc_webstatus" width="138" />
+          <cell name="createdon" width="239" />
+          <cell name="pfc_responsedate" width="172" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="pfc_query">
+          <attribute name="pfc_name" />
+          <attribute name="createdon" />
+          <attribute name="pfc_webstatus" />
+          <order attribute="createdon" descending="true" />
+          <filter type="and">
+            <condition attribute="pfc_webstatus" operator="ne" value="470000004" />
+          </filter>
+          <attribute name="pfc_queryid" />
+          <attribute name="pfc_objectofthequery" />
+          <attribute name="pfc_responsedate" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: ConsultesUsuari" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="L'utilitza tan la llista de les meves consultes, com la llista de consultes de la meva entitat." languagecode="1027" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

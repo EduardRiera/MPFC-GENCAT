@@ -1,0 +1,1137 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_wordonlinebusiness": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedwordonlinebusiness_4c7db"
+        },
+        "api": {
+          "name": "shared_wordonlinebusiness"
+        }
+      },
+      "shared_sharepointonline_2": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedsharepointonline_c963a"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "SharepointSite (pfc_sharepointsite)": {
+          "defaultValue": "https://gencat.sharepoint.com/sites/MPFCTest",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_sharepointsite"
+          }
+        }
+      },
+      "staticResults": {
+        "Rellenar_una_plantilla_de_Microsoft_Word0": {
+          "status": "Succeeded",
+          "outputs": {
+            "statusCode": "OK",
+            "headers": {}
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_agrega,_modifica_o_elimina_una_fila": {
+          "metadata": {
+            "operationMetadataId": "3d4bb046-e11b-4a88-9cec-b2672fbf2ee5"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "msevtmgt_event",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "pfc_counterflowcertificatpdf"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Condición_(certification_=_1)": {
+          "actions": {
+            "Enumerar_filas_(registre_d'entrada)": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "7a4cd7fd-8e21-45b0-9e95-e59554c14e11"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "msevtmgt_checkins",
+                  "fetchXml": "<fetch>\n  <entity name=\"msevtmgt_checkin\">\n    <all-attributes />\n    <filter>\n      <condition attribute=\"msevtmgt_event\" operator=\"eq\" value=\"@{triggerOutputs()?['body/msevtmgt_eventid']}\" />\n      <condition attribute=\"statecode\" operator=\"eq\" value=\"0\" />\n    </filter>\n  </entity>\n</fetch>"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Aplicar_a_cada_uno": {
+              "foreach": "@outputs('Enumerar_filas_(registre_d''entrada)')?['body/value']",
+              "actions": {
+                "Condición": {
+                  "actions": {
+                    "Obtener_una_fila_por_id_(registre_d'entrada)": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "e20aba8a-09b0-473a-acbd-15259210482d"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetItem",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "msevtmgt_checkins",
+                          "recordId": "@items('Aplicar_a_cada_uno')?['msevtmgt_checkinid']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Obtener_una_fila_por_id_(contacts)": {
+                      "runAfter": {
+                        "Obtener_una_fila_por_id_(registre_d'entrada)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "2d5f179a-0ba0-40d6-ba38-70a30ff9b150"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetItem",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "contacts",
+                          "recordId": "@outputs('Obtener_una_fila_por_id_(registre_d''entrada)')?['body/_msevtmgt_contact_value']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Rellenar_una_plantilla_de_Microsoft_Word_2_(plantilla_certificado)": {
+                      "runAfter": {
+                        "Obtener_una_fila_por_id_(contacts)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "01467KKMCE6UT3G5J3IVBKUGGSETVKRGCB": "/5100 - Servei Català de la Salut/Resposta.docx",
+                        "operationMetadataId": "ea6e25c5-303d-40b0-9fb0-04bc5a6322f8",
+                        "01467KKMDRKLYVI37XLZFZMU2HRJIQ4GXC": "/Certificats/Resposta.docx",
+                        "01467KKMBJF5R4QIAP3FAKD63YSAU5RC5H": "/Certificats/22.09.08_Plantilla Certificats.docx",
+                        "01467KKMBINZ7KIIKEIJF3HUHVL3A54435": "/22.09.08_Plantilla Certificats.docx",
+                        "01467KKMHUQZ45RG22KZE3OFDFBCENCRJI": "/22.09.08_Plantilla Certificats.docx"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_wordonlinebusiness",
+                          "operationId": "CreateFileItem",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                        },
+                        "parameters": {
+                          "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                          "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                          "file": "01467KKMHUQZ45RG22KZE3OFDFBCENCRJI",
+                          "dynamicFileSchema/365185717": "@outputs('Obtener_una_fila_por_id_(contacts)')?['body/pfc_nif']",
+                          "dynamicFileSchema/1018894782": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'hh:mm')",
+                          "dynamicFileSchema/1443576122": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'dd')",
+                          "dynamicFileSchema/-1287888649": "@outputs('Obtener_una_fila_por_id_(contacts)')?['body/fullname']",
+                          "dynamicFileSchema/-1975980224": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'MM')",
+                          "dynamicFileSchema/-1668088536": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'yyyy')",
+                          "dynamicFileSchema/-504130351": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventenddate'], 'hh:mm')",
+                          "dynamicFileSchema/-489940486": "@triggerOutputs()?['body/msevtmgt_name']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "staticResult": {
+                          "staticResultOptions": "Disabled",
+                          "name": "Rellenar_una_plantilla_de_Microsoft_Word0"
+                        }
+                      }
+                    },
+                    "Condición_4": {
+                      "actions": {
+                        "Rellenar_una_plantilla_de_Microsoft_Word_2": {
+                          "runAfter": {},
+                          "metadata": {
+                            "01467KKMG52KO7BSWXKBBIHG2VSJ456OOB": "/2023.07.12 Certificats PFC_2h.docx",
+                            "operationMetadataId": "ac0f4635-9c4e-4fe8-9990-4d705c3c5391"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_wordonlinebusiness",
+                              "operationId": "CreateFileItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                            },
+                            "parameters": {
+                              "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                              "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                              "file": "01467KKMG52KO7BSWXKBBIHG2VSJ456OOB",
+                              "dynamicFileSchema/706912846": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'MM')",
+                              "dynamicFileSchema/994680773": "@outputs('Obtener_una_fila_por_id_(contacts)')?['body/fullname']",
+                              "dynamicFileSchema/1535616074": "@outputs('Obtener_una_fila_por_id_(contacts)')?['body/pfc_nif']",
+                              "dynamicFileSchema/-244030066": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'dd')",
+                              "dynamicFileSchema/-1762056522": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'yyyy')",
+                              "dynamicFileSchema/-615366560": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'HH:mm')",
+                              "dynamicFileSchema/-700242333": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventenddate'], 'HH:mm')",
+                              "dynamicFileSchema/-131636503": "@triggerOutputs()?['body/msevtmgt_name']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Establecer_variable": {
+                          "runAfter": {
+                            "Rellenar_una_plantilla_de_Microsoft_Word_2": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "ca66bec6-438d-42ed-b8c0-e54bd6467bee"
+                          },
+                          "type": "SetVariable",
+                          "inputs": {
+                            "name": "TemplateBody",
+                            "value": "@body('Rellenar_una_plantilla_de_Microsoft_Word_2')"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Redactar": [
+                          "Succeeded"
+                        ]
+                      },
+                      "else": {
+                        "actions": {
+                          "Rellenar_una_plantilla_de_Microsoft_Word_3": {
+                            "runAfter": {},
+                            "metadata": {
+                              "01467KKME5Y5Y24U25LZD2WLKY2MB5JPEE": "/2023.07.12 Certificats PFC_1h_30m.docx",
+                              "operationMetadataId": "81609964-6674-4b16-a74f-9d9c1fa39a47"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_wordonlinebusiness",
+                                "operationId": "CreateFileItem",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                              },
+                              "parameters": {
+                                "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                                "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                                "file": "01467KKME5Y5Y24U25LZD2WLKY2MB5JPEE",
+                                "dynamicFileSchema/331036312": "@outputs('Obtener_una_fila_por_id_(contacts)')?['body/pfc_nif']",
+                                "dynamicFileSchema/662129020": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'dd')",
+                                "dynamicFileSchema/1113021323": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'HH:mm')",
+                                "dynamicFileSchema/1403251110": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'MM')",
+                                "dynamicFileSchema/-534962462": "@outputs('Obtener_una_fila_por_id_(contacts)')?['body/fullname']",
+                                "dynamicFileSchema/-1482382806": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'yyyy')",
+                                "dynamicFileSchema/-462727284": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventenddate'], 'HH:mm')",
+                                "dynamicFileSchema/-1624299354": "@triggerOutputs()?['body/msevtmgt_name']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Establecer_variable_2": {
+                            "runAfter": {
+                              "Rellenar_una_plantilla_de_Microsoft_Word_3": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "6d19d265-0527-475d-a4d4-d19a9db26c22"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "TemplateBody",
+                              "value": "@body('Rellenar_una_plantilla_de_Microsoft_Word_3')"
+                            }
+                          }
+                        }
+                      },
+                      "expression": {
+                        "greaterOrEquals": [
+                          "@triggerOutputs()?['body/pfc_duration']",
+                          120
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "acd943d4-a52a-4261-a858-21a90b0026c6"
+                      },
+                      "type": "If"
+                    },
+                    "Redactar": {
+                      "runAfter": {
+                        "Rellenar_una_plantilla_de_Microsoft_Word_2_(plantilla_certificado)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "a6256574-0c7f-4350-a9ab-c6c39f5cc39e"
+                      },
+                      "type": "Compose",
+                      "inputs": "@body('Rellenar_una_plantilla_de_Microsoft_Word_2_(plantilla_certificado)')"
+                    },
+                    "Actualizar_una_fila_(registro_d'entrada)": {
+                      "runAfter": {
+                        "Redactar_(redactar_enlace_a_certificado_pdf)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "ff354777-163d-4205-bb08-1744f841bf9c"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "UpdateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "msevtmgt_checkins",
+                          "recordId": "@items('Aplicar_a_cada_uno')?['msevtmgt_checkinid']",
+                          "item/pfc_certificatedurl": "@outputs('Crear_un_vínculo_de_uso_compartido_para_un_archivo_o_carpeta_(crear_enlace)')?['body/link/webUrl']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Redactar_(redactar_enlace_a_certificado_pdf)": {
+                      "runAfter": {
+                        "Crear_un_vínculo_de_uso_compartido_para_un_archivo_o_carpeta_(crear_enlace)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "d1e76ae3-9a0d-4556-a2f4-5d1c5eeab529"
+                      },
+                      "type": "Compose",
+                      "inputs": "@{variables('SharepointURL')}/_layouts/15/download.aspx?SourceUrl=%2Fsites%2FMPFCTest%2Fpfc%5Fcourse%2F@{encodeUriComponent(outputs('Crear_nueva_carpeta')?['body/Title'])}%2F@{encodeUriComponent(outputs('Crear_archivo_4_(Crear_PDF_en_sharepoint)')?['body/Name'])}"
+                    },
+                    "Crear_un_vínculo_de_uso_compartido_para_un_archivo_o_carpeta_(crear_enlace)": {
+                      "runAfter": {
+                        "Eliminar_archivo_(eliminar_word_Certificado)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "422dcc8a-1cec-440e-b40c-0e493ca89125"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_2",
+                          "operationId": "CreateSharingLink",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "table": "Curs",
+                          "id": "@outputs('Crear_archivo_4_(Crear_PDF_en_sharepoint)')?['body/ItemId']",
+                          "permission/type": "edit",
+                          "permission/scope": "organization"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Eliminar_archivo_(eliminar_word_Certificado)": {
+                      "runAfter": {
+                        "Crear_archivo_4_(Crear_PDF_en_sharepoint)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "17805be8-4b8e-49d9-bb12-05d66af31096"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_2",
+                          "operationId": "DeleteFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "id": "@outputs('Crear_archivo_3_(Crea_word_certificado)')?['body/Id']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Crear_archivo_4_(Crear_PDF_en_sharepoint)": {
+                      "runAfter": {
+                        "Convertir_documento_de_Word_a_PDF_2_(Pasar_Certificado_a_PDF)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "b6217fef-9328-434b-95e4-9ed81131f7b4"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_2",
+                          "operationId": "CreateFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "folderPath": "pfc_course/@{replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(triggerOutputs()?['body/msevtmgt_name'],'Á','A'),'À','A'),'á','a'),'à','a'),'È','E'),'É','E'),'è','e'),'é','e'),'ù','u'),'ú','u'),':', ''),'Ì','I'),'Í','I'),'ì','i'),'í','i'),'Ò','O'),'Ó','O'),'ò','o'),'ó','o'),';','')}",
+                          "name": "@{outputs('Obtener_una_fila_por_id_(contacts)')?['body/pfc_nif']}-@{triggerOutputs()?['body/msevtmgt_name']}.pdf",
+                          "body": "@body('Convertir_documento_de_Word_a_PDF_2_(Pasar_Certificado_a_PDF)')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    },
+                    "Convertir_documento_de_Word_a_PDF_2_(Pasar_Certificado_a_PDF)": {
+                      "runAfter": {
+                        "Establecer_variable_2_(Path)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "a66e48ad-2e14-4b0c-918d-b8d03d4094c8"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_wordonlinebusiness",
+                          "operationId": "GetFilePDF",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                        },
+                        "parameters": {
+                          "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                          "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                          "file": "@variables('Path')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Establecer_variable_2_(Path)": {
+                      "runAfter": {
+                        "Crear_archivo_3_(Crea_word_certificado)": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "73d0ca64-811f-48d8-bcbc-3c250212a876"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Path",
+                        "value": "@{replace(outputs('Crear_archivo_3_(Crea_word_certificado)')?['body/Path'],'/pfc_course','')}"
+                      }
+                    },
+                    "Crear_archivo_3_(Crea_word_certificado)": {
+                      "runAfter": {
+                        "Condición_4": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "6c472a40-c883-4d0f-b97e-7ff8a8049208"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_2",
+                          "operationId": "CreateFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "folderPath": "pfc_course/@{replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(triggerOutputs()?['body/msevtmgt_name'],'Á','A'),'À','A'),'á','a'),'à','a'),'È','E'),'É','E'),'è','e'),'é','e'),'ù','u'),'ú','u'),':', ''),'Ì','I'),'Í','I'),'ì','i'),'í','i'),'Ò','O'),'Ó','O'),'ò','o'),'ó','o'),';','')}",
+                          "name": "@{outputs('Obtener_una_fila_por_id_(contacts)')?['body/pfc_nif']}-@{triggerOutputs()?['body/msevtmgt_name']}.docx",
+                          "body": "@variables('TemplateBody')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "expression": {
+                    "equals": [
+                      "@items('Aplicar_a_cada_uno')?['pfc_createcertification']",
+                      "@true"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "cedb996d-69f1-405f-a321-bf68875d7455"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "Aplicar_a_cada_uno_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "f4eee998-e17e-4759-a5d2-b9a82c5ce97d"
+              },
+              "type": "Foreach"
+            },
+            "Crear_nueva_carpeta": {
+              "runAfter": {
+                "Enumerar_filas_(registre_d'entrada)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e1894ad0-2f4b-4fd0-bcaf-db904bd58bd7"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_sharepointonline_2",
+                  "operationId": "CreateNewFolder",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                },
+                "parameters": {
+                  "dataset": "https://gencat.sharepoint.com/sites/MPFCTest",
+                  "table": "9fd0dfae-21e3-4142-8228-9ba134dcaf50",
+                  "parameters/path": "@replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(triggerOutputs()?['body/msevtmgt_name'],'Á','A'),'À','A'),'á','a'),'à','a'),'È','E'),'É','E'),'è','e'),'é','e'),'ù','u'),'ú','u'),':', ''),'Ì','I'),'Í','I'),'ì','i'),'í','i'),'Ò','O'),'Ó','O'),'ò','o'),'ó','o'),';','')"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtener_archivos_(solo_propiedades)": {
+              "runAfter": {
+                "Crear_nueva_carpeta": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "07a4249c-17a5-49fd-9ef5-a804c5237548"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_sharepointonline_2",
+                  "operationId": "GetFileItems",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                },
+                "parameters": {
+                  "dataset": "https://gencat.sharepoint.com/sites/MPFCTest",
+                  "table": "9fd0dfae-21e3-4142-8228-9ba134dcaf50",
+                  "folderPath": "/@{replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(triggerOutputs()?['body/msevtmgt_name'],'Á','A'),'À','A'),'á','a'),'à','a'),'È','E'),'É','E'),'è','e'),'é','e'),'ù','u'),'ú','u'),':', ''),'Ì','I'),'Í','I'),'ì','i'),'í','i'),'Ò','O'),'Ó','O'),'ò','o'),'ó','o'),';','')}",
+                  "viewScopeOption": "Default"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Aplicar_a_cada_uno_2": {
+              "foreach": "@outputs('Obtener_archivos_(solo_propiedades)')?['body/value']",
+              "actions": {
+                "Obtener_propiedades_del_archivo": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "a8209563-22f6-4fa7-9c24-914585b12ab6"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_sharepointonline_2",
+                      "operationId": "GetFileItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                    },
+                    "parameters": {
+                      "dataset": "https://gencat.sharepoint.com/sites/MPFCTest",
+                      "table": "9fd0dfae-21e3-4142-8228-9ba134dcaf50",
+                      "id": "@items('Aplicar_a_cada_uno_2')?['ID']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Eliminar_archivo": {
+                  "runAfter": {
+                    "Obtener_propiedades_del_archivo": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d3020e23-599f-4521-a0e9-9ba2e94a2d86"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_sharepointonline_2",
+                      "operationId": "DeleteFile",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                    },
+                    "parameters": {
+                      "dataset": "https://gencat.sharepoint.com/sites/MPFCTest",
+                      "id": "@outputs('Obtener_propiedades_del_archivo')?['body/{Identifier}']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {
+                "Obtener_archivos_(solo_propiedades)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "9d93ff3c-d6a6-4fb2-943c-f49c16bd5bb0"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Inicializar_variable_TemplateBody": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Condición_2": {
+                "actions": {
+                  "Enumerar_filas_2_(registre_d'entrada)": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "ea2da770-58b1-4814-94e5-968f2f70afde"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps_1",
+                        "operationId": "ListRecords",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "msevtmgt_checkins",
+                        "fetchXml": "<fetch>\n  <entity name=\"msevtmgt_checkin\">\n    <all-attributes />\n    <filter>\n      <condition attribute=\"msevtmgt_event\" operator=\"eq\" value=\"@{triggerOutputs()?['body/msevtmgt_eventid']}\" />\n      <condition attribute=\"statecode\" operator=\"eq\" value=\"0\" />\n    </filter>\n  </entity>\n</fetch>"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  },
+                  "Aplicar_a_cada_uno_3": {
+                    "foreach": "@outputs('Enumerar_filas_2_(registre_d''entrada)')?['body/value']",
+                    "actions": {
+                      "Condición_3": {
+                        "actions": {
+                          "Obtener_una_fila_por_id_(registro_d'entrada)": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "063a7c33-e1c4-4808-8631-e98a6691616c"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetItem",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "msevtmgt_checkins",
+                                "recordId": "@items('Aplicar_a_cada_uno_3')?['msevtmgt_checkinid']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Agregar_una_fila_nueva_(portasignatura)": {
+                            "runAfter": {
+                              "Obtener_una_fila_por_id_(contacto)": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "3f0bf436-6248-414c-a998-ad0a1c902375"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "CreateRecord",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_portasignatureses",
+                                "item/subject": "Portasignature - @{outputs('Obtener_una_fila_por_id_(registro_d''entrada)')?['body/msevtmgt_name']}",
+                                "item/regardingobjectid_msevtmgt_checkin_pfc_portasignatures@odata.bind": "/msevtmgt_checkins(@{outputs('Obtener_una_fila_por_id_(registro_d''entrada)')?['body/msevtmgt_checkinid']})"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Rellenar_una_plantilla_de_Microsoft_Word": {
+                            "runAfter": {
+                              "Agregar_una_fila_nueva_(portasignatura)": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "01467KKMH36PCVS2F2MZEJCLAOBA7CK4WT": "/22.09.08_Plantilla Certificats.docx",
+                              "operationMetadataId": "a5411cfe-8e45-433d-b764-927e8fe89e1b",
+                              "01467KKMC5X45P3FR6P5ALATYIRUMFA6GR": "/22.09.08_Plantilla Certificats.docx",
+                              "01467KKMBINZ7KIIKEIJF3HUHVL3A54435": "/22.09.08_Plantilla Certificats.docx",
+                              "01467KKMHUQZ45RG22KZE3OFDFBCENCRJI": "/22.09.08_Plantilla Certificats.docx"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_wordonlinebusiness",
+                                "operationId": "CreateFileItem",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                              },
+                              "parameters": {
+                                "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                                "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                                "file": "01467KKMHUQZ45RG22KZE3OFDFBCENCRJI",
+                                "dynamicFileSchema/365185717": "@outputs('Obtener_una_fila_por_id_(contacto)')?['body/pfc_nif']",
+                                "dynamicFileSchema/1018894782": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'hh:mm')",
+                                "dynamicFileSchema/1443576122": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'dd')",
+                                "dynamicFileSchema/-1287888649": "@outputs('Obtener_una_fila_por_id_(contacto)')?['body/fullname']",
+                                "dynamicFileSchema/-1975980224": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'MM')",
+                                "dynamicFileSchema/-1668088536": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'yyyy')",
+                                "dynamicFileSchema/-504130351": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventenddate'], 'hh:mm')",
+                                "dynamicFileSchema/-489940486": "@triggerOutputs()?['body/msevtmgt_name']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Crear_archivo_2": {
+                            "runAfter": {
+                              "Condición_5": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "2fd2a2c9-91b2-4a6f-b855-1b5ddd617faa"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_sharepointonline_2",
+                                "operationId": "CreateFile",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                              },
+                              "parameters": {
+                                "dataset": "@variables('SharepointURL')",
+                                "folderPath": "pfc_course/@{replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(triggerOutputs()?['body/msevtmgt_name'],'Á','A'),'À','A'),'á','a'),'à','a'),'È','E'),'É','E'),'è','e'),'é','e'),'ù','u'),'ú','u'),':', ''),'Ì','I'),'Í','I'),'ì','i'),'í','i'),'Ò','O'),'Ó','O'),'ò','o'),'ó','o'),';','')}",
+                                "name": "Portasignature - @{outputs('Obtener_una_fila_por_id_(registro_d''entrada)')?['body/msevtmgt_name']}.docx",
+                                "body": "@variables('TemplateBody')"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            },
+                            "runtimeConfiguration": {
+                              "contentTransfer": {
+                                "transferMode": "Chunked"
+                              }
+                            }
+                          },
+                          "Convertir_documento_de_Word_a_PDF": {
+                            "runAfter": {
+                              "Crear_archivo_2": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "7dd508b2-e06f-48db-b711-c30f4988bdd9"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_wordonlinebusiness",
+                                "operationId": "GetFilePDF",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                              },
+                              "parameters": {
+                                "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                                "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                                "file": "@replace(outputs('Crear_archivo_2')?['body/Path'],'/pfc_course','')"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Cargar_un_archivo_o_una_imagen": {
+                            "runAfter": {
+                              "Eliminar_archivo_2": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "6a0b7276-b7e0-4373-bee7-047d90629b0f"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "UpdateEntityFileImageFieldContent",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_portasignatureses",
+                                "recordId": "@outputs('Agregar_una_fila_nueva_(portasignatura)')?['body/activityid']",
+                                "fileImageFieldName": "pfc_documenttobesigned",
+                                "item": "@body('Convertir_documento_de_Word_a_PDF')",
+                                "x-ms-file-name": "Portasignature - @{outputs('Obtener_una_fila_por_id_(registro_d''entrada)')?['body/msevtmgt_name']}.pdf"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Eliminar_archivo_2": {
+                            "runAfter": {
+                              "Convertir_documento_de_Word_a_PDF": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "7f3eb105-12f1-4346-8890-a8b45e58593a"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_sharepointonline_2",
+                                "operationId": "DeleteFile",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                              },
+                              "parameters": {
+                                "dataset": "@variables('SharepointURL')",
+                                "id": "@outputs('Crear_archivo_2')?['body/Id']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Obtener_una_fila_por_id_(contacto)": {
+                            "runAfter": {
+                              "Obtener_una_fila_por_id_(registro_d'entrada)": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "52af529f-c80e-404f-ac88-e465dc68b582"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetItem",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "contacts",
+                                "recordId": "@outputs('Obtener_una_fila_por_id_(registro_d''entrada)')?['body/_msevtmgt_contact_value']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Realizar_una_acción_sin_enlazar": {
+                            "runAfter": {
+                              "Cargar_un_archivo_o_una_imagen": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "c0486e12-521b-474d-b688-81c68dd45de2"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "PerformUnboundAction",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "actionName": "pfc_PortaFirmasUploadDocument",
+                                "item/portaSignaturesId": "@outputs('Agregar_una_fila_nueva_(portasignatura)')?['body/activityid']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Condición_5": {
+                            "actions": {
+                              "Rellenar_una_plantilla_de_Microsoft_Word_5": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "01467KKMG52KO7BSWXKBBIHG2VSJ456OOB": "/2023.07.12 Certificats PFC_2h.docx",
+                                  "operationMetadataId": "ac0f4635-9c4e-4fe8-9990-4d705c3c5391"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_wordonlinebusiness",
+                                    "operationId": "CreateFileItem",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                                  },
+                                  "parameters": {
+                                    "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                                    "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                                    "file": "01467KKMG52KO7BSWXKBBIHG2VSJ456OOB",
+                                    "dynamicFileSchema/706912846": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'MM')",
+                                    "dynamicFileSchema/994680773": "@outputs('Obtener_una_fila_por_id_(contacto)')?['body/fullname']",
+                                    "dynamicFileSchema/1535616074": "@outputs('Obtener_una_fila_por_id_(contacto)')?['body/pfc_nif']",
+                                    "dynamicFileSchema/-244030066": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'dd')",
+                                    "dynamicFileSchema/-1762056522": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'yyyy')",
+                                    "dynamicFileSchema/-615366560": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'HH:mm')",
+                                    "dynamicFileSchema/-700242333": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventenddate'], 'HH:mm')",
+                                    "dynamicFileSchema/-131636503": "@triggerOutputs()?['body/msevtmgt_name']"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              },
+                              "Establecer_variable_4": {
+                                "runAfter": {
+                                  "Rellenar_una_plantilla_de_Microsoft_Word_5": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "ca66bec6-438d-42ed-b8c0-e54bd6467bee"
+                                },
+                                "type": "SetVariable",
+                                "inputs": {
+                                  "name": "TemplateBody",
+                                  "value": "@body('Rellenar_una_plantilla_de_Microsoft_Word_5')"
+                                }
+                              }
+                            },
+                            "runAfter": {
+                              "Rellenar_una_plantilla_de_Microsoft_Word": [
+                                "Succeeded"
+                              ]
+                            },
+                            "else": {
+                              "actions": {
+                                "Rellenar_una_plantilla_de_Microsoft_Word_4": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "01467KKME5Y5Y24U25LZD2WLKY2MB5JPEE": "/2023.07.12 Certificats PFC_1h_30m.docx",
+                                    "operationMetadataId": "81609964-6674-4b16-a74f-9d9c1fa39a47"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_wordonlinebusiness",
+                                      "operationId": "CreateFileItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+                                    },
+                                    "parameters": {
+                                      "source": "sites/gencat.sharepoint.com,f468fd37-09a4-497e-9015-f0b8b03c25ab,ef3bdc7b-ba25-4551-9207-5df4e2e62b2b",
+                                      "drive": "b!N_1o9KQJfkmQFfC4sDwlq3vcO-8lulFFkgdd9OLmKyuu39Cf4yFCQYIom6E03K9Q",
+                                      "file": "01467KKME5Y5Y24U25LZD2WLKY2MB5JPEE",
+                                      "dynamicFileSchema/331036312": "@outputs('Obtener_una_fila_por_id_(contacto)')?['body/pfc_nif']",
+                                      "dynamicFileSchema/662129020": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'dd')",
+                                      "dynamicFileSchema/1113021323": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'HH:mm')",
+                                      "dynamicFileSchema/1403251110": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'MM')",
+                                      "dynamicFileSchema/-534962462": "@outputs('Obtener_una_fila_por_id_(contacto)')?['body/fullname']",
+                                      "dynamicFileSchema/-1482382806": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventstartdate'], 'yyyy')",
+                                      "dynamicFileSchema/-462727284": "@formatDateTime(triggerOutputs()?['body/msevtmgt_eventenddate'], 'HH:mm')",
+                                      "dynamicFileSchema/-1624299354": "@triggerOutputs()?['body/msevtmgt_name']"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Establecer_variable_3": {
+                                  "runAfter": {
+                                    "Rellenar_una_plantilla_de_Microsoft_Word_4": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "6d19d265-0527-475d-a4d4-d19a9db26c22"
+                                  },
+                                  "type": "SetVariable",
+                                  "inputs": {
+                                    "name": "TemplateBody",
+                                    "value": "@body('Rellenar_una_plantilla_de_Microsoft_Word_4')"
+                                  }
+                                }
+                              }
+                            },
+                            "expression": {
+                              "greaterOrEquals": [
+                                "@triggerOutputs()?['body/pfc_duration']",
+                                120
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "acd943d4-a52a-4261-a858-21a90b0026c6"
+                            },
+                            "type": "If"
+                          }
+                        },
+                        "runAfter": {
+                          "Enumerar_filas_(portasignatures_asociados_a_registre_d'entrada)": [
+                            "Succeeded"
+                          ]
+                        },
+                        "expression": {
+                          "equals": [
+                            "@length(outputs('Enumerar_filas_(portasignatures_asociados_a_registre_d''entrada)')?['body/value'])",
+                            0
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "daf6ce85-f635-4946-b437-336815eed480"
+                        },
+                        "type": "If"
+                      },
+                      "Enumerar_filas_(portasignatures_asociados_a_registre_d'entrada)": {
+                        "runAfter": {},
+                        "metadata": {
+                          "operationMetadataId": "4a73b804-6f3c-4c98-89cb-a0bc3e111c12"
+                        },
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connectionName": "shared_commondataserviceforapps_1",
+                            "operationId": "ListRecords",
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "pfc_portasignatureses",
+                            "fetchXml": "<fetch>\n  <entity name=\"pfc_portasignatures\">\n    <filter>\n      <condition attribute=\"regardingobjectid\" operator=\"eq\" value=\"@{items('Aplicar_a_cada_uno_3')?['msevtmgt_checkinid']}\" />\n    </filter>\n  </entity>\n</fetch>"
+                          },
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      }
+                    },
+                    "runAfter": {
+                      "Enumerar_filas_2_(registre_d'entrada)": [
+                        "Succeeded"
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "75d2ce14-fc44-4a7b-a6da-98233f2e67b5"
+                    },
+                    "type": "Foreach"
+                  }
+                },
+                "runAfter": {},
+                "expression": {
+                  "equals": [
+                    "@triggerOutputs()?['body/pfc_certification']",
+                    2
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "7dec61a5-1da6-48e2-899b-5dfc75039a3e"
+                },
+                "type": "If"
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/pfc_certification']",
+              1
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d91ae90e-ce57-4208-8361-15f6ed292506"
+          },
+          "type": "If"
+        },
+        "Inicializar_variable": {
+          "runAfter": {
+            "Inicializar_variable_2_(SharepointURL)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7a70ddba-1bd5-42c5-b16b-7419c672e8ca"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Path",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_2_(SharepointURL)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "b85a4ba0-4e10-419a-9dec-eff092aab8e2"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SharepointURL",
+                "type": "string",
+                "value": "@parameters('SharepointSite (pfc_sharepointsite)')"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_TemplateBody": {
+          "runAfter": {
+            "Inicializar_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e3d3df13-3d80-43f2-af3c-93871aad8a0d"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "TemplateBody",
+                "type": "object"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

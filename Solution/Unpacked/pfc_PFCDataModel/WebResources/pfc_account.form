@@ -1,0 +1,176 @@
+var Account;
+(function (Account) {
+    var form;
+    (function (form) {
+        var FormEvents;
+        (function (FormEvents) {
+            var LogicalName = "account";
+            function OnLoad(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                Account.form.Functions.BusinessLogic.showHideCatens(fc);
+                Account.form.Functions.BusinessLogic.setEntityHeadFilter(fc);
+                Account.form.Functions.BusinessLogic.setTrainingManagerFilter(fc);
+            }
+            FormEvents.OnLoad = OnLoad;
+        })(FormEvents = form.FormEvents || (form.FormEvents = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var FormEvents;
+        (function (FormEvents) {
+            var OnChange;
+            (function (OnChange) {
+                function pfc_entitytype(ec) {
+                    var fc = ec.getFormContext();
+                    Account.form.Functions.BusinessLogic.showHideCatens(fc);
+                }
+                OnChange.pfc_entitytype = pfc_entitytype;
+            })(OnChange = FormEvents.OnChange || (FormEvents.OnChange = {}));
+        })(FormEvents = form.FormEvents || (form.FormEvents = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var Functions;
+        (function (Functions) {
+            var BusinessLogic;
+            (function (BusinessLogic) {
+                function showHideCatens(fc) {
+                    if (fc.getAttribute(Account.form.Constants.Fields.EntityType).getValue() != Account.form.Constants.Optionsets.EntityType.Entitat) {
+                        fc.ui.tabs.get(Account.form.Constants.Tabs.CatENS).setVisible(false);
+                    }
+                    else {
+                        fc.ui.tabs.get(Account.form.Constants.Tabs.CatENS).setVisible(true);
+                    }
+                }
+                BusinessLogic.showHideCatens = showHideCatens;
+                function setEntityHeadFilter(fc) {
+                    var fetchXml = Account.form.Constants.Fetchs.fetchEntityTypeXMLAccount(fc);
+                    var viewId = "{00000000-0000-0000-1000-000000111119}";
+                    var viewDisplayName = "account";
+                    var layoutXml = Account.form.Constants.Options.XmlView;
+                    fc.getControl(Account.form.Constants.Fields.EntityHead).addCustomView(viewId, Account.form.Constants.Fields.Contact, viewDisplayName, fetchXml, layoutXml, true);
+                }
+                BusinessLogic.setEntityHeadFilter = setEntityHeadFilter;
+                function setTrainingManagerFilter(fc) {
+                    var fetchXml = Account.form.Constants.Fetchs.fetchEntityTypeXMLTraining(fc);
+                    var viewId = "{00000000-0000-0000-1000-000000111118}";
+                    var viewDisplayName = "account";
+                    var layoutXml = Account.form.Constants.Options.XmlView;
+                    fc.getControl(Account.form.Constants.Fields.TrainingManager).addCustomView(viewId, Account.form.Constants.Fields.Contact, viewDisplayName, fetchXml, layoutXml, true);
+                }
+                BusinessLogic.setTrainingManagerFilter = setTrainingManagerFilter;
+            })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+        })(Functions = form.Functions || (form.Functions = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var Constants;
+        (function (Constants) {
+            var Fields;
+            (function (Fields) {
+                Fields.EntityType = "pfc_entitytype";
+                Fields.Id = "accountid";
+                Fields.EntityHead = "pfc_entityhead";
+                Fields.TrainingManager = "pfc_trainingmanager";
+                Fields.Contact = "contact";
+            })(Fields = Constants.Fields || (Constants.Fields = {}));
+        })(Constants = form.Constants || (form.Constants = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var Constants;
+        (function (Constants) {
+            var Tabs;
+            (function (Tabs) {
+                Tabs.CatENS = "tab_14";
+            })(Tabs = Constants.Tabs || (Constants.Tabs = {}));
+        })(Constants = form.Constants || (form.Constants = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var Constants;
+        (function (Constants) {
+            var Optionsets;
+            (function (Optionsets) {
+                var EntityType;
+                (function (EntityType) {
+                    EntityType.Entitat = "470000000";
+                })(EntityType = Optionsets.EntityType || (Optionsets.EntityType = {}));
+            })(Optionsets = Constants.Optionsets || (Constants.Optionsets = {}));
+        })(Constants = form.Constants || (form.Constants = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var Constants;
+        (function (Constants) {
+            var Fetchs;
+            (function (Fetchs) {
+                function fetchEntityTypeXMLAccount(fc) {
+                    return [
+                        "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>\
+            <entity name='contact'>\
+            <attribute name='fullname'/>\
+            <attribute name='contactid'/>\
+            <order attribute='fullname' descending='false'/>\
+            <link-entity name='pfc_contact_account' from='pfc_contactid' to='contactid'>\
+            <filter type='and'>\
+            <condition attribute='pfc_usertype' operator='eq' value='470000000'/>\
+            <condition attribute='pfc_accountid' operator='eq' value='" + fc.data.entity.getId() + "'/>\
+            </filter>\
+            </link-entity>\
+            </entity>\
+            </fetch>",
+                    ].join("");
+                }
+                Fetchs.fetchEntityTypeXMLAccount = fetchEntityTypeXMLAccount;
+                function fetchEntityTypeXMLTraining(fc) {
+                    return [
+                        "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>\
+            <entity name='contact'>\
+            <attribute name='fullname'/>\
+            <attribute name='contactid'/>\
+            <order attribute='fullname' descending='false'/>\
+            <link-entity name='pfc_contact_account' from='pfc_contactid' to='contactid'>\
+            <filter type='and'>\
+            <condition attribute='pfc_usertype' operator='eq' value='470000003'/>\
+            <condition attribute='pfc_accountid' operator='eq' value='" + fc.data.entity.getId() + "'/>\
+            </filter>\
+            </link-entity>\
+            </entity>\
+            </fetch>",
+                    ].join("");
+                }
+                Fetchs.fetchEntityTypeXMLTraining = fetchEntityTypeXMLTraining;
+            })(Fetchs = Constants.Fetchs || (Constants.Fetchs = {}));
+        })(Constants = form.Constants || (form.Constants = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));
+(function (Account) {
+    var form;
+    (function (form) {
+        var Constants;
+        (function (Constants) {
+            var Options;
+            (function (Options) {
+                Options.XmlView = "<grid name='resultset' object='1' jump='name' select='1' icon='1'  preview='1'>" +
+                    "<row name='result' id='contactid'>" +
+                    "<cell name='fullname'  width='150' />" +
+                    "</row>" +
+                    "</grid>";
+            })(Options = Constants.Options || (Constants.Options = {}));
+        })(Constants = form.Constants || (form.Constants = {}));
+    })(form = Account.form || (Account.form = {}));
+})(Account || (Account = {}));

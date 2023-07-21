@@ -1,0 +1,410 @@
+var Query;
+(function (Query) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "pfc_query";
+        function onLoad(ec) {
+            "use strict";
+            var fc = ec.getFormContext();
+            fc.data.process.addOnPreStageChange(Query.FormEvents.OnChange.BPFOnChange);
+            ec.getFormContext().data.process.addOnStageSelected(Query.Functions.BusinessLogic.setQueryState);
+            Query.FormEvents.OnChange.pfc_referredtoconsultant(ec);
+        }
+        FormEvents.onLoad = onLoad;
+    })(FormEvents = Query.FormEvents || (Query.FormEvents = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var FormEvents;
+    (function (FormEvents) {
+        var OnChange;
+        (function (OnChange) {
+            function statuscode(ec) {
+                var fc = ec.getFormContext();
+                var stageStepDescription;
+                var newStatus;
+                debugger;
+                switch (fc.getAttribute(Query.Constants.Fields.StatusCode).getValue()) {
+                    case Query.Constants.StatusCodeOS.EnCurs:
+                        stageStepDescription = Query.Constants.StatesNames.EnCurs;
+                        newStatus = "active";
+                        break;
+                    case Query.Constants.StatusCodeOS.Esborrany:
+                        stageStepDescription = Query.Constants.StatesNames.Inici;
+                        newStatus = "active";
+                        break;
+                    case Query.Constants.StatusCodeOS.Cancelada:
+                        stageStepDescription = Query.Constants.StatesNames.Cancelada;
+                        newStatus = "abandoned";
+                        break;
+                    case Query.Constants.StatusCodeOS.Finalitzada:
+                        stageStepDescription = Query.Constants.StatesNames.Finalitzada;
+                        newStatus = "finished";
+                        break;
+                }
+                if (stageStepDescription && newStatus) {
+                    var id_1 = null;
+                    fc.data.process.getActiveProcess().getStages().forEach(function (v, i, a) {
+                        if (v._stageStep.description === stageStepDescription) {
+                            id_1 = v._stageStep.id;
+                        }
+                    });
+                    setTimeout(function () {
+                        fc.data.process.setActiveStage(id_1);
+                        fc.data.process.setStatus(newStatus);
+                        fc.data.refresh(true);
+                    }, 100);
+                }
+            }
+            OnChange.statuscode = statuscode;
+            function BPFOnChange(ec) {
+                var fc = ec.getFormContext();
+                if (fc.getAttribute(Query.Constants.Fields.StatusCode).getValue() == Query.Constants.StatusCodeOS.AnalisiResposta) {
+                    Query.Functions.BusinessLogic.CheckAmbitAndAnswerType(ec);
+                }
+            }
+            OnChange.BPFOnChange = BPFOnChange;
+            function pfc_accountid(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                Query.Functions.BusinessLogic.setSolicitantAndSupervisorAndDepartamentalAgrupation(fc);
+            }
+            OnChange.pfc_accountid = pfc_accountid;
+            function pfc_acceptance_date(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = Query.Constants.Fields.DataRecepcio;
+                var endDate = Query.Constants.Fields.DataAcceptacio;
+                Query.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_acceptance_date = pfc_acceptance_date;
+            function pfc_maxmanagementdate(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = Query.Constants.Fields.DataAcceptacio;
+                var endDate = Query.Constants.Fields.DataMaximaGestio;
+                Query.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_maxmanagementdate = pfc_maxmanagementdate;
+            function pfc_sent_date(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = Query.Constants.Fields.DataMaximaGestio;
+                var endDate = Query.Constants.Fields.DataResposta;
+                Query.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_sent_date = pfc_sent_date;
+            function pfc_closing_date(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = Query.Constants.Fields.DataResposta;
+                var endDate = Query.Constants.Fields.DataTancament;
+                Query.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_closing_date = pfc_closing_date;
+            function pfc_referredtoconsultant(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                Query.Functions.BusinessLogic.VisibleorNot(fc);
+            }
+            OnChange.pfc_referredtoconsultant = pfc_referredtoconsultant;
+            function pfc_interestedpeople(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                Query.Functions.BusinessLogic.checkInterestedPeople(fc);
+            }
+            OnChange.pfc_interestedpeople = pfc_interestedpeople;
+        })(OnChange = FormEvents.OnChange || (FormEvents.OnChange = {}));
+    })(FormEvents = Query.FormEvents || (Query.FormEvents = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            //declare var Sdk: any;
+            //Sdk = window.Sdk || {};
+            function CheckAmbitAndAnswerType(ec) {
+                "use strict";
+                if (ec.getEventArgs().getDirection() === "Next") {
+                    var fc = ec.getFormContext();
+                    var filteredRecordCount = fc.getControl(Query.Constants.Grids.AmbitGrid).getGrid().getTotalRecordCount();
+                    if (filteredRecordCount <= 0) {
+                        ec.getEventArgs().preventDefault();
+                        fc.ui.setFormNotification("No hi ha àmbits vinculats a aquesta consulta", "ERROR", "Ambit");
+                    }
+                    else {
+                        fc.ui.clearFormNotification("Ambit");
+                    }
+                    if (fc.getAttribute(Query.Constants.Fields.AnswerType).getValue() == null) {
+                        ec.getEventArgs().preventDefault();
+                        fc.ui.setFormNotification("No hi ha Tipus de resposta vinculats a aquesta consulta", "ERROR", "AnswerType");
+                    }
+                    else {
+                        fc.ui.clearFormNotification("AnswerType");
+                    }
+                }
+            }
+            BusinessLogic.CheckAmbitAndAnswerType = CheckAmbitAndAnswerType;
+            function checkInterestedPeople(fc) {
+                var myRe = /^([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?;)*([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)$/;
+                if (fc.getAttribute(Query.Constants.Fields.InterestedPeople).getValue() != "" && fc.getAttribute(Query.Constants.Fields.InterestedPeople).getValue() != null) {
+                    if (!myRe.test(fc.getAttribute(Query.Constants.Fields.InterestedPeople).getValue())) {
+                        fc.getControl(Query.Constants.Fields.InterestedPeople).setNotification("El format de correu electrònic és incorrecte.Només estan permesos correus electrònics vàlids separats per ';'");
+                    }
+                    else {
+                        fc.getControl(Query.Constants.Fields.InterestedPeople).clearNotification();
+                    }
+                }
+                else {
+                    fc.getControl(Query.Constants.Fields.InterestedPeople).clearNotification();
+                }
+            }
+            BusinessLogic.checkInterestedPeople = checkInterestedPeople;
+            function setSolicitantAndSupervisorAndDepartamentalAgrupation(fc) {
+                var lookupAccountId, accountId;
+                lookupAccountId = fc.getAttribute(Query.Constants.Fields.Entitat).getValue();
+                var EntitatId, lookupEntitat;
+                lookupEntitat = fc.getAttribute(Query.Constants.Fields.Entitat).getValue();
+                if (lookupAccountId) {
+                    accountId = lookupAccountId[0].id;
+                    Xrm.WebApi.online.retrieveMultipleRecords(Query.Constants.Entities.Entitat.LogicalName, Query.Queries.QueriesToRetrieveAccount(fc, accountId)).then(function success(result) {
+                        var lookupSupervisorId = new Array();
+                        lookupSupervisorId[0] = new Object();
+                        if (result.entities[0] && result.entities[0]._pfc_entityhead_value && result.entities[0]["_pfc_entityhead_value@OData.Community.Display.V1.FormattedValue"]) {
+                            lookupSupervisorId[0].id = result.entities[0]._pfc_entityhead_value;
+                            lookupSupervisorId[0].name = result.entities[0]["_pfc_entityhead_value@OData.Community.Display.V1.FormattedValue"];
+                            lookupSupervisorId[0].entityType = "contact";
+                            fc.getAttribute(Query.Constants.Fields.SupervisorContact).setValue(lookupSupervisorId);
+                        }
+                        var lookupDepartamentalAgrupation = new Array();
+                        lookupDepartamentalAgrupation[0] = new Object();
+                        if (result.entities[0] && result.entities[0]._pfc_departamental_agrupationid_value && result.entities[0]["_pfc_departamental_agrupationid_value@OData.Community.Display.V1.FormattedValue"]) {
+                            lookupDepartamentalAgrupation[0].id = result.entities[0]._pfc_departamental_agrupationid_value;
+                            lookupDepartamentalAgrupation[0].name = result.entities[0]["_pfc_departamental_agrupationid_value@OData.Community.Display.V1.FormattedValue"];
+                            lookupDepartamentalAgrupation[0].entityType = "pfc_departamental_agrupation";
+                            fc.getAttribute(Query.Constants.Fields.DepartamentalAgrupation).setValue(lookupDepartamentalAgrupation);
+                        }
+                    }, function error(error) {
+                        Xrm.Navigation.openAlertDialog(error.message);
+                    });
+                }
+                else {
+                    fc.getAttribute(Query.Constants.Fields.DepartamentalAgrupation).setValue(null);
+                    fc.getAttribute(Query.Constants.Fields.SupervisorContact).setValue(null);
+                }
+            }
+            BusinessLogic.setSolicitantAndSupervisorAndDepartamentalAgrupation = setSolicitantAndSupervisorAndDepartamentalAgrupation;
+            function CheckDate(fc, startDate, endDate) {
+                if (Date.parse(fc.getAttribute(startDate).getValue()) > Date.parse(fc.getAttribute(endDate).getValue())) {
+                    fc.getControl(endDate).setNotification(Query.Constants.Message.wrongDateNotification, Query.Constants.Message.wrongDateNotification);
+                }
+                else {
+                    fc.getControl(endDate).clearNotification(Query.Constants.Message.wrongDateNotification);
+                }
+            }
+            BusinessLogic.CheckDate = CheckDate;
+            function VisibleorNot(fc) {
+                if (fc.getAttribute(Query.Constants.Fields.DerivataConsultora).getValue() == true) {
+                    fc.ui.tabs.get(Query.Constants.Tabs.DadesConsultora).setVisible(true);
+                }
+                else {
+                    fc.ui.tabs.get(Query.Constants.Tabs.DadesConsultora).setVisible(false);
+                }
+            }
+            BusinessLogic.VisibleorNot = VisibleorNot;
+            function setQueryState(ec) {
+                var fc = ec.getFormContext();
+                var bpfControl = fc.getControl('header_process_pfc_querystatus');
+                var attribute = bpfControl.getAttribute();
+                if (attribute != undefined) {
+                    attribute.setValue(null);
+                }
+            }
+            BusinessLogic.setQueryState = setQueryState;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = Query.Functions || (Query.Functions = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.SupervisorContact = "pfc_entityhead";
+            Fields.Solicitant = "pfc_applicantid";
+            Fields.Entitat = "pfc_accountid";
+            Fields.Supervisor = "pfc_supervisorid";
+            Fields.DepartamentalAgrupation = "pfc_enrollmentdepartmentid";
+            Fields.DataRecepcio = "createdon";
+            Fields.DataAcceptacio = "pfc_acceptance_date";
+            Fields.DataMaximaGestio = "pfc_maxmanagementdate";
+            Fields.DataResposta = "pfc_sent_date";
+            Fields.DataTancament = "pfc_closing_date";
+            Fields.DerivataConsultora = "pfc_referredtoconsultant";
+            Fields.InterestedPeople = "pfc_interestedpeople";
+            Fields.IsInformedCorrectly = "pfc_entity_is_correctly_informed";
+            Fields.StatusCode = "statuscode";
+            Fields.AnswerType = "pfc_typeofanswer";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Grids;
+        (function (Grids) {
+            Grids.AmbitGrid = "Subgrid_new_8";
+        })(Grids = Constants.Grids || (Constants.Grids = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var BPFStageId;
+        (function (BPFStageId) {
+            BPFStageId.EnCurs = "ccf520d7-1f29-47e4-be23-5385e0ac257e";
+        })(BPFStageId = Constants.BPFStageId || (Constants.BPFStageId = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var StatusCodeOS;
+        (function (StatusCodeOS) {
+            StatusCodeOS.AnalisiResposta = 470000014;
+            StatusCodeOS.Finalitzada = 2;
+            StatusCodeOS.EnCurs = 470000001;
+            StatusCodeOS.Cancelada = 470000009;
+            StatusCodeOS.Esborrany = 470000000;
+        })(StatusCodeOS = Constants.StatusCodeOS || (Constants.StatusCodeOS = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var StatesNames;
+        (function (StatesNames) {
+            StatesNames.EnCurs = "En Curs";
+            StatesNames.Inici = "Inici";
+            StatesNames.Finalitzada = "Finalitzada";
+            StatesNames.Cancelada = "Cancel-Lada";
+        })(StatesNames = Constants.StatesNames || (Constants.StatesNames = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var Contact;
+            (function (Contact) {
+                Contact.LogicalName = "contact";
+            })(Contact = Entities.Contact || (Entities.Contact = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var Settings;
+            (function (Settings) {
+                Settings.LogicalName = "pfc_settings";
+            })(Settings = Entities.Settings || (Entities.Settings = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var Entitat;
+            (function (Entitat) {
+                Entitat.LogicalName = "account";
+            })(Entitat = Entities.Entitat || (Entities.Entitat = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var SystemUser;
+            (function (SystemUser) {
+                SystemUser.LogicalName = "systemuser";
+            })(SystemUser = Entities.SystemUser || (Entities.SystemUser = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var DepartamentalAgrupation;
+            (function (DepartamentalAgrupation) {
+                DepartamentalAgrupation.LogicalName = "pfc_departamental_agrupation";
+            })(DepartamentalAgrupation = Entities.DepartamentalAgrupation || (Entities.DepartamentalAgrupation = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Message;
+        (function (Message) {
+            Message.wrongDateNotification = "La data introduida és incorrecta.Introduiu una data més gran a la data anterior";
+        })(Message = Constants.Message || (Constants.Message = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Constants;
+    (function (Constants) {
+        var Tabs;
+        (function (Tabs) {
+            Tabs.DadesConsultora = "dadesconsultora";
+        })(Tabs = Constants.Tabs || (Constants.Tabs = {}));
+    })(Constants = Query.Constants || (Query.Constants = {}));
+})(Query || (Query = {}));
+(function (Query) {
+    var Queries;
+    (function (Queries) {
+        function QueriesToRetrieveApplicantId(fc, fieldValue) {
+            "use strict";
+            var fetchXml = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true' no-lock='true'>" +
+                    "<entity name='contact'>" +
+                    "<attribute name='parentcustomerid' />" +
+                    "<filter>" +
+                    "<condition attribute='contactid' operator='eq' value='" + fieldValue + "' />" +
+                    "</filter>" +
+                    "</entity>" +
+                    "</fetch>",
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.QueriesToRetrieveApplicantId = QueriesToRetrieveApplicantId;
+        function QueriesToRetrieveAccount(fc, fieldValue) {
+            "use strict";
+            var fetchXml = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true' no-lock='true'>\
+                <entity name='account'>\
+                    <attribute name='accountid' />\
+                    <attribute name='pfc_departamental_agrupationid' />\
+                    <attribute name='pfc_responsableid' />\
+                    <attribute name='pfc_entityhead' />\
+                    <filter>\
+                      <condition attribute='accountid' operator='eq' value='" + fieldValue + "' />\
+                    </filter>\
+                </entity>\
+            </fetch>",
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.QueriesToRetrieveAccount = QueriesToRetrieveAccount;
+    })(Queries = Query.Queries || (Query.Queries = {}));
+})(Query || (Query = {}));

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="MPFC.Plugins.Plugins.QueryDGTUpdatePreOperation: Update of pfc_query_dgt" SdkMessageProcessingStepId="{ad338f9e-2da9-ed11-aad1-000d3adf7228}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>MPFC.Plugins.Plugins.QueryDGTUpdatePreOperation, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b</PluginTypeName>
+  <PluginTypeId>52e778fa-8189-4153-85f3-8fae7363d8d7</PluginTypeId>
+  <PrimaryEntity>pfc_query_dgt</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>MPFC.Plugins.Plugins.QueryDGTUpdatePreOperation: Update of pfc_query_dgt</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

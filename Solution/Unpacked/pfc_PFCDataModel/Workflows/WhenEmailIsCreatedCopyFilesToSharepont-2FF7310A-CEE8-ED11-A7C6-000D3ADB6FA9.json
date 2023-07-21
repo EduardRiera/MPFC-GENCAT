@@ -1,0 +1,520 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedsharepointonline_c963a"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "SharepointSite (pfc_sharepointsite)": {
+          "defaultValue": "https://gencat.sharepoint.com/sites/MPFCTest",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_sharepointsite"
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_agrega,_modifica_o_elimina_una_fila": {
+          "metadata": {
+            "operationMetadataId": "9df32f31-a4f6-4de5-af4a-88dd1076892a"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "email",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "statecode"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)": {
+          "runAfter": {
+            "Inicializar_variable_(SharepointURL)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7ce4c3be-da29-4c85-9a70-24e374a9633b"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "emails",
+              "recordId": "@triggerOutputs()?['body/activityid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condición_3_(rao_per_l'estat_=_3)": {
+          "actions": {
+            "Condición_2_(tipus_d'activitat_=_email)": {
+              "actions": {
+                "Condición_(referent_a_=_query)": {
+                  "actions": {
+                    "Consulta:_Obtener_una_fila_por_id_de_referent": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "58290bfe-040a-4004-828f-bf86323a1e66"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetItem",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "pfc_queries",
+                          "recordId": "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/_regardingobjectid_value']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Entitat:_Obtener_una_fila_por_id_de_Entitat_de_consulta": {
+                      "runAfter": {
+                        "Consulta:_Obtener_una_fila_por_id_de_referent": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "6c019fb9-4ede-4dc5-844d-36031a3aaf06"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetItem",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "accounts",
+                          "recordId": "@outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/_pfc_accountid_value']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Aplicar_a_cada_uno": {
+                      "foreach": "@outputs('Enumerar_filas_(fitxers_adjunts)')?['body/value']",
+                      "actions": {
+                        "Obtener_una_fila_por_id_4_(fitxer_adjunt)": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "2b6f485d-265d-447a-ace7-281d0ea108b1"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps_1",
+                              "operationId": "GetItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "activitymimeattachments",
+                              "recordId": "@items('Aplicar_a_cada_uno')?['activitymimeattachmentid']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Crear_archivo_2": {
+                          "runAfter": {
+                            "Obtener_una_fila_por_id_4_(fitxer_adjunt)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "923ec435-aad3-4130-ab85-2d5b9bcdffa5"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_sharepointonline_1",
+                              "operationId": "CreateFile",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                            },
+                            "parameters": {
+                              "dataset": "@variables('SharepointURL')",
+                              "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_Entitat_de_consulta')?['body/name']}/pfc_query/@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de treball",
+                              "name": "@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{outputs('Obtener_una_fila_por_id_4_(fitxer_adjunt)')?['body/filename']}",
+                              "body": "@base64ToBinary(outputs('Obtener_una_fila_por_id_4_(fitxer_adjunt)')?['body/body'])"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          },
+                          "runtimeConfiguration": {
+                            "contentTransfer": {
+                              "transferMode": "Chunked"
+                            }
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Entitat:_Obtener_una_fila_por_id_de_Entitat_de_consulta": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "ee50929a-bd49-4573-821a-6956928d86d0"
+                      },
+                      "type": "Foreach"
+                    }
+                  },
+                  "runAfter": {},
+                  "else": {
+                    "actions": {
+                      "Condición_4_(referent_a_=_queryDGT)": {
+                        "actions": {
+                          "ConsultaDGT:_Obtener_una_fila_por_id_de_referent": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "0abbeed9-e41a-430b-8db7-f97beb41f2ee"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetItem",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_query_dgts",
+                                "recordId": "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/_regardingobjectid_value']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Entitat:_Obtener_una_fila_por_id_de_Entitat_de_consultaDGT": {
+                            "runAfter": {
+                              "ConsultaDGT:_Obtener_una_fila_por_id_de_referent": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "0202accd-5c5d-46ca-bf02-5b1f16d43993"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetItem",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "accounts",
+                                "recordId": "@outputs('ConsultaDGT:_Obtener_una_fila_por_id_de_referent')?['body/_pfc_accountid_value']"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Aplicar_a_cada_uno_2": {
+                            "foreach": "@outputs('Enumerar_filas_(fitxers_adjunts)')?['body/value']",
+                            "actions": {
+                              "Obtener_una_fila_por_id_7_(Fitxer_adjunt)": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "6574cec6-07fd-4bd2-9f48-731e63a8d92f"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_commondataserviceforapps_1",
+                                    "operationId": "GetItem",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                  },
+                                  "parameters": {
+                                    "entityName": "activitymimeattachments",
+                                    "recordId": "@items('Aplicar_a_cada_uno_2')?['activitymimeattachmentid']"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              },
+                              "Crear_archivo": {
+                                "runAfter": {
+                                  "Obtener_una_fila_por_id_7_(Fitxer_adjunt)": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "4081234d-42c8-4f89-b7dd-7b9b001f7675"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_sharepointonline_1",
+                                    "operationId": "CreateFile",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                  },
+                                  "parameters": {
+                                    "dataset": "@variables('SharepointURL')",
+                                    "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_Entitat_de_consultaDGT')?['body/name']}/pfc_query_dgt/@{outputs('ConsultaDGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de treball",
+                                    "name": "@{outputs('ConsultaDGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{outputs('Obtener_una_fila_por_id_7_(Fitxer_adjunt)')?['body/filename']}",
+                                    "body": "@base64ToBinary(outputs('Obtener_una_fila_por_id_7_(Fitxer_adjunt)')?['body/body'])"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                },
+                                "runtimeConfiguration": {
+                                  "contentTransfer": {
+                                    "transferMode": "Chunked"
+                                  }
+                                }
+                              }
+                            },
+                            "runAfter": {
+                              "Entitat:_Obtener_una_fila_por_id_de_Entitat_de_consultaDGT": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "3eda8e30-fbc1-48ca-a9f1-9f370363499b"
+                            },
+                            "type": "Foreach"
+                          }
+                        },
+                        "runAfter": {},
+                        "else": {
+                          "actions": {
+                            "OET:_Obtener_una_fila_por_id_de_referent": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "e52a58b0-6f39-4967-82e9-c5076edda465"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_1",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "pfc_tax_transcendence_operations",
+                                  "recordId": "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/_regardingobjectid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Entitat:_Obtener_una_fila_por_id_de_Entitat_de_OET": {
+                              "runAfter": {
+                                "OET:_Obtener_una_fila_por_id_de_referent": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "b40e944c-5b81-4c03-8d2c-df4fc89c4687"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_1",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "accounts",
+                                  "recordId": "@outputs('OET:_Obtener_una_fila_por_id_de_referent')?['body/_pfc_accountid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Aplicar_a_cada_uno_3": {
+                              "foreach": "@outputs('Enumerar_filas_(fitxers_adjunts)')?['body/value']",
+                              "actions": {
+                                "Obtener_una_fila_por_id_10_(Fitxer_adjunt)": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "3c044c2e-42a5-43c7-a70b-f4190c6d2785"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_1",
+                                      "operationId": "GetItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "activitymimeattachments",
+                                      "recordId": "@items('Aplicar_a_cada_uno_3')?['activitymimeattachmentid']"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Crear_archivo_3": {
+                                  "runAfter": {
+                                    "Obtener_una_fila_por_id_10_(Fitxer_adjunt)": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "a0f9213a-7c7c-46f0-8bba-266ded9ea055"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline_1",
+                                      "operationId": "CreateFile",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "parameters": {
+                                      "dataset": "@variables('SharepointURL')",
+                                      "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_Entitat_de_OET')?['body/name']}/pfc_tax_transcendence_operation/@{outputs('OET:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de treball",
+                                      "name": "@{outputs('OET:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{outputs('Obtener_una_fila_por_id_10_(Fitxer_adjunt)')?['body/filename']}",
+                                      "body": "@base64ToBinary(outputs('Obtener_una_fila_por_id_10_(Fitxer_adjunt)')?['body/body'])"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  },
+                                  "runtimeConfiguration": {
+                                    "contentTransfer": {
+                                      "transferMode": "Chunked"
+                                    }
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Entitat:_Obtener_una_fila_por_id_de_Entitat_de_OET": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "9387ec49-2919-4295-b4e7-32d1e6fd7623"
+                              },
+                              "type": "Foreach"
+                            }
+                          }
+                        },
+                        "expression": {
+                          "equals": [
+                            "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname']",
+                            "pfc_query_dgt"
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "c725032b-e16d-4406-a3e2-b4b59e37c2f9"
+                        },
+                        "type": "If"
+                      }
+                    }
+                  },
+                  "expression": {
+                    "equals": [
+                      "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname']",
+                      "pfc_query"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "33df1f3e-b616-4117-8cd2-bab1752133ff"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {},
+              "expression": {
+                "equals": [
+                  "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/activitytypecode']",
+                  "email"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1ec1fda0-f066-4e26-9d96-2b3010534024"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Enumerar_filas_(fitxers_adjunts)": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@outputs('Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)')?['body/statuscode']",
+              3
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8aef04a2-01ec-4703-b528-d31109ba102c"
+          },
+          "type": "If"
+        },
+        "Enumerar_filas_(fitxers_adjunts)": {
+          "runAfter": {
+            "Obtener_una_fila_por_id_2_(Missatges_de_correu_electronic)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "394138cc-e78d-4fa3-92d2-6ea02465ded7"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "activitymimeattachments",
+              "fetchXml": "<fetch>\n  <entity name=\"activitymimeattachment\">\n    <link-entity name=\"email\" from=\"activityid\" to=\"objectid\">\n      <filter>\n        <condition attribute=\"activityid\" operator=\"eq\" value=\"@{triggerOutputs()?['body/activityid']}\" />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Inicializar_variable_(SharepointURL)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "77d3f998-bb73-459e-84fc-186b4b062fde"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SharepointURL",
+                "type": "string",
+                "value": "@parameters('SharepointSite (pfc_sharepointsite)')"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

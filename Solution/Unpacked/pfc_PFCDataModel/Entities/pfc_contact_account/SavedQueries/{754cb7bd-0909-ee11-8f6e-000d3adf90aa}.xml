@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{754cb7bd-0909-ee11-8f6e-000d3adf90aa}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" preview="1" icon="1">
+        <row name="result" id="pfc_contact_accountid">
+          <cell name="pfc_name" width="150" />
+          <cell name="pfc_contactid" width="100" />
+          <cell name="pfc_usertype" width="100" />
+          <cell name="pfc_companylevelid" width="100" />
+          <cell name="pfc_entityposition" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="pfc_contact_account">
+          <attribute name="pfc_name" />
+          <attribute name="pfc_usertype" />
+          <attribute name="pfc_entityposition" />
+          <attribute name="pfc_contactid" />
+          <attribute name="pfc_companylevelid" />
+          <order attribute="pfc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="pfc_usertype" operator="eq" value="470000001" />
+          </filter>
+          <attribute name="pfc_contact_accountid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.16</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Usuaris ordinaris" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

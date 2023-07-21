@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{c79a4cd6-aea3-ed11-aad1-000d3adf796b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_query_dgtid">
+          <cell name="pfc_name" width="130" />
+          <cell name="pfc_queryid" width="100" />
+          <cell name="pfc_accountid" width="220" />
+          <cell name="statuscode" width="150" imageproviderfunctionname="QueryDGT.Functions.BusinessLogic.populateImageValuesinGrid" imageproviderwebresource="$webresource:pfc_querydgt.view" />
+          <cell name="pfc_receiptdate" width="160" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_deliveryentitydate" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_presentationdatedgt" width="160" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_responsedatedgt" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_dgtidentificationcode" width="100" />
+          <cell name="pfc_closingdate" width="100" />
+          <cell name="pfc_resume" width="218" />
+          <cell name="pfc_duration" width="100" />
+          <cell name="ownerid" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="pfc_query_dgt">
+          <attribute name="pfc_name" />
+          <attribute name="pfc_accountid" />
+          <attribute name="statuscode" />
+          <attribute name="pfc_responsedatedgt" />
+          <attribute name="pfc_receiptdate" />
+          <attribute name="pfc_presentationdatedgt" />
+          <attribute name="pfc_deliveryentitydate" />
+          <attribute name="pfc_closingdate" />
+          <attribute name="pfc_resume" />
+          <order attribute="pfc_name" descending="true" />
+          <attribute name="pfc_queryid" />
+          <attribute name="pfc_dgtidentificationcode" />
+          <attribute name="pfc_duration" />
+          <attribute name="ownerid" />
+          <attribute name="pfc_query_dgtid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.10</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Consultes a DGT - Totes" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

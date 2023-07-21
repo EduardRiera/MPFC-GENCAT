@@ -1,0 +1,167 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_commondataservice_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataservice_214d2"
+        },
+        "api": {
+          "name": "shared_commondataservice"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Cuando_se_modifica_una_fila": {
+          "metadata": {
+            "operationMetadataId": "4a956024-94bc-4cc6-9043-2c7eaca00be2"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataservice_1",
+              "operationId": "SubscribeOnUpdatedItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataservice"
+            },
+            "parameters": {
+              "dataset": "https://integracio-eco-mpfc.crm4.dynamics.com",
+              "table": "pfc_validatedqueries",
+              "scope": "Organization",
+              "subscriptionRequest/AttributeFilters": [
+                "statuscode",
+                "statecode"
+              ]
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Condición:_Accepta_la_condicion_=_1_|_statecode_=_1_|_statuscode_=_470000006": {
+          "actions": {
+            "Consulta_DGT:_Actualizar_fila": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "b401552c-55de-4f76-b1ef-b83e37f1bfc2"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_query_dgts",
+                  "recordId": "@outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_query_dgtid']",
+                  "item/statuscode": 470000004
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Justificant_del_enviament:_Agregar_una_fila_nueva": {
+              "runAfter": {
+                "Consulta_DGT:_Actualizar_fila": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "4d187639-810a-462f-b6d5-80af06f8f7c2"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_sentqueries",
+                  "item/subject": " @{outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - Evidència d' enviament",
+                  "item/pfc_registercode": "@outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_registercode']",
+                  "item/pfc_presentationdatedgt": "@outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_presentationdatedgt']",
+                  "item/regardingobjectid_pfc_query_dgt_pfc_sentquery@odata.bind": "/pfc_query_dgts/@{outputs('Consulta_DGT:_Actualizar_fila')?['body/pfc_query_dgtid']}"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Consulta_DGT:_Obtener_una_fila_por_id_de_referent": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/pfc_iscorrect']",
+                  1
+                ]
+              },
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/statecode']",
+                  1
+                ]
+              },
+              {
+                "equals": [
+                  "@outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/statuscode']",
+                  470000006
+                ]
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a24fb869-a5d1-4023-8df0-7f4854438401"
+          },
+          "type": "If"
+        },
+        "Consulta_DGT:_Obtener_una_fila_por_id_de_referent": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "7b749baf-e530-4557-91a4-c069ecc55b18"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "pfc_query_dgts",
+              "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

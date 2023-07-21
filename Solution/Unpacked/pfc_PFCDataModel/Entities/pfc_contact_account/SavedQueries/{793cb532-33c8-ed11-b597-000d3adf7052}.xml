@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{793cb532-33c8-ed11-b597-000d3adf7052}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_contact_accountid">
+          <cell name="pfc_accountid" width="292" />
+          <cell name="pfc_companylevelid" width="283" />
+          <cell name="pfc_entityposition" width="300" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_contact_account">
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_companylevelid" />
+          <attribute name="pfc_entityposition" />
+          <attribute name="pfc_contact_accountid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Contact Account" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

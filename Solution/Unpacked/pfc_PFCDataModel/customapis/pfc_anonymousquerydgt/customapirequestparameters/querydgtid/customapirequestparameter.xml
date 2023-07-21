@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="querydgtid">
+  <description default="querydgtid">
+    <label description="querydgtid" languagecode="1027" />
+  </description>
+  <displayname default="querydgtid">
+    <label description="querydgtid" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>querydgtid</name>
+  <type>10</type>
+</customapirequestparameter>

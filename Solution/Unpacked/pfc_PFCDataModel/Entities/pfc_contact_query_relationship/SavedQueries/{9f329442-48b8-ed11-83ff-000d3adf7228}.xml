@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9f329442-48b8-ed11-83ff-000d3adf7228}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_contact_query_relationshipid">
+          <cell name="a_a64741106d124bd1a371a1e8c6c0d40f.pfc_name" width="215" />
+          <cell name="a_a64741106d124bd1a371a1e8c6c0d40f.pfc_accountid" width="300" />
+          <cell name="a_a64741106d124bd1a371a1e8c6c0d40f.pfc_applicantid" width="300" />
+          <cell name="a_a64741106d124bd1a371a1e8c6c0d40f.pfc_summary" width="300" />
+          <cell name="a_a64741106d124bd1a371a1e8c6c0d40f.statuscode" width="256" />
+          <cell name="a_a64741106d124bd1a371a1e8c6c0d40f.createdon" width="300" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="pfc_contact_query_relationship">
+          <attribute name="pfc_contact_query_relationshipid" />
+          <link-entity alias="a_a64741106d124bd1a371a1e8c6c0d40f" name="pfc_query" to="pfc_queryid" from="pfc_queryid" link-type="outer" visible="false">
+            <attribute name="pfc_name" />
+            <attribute name="pfc_accountid" />
+            <attribute name="pfc_applicantid" />
+            <attribute name="pfc_summary" />
+            <attribute name="statuscode" />
+            <attribute name="createdon" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Query_Account" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

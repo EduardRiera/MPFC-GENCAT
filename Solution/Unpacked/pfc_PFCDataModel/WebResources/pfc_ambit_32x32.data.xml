@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{c377e5a0-5171-ed11-9561-000d3ab3f701}</WebResourceId>
+  <Name>pfc_ambit_32x32</Name>
+  <DisplayName>Ambit_32x32</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_ambit_32x32C377E5A0-5171-ED11-9561-000D3AB3F701</FileName>
+</WebResource>

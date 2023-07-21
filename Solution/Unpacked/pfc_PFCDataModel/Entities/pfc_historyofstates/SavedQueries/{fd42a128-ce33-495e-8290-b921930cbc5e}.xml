@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{fd42a128-ce33-495e-8290-b921930cbc5e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_historyofstatesid">
+          <cell name="pfc_originstate" width="108" />
+          <cell name="pfc_destinationstate" width="100" />
+          <cell name="pfc_startdate" width="100" />
+          <cell name="pfc_enddate" width="100" />
+          <cell name="pfc_timestate" width="100" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_historyofstates">
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_timestate" />
+          <attribute name="pfc_startdate" />
+          <attribute name="pfc_enddate" />
+          <order attribute="createdon" descending="true" />
+          <attribute name="pfc_historyofstatesid" />
+          <attribute name="pfc_originstate" />
+          <attribute name="pfc_destinationstate" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Històric d'estats actiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

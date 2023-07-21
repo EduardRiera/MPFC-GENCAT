@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{db1b8d04-5804-ee11-8f6e-000d3adea4bc}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" preview="1" icon="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="emailaddress1" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_contactaccount" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <attribute name="emailaddress1" />
+          <order attribute="fullname" descending="false" />
+          <link-entity name="pfc_contact_account" from="pfc_contactid" to="contactid" alias="aa">
+            <filter type="and">
+              <condition attribute="pfc_usertype" operator="eq" value="470000001" />
+              <condition attribute="pfc_companylevelid" operator="in">
+                <value uiname="Gerent" uitype="pfc_companylevel">{74FF0AD4-F8E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Director/a" uitype="pfc_companylevel">{2D3EA1E7-F8E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Director/a econòmic- financer" uitype="pfc_companylevel">{D35213F4-F8E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Responsable i/o àrea econòmic-financera" uitype="pfc_companylevel">{08AD2AFA-F8E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Cap i/o responsable del servei jurídic" uitype="pfc_companylevel">{DD10A806-F9E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Director/a general" uitype="pfc_companylevel">{590622D7-0E01-EE11-8F6E-000D3ADEA4BC}</value>
+                <value uiname="Interventor/a" uitype="pfc_companylevel">{271E4309-0F01-EE11-8F6E-000D3ADEA4BC}</value>
+                <value uiname="Interventor delegat/a" uitype="pfc_companylevel">{1F8C7A21-0F01-EE11-8F6E-000D3ADEA4BC}</value>
+                <value uiname="Secretari/a General" uitype="pfc_companylevel">{F8A2AB2C-F9E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Director/a de serveis" uitype="pfc_companylevel">{F667C545-F9E8-ED11-A7C6-000D3ADEA4BC}</value>
+                <value uiname="Advocat/da en cap de l'Assessoria Jurídica" uitype="pfc_companylevel">{32F4B492-F9E8-ED11-A7C6-000D3ADEA4BC}</value>
+              </condition>
+            </filter>
+          </link-entity>
+          <attribute name="pfc_contactaccount" />
+          <attribute name="contactid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.16</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Contactes responsables sense permisos" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_taxalert.Button.Hide" Location="AccessChecker.OpenDialog.pfc_taxalert.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.AddConnection.Hide" Location="Mscrm.Form.pfc_taxalert.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.AddToQueue.Hide" Location="Mscrm.Form.pfc_taxalert.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Assign.Hide" Location="Mscrm.Form.pfc_taxalert.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Convert.Case.Hide" Location="Mscrm.Form.pfc_taxalert.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Convert.Opportunity.Hide" Location="Mscrm.Form.pfc_taxalert.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.CopySelected.Hide" Location="Mscrm.Form.pfc_taxalert.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_taxalert.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_taxalert.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.OpenActiveStage.Hide" Location="Mscrm.Form.pfc_taxalert.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.PDFButtonId.Hide" Location="Mscrm.Form.pfc_taxalert.PDFButtonId" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Permissions.Grant.Hide" Location="Mscrm.Form.pfc_taxalert.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Permissions.GrantUCI.Hide" Location="Mscrm.Form.pfc_taxalert.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Permissions.Hide" Location="Mscrm.Form.pfc_taxalert.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Permissions.Sharing.Hide" Location="Mscrm.Form.pfc_taxalert.Permissions.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.PromoteToResponse.Hide" Location="Mscrm.Form.pfc_taxalert.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.QueueItemDetail.Hide" Location="Mscrm.Form.pfc_taxalert.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.RefreshModernButton.Hide" Location="Mscrm.Form.pfc_taxalert.RefreshModernButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.Reports.Hide" Location="Mscrm.Form.pfc_taxalert.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.RunScript.Hide" Location="Mscrm.Form.pfc_taxalert.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.RunWorkflow.Hide" Location="Mscrm.Form.pfc_taxalert.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.SendSelected.Hide" Location="Mscrm.Form.pfc_taxalert.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.SuggestProduct.Hide" Location="Mscrm.Form.pfc_taxalert.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.ViewHierarchy.Hide" Location="Mscrm.Form.pfc_taxalert.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_taxalert.WordTemplate.Hide" Location="Mscrm.Form.pfc_taxalert.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_taxalert.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_taxalert.MBPF.ConvertTo" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<InteractionCentricDashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Consultes Dashboard" languagecode="1027" />
+  </LocalizedNames>
+  <FormId>{34cc1337-1a6b-ed11-9561-000d3ab3f701}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>1</IsDefault>
+  <FormXml>
+    <forms type="interactioncentricdashboard">
+      <form>
+        <tabs filterby="pfc_date" timeframe="2" primaryentitylogicalname="pfc_query" entityview="{826F555C-42E9-4504-B8AA-5F6AE22EDBEE}" dashboardCategory="1_1" tilespresent="false">
+          <tab showlabel="true" verticallayout="true" collapsible="true" id="{b353b686-4963-4404-bfba-5f1e950b65ee}">
+            <labels>
+              <label description="" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section name="VisualFilters" showlabel="false" showbar="false" columns="11" id="{1f9ca3d8-6b23-40b9-a8d2-deb058f9858d}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="1" rowspan="12" showlabel="false" ischartcell="true" id="{2bf0a925-3eff-46f5-a397-94f478cae500}" auto="false">
+                          <labels>
+                            <label description="Consulta" languagecode="1027" />
+                          </labels>
+                          <control id="Component5982f93" uniqueid="{bcc14b52-4872-3697-50b2-420544288d77}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>10</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{826F555C-42E9-4504-B8AA-5F6AE22EDBEE}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{CC7C6EF2-196B-ED11-9561-000D3AB3F701}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" ischartcell="true" id="{33540b71-c8ee-4060-b6f7-4eb14878529a}" auto="false">
+                          <labels>
+                            <label description="Consultes" languagecode="1027" />
+                          </labels>
+                          <control id="Component010dfc5" uniqueid="{ced29b65-3718-7102-0338-804b22beca61}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>10</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{826F555C-42E9-4504-B8AA-5F6AE22EDBEE}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{F8BAE707-1B6B-ED11-9561-000D3AB3F701}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+          <tab name="StreamsContainer" showlabel="true" verticallayout="true" collapsible="false" id="{eeeb33c2-15aa-4305-bd4e-e7b62a70b2d6}">
+            <labels>
+              <label description="" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section name="Streams" showlabel="false" showbar="false" columns="11" id="{0a22e2fd-6522-4a47-80de-f2acc18e443c}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="2" rowspan="12" showlabel="false" isstreamcell="true" id="{7a85375f-b5b9-40c0-b0f3-3dc878642b7c}">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                          <control id="Component{40903d15-1058-3e7c-d58e-3dbb2d183791}" classid="{EE9078C8-6946-4E2C-B8F8-35E65F4BE6A8}">
+                            <parameters>
+                              <StreamObjects>
+                                <ShowAsTiles>false</ShowAsTiles>
+                                <StreamObject id="{8ced0914-a962-c258-526b-be8e05b0821c}" type="1">
+                                  <LogicalEntityName>pfc_query</LogicalEntityName>
+                                  <EntityViewId>{2B40CF49-8A69-ED11-9561-000D3AB3F701}</EntityViewId>
+                                </StreamObject>
+                                <StreamObject id="{cb7d52b7-3c2c-2c7c-0d7a-34a23847bd6a}" type="1">
+                                  <LogicalEntityName>pfc_query</LogicalEntityName>
+                                  <EntityViewId>{826F555C-42E9-4504-B8AA-5F6AE22EDBEE}</EntityViewId>
+                                </StreamObject>
+                              </StreamObjects>
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <DisplayConditions FallbackForm="true">
+          <Everyone />
+        </DisplayConditions>
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</InteractionCentricDashboard>

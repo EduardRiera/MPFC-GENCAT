@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{ea537804-031e-42c0-983a-7e5d6063a165}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_checkinid">
+          <cell name="msevtmgt_name" width="300" />
+          <cell name="msevtmgt_checkintime" width="240" />
+          <cell name="pfc_createcertification" width="185" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="msevtmgt_checkin">
+          <attribute name="msevtmgt_checkinid" />
+          <attribute name="msevtmgt_name" />
+          <order attribute="msevtmgt_name" descending="false" />
+          <attribute name="msevtmgt_checkintime" />
+          <attribute name="pfc_createcertification" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Visualització de cerca avançada de registres d'entrada" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

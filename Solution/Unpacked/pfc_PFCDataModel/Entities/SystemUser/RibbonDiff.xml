@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.systemuser.Button.Hide" Location="AccessChecker.OpenDialog.systemuser.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Convert.Case.Hide" Location="Mscrm.Form.systemuser.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Convert.Opportunity.Hide" Location="Mscrm.Form.systemuser.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.systemuser.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.systemuser.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Permissions.Grant.Hide" Location="Mscrm.Form.systemuser.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Permissions.GrantUCI.Hide" Location="Mscrm.Form.systemuser.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Permissions.Hide" Location="Mscrm.Form.systemuser.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.PromoteToResponse.Hide" Location="Mscrm.Form.systemuser.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.QueueItemDetail.Hide" Location="Mscrm.Form.systemuser.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.Reports.Hide" Location="Mscrm.Form.systemuser.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.RunScript.Hide" Location="Mscrm.Form.systemuser.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.RunWorkflow.Hide" Location="Mscrm.Form.systemuser.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.SendDirectEmail.Hide" Location="Mscrm.Form.systemuser.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.SendSelected.Hide" Location="Mscrm.Form.systemuser.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.SuggestProduct.Hide" Location="Mscrm.Form.systemuser.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.ViewHierarchy.Hide" Location="Mscrm.Form.systemuser.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.systemuser.WordTemplate.Hide" Location="Mscrm.Form.systemuser.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.AddConnection.Hide" Location="Mscrm.HomepageGrid.systemuser.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.AddToQueue.Hide" Location="Mscrm.HomepageGrid.systemuser.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.Copy.Hide" Location="Mscrm.HomepageGrid.systemuser.Copy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.ExportSelectedToExcel.Hide" Location="Mscrm.HomepageGrid.systemuser.ExportSelectedToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.systemuser.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.systemuser.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.ImportDataFromExcel.Hide" Location="Mscrm.HomepageGrid.systemuser.ImportDataFromExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.systemuser.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.systemuser.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.RunReport.Hide" Location="Mscrm.HomepageGrid.systemuser.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.RunScript.Hide" Location="Mscrm.HomepageGrid.systemuser.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.systemuser.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.Send.Hide" Location="Mscrm.HomepageGrid.systemuser.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.systemuser.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.systemuser.WordTemplate.Hide" Location="Mscrm.HomepageGrid.systemuser.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.AddConnection.Hide" Location="Mscrm.SubGrid.systemuser.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.AddEmail.Hide" Location="Mscrm.SubGrid.systemuser.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.AddToQueue.Hide" Location="Mscrm.SubGrid.systemuser.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.Assign.Hide" Location="Mscrm.SubGrid.systemuser.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.AssociateParentChildCase.Hide" Location="Mscrm.SubGrid.systemuser.AssociateParentChildCase" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.CopySelected.Hide" Location="Mscrm.SubGrid.systemuser.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.ExportSelectedToExcel.Hide" Location="Mscrm.SubGrid.systemuser.ExportSelectedToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.systemuser.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.modern.AddEmail.Hide" Location="Mscrm.SubGrid.systemuser.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.RunReport.Hide" Location="Mscrm.SubGrid.systemuser.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.RunScript.Hide" Location="Mscrm.SubGrid.systemuser.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.RunWorkflow.Hide" Location="Mscrm.SubGrid.systemuser.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.SendSelected.Hide" Location="Mscrm.SubGrid.systemuser.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.Sharing.Hide" Location="Mscrm.SubGrid.systemuser.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.systemuser.WordTemplate.Hide" Location="Mscrm.SubGrid.systemuser.WordTemplate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

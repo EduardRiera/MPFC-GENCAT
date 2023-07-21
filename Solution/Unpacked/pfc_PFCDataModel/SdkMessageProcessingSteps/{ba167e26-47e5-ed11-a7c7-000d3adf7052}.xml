@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Portasignatures.Plugins.Action.PortaFirmasUploadDocumentAction: pfc_PortaFirmasUploadDocument of any Entity" SdkMessageProcessingStepId="{ba167e26-47e5-ed11-a7c7-000d3adf7052}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>4e725731-43e5-ed11-a7c7-000d3adf7052</SdkMessageId>
+  <PluginTypeName>Portasignatures.Plugins.Action.PortaFirmasUploadDocumentAction, Portasignatures.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8c5bdd215925265f</PluginTypeName>
+  <PluginTypeId>c581deec-4617-486e-84a0-8225f2644d53</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Portasignatures.Plugins.Action.PortaFirmasUploadDocumentAction: pfc_PortaFirmasUploadDocument of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

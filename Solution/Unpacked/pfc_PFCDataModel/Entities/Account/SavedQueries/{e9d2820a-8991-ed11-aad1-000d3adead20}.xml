@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{e9d2820a-8991-ed11-aad1-000d3adead20}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" icon="1" preview="1">
+        <row name="result" id="accountid">
+          <cell name="name" width="300" />
+          <cell name="pfc_catalog_code" width="100" />
+          <cell name="pfc_entitytype" width="100" />
+          <cell name="pfc_descriptivename" width="300" />
+          <cell name="pfc_vinculat_catens" width="156" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="account">
+          <attribute name="name" />
+          <attribute name="pfc_descriptivename" />
+          <order attribute="name" descending="false" />
+          <attribute name="pfc_catalog_code" />
+          <attribute name="pfc_entitytype" />
+          <filter type="and">
+            <condition attribute="pfc_entitytype" operator="eq" value="470000000" />
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_vinculat_catens" />
+          <attribute name="accountid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.10</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Actualització massiva" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

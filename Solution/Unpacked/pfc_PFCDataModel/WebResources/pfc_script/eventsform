@@ -1,0 +1,166 @@
+var Events;
+(function (Events) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "msevtmgt_event";
+        function OnLoad(ec) {
+            "use strict";
+            var fc = ec.getFormContext();
+            Events.Functions.BusinessLogic.SetEventTypeAsMandatory(fc);
+            Events.Functions.BusinessLogic.LockFieldmsevtmgt_streamingenabled(fc);
+            Events.Functions.BusinessLogic.hideTabs(fc);
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = Events.FormEvents || (Events.FormEvents = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var FormEvents;
+    (function (FormEvents) {
+        var OnChange;
+        (function (OnChange) {
+            function EventType(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                Events.Functions.BusinessLogic.SetEventTypeAsMandatory(fc);
+            }
+            OnChange.EventType = EventType;
+        })(OnChange = FormEvents.OnChange || (FormEvents.OnChange = {}));
+    })(FormEvents = Events.FormEvents || (Events.FormEvents = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function hideTabs(fc) {
+                fc.ui.tabs.get(Events.Constants.Tabs.RoomReservations).setVisible(false);
+                fc.ui.tabs.get(Events.Constants.Tabs.RecoveryItems).setVisible(false);
+            }
+            BusinessLogic.hideTabs = hideTabs;
+            function SetEventTypeAsMandatory(fc) {
+                if (fc.getAttribute(Events.Constants.Fields.EventType).getValue() == 100000002 || fc.getAttribute(Events.Constants.Fields.EventType).getValue() == 100000001) {
+                    fc.getAttribute(Events.Constants.Fields.Building).setRequiredLevel("required");
+                    fc.getAttribute(Events.Constants.Fields.Room).setRequiredLevel("required");
+                }
+                else {
+                    fc.getAttribute(Events.Constants.Fields.Building).setRequiredLevel("none");
+                    fc.getAttribute(Events.Constants.Fields.Room).setRequiredLevel("none");
+                }
+            }
+            BusinessLogic.SetEventTypeAsMandatory = SetEventTypeAsMandatory;
+            function LockFieldmsevtmgt_streamingenabled(fc) {
+                Xrm.WebApi.online.retrieveMultipleRecords(Events.Constants.Entities.Settings.LogicalName, Events.Queries.SearchCorreuSetting()).then(function success(result) {
+                    if (result.entities.length > 0) {
+                        Xrm.WebApi.online.retrieveMultipleRecords(Events.Constants.Entities.User.LogicalName, Events.Queries.searchUserPolFis(result.entities[0]["pfc_value"])).then(function success(result2) {
+                            if (result2.entities.length > 0) {
+                                var userId = "{" + result2.entities[0]["systemuserid"].toString().toUpperCase() + "}";
+                                if (userId === Xrm.Utility.getGlobalContext().userSettings.userId.toString().toUpperCase()) {
+                                    fc.getControl(Events.Constants.Fields.StreamingEnabled).setDisabled(false);
+                                }
+                                else {
+                                    fc.getControl(Events.Constants.Fields.StreamingEnabled).setDisabled(true);
+                                }
+                            }
+                            else {
+                                fc.getControl(Events.Constants.Fields.StreamingEnabled).setDisabled(true);
+                            }
+                        }, function error(error) {
+                            Xrm.Navigation.openAlertDialog(error.message);
+                        });
+                    }
+                    else {
+                        fc.getControl(Events.Constants.Fields.StreamingEnabled).setDisabled(true);
+                    }
+                }, function error(error) {
+                    Xrm.Navigation.openAlertDialog(error.message);
+                });
+            }
+            BusinessLogic.LockFieldmsevtmgt_streamingenabled = LockFieldmsevtmgt_streamingenabled;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = Events.Functions || (Events.Functions = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.EventType = "msevtmgt_eventtype";
+            Fields.Building = "msevtmgt_building";
+            Fields.Room = "msevtmgt_room";
+            Fields.StreamingEnabled = "msevtmgt_streamingenabled";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = Events.Constants || (Events.Constants = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var User;
+            (function (User) {
+                User.LogicalName = "systemuser";
+            })(User = Entities.User || (Entities.User = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Events.Constants || (Events.Constants = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var Settings;
+            (function (Settings) {
+                Settings.LogicalName = "pfc_settings";
+            })(Settings = Entities.Settings || (Entities.Settings = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = Events.Constants || (Events.Constants = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var Constants;
+    (function (Constants) {
+        var Tabs;
+        (function (Tabs) {
+            Tabs.RoomReservations = "RoomReservationsTab";
+            Tabs.RecoveryItems = "RecoveryItemsTab";
+        })(Tabs = Constants.Tabs || (Constants.Tabs = {}));
+    })(Constants = Events.Constants || (Events.Constants = {}));
+})(Events || (Events = {}));
+(function (Events) {
+    var Queries;
+    (function (Queries) {
+        function SearchCorreuSetting() {
+            "use strict";
+            var fetchXml = ["<fetch version='1.0' output-format='xml - platform' mapping='logical' distinct='true' no-lock='true'>\
+            <entity name = 'pfc_settings' >\
+            <attribute name='pfc_value' />\
+            <attribute name='pfc_configuration_group_name' />\
+            <attribute name='pfc_field_name' />\
+            <filter>\
+            <condition attribute='pfc_configuration_group_name' operator = 'eq' value = 'bustia_correu' />\
+            <condition attribute='pfc_field_name' operator = 'eq' value = 'Correu electrònic principal' />\
+            </filter>\
+            </entity>\
+            </fetch>",
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.SearchCorreuSetting = SearchCorreuSetting;
+        function searchUserPolFis(email) {
+            "use strict";
+            var fetchXml = ["<fetch version='1.0' output-format='xml - platform' mapping='logical' distinct='true' no-lock='true'>\
+            <entity name = 'systemuser' >\
+            <attribute name='internalemailaddress' />\
+            <attribute name='systemuserid' />\
+            <filter>\
+            <condition attribute='internalemailaddress' operator = 'eq' value = '" + email + "' />\
+            </filter>\
+            </entity>\
+            </fetch>"
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.searchUserPolFis = searchUserPolFis;
+    })(Queries = Events.Queries || (Events.Queries = {}));
+})(Events || (Events = {}));

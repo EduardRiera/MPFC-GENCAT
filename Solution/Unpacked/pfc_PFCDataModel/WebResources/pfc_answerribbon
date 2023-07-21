@@ -1,0 +1,76 @@
+var Answer;
+(function (Answer) {
+    var ribbon;
+    (function (ribbon) {
+        var FormEvents;
+        (function (FormEvents) {
+            var LogicalName = "pfc_answer";
+            function OnLoad(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+            }
+            FormEvents.OnLoad = OnLoad;
+        })(FormEvents = ribbon.FormEvents || (ribbon.FormEvents = {}));
+    })(ribbon = Answer.ribbon || (Answer.ribbon = {}));
+})(Answer || (Answer = {}));
+(function (Answer) {
+    var ribbon;
+    (function (ribbon) {
+        var Functions;
+        (function (Functions) {
+            var BusinessLogic;
+            (function (BusinessLogic) {
+                function SaveAndSendNotification(fc) {
+                    fc.getAttribute(Answer.ribbon.Constants.Fields.notificationDeliveryNumber).setValue(0);
+                    fc.data.entity.save();
+                    var alertStrings = { confirmButtonLabel: "D'acord", text: "Heu enviat correctament la resposta. Recordeu canviar l'estat.", title: "Resposta" };
+                    var alertOptions = { height: 120, width: 260 };
+                    Xrm.Navigation.openAlertDialog(alertStrings, alertOptions).then(function (success) {
+                        console.log("Alert dialog closed");
+                    }, function (error) {
+                        console.log(error.message);
+                    });
+                }
+                BusinessLogic.SaveAndSendNotification = SaveAndSendNotification;
+            })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+        })(Functions = ribbon.Functions || (ribbon.Functions = {}));
+    })(ribbon = Answer.ribbon || (Answer.ribbon = {}));
+})(Answer || (Answer = {}));
+(function (Answer) {
+    var ribbon;
+    (function (ribbon) {
+        var Constants;
+        (function (Constants) {
+            var Fields;
+            (function (Fields) {
+                Fields.notificationDeliveryNumber = "pfc_notificaciondeliverynumber";
+                Fields.StateCode = "statecode";
+                Fields.StatusCode = "statuscode";
+            })(Fields = Constants.Fields || (Constants.Fields = {}));
+        })(Constants = ribbon.Constants || (ribbon.Constants = {}));
+    })(ribbon = Answer.ribbon || (Answer.ribbon = {}));
+})(Answer || (Answer = {}));
+(function (Answer) {
+    var ribbon;
+    (function (ribbon) {
+        var Constants;
+        (function (Constants) {
+            var StatusCodeOS;
+            (function (StatusCodeOS) {
+                StatusCodeOS.Enviada = 4;
+            })(StatusCodeOS = Constants.StatusCodeOS || (Constants.StatusCodeOS = {}));
+        })(Constants = ribbon.Constants || (ribbon.Constants = {}));
+    })(ribbon = Answer.ribbon || (Answer.ribbon = {}));
+})(Answer || (Answer = {}));
+(function (Answer) {
+    var ribbon;
+    (function (ribbon) {
+        var Constants;
+        (function (Constants) {
+            var StateCodeOS;
+            (function (StateCodeOS) {
+                StateCodeOS.Planificat = 3;
+            })(StateCodeOS = Constants.StateCodeOS || (Constants.StateCodeOS = {}));
+        })(Constants = ribbon.Constants || (ribbon.Constants = {}));
+    })(ribbon = Answer.ribbon || (Answer.ribbon = {}));
+})(Answer || (Answer = {}));

@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="pfc_portafirmas_getusers">
+  <defaultvalue>https://prod-76.westeurope.logic.azure.com:443/workflows/02cc0391a8ff4f09a8ad06282f64fdac/triggers/manual/paths/invoke?api-version=2016-10-01&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=U8DBONcV0U9QROjHtRv-v4gsOtA7n8-wyhZM1YjXvLE</defaultvalue>
+  <displayname default="PortaFirmas_GetUsers">
+    <label description="PortaFirmas_GetUsers" languagecode="1027" />
+  </displayname>
+  <introducedversion>1.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

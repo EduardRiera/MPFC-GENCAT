@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>pfc_CTTIFiscalidaddePoliticaFiscalCorpor</UniqueName>
+  <IntroducedVersion>1.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="activitypointer" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="email" />
+    <AppModuleComponent type="1" schemaName="pfc_ambit" />
+    <AppModuleComponent type="1" schemaName="pfc_answer" />
+    <AppModuleComponent type="1" schemaName="pfc_companylevel" />
+    <AppModuleComponent type="1" schemaName="pfc_departamental_agrupation" />
+    <AppModuleComponent type="1" schemaName="pfc_entityambit" />
+    <AppModuleComponent type="1" schemaName="pfc_impost" />
+    <AppModuleComponent type="1" schemaName="pfc_model" />
+    <AppModuleComponent type="1" schemaName="pfc_news" />
+    <AppModuleComponent type="1" schemaName="pfc_periodicobligation" />
+    <AppModuleComponent type="1" schemaName="pfc_portasignatures" />
+    <AppModuleComponent type="1" schemaName="pfc_procedure" />
+    <AppModuleComponent type="1" schemaName="pfc_processlogs" />
+    <AppModuleComponent type="1" schemaName="pfc_query" />
+    <AppModuleComponent type="1" schemaName="pfc_query_dgt" />
+    <AppModuleComponent type="1" schemaName="pfc_recipient" />
+    <AppModuleComponent type="1" schemaName="pfc_risk" />
+    <AppModuleComponent type="1" schemaName="pfc_settings" />
+    <AppModuleComponent type="1" schemaName="pfc_tax_transcendence_operation" />
+    <AppModuleComponent type="1" schemaName="pfc_trainingrequest" />
+    <AppModuleComponent type="1" schemaName="systemuser" />
+    <AppModuleComponent type="1" schemaName="task" />
+    <AppModuleComponent type="1" schemaName="team" />
+    <AppModuleComponent type="26" id="{2fa329cd-8891-ed11-aad1-000d3adead20}" />
+    <AppModuleComponent type="26" id="{826f555c-42e9-4504-b8aa-5f6ae22edbee}" />
+    <AppModuleComponent type="26" id="{ac0df919-b6ab-ed11-aad0-000d3adf7052}" />
+    <AppModuleComponent type="26" id="{268bf59b-3cac-ed11-aad0-000d3adf7052}" />
+    <AppModuleComponent type="26" id="{fd500b4c-08b1-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="26" id="{618be464-08b1-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="26" id="{e4000e09-61ac-ed11-aad0-000d3adf7052}" />
+    <AppModuleComponent type="26" id="{86de4569-6cda-4098-8408-51ada79861e5}" />
+    <AppModuleComponent type="26" id="{2b40cf49-8a69-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{83c2e86a-08b1-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="26" id="{0159e1ba-3cac-ed11-aad0-000d3adf7052}" />
+    <AppModuleComponent type="26" id="{3c046677-08b1-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="26" id="{0ca3d958-08b1-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="26" id="{406fedef-60ac-ed11-aad0-000d3adf7052}" />
+    <AppModuleComponent type="26" id="{da903ed3-8891-ed11-aad1-000d3adead20}" />
+    <AppModuleComponent type="26" id="{61d3075d-48fc-4876-8957-84f1b076b8be}" />
+    <AppModuleComponent type="26" id="{e71c1d02-25b4-ed11-83ff-000d3ad9cd83}" />
+    <AppModuleComponent type="26" id="{045c4635-25b4-ed11-83ff-0022489fa802}" />
+    <AppModuleComponent type="26" id="{72d55e70-25b4-ed11-83ff-000d3ad9cd83}" />
+    <AppModuleComponent type="26" id="{d4084e93-25b4-ed11-83ff-000d3adf72a2}" />
+    <AppModuleComponent type="26" id="{37cf7aa8-25b4-ed11-83ff-002248a2c9f5}" />
+    <AppModuleComponent type="26" id="{dc60c2e2-25b4-ed11-83ff-000d3adf72a2}" />
+    <AppModuleComponent type="26" id="{c79a4cd6-aea3-ed11-aad1-000d3adf796b}" />
+    <AppModuleComponent type="26" id="{30eeaa7e-d1a3-44a9-bc83-69d500e9a28e}" />
+    <AppModuleComponent type="26" id="{92a5c3c9-e18a-4e5f-9c50-74399236e732}" />
+    <AppModuleComponent type="26" id="{829331df-8891-ed11-aad1-000d3adead20}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001004}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001033}" />
+    <AppModuleComponent type="26" id="{db1b8d04-5804-ee11-8f6e-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{e9d2820a-8991-ed11-aad1-000d3adead20}" />
+    <AppModuleComponent type="26" id="{09166d44-156b-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{a31f1a51-156b-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{d58eb585-5866-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001002}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001031}" />
+    <AppModuleComponent type="26" id="{8874eb9d-f46e-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="26" id="{178f3afd-27ef-ed11-8849-000d3adf727d}" />
+    <AppModuleComponent type="26" id="{cc9f2894-76cd-ed11-b597-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{c35878b4-77cd-ed11-b597-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{432d7bcc-77cd-ed11-b597-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{4f30a5ac-76cd-ed11-b597-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{a45dc7eb-77cd-ed11-b597-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{5ca5ca81-76cd-ed11-b597-000d3adea4bc}" />
+    <AppModuleComponent type="26" id="{b5d2cb31-d09a-4dee-96cf-ba0e6d46a271}" />
+    <AppModuleComponent type="26" id="{d338de52-b1ae-4dc9-a039-0eef7152f60a}" />
+    <AppModuleComponent type="26" id="{4f596426-b1ed-425f-8393-92d36b742c79}" />
+    <AppModuleComponent type="26" id="{eb818f74-bb16-439b-a846-1f3d17620e45}" />
+    <AppModuleComponent type="26" id="{d1390359-6701-4ce1-afb8-bcf45c44b68e}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001019}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001119}" />
+    <AppModuleComponent type="59" id="{cc7c6ef2-196b-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="60" id="{5f4b9a38-1f6b-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="60" id="{a00dde90-1998-ed11-aad0-000d3adf90aa}" />
+    <AppModuleComponent type="60" id="{579fd6ea-679d-ed11-aad0-000d3adf90aa}" />
+    <AppModuleComponent type="60" id="{c53fb406-26ef-ed11-8849-000d3adf90aa}" />
+    <AppModuleComponent type="60" id="{7f67edb4-c33a-4ce2-8002-ed97d3ab5f06}" />
+    <AppModuleComponent type="60" id="{9040028c-51b8-ed11-83ff-000d3adf7228}" />
+    <AppModuleComponent type="60" id="{0d1e47ff-12b2-4f53-9090-bee951b98cb4}" />
+    <AppModuleComponent type="60" id="{c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b}" />
+    <AppModuleComponent type="60" id="{2fa26e4a-ea60-ed11-9561-000d3ab3f701}" />
+    <AppModuleComponent type="60" id="{e9a9c8a9-e94d-47a9-a6c3-ec37ddb83b99}" />
+    <AppModuleComponent type="60" id="{d346b0ee-eff3-465c-8201-9ff6201f37e7}" />
+    <AppModuleComponent type="62" schemaName="pfc_CTTIFiscalidaddePoliticaFiscalCorpor" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{e08ab78c-3ce3-ed11-a7c7-000d3adf7052}" />
+    <Role id="{303f2cb4-9371-ed11-9561-000d3ab3f701}" />
+    <Role id="{03568bc0-136f-ed11-9561-000d3ab3f701}" />
+    <Role id="{fc3d961f-146f-ed11-9561-000d3ab3f701}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+    <Role id="{21544511-b5e2-ed11-a7c7-002248a1c671}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="CTTI V1 - Fiscalidad de Politica Fiscal Corporativa" languagecode="1027" />
+  </LocalizedNames>
+</AppModule>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{cf11fa07-7268-e711-a824-000d3a33777b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" preview="1" icon="1">
+        <row name="result" id="msevtmgt_eventid">
+          <cell name="msevtmgt_name" width="150" />
+          <cell name="msevtmgt_eventtype" width="100" />
+          <cell name="msevtmgt_publishstatus" width="100" />
+          <cell name="msevtmgt_eventstartdate" width="100" />
+          <cell name="msevtmgt_eventenddate" width="100" />
+          <cell name="msevtmgt_primaryvenue" width="100" />
+          <cell name="createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="msevtmgt_event">
+          <attribute name="msevtmgt_name" />
+          <order attribute="msevtmgt_eventstartdate" descending="true" />
+          <attribute name="msevtmgt_primaryvenue" />
+          <attribute name="msevtmgt_eventtype" />
+          <attribute name="msevtmgt_eventstartdate" />
+          <attribute name="msevtmgt_eventenddate" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="msevtmgt_istemplate" operator="ne" value="100000001" />
+            <condition attribute="msevtmgt_isrecurringevent" operator="ne" value="1" />
+            <condition attribute="msevtmgt_recurrenteventstatus" operator="ne" value="2" />
+          </filter>
+          <attribute name="msevtmgt_publishstatus" />
+          <attribute name="msevtmgt_eventid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Tots els esdeveniments" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

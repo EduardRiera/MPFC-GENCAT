@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{2a7fb39c-d3d8-e611-80d8-00155d4b262e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_checkinid">
+          <cell name="msevtmgt_sessionattended" width="248" />
+          <cell name="a_91c5cd2353c8e61180d800155d4b262e.msevtmgt_publishstatus" width="300" disableSorting="1" />
+          <cell name="msevtmgt_checkintime" width="212" />
+          <cell name="msevtmgt_checkouttime" width="221" />
+          <cell name="pfc_createcertification" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="msevtmgt_checkin">
+          <attribute name="msevtmgt_sessionattended" />
+          <attribute name="msevtmgt_checkouttime" />
+          <attribute name="msevtmgt_checkintime" />
+          <order attribute="msevtmgt_sessionattended" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+            <condition attribute="msevtmgt_checkintype" operator="eq" value="100000000" />
+          </filter>
+          <link-entity alias="a_91c5cd2353c8e61180d800155d4b262e" name="msevtmgt_session" from="msevtmgt_sessionid" to="msevtmgt_sessionattended" link-type="outer" visible="false">
+            <attribute name="msevtmgt_publishstatus" />
+          </link-entity>
+          <attribute name="msevtmgt_checkinid" />
+          <attribute name="pfc_createcertification" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.8.37</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Registres d'entrada de la sessió activa" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

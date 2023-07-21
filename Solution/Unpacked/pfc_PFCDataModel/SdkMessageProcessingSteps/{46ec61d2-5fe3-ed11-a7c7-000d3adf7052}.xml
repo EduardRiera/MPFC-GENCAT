@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Portasignatures.Plugins.Action.PortaFirmasCreateSignerOrApproverAction: pfc_PortaFirmasCreateSignerOrApprover of any Entity" SdkMessageProcessingStepId="{46ec61d2-5fe3-ed11-a7c7-000d3adf7052}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>0acaab98-51e3-ed11-a7c7-000d3adea4bc</SdkMessageId>
+  <PluginTypeName>Portasignatures.Plugins.Action.PortaFirmasCreateSignerOrApproverAction, Portasignatures.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8c5bdd215925265f</PluginTypeName>
+  <PluginTypeId>45846c73-b519-46d0-9672-605d84297ed5</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Portasignatures.Plugins.Action.PortaFirmasCreateSignerOrApproverAction: pfc_PortaFirmasCreateSignerOrApprover of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

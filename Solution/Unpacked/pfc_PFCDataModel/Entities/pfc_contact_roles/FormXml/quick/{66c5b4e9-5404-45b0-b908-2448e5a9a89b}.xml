@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{66c5b4e9-5404-45b0-b908-2448e5a9a89b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{4ac5bd92-25b1-4b50-ad47-077c33d2cc7d}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{5d147763-7f9d-4531-809c-8db73b2b84af}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dc6e9265-78f0-4986-ba4c-e52e02aac5fa}">
+                        <labels>
+                          <label description="Code" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_code" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_code" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+  </systemform>
+</forms>

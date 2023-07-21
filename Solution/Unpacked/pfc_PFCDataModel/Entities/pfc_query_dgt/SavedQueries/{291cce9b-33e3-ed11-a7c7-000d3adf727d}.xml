@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{291cce9b-33e3-ed11-a7c7-000d3adf727d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_query_dgtid">
+          <cell name="pfc_name" width="100" />
+          <cell name="pfc_accountid" width="292" />
+          <cell name="pfc_objectofthequery" width="300" disableSorting="1" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="statuscode" width="150" />
+          <cell name="modifiedon" width="232" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="pfc_query_dgt">
+          <attribute name="pfc_accountid" />
+          <attribute name="statuscode" />
+          <attribute name="pfc_name" />
+          <attribute name="modifiedon" />
+          <order attribute="modifiedon" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="pfc_contact_pfc_query_dgt" intersect="true" visible="false" from="pfc_query_dgtid" to="pfc_query_dgtid">
+            <link-entity name="contact" alias="aa" from="contactid" to="contactid">
+              <filter type="and">
+                <condition attribute="contactid" operator="eq" value="{7f52da83-27c7-ed11-b597-000d3adea4bc}" uiname="[PortalUser]" uitype="contact" />
+              </filter>
+            </link-entity>
+          </link-entity>
+          <attribute name="pfc_objectofthequery" />
+          <attribute name="pfc_query_dgtid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: consultesDGT Interessats" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

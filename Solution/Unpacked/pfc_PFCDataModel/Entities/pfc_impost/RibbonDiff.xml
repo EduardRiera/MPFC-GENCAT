@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_impost.Button.Hide" Location="AccessChecker.OpenDialog.pfc_impost.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.AddCampaignResponse.Hide" Location="Mscrm.Form.pfc_impost.AddCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.AddConnection.Hide" Location="Mscrm.Form.pfc_impost.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.AddToQueue.Hide" Location="Mscrm.Form.pfc_impost.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Assign.Hide" Location="Mscrm.Form.pfc_impost.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Convert.Case.Hide" Location="Mscrm.Form.pfc_impost.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Convert.Opportunity.Hide" Location="Mscrm.Form.pfc_impost.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.CopySelected.Hide" Location="Mscrm.Form.pfc_impost.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_impost.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_impost.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.MailMerge.Hide" Location="Mscrm.Form.pfc_impost.MailMerge" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.OpenActiveStage.Hide" Location="Mscrm.Form.pfc_impost.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.PDFButtonId.Hide" Location="Mscrm.Form.pfc_impost.PDFButtonId" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Permissions.Grant.Hide" Location="Mscrm.Form.pfc_impost.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Permissions.GrantUCI.Hide" Location="Mscrm.Form.pfc_impost.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Permissions.Hide" Location="Mscrm.Form.pfc_impost.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Permissions.Sharing.Hide" Location="Mscrm.Form.pfc_impost.Permissions.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.PromoteToResponse.Hide" Location="Mscrm.Form.pfc_impost.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.QueueItemDetail.Hide" Location="Mscrm.Form.pfc_impost.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.RefreshModernButton.Hide" Location="Mscrm.Form.pfc_impost.RefreshModernButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.Reports.Hide" Location="Mscrm.Form.pfc_impost.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.RunScript.Hide" Location="Mscrm.Form.pfc_impost.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.RunWorkflow.Hide" Location="Mscrm.Form.pfc_impost.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.SendSelected.Hide" Location="Mscrm.Form.pfc_impost.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.SuggestProduct.Hide" Location="Mscrm.Form.pfc_impost.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.ViewHierarchy.Hide" Location="Mscrm.Form.pfc_impost.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_impost.WordTemplate.Hide" Location="Mscrm.Form.pfc_impost.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.AddCampaignResponse.Hide" Location="Mscrm.HomepageGrid.pfc_impost.AddCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.AddConnection.Hide" Location="Mscrm.HomepageGrid.pfc_impost.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.AddToQueue.Hide" Location="Mscrm.HomepageGrid.pfc_impost.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.Assign.Hide" Location="Mscrm.HomepageGrid.pfc_impost.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.Copy.Hide" Location="Mscrm.HomepageGrid.pfc_impost.Copy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.pfc_impost.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.pfc_impost.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.pfc_impost.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_impost.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_impost.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.RunReport.Hide" Location="Mscrm.HomepageGrid.pfc_impost.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.RunScript.Hide" Location="Mscrm.HomepageGrid.pfc_impost.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.pfc_impost.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.Send.Hide" Location="Mscrm.HomepageGrid.pfc_impost.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_impost.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.Sharing.Hide" Location="Mscrm.HomepageGrid.pfc_impost.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.ViewHierarchy.Hide" Location="Mscrm.HomepageGrid.pfc_impost.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_impost.WordTemplate.Hide" Location="Mscrm.HomepageGrid.pfc_impost.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.AddConnection.Hide" Location="Mscrm.SubGrid.pfc_impost.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_impost.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.AddToQueue.Hide" Location="Mscrm.SubGrid.pfc_impost.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.Assign.Hide" Location="Mscrm.SubGrid.pfc_impost.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.AssociateParentChildCase.Hide" Location="Mscrm.SubGrid.pfc_impost.AssociateParentChildCase" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.Charts.Hide" Location="Mscrm.SubGrid.pfc_impost.Charts" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.CopySelected.Hide" Location="Mscrm.SubGrid.pfc_impost.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.DocumentTemplate.Hide" Location="Mscrm.SubGrid.pfc_impost.DocumentTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.pfc_impost.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.modern.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_impost.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.RunReport.Hide" Location="Mscrm.SubGrid.pfc_impost.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.RunScript.Hide" Location="Mscrm.SubGrid.pfc_impost.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.RunWorkflow.Hide" Location="Mscrm.SubGrid.pfc_impost.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.SendSelected.Hide" Location="Mscrm.SubGrid.pfc_impost.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.Sharing.Hide" Location="Mscrm.SubGrid.pfc_impost.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_impost.WordTemplate.Hide" Location="Mscrm.SubGrid.pfc_impost.WordTemplate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

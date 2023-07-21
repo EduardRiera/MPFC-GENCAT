@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cd2a3e2f-7745-4fc3-8e05-c586cc931201}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{9c614c50-f407-4e0d-addf-939926864a82}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{bbea6bbe-6321-47b6-bf0e-ce9bd94ddba2}">
+          <labels>
+            <label description="Inici" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{950f70ee-5b9d-2789-e26f-eab0e75369b1}" name="StageStep3_section1" labelid="{07c3a11c-3597-42a6-a0a7-7ed5c4179f24}">
+                  <labels>
+                    <label description="Inici" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3494aae5-c916-4c11-a7c8-c889cf2713b8}" showlabel="true" visible="true" labelid="{635e688a-482d-428c-bcec-e65e19fa93e4}">
+                        <labels>
+                          <label description="Responsable Consulta" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:ownerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ownerid" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8119c557-6506-4573-8e77-e77972711f3c}" showlabel="true" visible="true" labelid="{d68ebd50-b79f-4513-b351-4e0dd40d58fa}">
+                        <labels>
+                          <label description="Data acceptació" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_acceptance_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_acceptance_date" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{ccf520d7-1f29-47e4-be23-5385e0ac257e}" name="StageStep10" locklevel="0" expanded="true" visible="false" labelid="{74b02f34-8d1d-407a-a601-e8ea5a575c41}">
+          <labels>
+            <label description="En Curs" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{78bc4a24-4c11-6696-1758-f99e6d9ee490}" name="StageStep10_section1" labelid="{f884b611-c297-4412-843d-b5fe90eaf08d}">
+                  <labels>
+                    <label description="En Curs" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{69040cb2-3c85-4ff7-bc04-5dc4a8e627de}" showlabel="true" visible="true" labelid="{feefade9-cc8c-44a9-8693-e78fcb6b1c1d}">
+                        <labels>
+                          <label description="Estat següent" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_querystatus" classid="{5d68b988-0661-4db2-bc3e-17598ad3be6c}" datafieldname="pfc_querystatus" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{77a76092-8418-44a3-ac7e-d2a024185668}" name="StageStep15" locklevel="0" expanded="true" visible="false" labelid="{c4266243-8021-4400-a0d1-673b69ee910f}">
+          <labels>
+            <label description="En Pausa" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{ae334917-e8fc-d62b-4c9c-ba24c38e2995}" name="StageStep15_section1" labelid="{daa8f421-b746-4ef1-b7c7-972022a03340}">
+                  <labels>
+                    <label description="En Pausa" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3b7b9407-446f-48b3-bead-da7fac0e241c}" showlabel="true" visible="true" labelid="{4dd4e682-f517-4330-8acf-614c85a3b20f}">
+                        <labels>
+                          <label description="Consulta finalitzada" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_finishedquery" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="pfc_finishedquery" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{0379b9a5-191b-4307-8368-108c4c8d0fb5}" name="StageStep20" locklevel="0" expanded="true" visible="false" labelid="{63af2960-753c-4ae7-9f65-e37130ceeda7}">
+          <labels>
+            <label description="Cancel-Lada" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{17ec6bf6-65dc-ec71-3b27-58d98629fbae}" name="StageStep20_section1" labelid="{c8737c7e-3357-4ed1-82fc-2a3d4d3d5ab3}">
+                  <labels>
+                    <label description="Cancel-Lada" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1f2442c1-ad09-4497-8656-a133a8c202cf}" showlabel="true" visible="true" labelid="{b9af0004-831b-4e2c-9282-b086c8357269}">
+                        <labels>
+                          <label description="Raó per a l'estat" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_finishedquery" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="pfc_finishedquery" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{de5c878b-b3fa-4694-a203-99917a90088d}" name="StageStep25" locklevel="0" expanded="true" visible="false" labelid="{ae9b4b93-5d48-4efb-8882-d0afd0dd06d0}">
+          <labels>
+            <label description="Resposta" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{2e5e25ef-acd8-f634-e8e8-089fbdd5b919}" name="StageStep25_section1" labelid="{64021558-1947-43de-9be4-3e0ddccd95e4}">
+                  <labels>
+                    <label description="Resposta" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{6c394cab-56b5-4631-ac95-04398551cd6e}" showlabel="true" visible="true" labelid="{19b40e20-c84b-4a76-a7c1-717c6c1c9892}">
+                        <labels>
+                          <label description="Hores dedicades pel responsable" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_hours_dedicated" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="pfc_hours_dedicated" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{68fdc500-15ac-47da-88fd-1a31e04f97d8}" showlabel="true" visible="true" labelid="{a469d8d0-532a-46df-a4df-189022a28715}">
+                        <labels>
+                          <label description="Hores dedicades pel validador" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_validatordedicatedhours" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="pfc_validatordedicatedhours" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{12a56021-802f-4a39-87c1-34338fdb85a2}" showlabel="true" visible="true" labelid="{2b522ffa-fa3b-4d82-9ede-758e4301d7d1}">
+                        <labels>
+                          <label description="Data enviament" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_sent_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_sent_date" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{9ff04e77-e517-4c31-9e06-59381be6ba6e}" name="StageStep34" locklevel="0" expanded="true" visible="false" labelid="{01e83abd-4462-48e8-8180-e7668b1e492d}">
+          <labels>
+            <label description="Anàlisi Resposta" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{6fbbff58-f563-4ef9-30b3-64645356dcd0}" name="StageStep34_section1" labelid="{de2c5fd2-d353-4363-ba1a-4f131be52477}">
+                  <labels>
+                    <label description="Anàlisi Resposta" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bd7618fd-7d3a-4305-88a0-a690d6089cbf}" showlabel="true" visible="true" labelid="{65b04f42-f802-4fdf-99bf-df13e4efcc20}">
+                        <labels>
+                          <label description="L'entitat esta informada correctament" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_entity_is_correctly_informed" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="pfc_entity_is_correctly_informed" uniqueid="{eaf4a90f-6c08-4cec-9135-8cf4c8f4358d}" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{80fe438d-23ae-4a02-acea-428fab5115ec}" name="StageStep39" locklevel="0" expanded="true" visible="false" labelid="{10f696ab-8741-42f5-84ed-7b978acf65b7}">
+          <labels>
+            <label description="Finalitzada" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{2939cf90-fd80-0a2a-2870-0b9e990b65df}" name="StageStep39_section1" labelid="{3044d1f6-986c-4c75-8f9e-3649b49fc266}">
+                  <labels>
+                    <label description="Finalitzada" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{66a78a84-c39c-46a4-99b7-41d70c4e03a6}" showlabel="true" visible="true" labelid="{c31591f7-0690-48c8-8a30-d98e0466102f}">
+                        <labels>
+                          <label description="Hores dedicades totals" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_dedicatedhourstotal" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="pfc_dedicatedhourstotal" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a902eef2-2b90-49bf-a82c-6828b974ad13}" showlabel="true" visible="true" labelid="{98a9d97a-e789-4bde-bf26-2247f12bfc1d}">
+                        <labels>
+                          <label description="Data tancament" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_query_pfc_bpfquery:pfc_closing_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_closing_date" disabled="false" relationship="bpf_pfc_query_pfc_bpfquery" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <controlDescriptions>
+        <controlDescription forControl="{eaf4a90f-6c08-4cec-9135-8cf4c8f4358d}">
+          <customControl id="{4273edbd-ac1d-40d3-9fb2-095c621b552d}">
+            <parameters>
+              <datafieldname>pfc_entity_is_correctly_informed</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value>pfc_entity_is_correctly_informed</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="MPFC.Plugins.Plugins.QueryUpdatePreOperationPlugin: Update of pfc_query" SdkMessageProcessingStepId="{949a9d9b-cfa6-ed11-aad1-000d3adf7052}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>MPFC.Plugins.Plugins.QueryUpdatePreOperationPlugin, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b</PluginTypeName>
+  <PluginTypeId>fbb59b9a-f42f-4348-b97c-9449f45193b8</PluginTypeId>
+  <PrimaryEntity>pfc_query</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>MPFC.Plugins.Plugins.QueryUpdatePreOperationPlugin: Update of pfc_query</Description>
+  <FilteringAttributes>pfc_accountid</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

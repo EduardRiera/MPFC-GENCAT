@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.msevtmgt_eventregistration.Button.Hide" Location="AccessChecker.OpenDialog.msevtmgt_eventregistration.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_eventregistration.Assign.Hide" Location="Mscrm.Form.msevtmgt_eventregistration.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_eventregistration.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.msevtmgt_eventregistration.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_eventregistration.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.msevtmgt_eventregistration.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_eventregistration.Reports.Hide" Location="Mscrm.Form.msevtmgt_eventregistration.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_eventregistration.WordTemplate.Hide" Location="Mscrm.Form.msevtmgt_eventregistration.WordTemplate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

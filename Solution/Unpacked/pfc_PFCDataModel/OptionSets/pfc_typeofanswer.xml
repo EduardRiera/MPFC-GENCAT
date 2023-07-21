@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="pfc_typeofanswer" localizedName="Tipus de resposta" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.10</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName>Tipus de resposta</ExternalTypeName>
+  <displaynames>
+    <displayname description="Tipus de resposta" languagecode="1027" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1027" />
+  </Descriptions>
+  <options>
+    <option value="470000005" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Operació d'especial trascendència" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000000" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Correu electrònic" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000001" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Informe" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000002" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Document" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000003" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Reunió amb l'entitat" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+    <option value="470000004" ExternalValue="" Color="#0000ff">
+      <labels>
+        <label description="Proposta de consulta a DGT" languagecode="1027" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1027" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

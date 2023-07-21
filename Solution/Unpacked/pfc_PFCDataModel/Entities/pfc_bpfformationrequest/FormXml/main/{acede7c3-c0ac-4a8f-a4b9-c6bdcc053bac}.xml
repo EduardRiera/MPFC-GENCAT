@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{acede7c3-c0ac-4a8f-a4b9-c6bdcc053bac}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{a403328b-8214-4e2c-abb8-b695cc559cc0}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{f69c7527-cc04-4ac0-836e-1a2ad044108d}">
+          <labels>
+            <label description="Sol·Licitada" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{9573f393-7fe6-8f82-255b-21ea845c30e2}" name="StageStep3_section1" labelid="{d8aaac5c-6fc0-4af6-b0af-dfe37f95af39}">
+                  <labels>
+                    <label description="Sol·Licitada" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a570e7f3-d649-4e01-abb8-b2db81e24d36}" showlabel="true" visible="true" labelid="{7064082f-d2c2-4f63-921f-edfb83f774a9}">
+                        <labels>
+                          <label description="Responsable Formació" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_trainingrequest_pfc_bpfformationrequest:pfc_userid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="pfc_userid" disabled="false" relationship="bpf_pfc_trainingrequest_pfc_bpfformationrequest" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{fe58404a-8872-4d57-aba0-6d6176ecc7be}" name="StageStep8" locklevel="0" expanded="true" visible="false" labelid="{a40b0255-f649-4f16-9920-6a7dd689904f}">
+          <labels>
+            <label description="En Progrés" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{5c86d3c2-b6fe-9ad5-a846-b0df269ed2dd}" name="StageStep8_section1" labelid="{cf582553-27e6-48ea-9d8c-d42e7cb28817}">
+                  <labels>
+                    <label description="En Progrés" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3349f4e1-123d-4004-9442-f0919f0a23e2}" showlabel="true" visible="true" labelid="{479c2447-7d21-4400-aeb8-8789822b90b2}">
+                        <labels>
+                          <label description="Raó per a l'estat" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_trainingrequest_pfc_bpfformationrequest:statuscode" classid="{5d68b988-0661-4db2-bc3e-17598ad3be6c}" datafieldname="statuscode" disabled="false" relationship="bpf_pfc_trainingrequest_pfc_bpfformationrequest" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{36fee823-6756-4076-8a53-c96f75aa7812}" name="StageStep13" locklevel="0" expanded="true" visible="false" labelid="{5a6eb76f-fd5c-49ad-8d0c-d8c089ae8b40}">
+          <labels>
+            <label description="Finalitzada" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{f4705496-d61d-4ad1-0f91-93cee4c046fd}" name="StageStep13_section1" labelid="{e1e4373e-37db-4570-94ca-b88ba2737f20}">
+                  <labels>
+                    <label description="Finalitzada" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{18fc9e18-0b98-4855-9186-eed2921322d3}" showlabel="true" visible="true" labelid="{ec468312-4d97-4c80-8f7e-bb84f18049a0}">
+                        <labels>
+                          <label description="Data de fi" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_trainingrequest_pfc_bpfformationrequest:pfc_enddate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_enddate" disabled="false" relationship="bpf_pfc_trainingrequest_pfc_bpfformationrequest" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{3f5e8e44-8089-43a6-8b47-cf406df95f2a}" name="StageStep18" locklevel="0" expanded="true" visible="false" labelid="{d3f38d16-9cc8-406e-99eb-dc9f996dda49}">
+          <labels>
+            <label description="En Pausa" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{b34009a1-32d7-9785-951f-105a7ed18e39}" name="StageStep18_section1" labelid="{b601e8cb-f145-4cf4-a81f-d2d9ab37c3b5}">
+                  <labels>
+                    <label description="En Pausa" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{22cc10bb-5d07-4cd5-a427-99eb550b2ca3}" showlabel="true" visible="true" labelid="{09e70f9c-077b-47f7-9d1f-beb7d164f067}">
+                        <labels>
+                          <label description="Data de fi" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_trainingrequest_pfc_bpfformationrequest:pfc_enddate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_enddate" disabled="false" relationship="bpf_pfc_trainingrequest_pfc_bpfformationrequest" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

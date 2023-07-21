@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{0b9d12cf-8efb-ed11-8849-000d3adf90aa}</WebResourceId>
+  <Name>pfc_mailsend32</Name>
+  <DisplayName>MailSend32</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.16</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_mailsend320B9D12CF-8EFB-ED11-8849-000D3ADF90AA</FileName>
+</WebResource>

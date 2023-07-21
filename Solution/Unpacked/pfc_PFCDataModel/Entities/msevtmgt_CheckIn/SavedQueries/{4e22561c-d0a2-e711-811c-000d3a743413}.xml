@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{4e22561c-d0a2-e711-811c-000d3a743413}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" preview="1" icon="1">
+        <row name="result" id="msevtmgt_checkinid">
+          <cell name="a_0b04a3a9cea2e711811c000d3a743413.msevtmgt_name" width="300" />
+          <cell name="a_0b04a3a9cea2e711811c000d3a743413.msevtmgt_sessiontype" width="300" disableSorting="1" />
+          <cell name="a_0b04a3a9cea2e711811c000d3a743413.msevtmgt_event" width="300" disableSorting="1" />
+          <cell name="a_0b04a3a9cea2e711811c000d3a743413.msevtmgt_starttime" width="300" disableSorting="1" />
+          <cell name="a_0b04a3a9cea2e711811c000d3a743413.msevtmgt_endtime" width="300" disableSorting="1" />
+          <cell name="pfc_createcertification" width="251" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="msevtmgt_checkin">
+          <filter type="and">
+            <condition attribute="msevtmgt_checkintype" operator="eq" value="100000000" />
+          </filter>
+          <link-entity alias="a_0b04a3a9cea2e711811c000d3a743413" name="msevtmgt_session" from="msevtmgt_sessionid" to="msevtmgt_sessionattended" link-type="outer" visible="false">
+            <attribute name="msevtmgt_starttime" />
+            <attribute name="msevtmgt_sessiontype" />
+            <attribute name="msevtmgt_name" />
+            <attribute name="msevtmgt_event" />
+            <attribute name="msevtmgt_endtime" />
+          </link-entity>
+          <attribute name="msevtmgt_checkinid" />
+          <attribute name="pfc_createcertification" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Esdeveniments principals de registres d'entrada de sessió" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

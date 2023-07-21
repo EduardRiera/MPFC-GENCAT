@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{c55d902b-d7e9-43cc-8535-3d0c0a4c3b19}</savedqueryid>
+    <layoutxml>
+      <grid name="pfc_contact_roleses" jump="pfc_code" select="1" icon="1" preview="1">
+        <row name="pfc_contact_roles" id="pfc_contact_rolesid">
+          <cell name="pfc_code" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_contact_roles">
+          <attribute name="pfc_contact_rolesid" />
+          <attribute name="pfc_code" />
+          <attribute name="createdon" />
+          <order attribute="pfc_code" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Visualització associada de Rols de contacte" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="MPFC.Plugins.Plugins.ContactQueryAssociate: Associate of any Entity" SdkMessageProcessingStepId="{f0a45678-f5bb-ed11-83ff-000d3adea4bc}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>16e7c888-3b24-448b-b7da-ebfe9b681762</SdkMessageId>
+  <PluginTypeName>MPFC.Plugins.Plugins.ContactQueryAssociate, MPFC.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b</PluginTypeName>
+  <PluginTypeId>92d2715e-81df-4026-bf27-e2c15712627c</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>MPFC.Plugins.Plugins.ContactQueryAssociate: Associate of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

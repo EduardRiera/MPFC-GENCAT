@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9b788df7-cd9f-47cd-a1c8-6987df3bd46b}</savedqueryid>
+    <layoutxml>
+      <grid name="pfc_presentacions" jump="subject" select="1" icon="1" preview="1">
+        <row name="pfc_presentacion" id="activityid">
+          <cell name="pfc_modeltype" width="100" />
+          <cell name="subject" width="300" />
+          <cell name="scheduledend" width="100" />
+          <cell name="pfc_presentationdate" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_presentacion">
+          <attribute name="subject" />
+          <order attribute="scheduledend" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="in">
+              <value>0</value>
+              <value>3</value>
+            </condition>
+          </filter>
+          <attribute name="scheduledend" />
+          <attribute name="pfc_presentationdate" />
+          <attribute name="pfc_modeltype" />
+          <attribute name="activityid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Visualització associada de Presentació" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

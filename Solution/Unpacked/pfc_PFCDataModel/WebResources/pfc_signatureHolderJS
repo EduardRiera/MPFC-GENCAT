@@ -1,0 +1,342 @@
+function DisablingPortaFirmasControls(diablingStatus) {
+    document.getElementById("searchValue").disabled = diablingStatus;
+    document.getElementById("searchValueButton").disabled = diablingStatus;
+    document.getElementById("saveRequesterButton").disabled = diablingStatus;
+    document.getElementById("saveSignerButton").disabled = diablingStatus;
+    document.getElementById("saveApproverButton").disabled = diablingStatus;
+    document.getElementById("sendButton").disabled = diablingStatus;
+}
+
+function addItemsTable(result) {
+    var tableBody = document.getElementById('mainTable').getElementsByTagName('tbody')[0];
+    var dataTable = false;
+
+    tableBody.innerHTML = "";
+
+    // helper function        
+    function addCell(tr, text, field) {
+        var td = tr.insertCell();
+
+        if (field === "first") {
+            td.style.paddingLeft = "40px";
+        }
+
+        td.style.textAlign = "left";
+        td.textContent = text;
+        return td;
+    }
+
+    function addCheckboxCell(tr, id) {
+        var td = tr.insertCell();
+
+        var chk = document.createElement('input');
+        chk.setAttribute('type', 'checkbox');
+        chk.setAttribute('value', 'yes');
+        chk.setAttribute('id', id);
+        td.appendChild(chk);
+
+        return td;
+    }
+
+    //If no data, Info = null
+    if (result === null || result.length === 0) {
+
+        let mainCellHTML = '<br>' +
+            '<img src="pfc_signatureHolderNoData />' +
+            '<br>' +
+            '<label>No data available</label>' +
+            '<br>';
+
+        var mainRow = tableBody.insertRow();
+        var mainCell = mainRow.insertCell();
+
+        mainCell.colSpan = 12;
+        mainCell.style.textAlign = "center";
+
+        mainCell.innerHTML = mainCellHTML;
+
+        //Hide pager
+        var link = document.getElementById('pager');
+        link.style.display = 'none';
+
+    } else {
+        dataTable = true;
+
+        // insert data
+        result.forEach(function (item) {
+            //var row = table.insertRow();
+            var row = tableBody.insertRow();
+            var userCode = "";
+            var name = "";
+            var surName1 = "";
+            var surName2 = "";
+            var email = "";
+            var entity = "";
+
+            if (item.userCode) {
+                userCode = item.userCode;
+            }
+
+            if (item.name) {
+                name = item.name;
+            }
+
+            if (item.surname1) {
+                surName1 = item.surname1;
+            }
+
+            if (item.surname2) {
+                surName2 = item.surname2;
+            }
+
+            if (item.entities != null && item.entities.length > 0) {
+                if (item.entities[0].entityCode) {
+                    entity = item.entities[0].entityCode;
+                }
+
+                if (item.entities[0].email) {
+                    email = item.entities[0].email;
+                }
+
+            }
+
+            addCheckboxCell(row, userCode + "#" + name + "#" + surName1 + "#" + surName2 + "#" + entity + "#" + email);
+            addCell(row, name);
+            addCell(row, surName1);
+            addCell(row, surName2);
+            addCell(row, email);
+            addCell(row, entity);
+
+
+        });
+    }
+    //call jquery function
+    $('#mainTable').trigger('updateAll');
+
+    $("#mainTable")
+        .tablesorter({
+            dateFormat: 'mmddYYYY',
+            headers: {
+                0: { sorter: false },
+                1: { align: "left" },
+                2: { align: "left" },
+                3: { align: "left" },
+                4: { align: "left" }
+            }
+        });
+
+
+    if (dataTable) {
+        $("#mainTable")
+            .tablesorterPager({
+                container: $("#pager"),
+                size: 20
+            });
+    }
+
+    $('#mainTable').trigger('update');
+}
+
+function loadEmptyGrid() {
+    var res = null;
+    addItemsTable(res);
+}
+
+function SearchUsers() {
+    var textToSearch = $("#searchValue").val();
+    DisablingPortaFirmasControls(true);
+    var parameters = {};
+    parameters.searchTerm = textToSearch;
+
+    var request = new XMLHttpRequest();
+    request.open("POST", Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v9.2/pfc_PortasignaturesGetUsers", false);
+    request.setRequestHeader("OData-MaxVersion", "4.0");
+    request.setRequestHeader("OData-Version", "4.0");
+    request.setRequestHeader("Accept", "application/json");
+    request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+    request.send(JSON.stringify(parameters));
+
+    if (request.status === 200) {
+        var result = JSON.parse(request.response);
+        var getUsersAppException = result.getUsersAppException;
+        var returnedUsers = result.users;
+        if (getUsersAppException) {
+            alert('Hi ha hagut un error en el flux de recuperaci\u00F3 usuaris: ' + getUsersAppException);
+        } else {
+            addItemsTable(JSON.parse(returnedUsers));
+        }
+        DisablingPortaFirmasControls(false);
+    }
+}
+
+function SaveRequester(formContext) {
+    var tableControl = document.getElementById('mainTable');
+
+    var cont = 0;
+    $('input:checkbox:checked', tableControl).each(function () {
+        cont = cont + 1;
+    }).get();
+
+    if (cont != 1) {
+        alert("Ha de seleccionar un sol peticionari");
+        return;
+    }
+
+    $('input:checkbox:checked', tableControl).each(function () {
+        var requesterParameters = $(this).attr("id");
+        CreateRequester(requesterParameters, formContext);
+    }).get();
+}
+
+function CreateRequester(requesterParameters, formContext) {
+    var portaSignaturesId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    if (portaSignaturesId != null) {
+        var parameters = {};
+        parameters.portaSignaturesId = portaSignaturesId;
+        parameters.reqParameters = requesterParameters;
+        DisablingPortaFirmasControls(true);
+        var request = new XMLHttpRequest();
+        request.open("POST", Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v9.2/pfc_PortaFirmasCreateRequester", false);
+        request.setRequestHeader("OData-MaxVersion", "4.0");
+        request.setRequestHeader("OData-Version", "4.0");
+        request.setRequestHeader("Accept", "application/json");
+        request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        request.send(JSON.stringify(parameters));
+
+        if (request.status === 200 || request.status === 204) {
+            DisablingPortaFirmasControls(false);
+            formContext.data.refresh();
+        }
+    }
+}
+
+function SaveSigner(formContext) {
+    var tableControl = document.getElementById('mainTable');
+    DisablingPortaFirmasControls(true);
+    $('input:checkbox:checked', tableControl).each(function () {
+        var userParameters = $(this).attr("id");
+        CreateSigner(userParameters, formContext);
+    }).get();
+    DisablingPortaFirmasControls(false);
+}
+
+function CreateSigner(userParameters, formContext) {
+    var portaSignaturesId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    if (portaSignaturesId != null) {
+        var parameters = {};
+        parameters.portaSignaturesId = portaSignaturesId;
+        parameters.userParameters = userParameters;
+        parameters.isSigner = true;
+        var req = new XMLHttpRequest();
+        req.open("POST", Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v9.2/pfc_PortaFirmasCreateSignerOrApprover", false);
+        req.setRequestHeader("OData-MaxVersion", "4.0");
+        req.setRequestHeader("OData-Version", "4.0");
+        req.setRequestHeader("Accept", "application/json");
+        req.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        req.send(JSON.stringify(parameters));
+
+        if (req.status === 200 || req.status === 204) {
+            formContext.getControl("Destinataris").refresh();
+        }
+    }
+}
+
+function SaveApprover(formContext) {
+    var tableControl = document.getElementById('mainTable');
+    DisablingPortaFirmasControls(true);
+    $('input:checkbox:checked', tableControl).each(function () {
+        var userParameters = $(this).attr("id");
+        CreateApprover(userParameters, formContext);
+    }).get();
+    DisablingPortaFirmasControls(false);
+}
+
+function CreateApprover(userParameters, formContext) {
+    var portaSignaturesId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    if (portaSignaturesId != null) {
+        var parameters = {};
+        parameters.portaSignaturesId = portaSignaturesId;
+        parameters.userParameters = userParameters;
+        parameters.isSigner = false;
+        var req = new XMLHttpRequest();
+        req.open("POST", Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v9.2/pfc_PortaFirmasCreateSignerOrApprover", false);
+        req.setRequestHeader("OData-MaxVersion", "4.0");
+        req.setRequestHeader("OData-Version", "4.0");
+        req.setRequestHeader("Accept", "application/json");
+        req.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        req.send(JSON.stringify(parameters));
+
+        if (req.status === 200 || req.status === 204) {
+            formContext.getControl("Destinataris").refresh();
+        }
+    }
+}
+
+function SendSignatureRequest(formContext) {
+    var signedDocument = formContext.getAttribute("pfc_documenttobesigned");
+    var validFIleExtension = "pdf";
+    var requesterUser = formContext.getAttribute("pfc_peticionari");
+    var portaSignaturesId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+
+    if (signedDocument.getValue() == null) {
+        alert("No es pot realitzar la sol\u00B7licitud de signatura perqu\u00E8 hi ha m\u00E9s d\u00B4un document a signar");
+        return;
+    }
+
+    if (signedDocument.getValue() != null && !signedDocument.getValue().fileName.endsWith(validFIleExtension)) {
+        alert("El document a pujar a portafirmes ha de ser pdf");
+        return;
+    }
+
+    if (requesterUser.getValue() == null) {
+        alert("No pot realitzar la sol\u00B7licitud de signatura fins que no indiqui el peticionari de la signatura");
+        return;
+    }
+
+    var signersOnPortasignatures = GetSignersOnPortasignatures(portaSignaturesId);
+    if (signersOnPortasignatures != null && signersOnPortasignatures.value.length == 0) {
+        alert("No pot realitzar la sol\u00B7licitud de signatura fins que no indiqui els signants");
+        return;
+    }
+
+    DisablingPortaFirmasControls(true);
+    var parameters = {};
+    parameters.portaSignaturesId = portaSignaturesId;
+    alert("El document s'est\u00E0 enviant al portasignatures i en breu estar\u00E0 disponible per ser signat");
+    var req = new XMLHttpRequest();
+    req.open("POST", Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v9.2/pfc_PortaFirmasUploadDocument", false);
+    req.setRequestHeader("OData-MaxVersion", "4.0");
+    req.setRequestHeader("OData-Version", "4.0");
+    req.setRequestHeader("Accept", "application/json");
+    req.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+    req.send(JSON.stringify(parameters));
+
+    if (req.status === 200 || req.status === 204) {
+        var result = JSON.parse(req.response);
+        var uploadDocumentAppException = result.uploadDocumentAppException;
+        if (uploadDocumentAppException) {
+            alert('Hi ha hagut un error en el flux de petici\u00F3 de signatura: ' + uploadDocumentAppException);
+            DisablingPortaFirmasControls(false);
+        } else {
+            alert("El document ja s'ha enviat al portasignatures i est\u00E0 disponible per ser signat");
+        }
+        formContext.data.refresh();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

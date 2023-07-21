@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_news.Button.Hide" Location="AccessChecker.OpenDialog.pfc_news.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.AddCampaignResponse.Hide" Location="Mscrm.Form.pfc_news.AddCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.AddConnection.Hide" Location="Mscrm.Form.pfc_news.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.AddToQueue.Hide" Location="Mscrm.Form.pfc_news.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Assign.Hide" Location="Mscrm.Form.pfc_news.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Convert.Case.Hide" Location="Mscrm.Form.pfc_news.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Convert.Opportunity.Hide" Location="Mscrm.Form.pfc_news.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.CopySelected.Hide" Location="Mscrm.Form.pfc_news.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Delete.Hide" Location="Mscrm.Form.pfc_news.Delete" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_news.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_news.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.OpenActiveStage.Hide" Location="Mscrm.Form.pfc_news.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.PDFButtonId.Hide" Location="Mscrm.Form.pfc_news.PDFButtonId" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Permissions.Grant.Hide" Location="Mscrm.Form.pfc_news.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Permissions.GrantUCI.Hide" Location="Mscrm.Form.pfc_news.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Permissions.Hide" Location="Mscrm.Form.pfc_news.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Permissions.Sharing.Hide" Location="Mscrm.Form.pfc_news.Permissions.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.PromoteToResponse.Hide" Location="Mscrm.Form.pfc_news.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.QueueItemDetail.Hide" Location="Mscrm.Form.pfc_news.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.RefreshModernButton.Hide" Location="Mscrm.Form.pfc_news.RefreshModernButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.Reports.Hide" Location="Mscrm.Form.pfc_news.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.RunScript.Hide" Location="Mscrm.Form.pfc_news.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.RunWorkflow.Hide" Location="Mscrm.Form.pfc_news.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.SendSelected.Hide" Location="Mscrm.Form.pfc_news.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.SuggestProduct.Hide" Location="Mscrm.Form.pfc_news.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.ViewHierarchy.Hide" Location="Mscrm.Form.pfc_news.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_news.WordTemplate.Hide" Location="Mscrm.Form.pfc_news.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.AddToQueue.Hide" Location="Mscrm.HomepageGrid.pfc_news.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Assign.Hide" Location="Mscrm.HomepageGrid.pfc_news.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Copy.Hide" Location="Mscrm.HomepageGrid.pfc_news.Copy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.pfc_news.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.pfc_news.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.pfc_news.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_news.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Meqf.Hide" Location="Mscrm.HomepageGrid.pfc_news.Meqf" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_news.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.OpenActiveStage.Hide" Location="Mscrm.HomepageGrid.pfc_news.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.RunReport.Hide" Location="Mscrm.HomepageGrid.pfc_news.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.RunScript.Hide" Location="Mscrm.HomepageGrid.pfc_news.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.pfc_news.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Send.Hide" Location="Mscrm.HomepageGrid.pfc_news.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_news.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.Sharing.Hide" Location="Mscrm.HomepageGrid.pfc_news.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.ViewHierarchy.Hide" Location="Mscrm.HomepageGrid.pfc_news.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_news.WordTemplate.Hide" Location="Mscrm.HomepageGrid.pfc_news.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_news.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.AddToQueue.Hide" Location="Mscrm.SubGrid.pfc_news.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.Assign.Hide" Location="Mscrm.SubGrid.pfc_news.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.AssociateParentChildCase.Hide" Location="Mscrm.SubGrid.pfc_news.AssociateParentChildCase" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.CopySelected.Hide" Location="Mscrm.SubGrid.pfc_news.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.pfc_news.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.modern.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_news.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.RunReport.Hide" Location="Mscrm.SubGrid.pfc_news.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.RunScript.Hide" Location="Mscrm.SubGrid.pfc_news.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.RunWorkflow.Hide" Location="Mscrm.SubGrid.pfc_news.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.SendSelected.Hide" Location="Mscrm.SubGrid.pfc_news.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.Sharing.Hide" Location="Mscrm.SubGrid.pfc_news.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_news.WordTemplate.Hide" Location="Mscrm.SubGrid.pfc_news.WordTemplate" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

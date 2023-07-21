@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{7eeb84f1-b098-ed11-aad0-002248a2c9f5}</WebResourceId>
+  <Name>pfc_iconentityambit</Name>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.10</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_iconentityambit7EEB84F1-B098-ED11-AAD0-002248A2C9F5</FileName>
+</WebResource>

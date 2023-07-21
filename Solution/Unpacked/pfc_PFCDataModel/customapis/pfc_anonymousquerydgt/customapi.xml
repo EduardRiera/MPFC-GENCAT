@@ -1,0 +1,18 @@
+<customapi uniquename="pfc_anonymousquerydgt">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="AnonymousQueryDGT">
+    <label description="AnonymousQueryDGT" languagecode="1027" />
+  </description>
+  <displayname default="AnonymousQueryDGT">
+    <label description="AnonymousQueryDGT" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>AnonymousQueryDGT</name>
+  <plugintypeid>
+    <plugintypeexportkey>322ce097-4d8d-44bb-bd69-ac2015c7c229</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

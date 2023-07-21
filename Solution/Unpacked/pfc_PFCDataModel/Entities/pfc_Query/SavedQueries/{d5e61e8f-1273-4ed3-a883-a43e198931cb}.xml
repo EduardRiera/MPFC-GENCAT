@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{d5e61e8f-1273-4ed3-a883-a43e198931cb}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_queryid">
+          <cell name="pfc_name" width="90" />
+          <cell name="pfc_accountid" width="300" />
+          <cell name="pfc_applicantid" width="209" />
+          <cell name="pfc_responsableid" width="100" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_query">
+          <attribute name="pfc_queryid" />
+          <attribute name="pfc_name" />
+          <attribute name="createdon" />
+          <order attribute="pfc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="pfc_name" operator="like" value="{0}" />
+            <condition attribute="pfc_responsableid" operator="like" value="{0}" />
+            <condition attribute="pfc_applicantid" operator="like" value="{0}" />
+            <condition attribute="pfc_accountid" operator="like" value="{0}" />
+            <condition attribute="pfc_summary" operator="like" value="{0}" />
+          </filter>
+          <attribute name="pfc_applicantid" />
+          <attribute name="pfc_responsableid" />
+          <attribute name="pfc_accountid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Cerca ràpida de Consultes actius" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

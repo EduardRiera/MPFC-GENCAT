@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{1a74ec26-08e5-ed11-a7c7-000d3adea4bc}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_budgetid">
+          <cell name="pfc_exercise" width="215" />
+          <cell name="pfc_incomeexpense" width="120" />
+          <cell name="pfc_chaptername" width="200" />
+          <cell name="pfc_articlename" width="221" />
+          <cell name="pfc_importpublicsectorconsolidate" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_importwithoutconsolidate" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_budget">
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_articlename" />
+          <attribute name="pfc_exercise" />
+          <attribute name="pfc_incomeexpense" />
+          <attribute name="pfc_chaptername" />
+          <attribute name="pfc_importwithoutconsolidate" />
+          <attribute name="pfc_importpublicsectorconsolidate" />
+          <attribute name="pfc_budgetid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.15</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Pessupostos actiu By Entity" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

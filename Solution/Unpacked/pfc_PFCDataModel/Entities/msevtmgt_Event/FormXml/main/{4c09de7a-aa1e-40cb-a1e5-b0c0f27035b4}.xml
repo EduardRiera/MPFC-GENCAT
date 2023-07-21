@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4c09de7a-aa1e-40cb-a1e5-b0c0f27035b4}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>0</FormActivationState>
+    <form shownavigationbar="true" showImage="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{b6526d8b-5dea-4950-a054-cefe795f506f}" IsUserDefined="1" name="GeneralTab" locklevel="0" showlabel="true" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="34%" id="0">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{6f16e2f5-af38-4b8a-8026-94fbe9a5c155}" name="{6f16e2f5-af38-4b8a-8026-94fbe9a5c155}" columns="1" locklevel="0" labelwidth="150" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{775ca688-32a1-2b51-2d98-815a3b51eae2}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10008" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{b932aaee-05d9-4a68-a710-7d36a382d524}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10009" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{86c326b2-2eea-3236-d45a-60164b881893}" showlabel="true" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10007" solutionaction="Added">
+                        <labels>
+                          <label description="Capacitat màxima de l'esdeveniment" languagecode="1027" />
+                        </labels>
+                        <control id="msevtmgt_maximumeventcapacity" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="msevtmgt_maximumeventcapacity" disabled="false" uniqueid="{c80ba297-5de0-ec59-d019-06b506651d2d}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="GeneralTab_section_Website" showlabel="true" showbar="false" locklevel="0" id="{a8c75b55-6652-8904-4764-7d1d01466e9e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{41a4bbe4-a272-4713-68a6-2bb031d5e034}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10005">
+                        <labels>
+                          <label description="Imatge del portal (portal)" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7c1db945-131c-de86-0ed0-011ca90cb719}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10006">
+                        <labels>
+                          <label description="Permet registres anònims (portal)" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7dc45c45-e662-ddb7-3118-ce20ad74c55b}" showlabel="true" locklevel="0" ordinalvalue="10007">
+                        <labels>
+                          <label description="Passarel·la de pagament del portal" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="{b6526d8b-5dea-4950-a054-cefe795f506f}_section_5" showlabel="false" showbar="false" locklevel="0" id="{3b499dcc-357c-331b-1a6d-d007be1183d8}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="2">
+                  <rows>
+                    <row>
+                      <cell id="{baab32c1-828c-aa74-b564-472727eea426}" showlabel="false" rowspan="15" auto="false" colspan="1" locklevel="0" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="TeamsIntegrationSection" showlabel="true" showbar="false" locklevel="0" id="{ae802e9a-8d09-a667-19a3-0bea8069c560}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{a320d277-75f4-4642-b9c9-ba41da039d58}" showlabel="false" locklevel="0" visible="false" ordinalvalue="10022">
+                        <labels>
+                          <label description="Origen de creació" languagecode="1027" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="OrganizeTab_section_location" showlabel="true" showbar="false" locklevel="0" id="{932d7d1e-b492-9c4c-5eae-e76cd3a8d27b}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="150" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="1" solutionaction="Modified">
+                  <labels>
+                    <label description="" languagecode="1027" solutionaction="Modified" />
+                  </labels>
+                </section>
+                <section name="OrganizeTab_section_venueconstraints" showlabel="true" showbar="false" locklevel="0" id="{6ece4ce7-4b1b-3b20-a96e-43b086ad430e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="150" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="2" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{86c326b2-2eea-3236-d45a-60164b881893}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{44249858-6114-d365-b3b1-15189c48e350}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10000" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{489aaa16-17e0-7201-a4b7-9251a46d2eee}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10001" solutionaction="Modified" />
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="WebsiteAndFormTab" id="{67aeeacc-174c-b9ac-0509-658028587788}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="2">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="WebsiteAndRegistrationFormSection" showlabel="true" showbar="false" locklevel="0" id="{9a00de7b-b2e1-6aaa-6783-165430b723de}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{b30a160c-207d-020b-6362-7d748780b937}" showlabel="true" locklevel="0" ordinalvalue="10008">
+                        <labels>
+                          <label description="Passarel·la de pagament del portal" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="RTMWebsiteAndFormTab" id="{94ed2b14-16ac-4da6-3abc-0301397347c4}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="false" ordinalvalue="3">
+          <columns>
+            <column width="60%" id="0">
+              <sections>
+                <section name="RTMWebsiteAndFormSection" showlabel="true" showbar="false" locklevel="0" id="{949854c0-b2de-8677-81b7-00a35147686a}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{6bea6d5b-997c-730d-920b-925563daa0b4}" showlabel="false" locklevel="0" visible="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Incrusta el formulari de registre" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e0ba06d8-0b95-8656-5e34-29d3b6ecb893}" showlabel="false" locklevel="0" visible="false" ordinalvalue="10002">
+                        <labels>
+                          <label description="Formulari" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="msevtmgt_guestlogistics" solutionaction="Removed" />
+        <event name="onchange" application="false" active="false" attribute="msevtmgt_primaryvenue" solutionaction="Removed" />
+        <event name="onchange" application="false" active="false" attribute="msevtmgt_eventformat">
+          <Handlers>
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.warningForEventFormat_portalLess" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{0de21e44-a478-4fba-823d-913e05934056}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="1" solutionaction="Removed" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.setVisibility_EventFormSetOrganizeTabVisbility" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{35e53561-a11b-c0da-9745-e510ac8996c9}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="1" solutionaction="Added" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.setVisibility_EventSetVisibilityForWebinar" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{c16ea795-de54-4316-60bd-3ea04e9b633e}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="2" solutionaction="Added" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.warningForWebinarDates_checkDates" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{4ad14b3f-fe9a-499f-982a-9654cae68016}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="3" solutionaction="Added" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.resetFields_resetDefaultFinancials" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{69CC9BB7-9A20-44EF-B193-AB3FA623224F}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="4" solutionaction="Added" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.warningForEventSessionType_displaySessionOfDifferentFormatNotificationOnEventFormLoad" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{21127393-4861-3a47-0293-0cb6a1a54914}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="5" solutionaction="Added" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.eventAndSessionStartDateCheck_checkEventStartDate" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{acc90604-b973-7330-b5ba-a218a9cc3975}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="6" solutionaction="Added" />
+          </Handlers>
+          <dependencies solutionaction="Added">
+            <dependency id="msevtmgt_eventformat" />
+            <dependency id="msevtmgt_webinartype" />
+            <dependency id="msevtmgt_language" />
+          </dependencies>
+        </event>
+      </events>
+      <footer id="{9c504b7f-4d27-4fc8-8716-588c4182b7d3}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows />
+      </footer>
+      <DisplayConditions FallbackForm="false" Order="2" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Incidència" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari d'aquesta entitat" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

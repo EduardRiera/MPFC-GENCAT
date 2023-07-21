@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{24f9d1de-40f9-4e8e-b17c-11bf9cd027f7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1900">
+      <tabs>
+        <tab name="FormDefinition" id="{8ac26cc0-c057-4845-51a2-c4e9a8280711}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="false" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_2_section_1" showlabel="false" showbar="false" locklevel="0" id="{a52b88d1-8157-2e64-d836-a36992edb307}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{e0a9fb7f-03b7-4b2f-b0f9-53c584789c2f}" showlabel="false" visible="false" locklevel="1" colspan="1" ordinalvalue="10002">
+                        <labels>
+                          <label description="domini de llista blanca d'organització" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="CapturingDefinition" id="{8dd26cc0-c057-4845-51a2-c4e9a8280711}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="false" ordinalvalue="1">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_4_section_1" showlabel="false" showbar="false" locklevel="0" id="{a52b88d1-8157-2164-d836-a36992edb307}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{8dde7d5d-edce-a4a2-57a4-e92b0ea922cd}" showlabel="false" locklevel="1" visible="false" ordinalvalue="10001">
+                        <labels>
+                          <label description="Captura de formulari" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fb4f9d56-5e3c-4ea8-800c-117a05f79851}" showlabel="false" locklevel="1" visible="false" ordinalvalue="10002">
+                        <labels>
+                          <label description="Captura configurada" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2620bad2-cdda-476f-93e1-c3cbb26f5312}" showlabel="false" locklevel="1" visible="false" ordinalvalue="10003">
+                        <labels>
+                          <label description="Captura de l'hora d'escaneig" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{81d27d5d-e111-330d-57a4-e92b0ea922cd}" showlabel="false" locklevel="0" ordinalvalue="10005">
+                        <labels>
+                          <label description="Captura de formulari" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{c0537846-8e64-48ca-af92-2219cf84e4af}" IsUserDefined="1" name="{c0537846-8e64-48ca-af92-2219cf84e4af}" locklevel="0" expanded="true" showlabel="true" ordinalvalue="2">
+          <columns>
+            <column width="34%" id="0">
+              <sections>
+                <section name="{c0537846-8e64-48ca-af92-2219cf84e4af}_section_2" showlabel="true" showbar="false" locklevel="0" id="{2e1447e8-d1ba-b253-071c-c3c212da6a70}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{4187ba0b-31a3-1e6a-3b6d-7ee4937a8986}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10002">
+                        <labels>
+                          <label description="Informació d'estratègia de coincidència d'esdeveniment" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                        <control id="msdyncrm_eventmatchingstrategyinfo" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_eventmatchingstrategyinfo" disabled="false" uniqueid="{5D428C13-2354-5990-9795-D41DDC3E2272}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b97513bb-9e8c-85a4-6818-3932d3242935}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10003">
+                        <labels>
+                          <label description="Estratègia de coincidència d'esdeveniment" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="DoubleOptIn" showlabel="true" showbar="false" locklevel="0" id="{f45704d4-15f9-41aa-87a1-b68db4e37831}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{4c64bf5a-f9d2-4109-b4cd-fff4af84ce4e}" ordinalvalue="10000">
+                        <control id="msdyncrm_enabledoubleoptin" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msdyncrm_enabledoubleoptin" uniqueid="{893232F2-5DF2-4E4D-AC77-9E8494425B2C}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="{c0537846-8e64-48ca-af92-2219cf84e4af}_section_3" showlabel="false" showbar="false" locklevel="0" id="{71594a51-5ea7-8e48-3b7a-ba188117b9b3}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{eb8a91b3-a558-4429-3ceb-5d85c946b031}" showlabel="true" colspan="1" auto="false" rowspan="8" ordinalvalue="10000" solutionaction="Modified">
+                        <control id="Related_MarketingPages" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{e7660275-c874-ba7d-47e7-43ed13daac88}">
+                          <parameters>
+                            <RecordsPerPage solutionaction="Modified">5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{41819e1a-210e-9bc1-b06b-1a5ed218ce28}" showlabel="true" colspan="1" auto="false" rowspan="8" ordinalvalue="10001" solutionaction="Modified">
+                        <control id="Related_Fields" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{79ca44ea-25e8-21ad-e461-5aedd2d641ea}">
+                          <parameters>
+                            <RecordsPerPage solutionaction="Modified">5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Form hosting" id="{c83ec73b-2996-c638-5012-6b7bca83c027}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" visible="false" ordinalvalue="3">
+          <columns>
+            <column width="50%" id="0">
+              <sections>
+                <section name="tab_3_section_1" showlabel="false" showbar="false" locklevel="0" id="{5e7d2b84-0233-68e5-5e55-939640792e33}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{f35a2d7d-bdd7-4f55-af61-239cd853a912}" showlabel="true" colspan="1" auto="false" rowspan="13" visible="true" ordinalvalue="10000" solutionaction="Modified">
+                        <control id="related_formpages" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{df53a859-0b90-4447-8704-cfb6a67881d3}">
+                          <parameters>
+                            <ViewId solutionaction="Modified">{EEA5E8B0-812A-47D6-9E67-CC50C42A0D30}</ViewId>
+                            <ViewIds solutionaction="Modified">{D8D3590B-B213-4268-84C1-61172CDF01A5}</ViewIds>
+                            <RecordsPerPage solutionaction="Modified">10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_submissions" id="{84bc3435-796c-85ac-bb4c-bd7c4be3c01b}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="4">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_submissions_left" showlabel="false" showbar="false" locklevel="0" id="{50b7e139-9010-82ce-46a3-3e3e947d438d}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" height="auto" ordinalvalue="0" solutionaction="Modified" />
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="insights" id="{446652F5-7316-4374-968E-61A8E41FED02}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" ordinalvalue="5">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="insights_section" showlabel="false" showbar="false" locklevel="0" id="{5772DCE7-B6A9-4141-A521-F181889C2CB8}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{DEC8607F-E0EE-4494-AF7E-A6840EF33B54}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Informació detallada" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <controlDescriptions>
+        <controlDescription forControl="{893232F2-5DF2-4E4D-AC77-9E8494425B2C}" solutionaction="Modified">
+          <customControl id="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>msdyncrm_enabledoubleoptin</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FlipSwitch.FlipSwitchControl">
+            <parameters>
+              <value>msdyncrm_enabledoubleoptin</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FlipSwitch.FlipSwitchControl">
+            <parameters>
+              <value>msdyncrm_enabledoubleoptin</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FlipSwitch.FlipSwitchControl">
+            <parameters>
+              <value>msdyncrm_enabledoubleoptin</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{5D428C13-2354-5990-9795-D41DDC3E2272}" solutionaction="Modified">
+          <customControl formFactor="2" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_eventmatchingstrategyinfo</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_eventmatchingstrategyinfo</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Marketing.LabelControl.LabelControl">
+            <parameters>
+              <value>msdyncrm_eventmatchingstrategyinfo</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari d'aquesta entitat" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

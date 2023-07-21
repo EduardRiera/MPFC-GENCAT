@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{fda042bf-397a-ed11-81ad-000d3ab3f701}" Name="BPF Procediment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BPFProcediment-FDA042BF-397A-ED11-81AD-000D3AB3F701.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>0</StateCode>
+  <StatusCode>1</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>pfc_bpf_procedure</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.2</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>pfc_procedure</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1027" description="BPF Procediment" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{071159b6-183b-4963-81c9-04e0c4d98fc1}">
+      <label languagecode="1027" description="Fase Iniciació" />
+    </steplabels>
+    <steplabels id="{c71ece03-f180-4409-be79-cf83106bb020}">
+      <label languagecode="1027" description="New Step" />
+    </steplabels>
+    <steplabels id="{f909960d-46b6-4051-892a-48524a3aa2e4}">
+      <label languagecode="1027" description="Fase Tramitació" />
+    </steplabels>
+    <steplabels id="{aadb9805-5e76-4771-970e-3856c4ceb05b}">
+      <label languagecode="1027" description="Raó per a l'estat" />
+    </steplabels>
+    <steplabels id="{6a0af9a7-81a8-4960-9b87-744f77fc1b12}">
+      <label languagecode="1027" description="Fase Finalització" />
+    </steplabels>
+    <steplabels id="{a7e6e64c-f6c5-4a5c-ad18-175c738f4b22}">
+      <label languagecode="1027" description="Raó per a l'estat" />
+    </steplabels>
+  </labels>
+  <ProcessTriggers />
+</Workflow>

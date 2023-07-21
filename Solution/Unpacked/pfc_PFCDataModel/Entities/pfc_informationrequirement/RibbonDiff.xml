@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_informationrequirement.Button.Hide" Location="AccessChecker.OpenDialog.pfc_informationrequirement.Button" />
+    <HideCustomAction HideActionId="pfc.GuidedHelp.pfc_informationrequirement.Form.Hide" Location="GuidedHelp.pfc_informationrequirement.Form" />
+    <HideCustomAction HideActionId="pfc.LPLibrary.pfc_informationrequirement.Form.Hide" Location="LPLibrary.pfc_informationrequirement.Form" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.ActionButtonForMSTeams.Hide" Location="Mscrm.Form.pfc_informationrequirement.ActionButtonForMSTeams" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.AddConnection.Hide" Location="Mscrm.Form.pfc_informationrequirement.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.AddToQueue.Hide" Location="Mscrm.Form.pfc_informationrequirement.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Assign.Hide" Location="Mscrm.Form.pfc_informationrequirement.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Convert.Case.Hide" Location="Mscrm.Form.pfc_informationrequirement.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Convert.Opportunity.Hide" Location="Mscrm.Form.pfc_informationrequirement.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.CopySelected.Hide" Location="Mscrm.Form.pfc_informationrequirement.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_informationrequirement.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_informationrequirement.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.FollowButton.Hide" Location="Mscrm.Form.pfc_informationrequirement.FollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.FollowButtonForYammer.Hide" Location="Mscrm.Form.pfc_informationrequirement.FollowButtonForYammer" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.NewUnfollowButton.Hide" Location="Mscrm.Form.pfc_informationrequirement.NewUnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.OpenActiveStage.Hide" Location="Mscrm.Form.pfc_informationrequirement.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Permissions.Grant.Hide" Location="Mscrm.Form.pfc_informationrequirement.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Permissions.GrantUCI.Hide" Location="Mscrm.Form.pfc_informationrequirement.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Permissions.Hide" Location="Mscrm.Form.pfc_informationrequirement.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Permissions.Sharing.Hide" Location="Mscrm.Form.pfc_informationrequirement.Permissions.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.PromoteToResponse.Hide" Location="Mscrm.Form.pfc_informationrequirement.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.QueueItemDetail.Hide" Location="Mscrm.Form.pfc_informationrequirement.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.QueueItemDetailOmnichannel.Hide" Location="Mscrm.Form.pfc_informationrequirement.QueueItemDetailOmnichannel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.Reports.Hide" Location="Mscrm.Form.pfc_informationrequirement.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.RunScript.Hide" Location="Mscrm.Form.pfc_informationrequirement.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.RunWorkflow.Hide" Location="Mscrm.Form.pfc_informationrequirement.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.SaveAndClose.Hide" Location="Mscrm.Form.pfc_informationrequirement.SaveAndClose" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.SendSelected.Hide" Location="Mscrm.Form.pfc_informationrequirement.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.SuggestProduct.Hide" Location="Mscrm.Form.pfc_informationrequirement.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.UnfollowButton.Hide" Location="Mscrm.Form.pfc_informationrequirement.UnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_informationrequirement.WordTemplate.Hide" Location="Mscrm.Form.pfc_informationrequirement.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_informationrequirement.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_informationrequirement.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.msdyn.ApplicationRibbon.pfc_informationrequirement.Form.SaveAndRunRoutingRule.Button.Hide" Location="msdyn.ApplicationRibbon.pfc_informationrequirement.Form.SaveAndRunRoutingRule.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.Form.pfc_informationrequirement.DisconnectSequence.Button.Hide" Location="msdyn.Form.pfc_informationrequirement.DisconnectSequence.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.Form.pfc_informationrequirement.LaunchPlaybook.Button.Hide" Location="msdyn.Form.pfc_informationrequirement.LaunchPlaybook.Button" />
+    <CustomAction Id="pfc.pfc_informationrequirement.Button2.Button.CustomAction" Location="Mscrm.Form.pfc_informationrequirement.MainTab.Save.Controls._children" Sequence="25">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:pfc.pfc_informationrequirement.Button2.Button.Alt" Command="pfc.pfc_informationrequirement.Command0.Command" Id="pfc.pfc_informationrequirement.Button2.Button" Image32by32="$webresource:pfc_mailsend32" Image16by16="$webresource:pfc_mailsend16" LabelText="$LocLabels:pfc.pfc_informationrequirement.Button2.Button.LabelText" Sequence="25" TemplateAlias="o1" ToolTipTitle="$LocLabels:pfc.pfc_informationrequirement.Button2.Button.ToolTipTitle" ToolTipDescription="$LocLabels:pfc.pfc_informationrequirement.Button2.Button.ToolTipDescription" ModernImage="$webresource:pfc_mailsendsvg" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="Mscrm.Form.CloseActivity">
+      <EnableRules>
+        <EnableRule Id="Mscrm.CanWritePrimary" />
+        <EnableRule Id="pfc.pfc_informationrequirement.EnableRule5.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.CanWritePrimary" />
+        <DisplayRule Id="Mscrm.PrimaryIsActive" />
+        <DisplayRule Id="Mscrm.PrimaryEntityHasStatecode" />
+        <DisplayRule Id="Mscrm.PrimaryIsActivity" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="XrmCore.Commands.ChangeState.changeState" Library="$webresource:Main_system_library.js">
+          <StringParameter Value="deactivate" />
+          <CrmParameter Value="PrimaryEntityTypeCode" />
+          <StringParameter Value="5" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="Mscrm.SavePrimary">
+      <EnableRules>
+        <EnableRule Id="Mscrm.AvailableOnForm" />
+        <EnableRule Id="Mscrm.CanSavePrimary" />
+        <EnableRule Id="Mscrm.ReadPrimaryPermission" />
+        <EnableRule Id="Mscrm.IsAutoSaveDisable" />
+        <EnableRule Id="Mscrm.IsEntityAvailableForUserInMocaOffline" />
+        <EnableRule Id="pfc.pfc_informationrequirement.EnableRule5.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.CanSavePrimaryEntityType" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="XrmCore.Commands.Save.saveForm" Library="$webresource:Main_system_library.js">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="Mscrm.SavePrimaryActivityAsComplete">
+      <EnableRules>
+        <EnableRule Id="Mscrm.AvailableOnForm" />
+        <EnableRule Id="Mscrm.CanSavePrimary" />
+        <EnableRule Id="Mscrm.ReadPrimaryPermission" />
+        <EnableRule Id="Mscrm.IsEntityAvailableForUserInMocaOffline" />
+        <EnableRule Id="pfc.pfc_informationrequirement.EnableRule5.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.PrimaryIsActivity" />
+        <DisplayRule Id="Mscrm.CanSavePrimaryEntityType" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="XrmCore.Commands.Save.saveAsCompleted" Library="$webresource:Main_system_library.js" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="pfc.pfc_informationrequirement.Command0.Command">
+      <EnableRules>
+        <EnableRule Id="pfc.pfc_informationrequirement.EnableRule5.EnableRule" />
+      </EnableRules>
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="InformationRequirement.ribbon.Functions.BusinessLogic.SaveAndSendNotification" Library="$webresource:pfc_informationrequirementribbon">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="Mscrm.CanSavePrimaryEntityType">
+        <OrRule>
+          <Or>
+            <EntityPrivilegeRule PrivilegeType="Create" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+          </Or>
+          <Or>
+            <EntityPrivilegeRule PrivilegeType="Write" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+          </Or>
+        </OrRule>
+        <EntityPrivilegeRule PrivilegeType="Read" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+      </DisplayRule>
+      <DisplayRule Id="Mscrm.CanWritePrimary">
+        <EntityPrivilegeRule PrivilegeType="Write" PrivilegeDepth="Basic" AppliesTo="PrimaryEntity" />
+      </DisplayRule>
+      <DisplayRule Id="Mscrm.PrimaryEntityHasStatecode">
+        <EntityPropertyRule AppliesTo="PrimaryEntity" PropertyName="HasStateCode" PropertyValue="true" />
+      </DisplayRule>
+      <DisplayRule Id="Mscrm.PrimaryIsActive">
+        <FormStateRule State="Existing" />
+      </DisplayRule>
+      <DisplayRule Id="Mscrm.PrimaryIsActivity">
+        <EntityPropertyRule AppliesTo="PrimaryEntity" PropertyName="IsActivity" PropertyValue="true" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="Mscrm.AvailableOnForm">
+        <EntityRule AppliesTo="PrimaryEntity" Context="Form" Default="false" />
+      </EnableRule>
+      <EnableRule Id="Mscrm.CanSavePrimary">
+        <OrRule>
+          <Or>
+            <RecordPrivilegeRule PrivilegeType="Create" AppliesTo="PrimaryEntity" />
+            <FormStateRule State="Create" />
+          </Or>
+          <Or>
+            <RecordPrivilegeRule PrivilegeType="Write" AppliesTo="PrimaryEntity" />
+            <FormStateRule State="Existing" />
+          </Or>
+        </OrRule>
+      </EnableRule>
+      <EnableRule Id="Mscrm.CanWritePrimary">
+        <RecordPrivilegeRule PrivilegeType="Write" AppliesTo="PrimaryEntity" />
+      </EnableRule>
+      <EnableRule Id="Mscrm.IsAutoSaveDisable">
+        <OrRule>
+          <Or>
+            <FormStateRule State="Create" />
+          </Or>
+          <Or>
+            <CustomRule FunctionName="XrmCore.Rules.AutoSave.isAutoSaveEnabled" Library="$webresource:Main_system_library.js" InvertResult="true" />
+          </Or>
+          <Or>
+            <CustomRule FunctionName="XrmCore.Rules.RefreshForm.isRefreshForm" Library="$webresource:Main_system_library.js" InvertResult="true" />
+          </Or>
+          <Or>
+            <CommandClientTypeRule Type="Modern" />
+          </Or>
+        </OrRule>
+      </EnableRule>
+      <EnableRule Id="Mscrm.IsEntityAvailableForUserInMocaOffline">
+        <CustomRule FunctionName="XrmCore.Rules.Online.IsEntityAvailableForUserInMocaOffline" Library="$webresource:Main_system_library.js">
+          <CrmParameter Value="SelectedEntityTypeName" />
+        </CustomRule>
+      </EnableRule>
+      <EnableRule Id="Mscrm.ReadPrimaryPermission">
+        <RecordPrivilegeRule PrivilegeType="Read" AppliesTo="PrimaryEntity" />
+      </EnableRule>
+      <EnableRule Id="pfc.pfc_informationrequirement.EnableRule5.EnableRule">
+        <OrRule>
+          <Or>
+            <ValueRule Field="pfc_notificaciondeliverynumber" Value="" Default="true" InvertResult="false" />
+          </Or>
+          <Or>
+            <ValueRule Field="pfc_notificaciondeliverynumber" Value="1" Default="true" InvertResult="false" />
+          </Or>
+        </OrRule>
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="pfc.pfc_informationrequirement.Button2.Button.Alt">
+      <Titles>
+        <Title description="Guardar i enviar" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.pfc_informationrequirement.Button2.Button.LabelText">
+      <Titles>
+        <Title description="Guardar i enviar" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.pfc_informationrequirement.Button2.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Guardar i enviar" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.pfc_informationrequirement.Button2.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Guardar i enviar" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

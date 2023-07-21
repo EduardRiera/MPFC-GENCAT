@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{65cc4b51-a5a3-ed11-aad1-000d3adf796b}</WebResourceId>
+  <Name>pfc_querydgt.view</Name>
+  <DisplayName>QueryDGT.View</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.10</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_querydgtview65CC4B51-A5A3-ED11-AAD1-000D3ADF796B</FileName>
+</WebResource>

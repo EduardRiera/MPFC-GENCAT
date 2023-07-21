@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{23a96032-df00-48a7-8d44-e4a7c8a99889}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_budgetid">
+          <cell name="pfc_accountid" width="100" />
+          <cell name="pfc_entitycode" width="100" />
+          <cell name="pfc_entityname" width="100" />
+          <cell name="pfc_exercise" width="100" />
+          <cell name="pfc_articlename" width="100" />
+          <cell name="pfc_importpublicsectorconsolidate" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_importwithoutconsolidate" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_budget">
+          <order attribute="pfc_entitycode" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="pfc_entityname" />
+          <attribute name="pfc_articlename" />
+          <attribute name="pfc_exercise" />
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_entitycode" />
+          <attribute name="pfc_importwithoutconsolidate" />
+          <attribute name="pfc_importpublicsectorconsolidate" />
+          <attribute name="pfc_budgetid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="pressupostos inactiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

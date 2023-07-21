@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{482539bf-679d-ed11-aad0-000d3adf90aa}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" preview="1" icon="1">
+        <row name="result" id="activityid">
+          <cell name="subject" width="150" />
+          <cell name="prioritycode" width="100" />
+          <cell name="regardingobjectid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="task">
+          <attribute name="subject" />
+          <attribute name="regardingobjectid" />
+          <attribute name="prioritycode" />
+          <order attribute="subject" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+            <filter type="or">
+              <condition attribute="ownerid" operator="eq-userid" />
+              <condition attribute="ownerid" operator="eq" uiname="Equip de gestió d'entitats" uitype="team" value="{3D82C966-C09C-ED11-AAD0-000D3ADF90AA}" />
+            </filter>
+          </filter>
+          <attribute name="activityid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.10</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Les meves tasques per avui" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

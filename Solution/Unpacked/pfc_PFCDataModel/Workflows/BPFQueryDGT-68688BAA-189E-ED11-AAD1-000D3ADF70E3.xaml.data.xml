@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{68688baa-189e-ed11-aad1-000d3adf70e3}" Name="BPF Query DGT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BPFQueryDGT-68688BAA-189E-ED11-AAD1-000D3ADF70E3.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>pfc_bpfquerydgt</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.10</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>pfc_query_dgt</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1027" description="BPF Query DGT" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{3c4f2267-ef2a-4dbf-9bee-225a51153f75}">
+      <label languagecode="1027" description="Inici" />
+    </steplabels>
+    <steplabels id="{8db6a1e1-7148-4941-8221-193634aaf617}">
+      <label languagecode="1027" description="Responsable de consulta" />
+    </steplabels>
+    <steplabels id="{12326c2c-19f8-47b5-b5f9-2d8feb3b960d}">
+      <label languagecode="1027" description="En Curs" />
+    </steplabels>
+    <steplabels id="{7ebd4061-2756-4146-8559-1ae26ba5b94c}">
+      <label languagecode="1027" description="Validador" />
+    </steplabels>
+    <steplabels id="{d9070e19-f910-46ad-a99b-e6afa1a839d5}">
+      <label languagecode="1027" description="En Progrés" />
+    </steplabels>
+    <steplabels id="{636c506f-2acc-4aa7-925e-b1c2e1a34711}">
+      <label languagecode="1027" description="Hores responsable primera fase" />
+    </steplabels>
+    <steplabels id="{d613f804-1fda-4ac7-b98f-e026d4188fa6}">
+      <label languagecode="1027" description="Hores validador primera fase" />
+    </steplabels>
+    <steplabels id="{cf729557-a092-4afa-a51f-6a362bfe3179}">
+      <label languagecode="1027" description="Anàlisi Resposta DGT" />
+    </steplabels>
+    <steplabels id="{b9d229f0-8d49-4bdd-8553-b01f094b0b35}">
+      <label languagecode="1027" description="L'entitat està informada correctament" />
+    </steplabels>
+    <steplabels id="{36b72986-e7cd-46dd-ad35-ef245e595c82}">
+      <label languagecode="1027" description="Finalitzada" />
+    </steplabels>
+    <steplabels id="{3a12350c-cd87-4a10-9d10-56ba8c7222c5}">
+      <label languagecode="1027" description="Data tancament" />
+    </steplabels>
+  </labels>
+</Workflow>

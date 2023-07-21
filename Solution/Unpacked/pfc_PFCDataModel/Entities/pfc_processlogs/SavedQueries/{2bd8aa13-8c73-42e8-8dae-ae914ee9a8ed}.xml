@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2bd8aa13-8c73-42e8-8dae-ae914ee9a8ed}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_processlogsid">
+          <cell name="pfc_name" width="300" />
+          <cell name="pfc_process_name" width="300" />
+          <cell name="pfc_process_state" width="260" />
+          <cell name="pfc_process_start_date" width="262" />
+          <cell name="pfc_process_end_date" width="190" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_processlogs">
+          <attribute name="pfc_processlogsid" />
+          <attribute name="pfc_name" />
+          <order attribute="pfc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="pfc_name" operator="like" value="{0}" />
+            <condition attribute="pfc_process_start_date" operator="on" value="{3}" />
+            <condition attribute="pfc_process_end_date" operator="on" value="{3}" />
+            <condition attribute="pfc_process_state" operator="like" value="{0}" />
+            <condition attribute="pfc_process_name" operator="like" value="{0}" />
+          </filter>
+          <attribute name="pfc_process_name" />
+          <attribute name="pfc_process_state" />
+          <attribute name="pfc_process_start_date" />
+          <attribute name="pfc_process_end_date" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Cerca ràpida de Registres de procés actius" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

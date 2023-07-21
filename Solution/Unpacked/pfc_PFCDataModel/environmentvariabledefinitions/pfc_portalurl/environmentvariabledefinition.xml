@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="pfc_portalurl">
+  <defaultvalue>https://integracio-eco-mpfc-web.powerappsportals.com/</defaultvalue>
+  <displayname default="PortalUrl">
+    <label description="PortalUrl" languagecode="1027" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

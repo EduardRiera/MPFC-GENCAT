@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery unmodified="1">
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{5404685e-d43e-e611-80d6-00155df8bf02}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" preview="1" icon="1">
+        <row name="result" id="msevtmgt_checkinid">
+          <cell name="a_7ea5ecf03792e61180e2c4346baca9e4.msevtmgt_contactid" width="200" disableSorting="1" />
+          <cell name="msevtmgt_registrationid" width="150" />
+          <cell name="msevtmgt_checkintime" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="msevtmgt_checkin">
+          <order attribute="msevtmgt_checkintime" descending="false" />
+          <attribute name="msevtmgt_registrationid" />
+          <attribute name="msevtmgt_checkintime" />
+          <link-entity alias="a_7ea5ecf03792e61180e2c4346baca9e4" name="msevtmgt_eventregistration" from="msevtmgt_eventregistrationid" to="msevtmgt_registrationid" link-type="outer" visible="false">
+            <attribute name="msevtmgt_contactid" />
+          </link-entity>
+          <attribute name="msevtmgt_checkinid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="msevtmgt_EventMainCheckins" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Per utilitzar al formulari de l'esdeveniment principal" languagecode="1027" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

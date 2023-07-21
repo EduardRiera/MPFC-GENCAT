@@ -1,0 +1,158 @@
+var ContactAccount;
+(function (ContactAccount) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "pfc_contact_account";
+        function OnChange(ec) {
+            "use strict";
+            var fc = ec.getFormContext();
+            ContactAccount.FormEvents.OnChange.pfc_accountid(ec);
+        }
+        FormEvents.OnChange = OnChange;
+    })(FormEvents = ContactAccount.FormEvents || (ContactAccount.FormEvents = {}));
+})(ContactAccount || (ContactAccount = {}));
+(function (ContactAccount) {
+    var FormEvents;
+    (function (FormEvents) {
+        var OnChange;
+        (function (OnChange) {
+            function pfc_accountid(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                ContactAccount.Functions.BusinessLogic.setAccountIdFilter(fc);
+            }
+            OnChange.pfc_accountid = pfc_accountid;
+        })(OnChange = FormEvents.OnChange || (FormEvents.OnChange = {}));
+    })(FormEvents = ContactAccount.FormEvents || (ContactAccount.FormEvents = {}));
+})(ContactAccount || (ContactAccount = {}));
+(function (ContactAccount) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function setAccountIdFilter(fc) {
+                var accountId = Xrm.Page.getAttribute(ContactAccount.Constants.Fields.AccountId);
+                var viewId = "{00000000-0000-0000-1000-000000111111}";
+                var viewDisplayName = "AccountContact";
+                var layoutXml = ContactAccount.Constants.Options.XmlView;
+                if (accountId.getValue() != null) {
+                    Xrm.WebApi.online.retrieveMultipleRecords("account", ContactAccount.Queries.ContactAccountToRetrieveEntityTypeByAccountId(accountId.getValue()[0].id)).then(function success(result) {
+                        if (result.entities[0].pfc_entitytype == ContactAccount.Constants.Options.EntityType) {
+                            var fetchXml = ContactAccount.Constants.Fetch.fetchEntityTypeXML;
+                            fc.getControl(ContactAccount.Constants.Fields.CompanyLevelId).addCustomView(viewId, ContactAccount.Constants.Fields.CompanyLevel, viewDisplayName, fetchXml, layoutXml, true);
+                        }
+                        else if (result.entities[0].pfc_entitytype == ContactAccount.Constants.Options.DepartmentalServiceType) {
+                            var fetchXml = ContactAccount.Constants.Fetch.fetchDepartmentalServiceTypeXML;
+                            fc.getControl(ContactAccount.Constants.Fields.CompanyLevelId).addCustomView(viewId, ContactAccount.Constants.Fields.CompanyLevel, viewDisplayName, fetchXml, layoutXml, true);
+                        }
+                    }, function error(error) {
+                        Xrm.Navigation.openAlertDialog(error.message);
+                    });
+                }
+                else {
+                    var fetchXml = ContactAccount.Constants.Fetch.fetchAllServiceTypeXML;
+                    fc.getControl(ContactAccount.Constants.Fields.CompanyLevelId).addCustomView(viewId, ContactAccount.Constants.Fields.CompanyLevel, viewDisplayName, fetchXml, layoutXml, true);
+                }
+            }
+            BusinessLogic.setAccountIdFilter = setAccountIdFilter;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = ContactAccount.Functions || (ContactAccount.Functions = {}));
+})(ContactAccount || (ContactAccount = {}));
+(function (ContactAccount) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.ContactId = "pfc_contactid";
+            Fields.AccountId = "pfc_accountid";
+            Fields.CompanyLevel = "pfc_companylevel";
+            Fields.CompanyLevelId = "pfc_companylevelid";
+            Fields.EntityPosition = "pfc_entityposition";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = ContactAccount.Constants || (ContactAccount.Constants = {}));
+})(ContactAccount || (ContactAccount = {}));
+(function (ContactAccount) {
+    var Constants;
+    (function (Constants) {
+        var Options;
+        (function (Options) {
+            Options.EntityType = 470000000;
+            Options.DepartmentalServiceType = 470000001;
+            Options.XmlView = "<grid name='resultset' object='1' jump='name' select='1' icon='1'  preview='1'>" +
+                "<row name='result' id='pfc_companylevelid'>" +
+                "<cell name='pfc_name'  width='150' />" +
+                "<cell name='pfc_entitytype' width='150' />" +
+                "</row>" +
+                "</grid>";
+        })(Options = Constants.Options || (Constants.Options = {}));
+    })(Constants = ContactAccount.Constants || (ContactAccount.Constants = {}));
+})(ContactAccount || (ContactAccount = {}));
+(function (ContactAccount) {
+    var Queries;
+    (function (Queries) {
+        function ContactAccountToRetrieveEntityTypeByAccountId(fieldValue) {
+            "use strict";
+            var fetchXml = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true' no-lock='true'>\
+            <entity name='account'>\
+            <attribute name='accountid' />\
+            <attribute name ='pfc_entitytype' />\
+            <filter>\
+            <condition attribute='accountid' operator='eq' value='" + fieldValue + "' />\
+            </filter>\
+            </entity>\
+            </fetch>",
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.ContactAccountToRetrieveEntityTypeByAccountId = ContactAccountToRetrieveEntityTypeByAccountId;
+    })(Queries = ContactAccount.Queries || (ContactAccount.Queries = {}));
+})(ContactAccount || (ContactAccount = {}));
+(function (ContactAccount) {
+    var Constants;
+    (function (Constants) {
+        var Fetch;
+        (function (Fetch) {
+            Fetch.fetchEntityTypeXML = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>\
+            <entity name='pfc_companylevel'>\
+            <attribute name='pfc_companylevelid'/>\
+            <attribute name='pfc_name'/>\
+            <attribute name='createdon'/>\
+            <attribute name='pfc_entitytype'/>\
+            <order attribute='pfc_name' descending='false'/>\
+            <filter type='and'>\
+            <condition attribute='pfc_entitytype' operator='eq' value='470000000'/>\
+            </filter>\
+            </entity>\
+            </fetch>",
+            ].join("");
+            Fetch.fetchDepartmentalServiceTypeXML = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>\
+            <entity name='pfc_companylevel'>\
+            <attribute name='pfc_companylevelid'/>\
+            <attribute name='pfc_name'/>\
+            <attribute name='createdon'/>\
+            <attribute name='pfc_entitytype'/>\
+            <order attribute='pfc_name' descending='false'/>\
+            <filter type='and'>\
+            <condition attribute='pfc_entitytype' operator='eq' value='470000001'/>\
+            </filter>\
+            </entity>\
+            </fetch>",
+            ].join("");
+            Fetch.fetchAllServiceTypeXML = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'>\
+            <entity name='pfc_companylevel'>\
+            <attribute name='pfc_companylevelid'/>\
+            <attribute name='pfc_name'/>\
+            <attribute name='createdon'/>\
+            <attribute name='pfc_entitytype'/>\
+            <order attribute='pfc_name' descending='false'/>\
+            </entity>\
+            </fetch>",
+            ].join("");
+        })(Fetch = Constants.Fetch || (Constants.Fetch = {}));
+    })(Constants = ContactAccount.Constants || (ContactAccount.Constants = {}));
+})(ContactAccount || (ContactAccount = {}));

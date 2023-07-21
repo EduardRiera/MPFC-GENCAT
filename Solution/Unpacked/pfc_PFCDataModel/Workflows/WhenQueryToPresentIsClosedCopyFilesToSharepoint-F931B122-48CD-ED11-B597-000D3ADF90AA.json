@@ -1,0 +1,2078 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedsharepointonline_c963a"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_commondataservice_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataservice_214d2"
+        },
+        "api": {
+          "name": "shared_commondataservice"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "SharepointSite (pfc_sharepointsite)": {
+          "defaultValue": "https://gencat.sharepoint.com/sites/MPFCTest",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_sharepointsite"
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_modifica_una_fila": {
+          "metadata": {
+            "operationMetadataId": "0ecd601f-85b7-4c81-b418-f18aec309ff2"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataservice_1",
+              "operationId": "SubscribeOnUpdatedItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataservice"
+            },
+            "parameters": {
+              "dataset": "default.cds",
+              "table": "pfc_validatedqueries",
+              "scope": "Business unit",
+              "subscriptionRequest/AttributeFilters": [
+                "statecode"
+              ]
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Consulta_Validada:_Obtener_una_fila_por_id_de_actividad": {
+          "runAfter": {
+            "Inicializar_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d6f52c32-6cb7-4813-8eb4-070e6acd70d1"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "pfc_validatedqueries",
+              "recordId": "@triggerOutputs()?['body/activityid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condición": {
+          "actions": {
+            "Consulta_DGT:_Obtener_una_fila_por_id_de_referent": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "184b726b-f146-40d4-bfa8-1e0cf08eb0cd"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_query_dgts",
+                  "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Entitat:_Obtener_una_fila_por_id_de_entitat": {
+              "runAfter": {
+                "Consulta_DGT:_Obtener_una_fila_por_id_de_referent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "26e84b83-6620-4c9d-acdf-e5782f4e090e"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "accounts",
+                  "recordId": "@outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/_pfc_accountid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Análisis_del_archivo_JSON": {
+              "runAfter": {
+                "Entitat:_Obtener_una_fila_por_id_de_entitat": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "7ecf7427-339c-40c6-9946-263def2b566d"
+              },
+              "type": "ParseJson",
+              "inputs": {
+                "content": "@body('Consulta_Validada:_Obtener_una_fila_por_id_de_actividad')",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@@odata.context": {
+                      "type": "string"
+                    },
+                    "@@odata.type": {
+                      "type": "string"
+                    },
+                    "@@odata.id": {
+                      "type": "string"
+                    },
+                    "@@odata.etag": {
+                      "type": "string"
+                    },
+                    "@@odata.editLink": {
+                      "type": "string"
+                    },
+                    "statecode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "statecode": {
+                      "type": "integer"
+                    },
+                    "_regardingobjectid_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value": {
+                      "type": "string"
+                    },
+                    "statuscode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "statuscode": {
+                      "type": "integer"
+                    },
+                    "pfc_document": {
+                      "type": "string"
+                    },
+                    "leftvoicemail@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "leftvoicemail": {
+                      "type": "boolean"
+                    },
+                    "createdon@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "createdon@odata.type": {
+                      "type": "string"
+                    },
+                    "createdon": {
+                      "type": "string"
+                    },
+                    "isbilled@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "isbilled": {
+                      "type": "boolean"
+                    },
+                    "pfc_document_name": {
+                      "type": "string"
+                    },
+                    "subject": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_ownerid_value": {
+                      "type": "string"
+                    },
+                    "modifiedon@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "modifiedon@odata.type": {
+                      "type": "string"
+                    },
+                    "modifiedon": {
+                      "type": "string"
+                    },
+                    "versionnumber@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "versionnumber@odata.type": {
+                      "type": "string"
+                    },
+                    "versionnumber": {
+                      "type": "integer"
+                    },
+                    "prioritycode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "prioritycode": {
+                      "type": "integer"
+                    },
+                    "_owningbusinessunit_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value": {
+                      "type": "string"
+                    },
+                    "timezoneruleversionnumber@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "timezoneruleversionnumber": {
+                      "type": "integer"
+                    },
+                    "isregularactivity@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "isregularactivity": {
+                      "type": "boolean"
+                    },
+                    "ismapiprivate@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "ismapiprivate": {
+                      "type": "boolean"
+                    },
+                    "_modifiedby_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_modifiedby_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_modifiedby_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_modifiedby_value": {
+                      "type": "string"
+                    },
+                    "activitytypecode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "activitytypecode": {
+                      "type": "string"
+                    },
+                    "instancetypecode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "instancetypecode": {
+                      "type": "integer"
+                    },
+                    "isworkflowcreated@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "isworkflowcreated": {
+                      "type": "boolean"
+                    },
+                    "_createdby_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_createdby_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_createdby_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_createdby_value": {
+                      "type": "string"
+                    },
+                    "actualend@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "actualend@odata.type": {
+                      "type": "string"
+                    },
+                    "actualend": {
+                      "type": "string"
+                    },
+                    "processid@odata.type": {
+                      "type": "string"
+                    },
+                    "processid": {
+                      "type": "string"
+                    },
+                    "_owninguser_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_owninguser_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_owninguser_value": {
+                      "type": "string"
+                    },
+                    "deliveryprioritycode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "deliveryprioritycode": {
+                      "type": "integer"
+                    },
+                    "activityid@odata.type": {
+                      "type": "string"
+                    },
+                    "activityid": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ownerid_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ownerid_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_socialactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_socialactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurringappointmentmaster@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurringappointmentmaster@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_QueueItem@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_QueueItem@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ownerid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ownerid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owninguser@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owninguser@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_activity_mime_attachment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_activity_mime_attachment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_fax@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_fax@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email_hash@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email_hash@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_task@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_task@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_phonecall@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_phonecall@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_appointment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_appointment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_letter@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_letter@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections2@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections2@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "slakpiinstance_activitypointer@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "slakpiinstance_activitypointer@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningteam@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningteam@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_BulkDeleteFailures@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_BulkDeleteFailures@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections1@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections1@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_AsyncOperations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_AsyncOperations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurrencerule@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurrencerule@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_activity_parties@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_activity_parties@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_chat@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_chat@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_FileAttachments@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_FileAttachments@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation_logs@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation_logs@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "CreatedActivity_BulkOperationLogs@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "CreatedActivity_BulkOperationLogs@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_CampaignActivityItems@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_CampaignActivityItems@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_campaignresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_campaignresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_incident_resolution@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_incident_resolution@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_service_appointment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_service_appointment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "serviceid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "serviceid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_opportunity_close@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_opportunity_close@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_order_close@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_order_close@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_quote_close@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_quote_close@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_alert@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_alert@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyinvite@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyinvite@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocliveworkitem@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocliveworkitem@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocsession@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocsession@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_alertsubscription@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_alertsubscription@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_inviteredemption@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_inviteredemption@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_presentacion@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_presentacion@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_portalcomment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_portalcomment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_answer@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_answer@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_sentquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_sentquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_receivedresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_receivedresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_portasignatures@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_portasignatures@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_tax_transcendence_operation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_tax_transcendence_operation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "serviceid_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "serviceid_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdby_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdby_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owninguser_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owninguser_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningteam_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningteam_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activityid_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activityid_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_activity_parties@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_activity_parties@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "CampaignResponse_pfc_validatedqueries@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "CampaignResponse_pfc_validatedqueries@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_ActionCards@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_ActionCards@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_SyncErrors@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_SyncErrors@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_DuplicateMatchingRecord@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_DuplicateMatchingRecord@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_DuplicateBaseRecord@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_DuplicateBaseRecord@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_AsyncOperations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_AsyncOperations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_MailboxTrackingFolders@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_MailboxTrackingFolders@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_UserEntityInstanceDatas@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_UserEntityInstanceDatas@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_ProcessSession@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_ProcessSession@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_BulkDeleteFailures@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_BulkDeleteFailures@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_PrincipalObjectAttributeAccesses@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_PrincipalObjectAttributeAccesses@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_connections1@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_connections1@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_connections2@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_connections2@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_QueueItems@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_QueueItems@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_Annotations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_Annotations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_Feedback@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_Feedback@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_FileAttachments@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedquery_FileAttachments@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_document_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_document_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedby_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_validatedby_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_tax_transcendence_operation_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_tax_transcendence_operation_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "Condición_2": {
+              "actions": {
+                "Consulta_Validada:_Descargar_un_archivo_o_una_imagen": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "df28b268-8cc4-42b4-9edd-2596cdda502a"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_1",
+                      "operationId": "GetEntityFileImageFieldContent",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "pfc_validatedqueries",
+                      "recordId": "@triggerOutputs()?['body/activityid']",
+                      "fileImageFieldName": "pfc_document"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Crear_archivo": {
+                  "runAfter": {
+                    "Consulta_Validada:_Descargar_un_archivo_o_una_imagen": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "c56362e4-e945-467a-b94f-3b0754c7f466"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_sharepointonline_1",
+                      "operationId": "CreateFile",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                    },
+                    "parameters": {
+                      "dataset": "@variables('SharepointURL')",
+                      "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_entitat')?['body/name']}/pfc_query_dgt/@{outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de treball",
+                      "name": "@{outputs('Consulta_DGT:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_document_name']}",
+                      "body": "@body('Consulta_Validada:_Descargar_un_archivo_o_una_imagen')"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "Análisis_del_archivo_JSON": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "not": {
+                  "equals": [
+                    "@outputs('Consulta_Validada:_Obtener_una_fila_por_id_de_actividad')?['body/pfc_document']",
+                    "@null"
+                  ]
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "b7b41055-c508-4177-888c-c781b73342d2"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Consulta_Validada:_Obtener_una_fila_por_id_de_actividad": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/statecode']",
+              1
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "be90048c-db18-4ab1-b89a-1012861b9f1c"
+          },
+          "type": "If"
+        },
+        "Inicializar_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e90b9ddd-0f5c-44b5-96c3-2e57a9bb8cd0"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SharepointURL",
+                "type": "string",
+                "value": "@parameters('SharepointSite (pfc_sharepointsite)')"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

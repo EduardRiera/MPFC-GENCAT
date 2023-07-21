@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{6c25af32-94fb-4746-afa2-a73ae50bdbb3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_taxproflieid">
+          <cell name="pfc_name" width="100" />
+          <cell name="pfc_accountid" width="200" />
+          <cell name="pfc_year" width="100" />
+          <cell name="pfc_entitytype" width="150" />
+          <cell name="pfc_responsableid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_taxproflie">
+          <attribute name="pfc_taxproflieid" />
+          <attribute name="pfc_name" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_year" />
+          <attribute name="pfc_entitytype" />
+          <attribute name="pfc_responsableid" />
+          <order attribute="pfc_name" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Perfils Tributaris inactiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

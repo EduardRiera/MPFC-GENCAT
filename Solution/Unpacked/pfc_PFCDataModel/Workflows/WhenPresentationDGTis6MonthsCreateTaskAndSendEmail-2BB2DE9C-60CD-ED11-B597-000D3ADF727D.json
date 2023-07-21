@@ -1,0 +1,206 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Day",
+            "interval": 1,
+            "startTime": "2023-03-29T01:00:00Z"
+          },
+          "metadata": {
+            "operationMetadataId": "d89f32d7-d53d-46df-9294-a517f3c99bc3"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Enumerar_filas": {
+          "runAfter": {
+            "Inicializar_variable_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "584788cd-2cdd-423e-8a17-dec7d6bc982e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "pfc_query_dgts",
+              "fetchXml": "<fetch>\n  <entity name=\"pfc_query_dgt\">\n    <attribute name=\"pfc_presentationdatedgt\" />\n    <filter>\n      <condition attribute=\"pfc_presentationdatedgt\" operator=\"not-null\" />\n    </filter>\n  </entity>\n</fetch>"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Aplicar_a_cada_uno": {
+          "foreach": "@outputs('Enumerar_filas')?['body/value']",
+          "actions": {
+            "Obtener_una_fila_por_id": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9e91717d-a6ed-473d-9cda-c3c249d596dc"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_query_dgts",
+                  "recordId": "@items('Aplicar_a_cada_uno')?['pfc_query_dgtid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Establecer_variable": {
+              "runAfter": {
+                "Obtener_una_fila_por_id": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3e78a665-3473-4661-ac29-50c6b70f57f8"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "variable",
+                "value": "@{div(sub(ticks(utcNow()), ticks(outputs('Obtener_una_fila_por_id')?['body/pfc_presentationdatedgt'])), 864000000000)} "
+              }
+            },
+            "Condición": {
+              "actions": {
+                "Agregar_una_fila_nueva": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "e22037de-1436-4a6c-b239-9120f70ed50f"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_1",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "tasks",
+                      "item/scheduledstart": "@utcNow()",
+                      "item/subject": "Avis",
+                      "item/regardingobjectid_pfc_query_dgt_task@odata.bind": "/pfc_query_dgts/@{items('Aplicar_a_cada_uno')?['pfc_query_dgtid']}"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {
+                "Establecer_variable_2": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@variables('variable')",
+                  6
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "9197ea02-a6b0-49b4-b454-09ad129bb4a1"
+              },
+              "type": "If"
+            },
+            "Establecer_variable_2": {
+              "runAfter": {
+                "Establecer_variable": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d66d88d6-f929-4aa1-ab64-b5c1318ad9f3"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "v2",
+                "value": "@div(float(variables('variable')),30)"
+              }
+            }
+          },
+          "runAfter": {
+            "Enumerar_filas": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3e1fa6eb-744d-4f6a-bd10-83339b1c606b"
+          },
+          "type": "Foreach"
+        },
+        "Inicializar_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "72d971ae-767f-4491-a6f8-66e1957a8828"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "variable",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_2": {
+          "runAfter": {
+            "Inicializar_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "bc0b8f6f-17f3-4655-a061-739a8c42ee07"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "v2",
+                "type": "float"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

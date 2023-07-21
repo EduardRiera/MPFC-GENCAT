@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{b2819344-9c6e-e611-80d6-00155db66667}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" preview="1" icon="1">
+        <row name="result" id="msevtmgt_checkinid">
+          <cell name="msevtmgt_contact" width="112" />
+          <cell name="msevtmgt_registrationid" width="277" />
+          <cell name="msevtmgt_checkintime" width="233" />
+          <cell name="msevtmgt_checkouttime" width="240" />
+          <cell name="pfc_createcertification" width="194" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="msevtmgt_checkin">
+          <attribute name="msevtmgt_registrationid" />
+          <attribute name="msevtmgt_contact" />
+          <attribute name="createdon" />
+          <attribute name="msevtmgt_checkintime" />
+          <attribute name="msevtmgt_checkouttime" />
+          <order attribute="createdon" descending="false" />
+          <filter type="and">
+            <condition attribute="msevtmgt_sessionregistration" operator="null" />
+          </filter>
+          <attribute name="msevtmgt_checkinid" />
+          <attribute name="pfc_createcertification" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Registre d'entrada d'esdeveniment" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Mostra tots els registres d'entrada relacionats amb un esdeveniment i no una sessió" languagecode="1027" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

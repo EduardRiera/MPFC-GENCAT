@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ed9a50af-a06a-4591-a14a-d9e84b5aa734}</formid>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="true" maxWidth="1900" headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{c5832c69-6e53-4fc1-a074-d8e63eb53c25}" IsUserDefined="1" name="tab_general" expanded="true" locklevel="0" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{7380aa00-0cbc-4b55-9fec-9b680da0e87f}" name="section_general" columns="1" locklevel="0" labelwidth="122" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{e9499b2a-459a-89e5-29c8-30199bed2815}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{75b44bd4-2a82-2ea4-2e3a-6307a11266ab}" showlabel="true" locklevel="0" ordinalvalue="10000" solutionaction="Modified">
+                        <control id="msevtmgt_registrationid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="msevtmgt_registrationid" disabled="true" uniqueid="{c201d341-8bdb-e482-2126-ca98733c7524}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{38d960a0-6344-db62-55a2-1521d9ee0a38}" showlabel="true" locklevel="0" ordinalvalue="10001" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{37304977-0b8b-a0ce-0e0d-0252986855c7}" showlabel="true" locklevel="0" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Curs" languagecode="1027" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3687e991-d5e1-d27d-0a85-2be0739928c4}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Modified">
+                        <control id="msevtmgt_checkintype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="msevtmgt_checkintype" disabled="true" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4ace00e2-dabe-33b2-885e-d19e02b38855}" showlabel="true" locklevel="0" ordinalvalue="10005" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{2e491e60-796c-5e63-95a1-da1b4dd49ce8}" showlabel="true" locklevel="0" ordinalvalue="10006" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{6c762082-1d22-aa75-33e6-d4adc4e12047}" showlabel="true" locklevel="0" ordinalvalue="10004" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell id="{5b63cea9-9236-bb3a-083e-172020cc62c0}" showlabel="true" locklevel="0" ordinalvalue="10005" solutionaction="Modified">
+                        <control id="msevtmgt_numberofquestionsasked" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="msevtmgt_numberofquestionsasked" disabled="true" uniqueid="{819c9592-ed37-3d60-e36c-a604d62eb07d}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0766dca1-c9a4-471d-bf6d-6fa1ed24943d}" showlabel="true" locklevel="1" visible="false" ordinalvalue="10008" solutionaction="Modified">
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" uniqueid="{dd6912ce-6d52-08d1-1600-b2a50336c7ca}" solutionaction="Modified">
+                          <parameters solutionaction="Added">
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8a103187-fbf2-481e-9f07-3926d62c09a7}" locklevel="0" colspan="1" rowspan="1" showlabel="true" ordinalvalue="10006" solutionaction="Added">
+                        <labels>
+                          <label description="Generar certificat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_createcertification" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="pfc_createcertification" disabled="false" uniqueid="{8b54e618-ea14-a344-e997-56d3a9ce083d}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{200db948-6a31-c17d-7a08-28c0c1e8b3bc}" showlabel="true" locklevel="0" ordinalvalue="10007" solutionaction="Added">
+                        <labels>
+                          <label description="URL certificat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_certificatedurl" classid="{71716B6C-711E-476c-8AB8-5D11542BFB47}" datafieldname="pfc_certificatedurl" disabled="false" uniqueid="{d824939a-b6e9-e940-7735-a34ae1ac5436}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="66%" id="1">
+              <sections>
+                <section showlabel="false" showbar="false" id="{17f2255f-40a5-4d20-94ad-47e35f9c2d0f}" IsUserDefined="0" height="auto" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell showlabel="false" rowspan="15" auto="false" id="{0c5f00d1-4675-49ab-9d33-9f3786409d89}" ordinalvalue="10000">
+                        <control id="notescontrol" classid="{06375649-c143-495e-a496-c962e5b4488e}">
+                          <parameters>
+                            <UClientActivities solutionaction="Added">appointment,pfc_portasignatures,msfp_surveyresponse</UClientActivities>
+                            <UClientDisplayActivityUsing solutionaction="Added">defaultfields</UClientDisplayActivityUsing>
+                            <UClientActivityCardMap solutionaction="Added">appointment:4201:,campaignactivity:4402:,campaignresponse:4401:,email:4202:,fax:4204:,incidentresolution:4206:,letter:4207:,opportunityclose:4208:,orderclose:4209:,phonecall:4210:,quoteclose:4211:,recurringappointmentmaster:4251:,serviceappointment:4214:,socialactivity:4216:,task:4212:,adx_alertsubscription:10678:,adx_inviteredemption:10683:,adx_portalcomment:10756:,chat:10095:,msdyn_copilottranscript:11429:,msdyn_ocliveworkitem:10472:,msdyn_ocsession:10489:,msfp_alert:10362:,msfp_surveyinvite:10372:,msfp_surveyresponse:10374:,pfc_answer:11300:,pfc_informationrequirement:11130:,pfc_portasignatures:11307:,pfc_presentacion:10735:,pfc_receivedresponse:11303:,pfc_sentquery:11302:,pfc_validatedquery:11301:,</UClientActivityCardMap>
+                            <UClientActivitiesConfigurationJSON solutionaction="Added">{"email":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"campaignactivity":{"showTopDate":true,"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"incidentresolution":{"showTopDate":true,"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"opportunityclose":{"showTopDate":true,"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"orderclose":{"showTopDate":true,"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"phonecall":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"quoteclose":{"showTopDate":true,"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"recurringappointmentmaster":{"showTopDate":true,"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"socialactivity":{"showTopDate":true,"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"task":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_validatedquery":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_sentquery":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_receivedresponse":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_answer":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_presentacion":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_informationrequirement":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"msfp_alert":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"msfp_surveyinvite":{"showTopDate":true,"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"msfp_surveyresponse":{"showTopDate":true,"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"msdyn_ocsession":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"chat":{"showTopDate":true,"showStatus":false,"canCreate":false,"createUsing":"default","openUsing":"default"},"msdyn_copilottranscript":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"msdyn_ocliveworkitem":{"showTopDate":true,"showStatus":true,"canCreate":false,"createUsing":"default","openUsing":"default"},"adx_portalcomment":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"adx_inviteredemption":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"adx_alertsubscription":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default"},"pfc_portasignatures":{"showTopDate":true,"showStatus":true,"canCreate":true,"createUsing":"default","openUsing":"default","commandsConfig":{"order":[{"id":"OpenEntityRecord","isVisible":true},{"id":"CloseActivity","isVisible":true},{"id":"Delete","isVisible":true},{"id":"Assign","isVisible":false},{"id":"AddToQueue","isVisible":false}]}}}</UClientActivitiesConfigurationJSON>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{b4300ff7-599f-4653-9649-0598948de77a}" columns="111" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+        <rows>
+          <row>
+            <cell id="{1b371179-27ca-ba38-d943-830432dccab4}" showlabel="true" locklevel="0" visible="false" ordinalvalue="10000" solutionaction="Modified" />
+          </row>
+          <row>
+            <cell id="{1459e996-3219-1c7a-3b71-530de628a873}" showlabel="true" locklevel="0" ordinalvalue="10003" solutionaction="Added">
+              <labels>
+                <label description="Propietari" languagecode="1027" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+            <cell id="{76d55438-a0dd-905e-bdb3-60571622499b}" showlabel="false" ordinalvalue="20004" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{931c1d93-e1ea-871e-663d-8c388ed0b5ae}" showlabel="false" ordinalvalue="30005" solutionaction="Added">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <controlDescriptions>
+        <controlDescription forControl="{A2004C7A-E818-5A2B-296A-9192D856E4C7}" solutionaction="Removed" />
+        <controlDescription forControl="{60005905-868A-D3DD-E1C9-099603A30C59}" solutionaction="Removed" />
+      </controlDescriptions>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.setVisibility_initCheckinFormSetSessionsFieldsVisbility" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{ca742049-e435-04ad-0d0b-85697aeb6e26}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="2" solutionaction="Modified" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.lookupPreFilter_addPreFilter" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{4a8bd89a-e259-2cb5-9826-c6b6579abe50}" enabled="true" parameters="{   &quot;preFilterFields&quot;: [     {       &quot;parentName&quot;: &quot;msevtmgt_eventregistration&quot;,       &quot;parentLookupName&quot;: &quot;msevtmgt_registrationid&quot;,       &quot;parentInChildIdAttribute&quot;: &quot;msevtmgt_registrationid&quot;,       &quot;childName&quot;: &quot;msevtmgt_sessionregistration&quot;     }   ] }" passExecutionContext="false" ordinalvalue="1" solutionaction="Modified" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.resetFields_initResetSessionRegistrationField" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{d0dd245c-9742-13a2-8b58-9651918ec886}" enabled="true" parameters="" passExecutionContext="false" ordinalvalue="4" solutionaction="Modified" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.lookupAutoFill_addAutoFill" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{88b0bacb-ccad-95e3-e700-b8c16eb200c4}" enabled="true" parameters="[{   &quot;parentLookupName&quot;: &quot;msevtmgt_event&quot;,   &quot;parentName&quot;: &quot;msevtmgt_event&quot;,   &quot;parentIdName&quot;: &quot;msevtmgt_eventid&quot;,   &quot;childLookupName&quot;: &quot;msevtmgt_registrationid&quot;,   &quot;childIdName&quot;: &quot;msevtmgt_eventregistrationid&quot;,   &quot;childSetName&quot;: &quot;msevtmgt_eventregistrations&quot;,   &quot;navPropertyName&quot;: &quot;msevtmgt_EventId&quot;,   &quot;stopImmediateFireOnChange&quot;: true  }]" passExecutionContext="false" ordinalvalue="3" solutionaction="Modified" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.lookupAutoFill_addAutoFill" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{36109703-7405-b503-c2c3-55bc2d3014a5}" enabled="true" parameters="[{   &quot;parentLookupName&quot;: &quot;msevtmgt_contact&quot;,   &quot;parentName&quot;: &quot;contact&quot;,   &quot;parentIdName&quot;: &quot;contactid&quot;,   &quot;childLookupName&quot;: &quot;msevtmgt_registrationid&quot;,   &quot;childIdName&quot;: &quot;msevtmgt_eventregistrationid&quot;,   &quot;childSetName&quot;: &quot;msevtmgt_eventregistrations&quot;,   &quot;navPropertyName&quot;: &quot;msevtmgt_ContactId&quot;,   &quot;parentNamePropertyName&quot;: &quot;fullname&quot;,   &quot;stopImmediateFireOnChange&quot;: true  }]" passExecutionContext="false" ordinalvalue="5" solutionaction="Modified" />
+            <Handler functionName="EventMgmt.CrmWebResource.Handlers.lookupAutoFill_addAutoFill" libraryName="msevtmgt_EventMgmt.CrmWebResource" handlerUniqueId="{a5ed9aca-1c3b-505e-7d57-ed0141a10860}" enabled="true" parameters="[{   &quot;parentLookupName&quot;: &quot;msevtmgt_sessionattended&quot;,   &quot;parentName&quot;: &quot;msevtmgt_session&quot;,   &quot;parentIdName&quot;: &quot;msevtmgt_sessionid&quot;,   &quot;childLookupName&quot;: &quot;msevtmgt_sessionregistration&quot;,   &quot;childIdName&quot;: &quot;msevtmgt_sessionregistrationid&quot;,   &quot;childSetName&quot;: &quot;msevtmgt_sessionregistrations&quot;,   &quot;navPropertyName&quot;: &quot;msevtmgt_SessionId&quot;,   &quot;stopImmediateFireOnChange&quot;: true  }]" passExecutionContext="false" ordinalvalue="6" solutionaction="Modified" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="msevtmgt_registrationidfromqr" solutionaction="Removed" />
+      </events>
+      <footer id="{9b066ec0-122c-412b-985b-0080f5837f99}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+      <DisplayConditions FallbackForm="true" Order="1" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari d'aquesta entitat" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

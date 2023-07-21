@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{25ff7a11-29ed-4c5b-b1b2-a8c8909e1c36}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_departamental_agrupationid">
+          <cell name="pfc_name" width="300" />
+          <cell name="pfc_acronym" width="100" />
+          <cell name="pfc_code" width="100" />
+          <cell name="pfc_order" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_departamental_agrupation">
+          <attribute name="pfc_departamental_agrupationid" />
+          <attribute name="pfc_name" />
+          <order attribute="pfc_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="pfc_acronym" />
+          <attribute name="pfc_code" />
+          <attribute name="pfc_order" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Agrupacións departamentals inactiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

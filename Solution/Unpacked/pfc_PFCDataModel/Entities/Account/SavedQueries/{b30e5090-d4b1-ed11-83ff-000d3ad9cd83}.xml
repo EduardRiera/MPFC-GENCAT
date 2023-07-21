@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{b30e5090-d4b1-ed11-83ff-000d3ad9cd83}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" preview="1" icon="1">
+        <row name="result" id="accountid">
+          <cell name="name" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="account">
+          <attribute name="name" />
+          <order attribute="name" descending="false" />
+          <filter type="or">
+            <filter type="and">
+              <condition attribute="pfc_grade_of_participation" operator="eq" value="1-Majoritària" />
+              <condition attribute="pfc_uniquelegalsystem" operator="ne" value="Entitat independent" />
+            </filter>
+            <condition attribute="pfc_registrationstatus" operator="eq" value="3-Prebaixa" />
+            <filter type="and">
+              <condition attribute="pfc_membership_administration" operator="eq" value="1-Administració de la Generalitat de Catalunya" />
+              <filter type="or">
+                <condition attribute="pfc_catalogentitytype" operator="eq" value="6-Consorcis" />
+                <condition attribute="pfc_catalogentitytype" operator="eq" value="2-Fundacions" />
+              </filter>
+              <filter type="or">
+                <condition attribute="pfc_grade_of_participation" operator="eq" value="2-Minoritaria" />
+                <condition attribute="pfc_grade_of_participation" operator="eq" value="3-Paritària" />
+              </filter>
+            </filter>
+          </filter>
+          <attribute name="accountid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Àmbit subjectiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,1447 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_3": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedoffice365_2d413"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Quan_s’afegeix,_es_modifica_o_se_suprimeix_una_fila": {
+          "metadata": {
+            "operationMetadataId": "bdb2c9be-7253-4bc4-84a6-bcd714946759"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_3",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "pfc_informationrequirement",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "pfc_notificaciondeliverynumber",
+              "subscriptionRequest/filterexpression": "pfc_notificaciondeliverynumber lt 1"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Inicializar_variable_(URL)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e6e88444-77a6-4b3c-98e0-0dcf9811a786"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "URL",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicialitza_la_variable_notificaciondeliverynumber": {
+          "runAfter": {
+            "Inicializar_variable_(URL)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "adb1adf3-8aa9-49e4-b1e1-342265a89289"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "notificaciondeliverynumber",
+                "type": "integer",
+                "value": "@triggerOutputs()?['body/pfc_notificaciondeliverynumber']"
+              }
+            ]
+          }
+        },
+        "Condició": {
+          "actions": {
+            "Incrementa_una_variable": {
+              "runAfter": {
+                "Conmutador": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "91a020d5-a491-4431-a0c8-2c06d2555bb9"
+              },
+              "type": "IncrementVariable",
+              "inputs": {
+                "name": "notificaciondeliverynumber",
+                "value": 1
+              }
+            },
+            "Actualitza_una_fila": {
+              "runAfter": {
+                "Incrementa_una_variable": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3a405dbf-d942-4a6b-902a-c962d73f1c5d"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_informationrequirements",
+                  "recordId": "@triggerOutputs()?['body/activityid']",
+                  "item/statecode": 0,
+                  "item/pfc_notificaciondeliverynumber": "@variables('notificaciondeliverynumber')",
+                  "item/statuscode": 470000001
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Conmutador": {
+              "runAfter": {},
+              "cases": {
+                "Caso_Consultas": {
+                  "case": "pfc_queries",
+                  "actions": {
+                    "Ámbito_Consultas": {
+                      "actions": {
+                        "Redactar_(Enlace)": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "9f90b312-0320-4f95-ac3c-745545f47753"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Assist%C3%A8ncia-i-suport/consultes-usuari/"
+                        },
+                        "Redactar_(Enlace_Interessat)_2": {
+                          "runAfter": {
+                            "Redactar_(Enlace)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "9f90b312-0320-4f95-ac3c-745545f47753"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Assist%C3%A8ncia-i-suport/consultes-interessat/"
+                        },
+                        "Consulta:_Obtener_regarding": {
+                          "runAfter": {
+                            "Redactar_(Enlace_Interessat)_2": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "6599eb41-1a79-46bf-af3d-11b73470992a"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps_3",
+                              "operationId": "GetItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "pfc_queries",
+                              "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Condición_Notificaciones_Habilidadas": {
+                          "actions": {
+                            "Obtener_una_fila_por_id_(Contacte)": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "39abaee0-512b-435c-829a-a94f6d30593c"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "recordId": "@outputs('Consulta:_Obtener_regarding')?['body/_pfc_applicantid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Enumerar_filas_(Contactes_relacionats)": {
+                              "runAfter": {
+                                "Obtener_una_fila_por_id_(Contacte)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "94bb8caf-a536-4909-81c5-a42d10e12415"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "ListRecords",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "fetchXml": "<fetch>\n  <entity name=\"contact\">\n    <attribute name=\"contactid\" />\n    <link-entity name=\"pfc_query_contact\" from=\"contactid\" to=\"contactid\" intersect=\"true\">\n      <attribute name=\"pfc_query_contactid\" />\n      <filter>\n        <condition attribute=\"pfc_queryid\" operator=\"eq\" value=\"@{outputs('Consulta:_Obtener_regarding')?['body/pfc_queryid']}\" />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Consulta:_For_contactos_relacionados": {
+                              "foreach": "@outputs('Enumerar_filas_(Contactes_relacionats)')?['body/value']",
+                              "actions": {
+                                "Obtener_una_fila_por_id": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "a128e4ad-d72f-44f8-8bd1-7b0e164bef3d"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_3",
+                                      "operationId": "GetItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "contacts",
+                                      "recordId": "@items('Consulta:_For_contactos_relacionados')?['contactid']"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Anexar_a_la_variable_de_cadena": {
+                                  "runAfter": {
+                                    "Obtener_una_fila_por_id": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "861d5b70-78e6-4416-9836-3103d07fa566"
+                                  },
+                                  "type": "AppendToStringVariable",
+                                  "inputs": {
+                                    "name": "Destinatarios",
+                                    "value": "@{outputs('Obtener_una_fila_por_id')?['body/emailaddress1']};"
+                                  }
+                                },
+                                "Defineix_la_variable_Interessat_2": {
+                                  "runAfter": {
+                                    "Anexar_a_la_variable_de_cadena": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "4443c6af-d073-48d7-a17d-9b7ca92ace51"
+                                  },
+                                  "type": "SetVariable",
+                                  "inputs": {
+                                    "name": "Interessat",
+                                    "value": "@true"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Enumerar_filas_(Contactes_relacionats)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "5bbe9f4c-42bc-416a-a942-94c30eb2dbe5"
+                              },
+                              "type": "Foreach"
+                            },
+                            "Consulta:_Enviar_correo": {
+                              "runAfter": {
+                                "Consulta:_For_contactos_relacionados": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "19c9188b-40a3-49d4-bdea-ea65ac96deee"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_office365",
+                                  "operationId": "SendEmailV2",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                },
+                                "parameters": {
+                                  "emailMessage/To": "@outputs('Obtener_una_fila_por_id_(Contacte)')?['body/emailaddress1']",
+                                  "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                  "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Consulta:_Obtener_regarding')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_(Enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n",
+                                  "emailMessage/Importance": "Normal"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condició_Interessat_2": {
+                              "actions": {
+                                "Consulta:_Enviar_correo_2": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "19c9188b-40a3-49d4-bdea-ea65ac96deee"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_office365",
+                                      "operationId": "SendEmailV2",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                    },
+                                    "parameters": {
+                                      "emailMessage/To": "@{variables('Destinatarios')}@{outputs('Consulta:_Obtener_regarding')?['body/pfc_interestedpeople']}",
+                                      "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                      "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Consulta:_Obtener_regarding')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_(Enlace_Interessat)_2')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n",
+                                      "emailMessage/Importance": "Normal"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Consulta:_Enviar_correo": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "or": [
+                                  {
+                                    "equals": [
+                                      "@variables('Interessat')",
+                                      "@true"
+                                    ]
+                                  },
+                                  {
+                                    "not": {
+                                      "equals": [
+                                        "@outputs('Consulta:_Obtener_regarding')?['body/pfc_interestedpeople']",
+                                        "@null"
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "9dad26a3-88f3-452f-a1fb-dc2c769fa84c"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {
+                            "Consulta:_Obtener_regarding": [
+                              "Succeeded"
+                            ]
+                          },
+                          "else": {
+                            "actions": {
+                              "Consulta:_Enviar_correo_Equipo_Desarrollo": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "19c9188b-40a3-49d4-bdea-ea65ac96deee"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_office365",
+                                    "operationId": "SendEmailV2",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                  },
+                                  "parameters": {
+                                    "emailMessage/To": "@variables('Destinatarios Equipo')",
+                                    "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                    "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Consulta:_Obtener_regarding')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_(Enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n",
+                                    "emailMessage/Importance": "Normal"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              }
+                            }
+                          },
+                          "expression": {
+                            "equals": [
+                              "@variables('NotificationIsEnable')",
+                              "@true"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "2f36b805-e7e9-4feb-8f83-8abf87459c72"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "b5d6158e-cc94-4f9b-b5b0-484a3456a1cc"
+                      },
+                      "type": "Scope"
+                    }
+                  }
+                },
+                "Caso_Consultas_DGT": {
+                  "case": "pfc_query_dgts",
+                  "actions": {
+                    "Ámbito_Consultas_DGT": {
+                      "actions": {
+                        "Redactar_2_(Enlace)": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "9f90b312-0320-4f95-ac3c-745545f47753"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Assist%C3%A8ncia-i-suport/consultesDGT/"
+                        },
+                        "Url_Interessats": {
+                          "runAfter": {
+                            "Redactar_2_(Enlace)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "f409bc0a-6ad6-42bf-b5f4-39bd538a94b0"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Assistència-i-suport/consultesDGT-interessat/"
+                        },
+                        "Obtener_una_fila_por_id_3_(Consulta_dgt)": {
+                          "runAfter": {
+                            "Url_Interessats": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "6599eb41-1a79-46bf-af3d-11b73470992a"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps_3",
+                              "operationId": "GetItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "pfc_query_dgts",
+                              "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Condición_Notificaciones_Habilidadas_2": {
+                          "actions": {
+                            "Obtener_una_fila_por_id_4_(contacte)": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "39abaee0-512b-435c-829a-a94f6d30593c"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "recordId": "@outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/_pfc_applicantid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Enumerar_filas_3_(contactes_relacionats)": {
+                              "runAfter": {
+                                "Obtener_una_fila_por_id_4_(contacte)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "94bb8caf-a536-4909-81c5-a42d10e12415"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "ListRecords",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "fetchXml": "<fetch>\n  <entity name=\"contact\">\n    <attribute name=\"contactid\" />\n    <link-entity name=\"pfc_contact_pfc_query_dgt\" from=\"contactid\" to=\"contactid\" intersect=\"true\">\n      <filter>\n        <condition attribute=\"pfc_query_dgtid\" operator=\"eq\" value=\"@{outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/pfc_query_dgtid']}\" />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Aplicar_a_cada_uno_3": {
+                              "foreach": "@outputs('Enumerar_filas_3_(contactes_relacionats)')?['body/value']",
+                              "actions": {
+                                "Obtener_una_fila_por_id_11_(Contacte_relacionat)": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "c051c68e-7a3a-4192-a0c2-510fd9819abb"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_3",
+                                      "operationId": "GetItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "contacts",
+                                      "recordId": "@items('Aplicar_a_cada_uno_3')?['contactid']"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Anexar_a_la_variable_de_cadena_3_(destinatarios)": {
+                                  "runAfter": {
+                                    "Obtener_una_fila_por_id_11_(Contacte_relacionat)": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "e3689042-ec33-4996-b51f-f1977174e8bb"
+                                  },
+                                  "type": "AppendToStringVariable",
+                                  "inputs": {
+                                    "name": "Destinatarios",
+                                    "value": "@{outputs('Obtener_una_fila_por_id_11_(Contacte_relacionat)')?['body/emailaddress1']}; "
+                                  }
+                                },
+                                "Defineix_la_variable_Interessat": {
+                                  "runAfter": {
+                                    "Anexar_a_la_variable_de_cadena_3_(destinatarios)": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "a4aea4a1-fb1d-4bf7-a5ce-2147c267ff12"
+                                  },
+                                  "type": "SetVariable",
+                                  "inputs": {
+                                    "name": "Interessat",
+                                    "value": "@true"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Enumerar_filas_3_(contactes_relacionats)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "03ba7ef0-f665-4d70-a7e9-49dd3f502116"
+                              },
+                              "type": "Foreach"
+                            },
+                            "Consulta_DGT:_Enviar_correo_electrónico_(V2)": {
+                              "runAfter": {
+                                "Aplicar_a_cada_uno_3": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "8d36b5d4-f6e5-41f6-9efb-3f8e1b867894"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_office365",
+                                  "operationId": "SendEmailV2",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                },
+                                "parameters": {
+                                  "emailMessage/To": "@outputs('Obtener_una_fila_por_id_4_(contacte)')?['body/emailaddress1']",
+                                  "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                  "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_2_(Enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>",
+                                  "emailMessage/Importance": "Normal"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condició_Personas_Relacionadas": {
+                              "actions": {
+                                "Consulta_DGT:_Enviar_correo_electrónico_Interessats": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "0f4b429d-92ca-4621-b1f0-9041a2588f94"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_office365",
+                                      "operationId": "SendEmailV2",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                    },
+                                    "parameters": {
+                                      "emailMessage/To": "@{variables('Destinatarios')};@{outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/pfc_interestedpeople']}",
+                                      "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                      "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Url_Interessats')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>",
+                                      "emailMessage/Importance": "Normal"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Consulta_DGT:_Enviar_correo_electrónico_(V2)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "or": [
+                                  {
+                                    "equals": [
+                                      "@variables('Interessat')",
+                                      "@true"
+                                    ]
+                                  },
+                                  {
+                                    "not": {
+                                      "equals": [
+                                        "@outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/pfc_interestedpeople']",
+                                        "@null"
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "92103c9d-ef0b-4d61-b1ef-508835f114bc"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {
+                            "Obtener_una_fila_por_id_3_(Consulta_dgt)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "else": {
+                            "actions": {
+                              "Consulta_DGT:_Enviar_correo_electrónico_(V2)_Equipo_Desarrollo": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "8d36b5d4-f6e5-41f6-9efb-3f8e1b867894"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_office365",
+                                    "operationId": "SendEmailV2",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                  },
+                                  "parameters": {
+                                    "emailMessage/To": "@variables('Destinatarios Equipo')",
+                                    "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                    "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Obtener_una_fila_por_id_3_(Consulta_dgt)')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_2_(Enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>",
+                                    "emailMessage/Importance": "Normal"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              }
+                            }
+                          },
+                          "expression": {
+                            "equals": [
+                              "@variables('NotificationIsEnable')",
+                              "@true"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "2f180d50-ad9e-44cb-a886-97848448f993"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "8e48d815-773b-4f04-8dd2-fa4920a6b245"
+                      },
+                      "type": "Scope"
+                    }
+                  }
+                },
+                "Caso_OET": {
+                  "case": "pfc_tax_transcendence_operations",
+                  "actions": {
+                    "Ámbito_OET": {
+                      "actions": {
+                        "Redactar_3_(enlace)": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "c9e57293-33e2-45e5-a08b-e8150ca261d7"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Assist%C3%A8ncia-i-suport/operacions/"
+                        },
+                        "Redactar_3_(enlace)_2": {
+                          "runAfter": {
+                            "Redactar_3_(enlace)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "c9e57293-33e2-45e5-a08b-e8150ca261d7"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Assist%C3%A8ncia-i-suport/operacions-interessat/"
+                        },
+                        "OET:_Obtener_una_fila_por_id_5": {
+                          "runAfter": {
+                            "Redactar_3_(enlace)_2": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "9f92801f-95ca-4932-a2f9-ea7ff4fad350"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps_3",
+                              "operationId": "GetItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "pfc_tax_transcendence_operations",
+                              "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Condición_Notificaciones_Habilidadas_3": {
+                          "actions": {
+                            "OET:_Obtener_una_fila_por_id_6_(contacte)": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "aa897c39-f7c4-40d9-b64e-75b43bf3a1ac"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "recordId": "@outputs('OET:_Obtener_una_fila_por_id_5')?['body/_pfc_applicantid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "OET:_Enumerar_filas_2_(contactes_relacionats)": {
+                              "runAfter": {
+                                "OET:_Obtener_una_fila_por_id_6_(contacte)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "94bb8caf-a536-4909-81c5-a42d10e12415"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "ListRecords",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "fetchXml": "<fetch>\n  <entity name=\"contact\">\n    <attribute name=\"contactid\" />\n    <link-entity name=\"pfc_tax_transcendence_operation_contact\" from=\"contactid\" to=\"contactid\" intersect=\"true\">\n      <filter>\n        <condition attribute=\"pfc_tax_transcendence_operationid\" operator=\"eq\" value=\"@{outputs('OET:_Obtener_una_fila_por_id_5')?['body/pfc_tax_transcendence_operationid']}\" />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "OET:_Aplicar_a_cada_uno_2": {
+                              "foreach": "@outputs('OET:_Enumerar_filas_2_(contactes_relacionats)')?['body/value']",
+                              "actions": {
+                                "Obtener_una_fila_por_id_10_(contacte_relacionat)": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "50c518e4-27ca-4fc4-9203-af2882479836"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_3",
+                                      "operationId": "GetItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "contacts",
+                                      "recordId": "@items('OET:_Aplicar_a_cada_uno_2')?['contactid']"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Anexar_a_la_variable_de_cadena_2_(destinatario)": {
+                                  "runAfter": {
+                                    "Obtener_una_fila_por_id_10_(contacte_relacionat)": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "5b94f9d8-00e0-4dd0-9799-6304394d88e7"
+                                  },
+                                  "type": "AppendToStringVariable",
+                                  "inputs": {
+                                    "name": "Destinatarios",
+                                    "value": "@{outputs('Obtener_una_fila_por_id_10_(contacte_relacionat)')?['body/emailaddress1']}; "
+                                  }
+                                },
+                                "Defineix_la_variable_Interessat_3": {
+                                  "runAfter": {
+                                    "Anexar_a_la_variable_de_cadena_2_(destinatario)": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "90526c7b-2b24-46c4-bb7b-058b9fef8218"
+                                  },
+                                  "type": "SetVariable",
+                                  "inputs": {
+                                    "name": "Interessat",
+                                    "value": "@true"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "OET:_Enumerar_filas_2_(contactes_relacionats)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "17a17cb0-3dc2-4e83-bc92-9c27adcf3705"
+                              },
+                              "type": "Foreach"
+                            },
+                            "OET:_Enviar_correo_electrónico": {
+                              "runAfter": {
+                                "OET:_Aplicar_a_cada_uno_2": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "566b8092-c995-4b49-a282-06f7e622db66"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_office365",
+                                  "operationId": "SendEmailV2",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                },
+                                "parameters": {
+                                  "emailMessage/To": "@outputs('OET:_Obtener_una_fila_por_id_6_(contacte)')?['body/emailaddress1']",
+                                  "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                  "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('OET:_Obtener_una_fila_por_id_5')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_3_(enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n",
+                                  "emailMessage/Importance": "Normal"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condició_Interessat_3": {
+                              "actions": {
+                                "OET:_Enviar_correo_electrónico_2": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "566b8092-c995-4b49-a282-06f7e622db66"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_office365",
+                                      "operationId": "SendEmailV2",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                    },
+                                    "parameters": {
+                                      "emailMessage/To": "@{variables('Destinatarios')}@{outputs('OET:_Obtener_una_fila_por_id_5')?['body/pfc_interestedpeople']}",
+                                      "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                      "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('OET:_Obtener_una_fila_por_id_5')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_3_(enlace)_2')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n",
+                                      "emailMessage/Importance": "Normal"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "OET:_Enviar_correo_electrónico": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "or": [
+                                  {
+                                    "equals": [
+                                      "@variables('Interessat')",
+                                      "@true"
+                                    ]
+                                  },
+                                  {
+                                    "not": {
+                                      "equals": [
+                                        "@outputs('OET:_Obtener_una_fila_por_id_5')?['body/pfc_interestedpeople']",
+                                        "@null"
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "f20a7c53-89df-4f2f-93b8-cfa099d78d67"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {
+                            "OET:_Obtener_una_fila_por_id_5": [
+                              "Succeeded"
+                            ]
+                          },
+                          "else": {
+                            "actions": {
+                              "OET:_Enviar_correo_electrónico_-_Equipo_Desarrollo": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "566b8092-c995-4b49-a282-06f7e622db66"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_office365",
+                                    "operationId": "SendEmailV2",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                  },
+                                  "parameters": {
+                                    "emailMessage/To": "@variables('Destinatarios Equipo')",
+                                    "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                    "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('OET:_Obtener_una_fila_por_id_5')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_3_(enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n",
+                                    "emailMessage/Importance": "Normal"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              }
+                            }
+                          },
+                          "expression": {
+                            "equals": [
+                              "@variables('NotificationIsEnable')",
+                              "@true"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "6c8c7109-d785-4aa9-bb8f-39788eff2f6f"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "4abbdcda-8ccb-4c67-a5dd-2b993b25ca7a"
+                      },
+                      "type": "Scope"
+                    }
+                  }
+                },
+                "Caso_Solicitudes_de_formación": {
+                  "case": "pfc_trainingrequests",
+                  "actions": {
+                    "Ámbito_Solicitud_de_Formación": {
+                      "actions": {
+                        "Redactar_4_(enlace)": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "c9e57293-33e2-45e5-a08b-e8150ca261d7"
+                          },
+                          "type": "Compose",
+                          "inputs": "@{variables('URL')}/Formaci%C3%B3/formacions/formation-requests/"
+                        },
+                        "Obtener_una_fila_por_id_7_(solicitud_de_formació)": {
+                          "runAfter": {
+                            "Redactar_4_(enlace)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "90f61f80-0ce9-44d3-b6ec-db8aed4255e8"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps_3",
+                              "operationId": "GetItem",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "pfc_trainingrequests",
+                              "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Condición_Notificaciones_Habilidadas_4": {
+                          "actions": {
+                            "Obtener_una_fila_por_id_8_(contacte)": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "4f2014a9-b7a0-474b-a20a-106a4e6e0f4b"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_3",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "contacts",
+                                  "recordId": "@outputs('Obtener_una_fila_por_id_7_(solicitud_de_formació)')?['body/_pfc_contactid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Enviar_correo_electrónico_(V2)_4": {
+                              "runAfter": {
+                                "Obtener_una_fila_por_id_8_(contacte)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "49405093-d101-4e7d-a915-7ca6aed449aa"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_office365",
+                                  "operationId": "SendEmailV2",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                },
+                                "parameters": {
+                                  "emailMessage/To": "@outputs('Obtener_una_fila_por_id_8_(contacte)')?['body/emailaddress1']",
+                                  "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                  "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Obtener_una_fila_por_id_7_(solicitud_de_formació)')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_4_(enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n<br>\n@{outputs('Obtener_una_fila_por_id_8_(contacte)')?['body/emailaddress1']}</p>",
+                                  "emailMessage/Cc": "@variables('Destinatarios')",
+                                  "emailMessage/Importance": "Normal"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            }
+                          },
+                          "runAfter": {
+                            "Obtener_una_fila_por_id_7_(solicitud_de_formació)": [
+                              "Succeeded"
+                            ]
+                          },
+                          "else": {
+                            "actions": {
+                              "Enviar_correo_electrónico_(V2)_-Equipo_Desarrollo_4": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "49405093-d101-4e7d-a915-7ca6aed449aa"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_office365",
+                                    "operationId": "SendEmailV2",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                                  },
+                                  "parameters": {
+                                    "emailMessage/To": "@variables('Destinatarios Equipo')",
+                                    "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                                    "emailMessage/Body": "<p>Bon dia,<br>\n<br>\nTeniu una nova sol·licitud d'informació referent a @{outputs('Obtener_una_fila_por_id_7_(solicitud_de_formació)')?['body/pfc_name']}.<br>\n<br>\n<br><p><a href=\"@{outputs('Redactar_4_(enlace)')}\">Enllaç a la sol·licitud d'informació</a></p>\n<br>\nSalutacions.<br>\n<br>\n</p>",
+                                    "emailMessage/Cc": "@variables('Destinatarios')",
+                                    "emailMessage/Importance": "Normal"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              }
+                            }
+                          },
+                          "expression": {
+                            "equals": [
+                              "@variables('NotificationIsEnable')",
+                              "@true"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "3761a781-a08a-405a-aee2-3e29a8831abf"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "b234cb97-e55c-4599-be5d-a03129e743c9"
+                      },
+                      "type": "Scope"
+                    }
+                  }
+                }
+              },
+              "default": {
+                "actions": {}
+              },
+              "expression": "@triggerOutputs()?['body/_regardingobjectid_type']",
+              "metadata": {
+                "operationMetadataId": "5f82639c-d1b7-44db-943d-c5abcb5d131b"
+              },
+              "type": "Switch"
+            }
+          },
+          "runAfter": {
+            "Ámbito_Equipos": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "less": [
+              "@variables('notificaciondeliverynumber')",
+              1
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ecd4fc75-d415-464c-882e-a6fa413e5234"
+          },
+          "type": "If"
+        },
+        "Inicialitza_la_variable_Interessat": {
+          "runAfter": {
+            "Inicializar_variable_NotificationIsEnable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "84ac6912-5714-4426-b40b-d9534dcd6143"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Interessat",
+                "type": "boolean",
+                "value": "@false"
+              }
+            ]
+          }
+        },
+        "Ámbito_Configuració_del_Lloc": {
+          "actions": {
+            "Obtener_Configuració_del_lloc_-_URL": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "d952aadf-f322-4cfa-9508-2708ec370ff3"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "adx_sitesettings",
+                  "$select": "adx_name, adx_value",
+                  "$filter": "adx_name eq 'Portal/EnvioMail'"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Aplicar_a_cada_Configuracó_del_Lloc": {
+              "foreach": "@outputs('Obtener_Configuració_del_lloc_-_URL')?['body/value']",
+              "actions": {
+                "Establecer_variable_(URL)": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "e5e4982b-aac6-44fb-962c-1303c86dc157"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "URL",
+                    "value": "@items('Aplicar_a_cada_Configuracó_del_Lloc')?['adx_value']"
+                  }
+                }
+              },
+              "runAfter": {
+                "Obtener_Configuració_del_lloc_-_URL": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c8e1f690-ac6d-4900-923f-d271b2335abe"
+              },
+              "type": "Foreach"
+            },
+            "Obtener_Configuració_del_lloc_-_(Notificaciones_Activas)": {
+              "runAfter": {
+                "Aplicar_a_cada_Configuracó_del_Lloc": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d952aadf-f322-4cfa-9508-2708ec370ff3"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "adx_sitesettings",
+                  "$select": "adx_name, adx_value",
+                  "$filter": "adx_name eq 'PowerAutomate/Notifications'"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Aplicar_a_cada_Configuració_del_lloc_-_(Notificaciones_Activas)": {
+              "foreach": "@outputs('Obtener_Configuració_del_lloc_-_(Notificaciones_Activas)')?['body/value']",
+              "actions": {
+                "Condición": {
+                  "actions": {
+                    "Establecer_variable_NotificationIsEnable": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "5429bb77-5536-4a8c-b594-9dda3be136e2"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "NotificationIsEnable",
+                        "value": "@true"
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "expression": {
+                    "contains": [
+                      "@items('Aplicar_a_cada_Configuració_del_lloc_-_(Notificaciones_Activas)')?['adx_value']",
+                      "Si"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "f09dbbe6-7883-4e4b-8fe5-5c760a3f47d6"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "Obtener_Configuració_del_lloc_-_(Notificaciones_Activas)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d18c502c-97e5-461f-b463-d5bfa22e7392"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Inicializar_variable_(Destinatarios_Equipo)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7f19ca9d-47f1-4837-8412-fb7f1473502d"
+          },
+          "type": "Scope"
+        },
+        "Inicializar_variable_(Destinatario)": {
+          "runAfter": {
+            "Inicialitza_la_variable_Interessat": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5a6d4327-5ebd-434b-9b1e-11019ac79b4c"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Destinatarios",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_NotificationIsEnable": {
+          "runAfter": {
+            "Inicialitza_la_variable_notificaciondeliverynumber": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "63b0f639-de3a-482a-a967-94af309fba96"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "NotificationIsEnable",
+                "type": "boolean",
+                "value": "@false"
+              }
+            ]
+          }
+        },
+        "Ámbito_Equipos": {
+          "actions": {
+            "Enumerar_filas_Equipo_de_Desarrollo": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "dfbb4518-cd0a-445b-82da-4aebcbb003f4"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "teams",
+                  "$filter": "name eq 'Equip de desenvolupament'"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Aplicar_a_cada_Equipo": {
+              "foreach": "@outputs('Enumerar_filas_Equipo_de_Desarrollo')?['body/value']",
+              "actions": {
+                "Enumerar_Usuarios_del_Equipo": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "f09dea81-f136-4465-9f48-f75c1bcdf25c"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_3",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "systemusers",
+                      "fetchXml": "<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"true\">\n<entity name=\"systemuser\">\n<link-entity name=\"teammembership\" from=\"systemuserid\" to=\"systemuserid\">\n<link-entity name=\"team\" from=\"teamid\" to=\"teamid\" alias=\"ac\">\n<filter type=\"and\">\n<condition attribute=\"teamid\" operator=\"eq\" value=\"@{items('Aplicar_a_cada_Equipo')?['teamid']}\"/>\n</filter>\n</link-entity>\n</link-entity>\n</entity>\n</fetch>"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Aplicar_a_cada_Usuario": {
+                  "foreach": "@outputs('Enumerar_Usuarios_del_Equipo')?['body/value']",
+                  "actions": {
+                    "Anexar_a_la_variable_de_cadena_(Destinatarios-Equipo)": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "36c4c39d-8f9f-423e-8742-814db2cac1f3"
+                      },
+                      "type": "AppendToStringVariable",
+                      "inputs": {
+                        "name": "Destinatarios Equipo",
+                        "value": "@{items('Aplicar_a_cada_Usuario')?['internalemailaddress']};"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Enumerar_Usuarios_del_Equipo": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "c9dcfeb6-2f3c-425f-a07b-1efa7ee8e861"
+                  },
+                  "type": "Foreach"
+                }
+              },
+              "runAfter": {
+                "Enumerar_filas_Equipo_de_Desarrollo": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "255d94de-1a37-435c-aa9a-0d65d94f6577"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Ámbito_Configuració_del_Lloc": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ee4d511b-807c-4fa4-8a2c-7746e20b9d72"
+          },
+          "type": "Scope"
+        },
+        "Inicializar_variable_(Destinatarios_Equipo)": {
+          "runAfter": {
+            "Inicializar_variable_(Destinatario)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "684c71fd-e207-49c0-aed3-ab13cdbab9c7"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Destinatarios Equipo",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

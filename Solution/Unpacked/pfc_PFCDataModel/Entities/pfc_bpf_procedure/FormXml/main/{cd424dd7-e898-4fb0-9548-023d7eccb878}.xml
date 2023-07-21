@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cd424dd7-e898-4fb0-9548-023d7eccb878}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{071159b6-183b-4963-81c9-04e0c4d98fc1}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{aa7441a1-789c-4dfc-954a-276fe53504bd}">
+          <labels>
+            <label description="Fase Iniciació" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{edec7246-2c9e-231c-3bd5-5489b8437f2d}" name="StageStep3_section1" labelid="{a44c2d6b-64a0-4b4b-b880-c755dffcd2e3}">
+                  <labels>
+                    <label description="Fase Iniciació" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c71ece03-f180-4409-be79-cf83106bb020}" showlabel="true" visible="true" labelid="{5d7399ec-ed9e-406d-8e5f-be8b799ede65}">
+                        <labels>
+                          <label description="New Step" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_procedure_pfc_bpf_procedure:pfc_name" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="pfc_name" relationship="bpf_pfc_procedure_pfc_bpf_procedure" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{f909960d-46b6-4051-892a-48524a3aa2e4}" name="StageStep7" locklevel="0" expanded="true" visible="false" labelid="{70b4df1b-f852-401e-b34a-aadc064d2061}">
+          <labels>
+            <label description="Fase Tramitació" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{035f6b7e-7dc4-653c-d3c3-a103ecc8979c}" name="StageStep7_section1" labelid="{0577bee7-760b-432e-8da8-891542ec6961}">
+                  <labels>
+                    <label description="Fase Tramitació" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{aadb9805-5e76-4771-970e-3856c4ceb05b}" showlabel="true" visible="true" labelid="{9c8c57fd-d242-4059-a629-1fc59846e043}">
+                        <labels>
+                          <label description="Raó per a l'estat" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_procedure_pfc_bpf_procedure:statuscode" classid="{5d68b988-0661-4db2-bc3e-17598ad3be6c}" datafieldname="statuscode" relationship="bpf_pfc_procedure_pfc_bpf_procedure" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{6a0af9a7-81a8-4960-9b87-744f77fc1b12}" name="StageStep11" locklevel="0" expanded="true" visible="false" labelid="{0d0fec9f-c89b-4874-94bd-79ab36003b93}">
+          <labels>
+            <label description="Fase Finalització" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{87e339c8-9aee-5672-e2bc-c8e868d5833a}" name="StageStep11_section1" labelid="{7b155074-8372-4fd8-a61e-f82d3f6a4ba3}">
+                  <labels>
+                    <label description="Fase Finalització" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a7e6e64c-f6c5-4a5c-ad18-175c738f4b22}" showlabel="true" visible="true" labelid="{7c4aa830-a25a-4acc-afc5-fb14cc25b8e7}">
+                        <labels>
+                          <label description="Raó per a l'estat" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_procedure_pfc_bpf_procedure:statuscode" classid="{5d68b988-0661-4db2-bc3e-17598ad3be6c}" datafieldname="statuscode" relationship="bpf_pfc_procedure_pfc_bpf_procedure" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

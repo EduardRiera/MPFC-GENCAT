@@ -1,0 +1,96 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_commondataservice_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataservice_214d2"
+        },
+        "api": {
+          "name": "shared_commondataservice"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Cuando_se_agrega_una_fila": {
+          "metadata": {
+            "operationMetadataId": "b59dfd21-747d-42f2-a9d4-eb87395099c3"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataservice_1",
+              "operationId": "SubscribeOnNewItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataservice"
+            },
+            "parameters": {
+              "dataset": "default.cds",
+              "table": "msdyncrm_formpages",
+              "scope": "Organization"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Pagines_de_formulari:_Actualizar_una_fila": {
+          "runAfter": {
+            "Redactar": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d406e8a1-50dd-4d81-a746-d177e9aedb36"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msdyncrm_formpages",
+              "recordId": "@triggerOutputs()?['body/msdyncrm_formpageid']",
+              "item/msdyncrm_javascriptcode": "@outputs('Redactar')",
+              "item/pfc_formpagejavascriptcode": "@outputs('Redactar')"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Redactar": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "14de5c9e-cb07-4814-a68b-56a53e092710"
+          },
+          "type": "Compose",
+          "inputs": "@replace(triggerOutputs()?['body/msdyncrm_javascriptcode'], 'https://mktdplp102cdn.azureedge.net/public/1.84.2007/static/js/form-loader.js', 'https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007')"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

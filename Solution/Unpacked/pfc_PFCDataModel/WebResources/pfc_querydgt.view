@@ -1,0 +1,64 @@
+var QueryDGT;
+(function (QueryDGT) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "pfc_query_dgt";
+        function OnLoad(ec) {
+            var fc = ec.getFormContext();
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = QueryDGT.FormEvents || (QueryDGT.FormEvents = {}));
+})(QueryDGT || (QueryDGT = {}));
+(function (QueryDGT) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function populateImageValuesinGrid(rowDataFromGrid) {
+                "use strict";
+                debugger;
+                var getRows = JSON.parse(rowDataFromGrid);
+                var currentRecordStatus = getRows.statuscode_Value;
+                var populateimageValues = "";
+                var populateTooltip = "";
+                switch (currentRecordStatus) {
+                    case 470000001:
+                        populateimageValues = "pfc_circlegray";
+                        populateTooltip = "Esborrany";
+                        break;
+                    case 470000002:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "En curs";
+                        break;
+                    case 470000003:
+                        populateimageValues = "pfc_circleorange";
+                        populateTooltip = "Pendent resposta";
+                        break;
+                    case 470000004:
+                        populateimageValues = "pfc_circleorange";
+                        populateTooltip = "Pendent presentació";
+                        break;
+                    case 470000005:
+                        populateimageValues = "pfc_circlegreen";
+                        populateTooltip = "Finalitzada";
+                        break;
+                    case 470000006:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "Pendent validació";
+                        break;
+                    case 470000007:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "Resposta";
+                        break;
+                    case 470000008:
+                        populateimageValues = "pfc_circleyellow";
+                        populateTooltip = "Anàlisi resposta DGT";
+                        break;
+                }
+                var returnArrayValues = [populateimageValues, populateTooltip];
+                return returnArrayValues;
+            }
+            BusinessLogic.populateImageValuesinGrid = populateImageValuesinGrid;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = QueryDGT.Functions || (QueryDGT.Functions = {}));
+})(QueryDGT || (QueryDGT = {}));

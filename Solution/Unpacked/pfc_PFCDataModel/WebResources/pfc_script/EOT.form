@@ -1,0 +1,275 @@
+var OET;
+(function (OET) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "pfc_tax_transcendence_operation";
+        function OnLoad(ec) {
+            "use strict";
+            var fc = ec.getFormContext();
+            fc.data.process.addOnPreStageChange(OET.FormEvents.OnChange.BPFOnChange);
+            OET.Functions.BusinessLogic.showHideTabQueryData(fc);
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = OET.FormEvents || (OET.FormEvents = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var FormEvents;
+    (function (FormEvents) {
+        var OnChange;
+        (function (OnChange) {
+            function statuscode(ec) {
+                var fc = ec.getFormContext();
+                if (fc.getAttribute(OET.Constants.Fields.StatusCode).getValue() == OET.Constants.StatusCodeOS.EnCurs && (fc.data.process.getActiveStage()._stageStep.description == OET.Constants.StatesNames.Finalitzada)) {
+                    var id_1 = null;
+                    fc.data.process.getActiveProcess().getStages().forEach(function (v, i, a) {
+                        if (v._stageStep.description === OET.Constants.StatesNames.EnCurs) {
+                            id_1 = v._stageStep.id;
+                        }
+                    });
+                    fc.data.process.setStatus("active");
+                    setTimeout(function () {
+                        fc.data.process.setActiveStage(id_1);
+                        fc.data.refresh(true);
+                    }, 100);
+                }
+            }
+            OnChange.statuscode = statuscode;
+            function BPFOnChange(ec) {
+                var fc = ec.getFormContext();
+                if (fc.getAttribute(OET.Constants.Fields.StatusCode).getValue() == OET.Constants.StatusCodeOS.Resposta) {
+                    OET.Functions.BusinessLogic.CheckAmbit(ec);
+                }
+            }
+            OnChange.BPFOnChange = BPFOnChange;
+            function pfc_accountid(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                OET.Functions.BusinessLogic.setSolicitantAndSupervisorAndDepartamentalAgrupation(fc);
+            }
+            OnChange.pfc_accountid = pfc_accountid;
+            function pfc_referredtoconsultant(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                OET.Functions.BusinessLogic.showHideTabQueryData(fc);
+            }
+            OnChange.pfc_referredtoconsultant = pfc_referredtoconsultant;
+            function pfc_acceptance_date(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = OET.Constants.Fields.DataRecepcio;
+                var endDate = OET.Constants.Fields.DataAcceptacio;
+                OET.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_acceptance_date = pfc_acceptance_date;
+            function pfc_sent_date(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = OET.Constants.Fields.DataAcceptacio;
+                var endDate = OET.Constants.Fields.DataResposta;
+                OET.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_sent_date = pfc_sent_date;
+            function pfc_closing_date(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = OET.Constants.Fields.DataResposta;
+                var endDate = OET.Constants.Fields.DataTancament;
+                OET.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            OnChange.pfc_closing_date = pfc_closing_date;
+            function pfc_interestedpeople(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                OET.Functions.BusinessLogic.checkInterestedPeople(fc);
+            }
+            OnChange.pfc_interestedpeople = pfc_interestedpeople;
+        })(OnChange = FormEvents.OnChange || (FormEvents.OnChange = {}));
+    })(FormEvents = OET.FormEvents || (OET.FormEvents = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function CheckAmbit(ec) {
+                "use strict";
+                if (ec.getEventArgs().getDirection() === "Next") {
+                    var fc = ec.getFormContext();
+                    var filteredRecordCount = fc.getControl(OET.Grids.AmbitGrid).getGrid().getTotalRecordCount();
+                    if (filteredRecordCount <= 0) {
+                        ec.getEventArgs().preventDefault();
+                        fc.ui.setFormNotification("No hi ha àmbits vinculats a aquesta consulta", "ERROR", "Ambit");
+                    }
+                    else {
+                        fc.ui.clearFormNotification("Ambit");
+                    }
+                }
+            }
+            BusinessLogic.CheckAmbit = CheckAmbit;
+            function checkInterestedPeople(fc) {
+                var myRe = /^([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?;)*([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)$/;
+                if (fc.getAttribute(OET.Constants.Fields.InterestedPeople).getValue() != "" && fc.getAttribute(OET.Constants.Fields.InterestedPeople).getValue() != null) {
+                    if (!myRe.test(fc.getAttribute(OET.Constants.Fields.InterestedPeople).getValue())) {
+                        fc.getControl(OET.Constants.Fields.InterestedPeople).setNotification("El format de correu electrònic és incorrecte.Només estan permesos correus electrònics vàlids separats per ';'");
+                    }
+                    else {
+                        fc.getControl(OET.Constants.Fields.InterestedPeople).clearNotification();
+                    }
+                }
+                else {
+                    fc.getControl(OET.Constants.Fields.InterestedPeople).clearNotification();
+                }
+            }
+            BusinessLogic.checkInterestedPeople = checkInterestedPeople;
+            function showHideTabQueryData(fc) {
+                if (fc.getAttribute(OET.Constants.Fields.ReferredConsultant).getValue() == true) {
+                    fc.ui.tabs.get(OET.Tabs.DataQuery).setVisible(true);
+                }
+                else {
+                    fc.ui.tabs.get(OET.Tabs.DataQuery).setVisible(false);
+                }
+            }
+            BusinessLogic.showHideTabQueryData = showHideTabQueryData;
+            function CheckDate(fc, startDate, endDate) {
+                if (Date.parse(fc.getAttribute(startDate).getValue()) > Date.parse(fc.getAttribute(endDate).getValue())) {
+                    fc.getControl(endDate).setNotification(OET.Constants.Message.wrongDateNotification, OET.Constants.Message.wrongDateNotification);
+                }
+                else {
+                    fc.getControl(endDate).clearNotification(OET.Constants.Message.wrongDateNotification);
+                }
+            }
+            BusinessLogic.CheckDate = CheckDate;
+            function setSolicitantAndSupervisorAndDepartamentalAgrupation(fc) {
+                var lookupAccountId, accountId;
+                lookupAccountId = fc.getAttribute(OET.Constants.Fields.Entitat).getValue();
+                var EntitatId, lookupEntitat;
+                lookupEntitat = fc.getAttribute(OET.Constants.Fields.Entitat).getValue();
+                if (lookupAccountId) {
+                    accountId = lookupAccountId[0].id;
+                    Xrm.WebApi.online.retrieveMultipleRecords(OET.Constants.Entities.Entitat.LogicalName, OET.Queries.QueriesToRetrieveAccount(fc, accountId)).then(function success(result) {
+                        var lookupSupervisorId = new Array();
+                        lookupSupervisorId[0] = new Object();
+                        if (result.entities[0] && result.entities[0]._pfc_entityhead_value && result.entities[0]["_pfc_entityhead_value@OData.Community.Display.V1.FormattedValue"]) {
+                            lookupSupervisorId[0].id = result.entities[0]._pfc_entityhead_value;
+                            lookupSupervisorId[0].name = result.entities[0]["_pfc_entityhead_value@OData.Community.Display.V1.FormattedValue"];
+                            lookupSupervisorId[0].entityType = "contact";
+                            fc.getAttribute(OET.Constants.Fields.SupervisorContact).setValue(lookupSupervisorId);
+                        }
+                        var lookupDepartamentalAgrupation = new Array();
+                        lookupDepartamentalAgrupation[0] = new Object();
+                        if (result.entities[0] && result.entities[0]._pfc_departamental_agrupationid_value && result.entities[0]["_pfc_departamental_agrupationid_value@OData.Community.Display.V1.FormattedValue"]) {
+                            lookupDepartamentalAgrupation[0].id = result.entities[0]._pfc_departamental_agrupationid_value;
+                            lookupDepartamentalAgrupation[0].name = result.entities[0]["_pfc_departamental_agrupationid_value@OData.Community.Display.V1.FormattedValue"];
+                            lookupDepartamentalAgrupation[0].entityType = "pfc_departamental_agrupation";
+                            fc.getAttribute(OET.Constants.Fields.DepartamentalAgrupation).setValue(lookupDepartamentalAgrupation);
+                        }
+                    }, function error(error) {
+                        Xrm.Navigation.openAlertDialog(error.message);
+                    });
+                }
+                else {
+                    fc.getAttribute(OET.Constants.Fields.DepartamentalAgrupation).setValue(null);
+                    fc.getAttribute(OET.Constants.Fields.SupervisorContact).setValue(null);
+                }
+            }
+            BusinessLogic.setSolicitantAndSupervisorAndDepartamentalAgrupation = setSolicitantAndSupervisorAndDepartamentalAgrupation;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = OET.Functions || (OET.Functions = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.Entitat = "pfc_accountid";
+            Fields.Supervisor = "pfc_supervisorid";
+            Fields.SupervisorContact = "pfc_entityhead";
+            Fields.DepartamentalAgrupation = "pfc_enrollmentdepartmentid";
+            Fields.DataRecepcio = "pfc_receptiondate";
+            Fields.DataAcceptacio = "pfc_acceptance_date";
+            Fields.DataResposta = "pfc_sent_date";
+            Fields.DataTancament = "pfc_closing_date";
+            Fields.ReferredConsultant = "pfc_referredtoconsultant";
+            Fields.InterestedPeople = "pfc_interestedpeople";
+            Fields.StatusCode = "statuscode";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = OET.Constants || (OET.Constants = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Constants;
+    (function (Constants) {
+        var StatusCodeOS;
+        (function (StatusCodeOS) {
+            StatusCodeOS.Resposta = 470000002;
+            StatusCodeOS.EnCurs = 470000000;
+        })(StatusCodeOS = Constants.StatusCodeOS || (Constants.StatusCodeOS = {}));
+    })(Constants = OET.Constants || (OET.Constants = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Constants;
+    (function (Constants) {
+        var StatesNames;
+        (function (StatesNames) {
+            StatesNames.EnCurs = "En Curs";
+            StatesNames.Finalitzada = "Finalitzada";
+        })(StatesNames = Constants.StatesNames || (Constants.StatesNames = {}));
+    })(Constants = OET.Constants || (OET.Constants = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Tabs;
+    (function (Tabs) {
+        Tabs.DataQuery = "tab_8";
+    })(Tabs = OET.Tabs || (OET.Tabs = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Grids;
+    (function (Grids) {
+        Grids.AmbitGrid = "Subgrid_Ambit";
+    })(Grids = OET.Grids || (OET.Grids = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var Entitat;
+            (function (Entitat) {
+                Entitat.LogicalName = "account";
+            })(Entitat = Entities.Entitat || (Entities.Entitat = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = OET.Constants || (OET.Constants = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Constants;
+    (function (Constants) {
+        var Message;
+        (function (Message) {
+            Message.wrongDateNotification = "La data introduida és incorrecta.Introduiu una data més gran a la data anterior";
+            Message.successfulDateNotification = "La data és correcta";
+        })(Message = Constants.Message || (Constants.Message = {}));
+    })(Constants = OET.Constants || (OET.Constants = {}));
+})(OET || (OET = {}));
+(function (OET) {
+    var Queries;
+    (function (Queries) {
+        function QueriesToRetrieveAccount(fc, fieldValue) {
+            "use strict";
+            var fetchXml = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true' no-lock='true'>\
+                <entity name='account'>\
+                    <attribute name='accountid' />\
+                    <attribute name='pfc_departamental_agrupationid' />\
+                    <attribute name='pfc_responsableid' />\
+                    <attribute name='pfc_entityhead' />\
+                    <filter>\
+                        <condition attribute='accountid' operator='eq' value='" + fieldValue + "' />\
+                    </filter>\
+                </entity>\
+            </fetch>",
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.QueriesToRetrieveAccount = QueriesToRetrieveAccount;
+    })(Queries = OET.Queries || (OET.Queries = {}));
+})(OET || (OET = {}));

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{7eb21ae8-dc6f-ed11-9561-000d3ab3f701}</WebResourceId>
+  <Name>pfc_model_16x16</Name>
+  <DisplayName>model_16x16</DisplayName>
+  <LanguageCode>1027</LanguageCode>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_model_16x167EB21AE8-DC6F-ED11-9561-000D3AB3F701</FileName>
+</WebResource>

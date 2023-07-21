@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cd585c3d-6c7a-4307-bbcf-6422ca067934}</formid>
+    <IntroducedVersion>1.0.10</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{ed92675b-057c-4ba1-b2b2-4f69098e3bde}" IsUserDefined="1" name="{ed92675b-057c-4ba1-b2b2-4f69098e3bde}" locklevel="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{dd5ebc27-567b-4c37-ad50-b46bb8f8cc27}">
+                  <labels>
+                    <label description="General" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{cb074cd2-3868-811c-4c2c-38e54bd29a3b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Resum" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_summary" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pfc_summary" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bda9e85e-70a4-4825-3c65-07ba525842ea}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Objecte de la consulta" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_objectofthequery" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pfc_objectofthequery" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{53754082-39e1-47d8-9a00-c24f871a55f3}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="Nom" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" uniqueid="{9d545903-46ea-b633-ceed-14a5384d387d}" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8c65a3d8-dd4d-4448-ba53-38c05c6651bb}" showlabel="true" locklevel="1" visible="false">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" uniqueid="{351ca7e4-5ddc-2757-4e42-dd078c7710c5}" disabled="false">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0d93786e-0c25-a80c-9837-3a50c5994788}" showlabel="true" colspan="1" auto="false" rowspan="7">
+                        <labels>
+                          <label description="Àmbit" languagecode="1027" />
+                        </labels>
+                        <control id="grd_ambit" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{C86A1E07-78B8-4332-8BE1-5802B1F42A76}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>pfc_pfc_ambit_pfc_anonymizedrecord</RelationshipName>
+                            <TargetEntityType>pfc_ambit</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{C86A1E07-78B8-4332-8BE1-5802B1F42A76}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                            <RelationshipRoleOrdinal>2</RelationshipRoleOrdinal>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1027" Text="Comú" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1027" Text="Vendes" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1027" Text="Servei" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1027" Text="Màrqueting" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1027" Text="Sessions del procés" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

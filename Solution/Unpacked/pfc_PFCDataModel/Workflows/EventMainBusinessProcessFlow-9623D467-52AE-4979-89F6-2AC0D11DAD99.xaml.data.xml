@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{9623d467-52ae-4979-89f6-2ac0d11dad99}" Name="EventMainBusinessProcessFlow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/EventMainBusinessProcessFlow-9623D467-52AE-4979-89F6-2AC0D11DAD99.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <processroleassignment>&lt;DisplayConditions&gt;&lt;Role Id="{A31A2242-BF8F-E611-80D7-00155D4B201D}" /&gt;&lt;Role Id="{26FCA5D6-C18F-E611-80D7-00155D4B201D}" /&gt;&lt;Role Id="{627090ff-40a3-4053-8790-584edc5be201}" /&gt;&lt;Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" /&gt;&lt;/DisplayConditions&gt;</processroleassignment>
+  <RunAs>1</RunAs>
+  <UniqueName>msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>0.0.0.1</IntroducedVersion>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>msevtmgt_Event</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1027" description="EventMainBusinessProcessFlow" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{6d5310d4-ff9b-4445-81cc-8ea6c19ed44d}">
+      <label languagecode="1027" description="Inclòs Al Pla De Formació" />
+    </steplabels>
+    <steplabels id="{24dd5826-498c-4cbe-ae18-06b571dbe989}">
+      <label languagecode="1027" description="Nom del curs" />
+    </steplabels>
+    <steplabels id="{24124d99-d200-b2c5-683a-8691dd74b516}">
+      <label languagecode="1027" description="Tipus de curs" />
+    </steplabels>
+    <steplabels id="{c8866253-3e42-44f8-932d-242612ec8c2d}">
+      <label languagecode="1027" description="Descripció" />
+    </steplabels>
+    <steplabels id="{b82f1e3d-ec68-416b-8d04-e66ecbe2c955}">
+      <label languagecode="1027" description="Capacitat màxima de l'esdeveniment" />
+    </steplabels>
+    <steplabels id="{a298250e-4120-88c4-b3d3-cc5a8b0e6489}">
+      <label languagecode="1027" description="Fus horari del curs" />
+    </steplabels>
+    <steplabels id="{8ca110b0-5e94-757d-23d0-dc090ee50509}">
+      <label languagecode="1027" description="Data d'inici del curs" />
+    </steplabels>
+    <steplabels id="{3b371ded-05a5-44e6-57ee-5d5dd1e5c6b7}">
+      <label languagecode="1027" description="Data final del curs" />
+    </steplabels>
+    <steplabels id="{b61016c3-ecbe-6768-e94b-c9b0c5470521}">
+      <label languagecode="1027" description="En Organització" />
+    </steplabels>
+    <steplabels id="{baedb358-2479-4ad8-a42b-034d804428f5}">
+      <label languagecode="1027" description="Voleu reproduir en temps real aquest esdeveniment?" />
+    </steplabels>
+    <steplabels id="{94e0ef28-ca3a-4595-a950-9c0a7a8c4161}">
+      <label languagecode="1027" description="Documentació" />
+    </steplabels>
+    <steplabels id="{67366c00-91e3-4428-8425-e3246cfd3ebf}">
+      <label languagecode="1027" description="Annexos" />
+    </steplabels>
+    <steplabels id="{2c4b3548-d1e5-4e13-9219-021c715a8baf}">
+      <label languagecode="1027" description="Identifica els ponents" />
+    </steplabels>
+    <steplabels id="{e0d8a080-54b1-eca8-7936-bd0c355e54c5}">
+      <label languagecode="1027" description="En Registre" />
+    </steplabels>
+    <steplabels id="{be1d28a9-506a-906a-6b11-d213518c9d8b}">
+      <label languagecode="1027" description="Curs actiu?" />
+    </steplabels>
+    <steplabels id="{d61d62aa-896a-4ca5-b659-2e58c7768721}">
+      <label languagecode="1027" description="Recorregut actiu?" />
+    </steplabels>
+    <steplabels id="{21638333-bc8c-24e2-54ee-a44785657e49}">
+      <label languagecode="1027" description="Posterior A L’Esdeveniment" />
+    </steplabels>
+    <steplabels id="{1093b596-4488-462c-abac-9aeec0a14db1}">
+      <label languagecode="1027" description="Sessió gravada" />
+    </steplabels>
+    <steplabels id="{191184b0-7391-c29a-6bd1-44cce0c8c478}">
+      <label languagecode="1027" description="Enquesta" />
+    </steplabels>
+  </labels>
+</Workflow>

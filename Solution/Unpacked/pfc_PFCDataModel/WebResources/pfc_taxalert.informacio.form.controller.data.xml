@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{0a1acc15-c56f-ed11-9561-000d3ab3f701}</WebResourceId>
+  <Name>pfc_taxalert.informacio.form.controller</Name>
+  <DisplayName>ControllerTaxAlert</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_taxalertinformacioformcontroller0A1ACC15-C56F-ED11-9561-000D3AB3F701</FileName>
+</WebResource>

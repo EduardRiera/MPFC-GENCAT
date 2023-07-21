@@ -1,0 +1,36 @@
+var FormPage;
+(function (FormPage) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "msdyncrm_formpage";
+        function OnLoad(ec) {
+            var fc = ec.getFormContext();
+            FormPage.Functions.BusinessLogic.CopyFormSiteToJavascriptCodeField(fc);
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = FormPage.FormEvents || (FormPage.FormEvents = {}));
+})(FormPage || (FormPage = {}));
+(function (FormPage) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function CopyFormSiteToJavascriptCodeField(fc) {
+                if (!fc.getAttribute(FormPage.Constants.Fields.JavaScriptCode).getValue()) {
+                    fc.getAttribute(FormPage.Constants.Fields.JavaScriptCode).setValue(fc.getAttribute(FormPage.Constants.Fields.WebSiteForm).getValue());
+                }
+            }
+            BusinessLogic.CopyFormSiteToJavascriptCodeField = CopyFormSiteToJavascriptCodeField;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = FormPage.Functions || (FormPage.Functions = {}));
+})(FormPage || (FormPage = {}));
+(function (FormPage) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.WebSiteForm = "msdyncrm_javascriptcode_compound";
+            Fields.JavaScriptCode = "pfc_formpagejavascriptcode";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = FormPage.Constants || (FormPage.Constants = {}));
+})(FormPage || (FormPage = {}));

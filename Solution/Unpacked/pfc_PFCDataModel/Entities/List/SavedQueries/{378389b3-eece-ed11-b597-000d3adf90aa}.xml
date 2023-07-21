@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{378389b3-eece-ed11-b597-000d3adf90aa}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="listname" select="1" preview="1" icon="1">
+        <row name="result" id="listid">
+          <cell name="listname" width="100" />
+          <cell name="lm.createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" count="50">
+        <entity name="list">
+          <attribute name="listname" />
+          <link-entity name="listmember" from="listid" to="listid" intersect="true">
+            <link-entity name="contact" from="contactid" to="entityid" link-type="outer" intersect="true">
+              <link-entity name="systemuser" from="systemuserid" to="pfc_userid">
+                <filter>
+                  <condition attribute="systemuserid" operator="eq-userid" />
+                </filter>
+              </link-entity>
+            </link-entity>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Llistes a les quals no estic subscrit" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

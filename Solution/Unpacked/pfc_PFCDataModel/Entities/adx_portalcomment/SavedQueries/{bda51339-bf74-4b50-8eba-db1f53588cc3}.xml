@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{bda51339-bf74-4b50-8eba-db1f53588cc3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" icon="1" preview="1">
+        <row name="result" id="activityid">
+          <cell name="subject" width="100" />
+          <cell name="description" width="300" />
+          <cell name="createdon" width="125" />
+          <cell name="actualend" width="100" />
+          <cell name="statecode" width="222" />
+          <cell name="adx_portalcommentdirectioncode" width="100" />
+          <cell name="regardingobjectid" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="adx_portalcomment">
+          <attribute name="activityid" />
+          <attribute name="createdon" />
+          <attribute name="description" />
+          <attribute name="statecode" />
+          <attribute name="adx_portalcommentdirectioncode" />
+          <attribute name="subject" />
+          <filter type="and">
+            <condition attribute="activitytypecode" operator="eq" value="10756" />
+          </filter>
+          <attribute name="actualend" />
+          <attribute name="regardingobjectid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>8.0.0000</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Tots els comentaris del portal" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

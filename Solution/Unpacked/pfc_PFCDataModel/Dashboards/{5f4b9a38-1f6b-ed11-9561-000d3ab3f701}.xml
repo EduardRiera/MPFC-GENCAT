@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Consultes" languagecode="1027" />
+  </LocalizedNames>
+  <FormId>{5f4b9a38-1f6b-ed11-9561-000d3ab3f701}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="dashboard">
+      <form>
+        <tabs>
+          <tab showlabel="false" verticallayout="true" id="{259fa41d-145e-46a2-8942-a0c42cb09fa2}">
+            <labels>
+              <label description="Pestanya" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section showlabel="false" showbar="false" columns="1111" id="{65abb9b2-4f44-419c-bbf5-c0323ad07709}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell id="{59e11e17-aa04-ac10-ee25-632edb7462ac}" showlabel="false" colspan="1" auto="false" rowspan="12">
+                          <labels>
+                            <label description="Consultes" languagecode="1027" />
+                          </labels>
+                          <control id="Component5828059" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{5da05395-c31b-05c4-174c-80da0ac83e72}">
+                            <parameters>
+                              <ViewId>{406FEDEF-60AC-ED11-AAD0-000D3ADF7052}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <RelationshipName />
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <ViewIds>{406FEDEF-60AC-ED11-AAD0-000D3ADF7052}</ViewIds>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <VisualizationId>{F8BAE707-1B6B-ED11-9561-000D3AB3F701}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RecordsPerPage>9</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{ead9768a-1817-e473-69e0-093b398a693c}" showlabel="false" colspan="1" auto="false" rowspan="12">
+                          <labels>
+                            <label description="Consulta" languagecode="1027" />
+                          </labels>
+                          <control id="Component8627776" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <ViewId>{4C51AFD0-226B-ED11-9561-000D3AB3F701}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <RelationshipName />
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <ViewIds />
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <VisualizationId>{B0530600-236B-ED11-9561-000D3AB3F701}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{27e975d8-e860-2747-a1b0-e42998489b6c}" showlabel="false" colspan="1" auto="false" rowspan="12">
+                          <labels>
+                            <label description="Consulta" languagecode="1027" />
+                          </labels>
+                          <control id="Component3501311" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true" uniqueid="{68394376-4ad6-935e-a915-e2a111051b12}">
+                            <parameters>
+                              <ViewId>{4C51AFD0-226B-ED11-9561-000D3AB3F701}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <RelationshipName />
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <ViewIds>{826F555C-42E9-4504-B8AA-5F6AE22EDBEE}</ViewIds>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <VisualizationId>{27D2C426-236B-ED11-9561-000D3AB3F701}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RecordsPerPage>12</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{5da09e49-8d98-273b-3382-e27aed305774}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{14cae827-5bab-d15c-c427-6156551a5237}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{d648b437-513e-a003-7c71-a760a1e72dc4}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{24bc55c3-3b34-ddde-26c2-c7541d3309da}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{02285216-350a-2344-3cc2-9635ed9d7456}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{a76d5a29-2ea7-c488-abb1-5de4a7b0c91b}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{e2141e2b-609d-43b5-8e4c-33a2a34c2321}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{459d0606-9411-e718-1a25-a096935d847d}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{212e0a76-ce45-90a3-898a-799089e94817}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{7a82d390-476e-1d52-a158-3995e4e81ad6}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{c766eb7e-6c50-08cb-e175-363399ce1bc8}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{5e52aa17-0684-c680-7664-8a795cd4ceb1}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <controlDescriptions />
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</Dashboard>

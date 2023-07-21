@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0bd832d5-9d6a-456d-bdc1-21129e82cc0f}</formid>
+    <IntroducedVersion>7.0.0003</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" headerdensity="HighWithControls" showImage="false" maxWidth="1920" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{9748ec98-3746-40cc-83bf-d15c7363166f}" IsUserDefined="0" labelid="{1bd42238-ddcc-4029-9eff-256aa3c887c9}" name="General" ordinalvalue="0" solutionaction="Modified">
+          <labels>
+            <label description="El meu perfil" languagecode="1027" solutionaction="Modified" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" id="{90b0776f-2977-4695-9cd4-73bb6c820f88}" IsUserDefined="0" labelid="{3127edf7-a176-4d80-b734-6be963ceafb4}" name="Nom" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{478c8803-2686-4d10-8cf0-e6e5b3b6007f}" labelid="{b73d114e-ac34-4ab0-9030-a7409986ab62}" visible="false" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Nom" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell id="{4fde05d9-89b1-4acf-a98f-13159f1bdcc8}" labelid="{c024ced5-550d-414f-8639-96a38a80b26b}" visible="false" ordinalvalue="20003" solutionaction="Modified">
+                        <labels>
+                          <label description="Cognoms" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                        <control id="lastname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="lastname" uniqueid="{aa0e97b3-1006-65c0-94ea-630ad1bc43a3}" solutionaction="Modified" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{38d7b950-436b-412f-a71b-ae4187e60c14}" labelid="{485eef8d-000d-488e-9c1c-0e98df04e5d1}" colspan="1" rowspan="1" ordinalvalue="20001" solutionaction="Modified">
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="true" solutionaction="Modified" />
+                      </cell>
+                      <cell id="{f3eec8ff-7b5a-43af-92c4-1a41adaf4b50}" labelid="{1409682e-cb37-4c1a-813b-59ce76da79c2}" showlabel="true" locklevel="0" ordinalvalue="20003" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{2329843a-6ab4-4431-8a2b-101f3272e104}" showlabel="true" locklevel="1" labelid="{0e9a6300-1e04-4a2d-af5c-b468b4708830}" visible="false" ordinalvalue="10008" solutionaction="Modified">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell id="{d173e5b2-7472-0652-2dd4-e54522b6aeaa}" showlabel="true" locklevel="0" ordinalvalue="20005" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{d31e1e13-a15b-4d4e-9eb6-cf8ac76f583f}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="GICAR-Id" languagecode="1027" />
+                        </labels>
+                        <control id="adx_identity_username" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="adx_identity_username" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3a35a54e-5b60-4603-a607-df34c235382c}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10004" solutionaction="Added">
+                        <labels>
+                          <label description="Nom complet" languagecode="1027" />
+                        </labels>
+                        <control id="fullname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="fullname" disabled="true" />
+                      </cell>
+                      <cell id="{dd6b2521-b485-279e-943b-794ce5b62820}" showlabel="true" locklevel="0" ordinalvalue="20005" solutionaction="Added">
+                        <labels>
+                          <label description="Telèfon de l'empresa" languagecode="1027" />
+                        </labels>
+                        <control id="company" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="company" disabled="false" uniqueid="{a77a1202-5036-7dc8-6053-5b00be97cd60}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d72cdd91-98a7-e32b-2983-7bb5e7dc787a}" showlabel="true" locklevel="0" ordinalvalue="10006" solutionaction="Added">
+                        <labels>
+                          <label description="Entitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_contactaccount" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_contactaccount" disabled="false" uniqueid="{207b9d52-5d1b-3b66-85c3-6aa960cad5e2}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{077DA2D4-C72E-4090-8D2E-0D362EFCABA7}</DefaultViewId>
+                            <FilterRelationshipName>pfc_pfc_rel_contact_account_contactid</FilterRelationshipName>
+                            <DependentAttributeName>pfc_contact_account.pfc_contactid</DependentAttributeName>
+                            <DependentAttributeType>contact</DependentAttributeType>
+                            <AllowFilterOff>false</AllowFilterOff>
+                            <AvailableViewIds>{077DA2D4-C72E-4090-8D2E-0D362EFCABA7}</AvailableViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{7da9c47c-2847-de37-da26-141c544c3ba4}" showlabel="false" ordinalvalue="20007" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{34c68d90-d6d8-3e76-664b-e9663c87d943}" showlabel="false" ordinalvalue="20009" solutionaction="Added">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="83512f48-6531-4f85-98bc-f848078b51f8" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" ordinalvalue="1" solutionaction="Added">
+                  <labels>
+                    <label description="Entitats relacionades" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{2f169a63-7d43-4a77-b505-f6eb4ad169df}" rowspan="4" colspan="2" auto="false" showlabel="true" ordinalvalue="10000">
+                        <labels>
+                          <label description="Entitats vinculades" languagecode="1027" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Entitats_vinculades" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{3c90cbe1-e8d4-4497-7646-d1746628d69d}">
+                          <parameters>
+                            <RecordsPerPage>5</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>pfc_contact_account</TargetEntityType>
+                            <ViewId>{793CB532-33C8-ED11-B597-000D3ADF7052}</ViewId>
+                            <ViewIds>{436FE144-045A-4617-B362-04AEB6200442},{793CB532-33C8-ED11-B597-000D3ADF7052}</ViewIds>
+                            <RelationshipName>pfc_pfc_rel_contact_account_contactid</RelationshipName>
+                            <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                            <IsUserView>false</IsUserView>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_4" id="d7fe7ad7-bb94-4a3e-9b59-9fcef0aa8756" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" visible="false" ordinalvalue="2" solutionaction="Added">
+                  <labels>
+                    <label description="Condicions d'ús" languagecode="1027" />
+                  </labels>
+                  <rows />
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <footer id="{1d059e53-e20d-40bf-9ce9-5a24aa24596c}">
+        <rows>
+          <row>
+            <cell id="{2fd4a9dc-42af-4f52-a840-7ceea09a71bd}" labelid="{84b0e9f2-de51-414c-a946-ec84fa46b6a0}" ordinalvalue="10000">
+              <labels>
+                <label description="Estat" languagecode="1027" solutionaction="Added" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions FallbackForm="false" Order="3" solutionaction="Modified" />
+      <header id="{0c330d35-2428-4abd-a755-361f4f5e1be1}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </header>
+      <controlDescriptions solutionaction="Added" />
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Formulari web de perfil" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="El portal fa servir aquest formulari per tal que els contactes actualitzin la seva informació de contacte" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

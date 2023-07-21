@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{bd7106b5-48cd-ed11-b597-000d3adea4bc}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_tax_transcendence_operationid">
+          <cell name="pfc_name" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_accountid" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_applicantid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_operationcontext" width="300" />
+          <cell name="statuscode" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="pfc_tax_transcendence_operation">
+          <attribute name="pfc_name" />
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_applicantid" />
+          <attribute name="statuscode" />
+          <attribute name="createdon" />
+          <order attribute="createdon" descending="true" />
+          <filter type="and">
+            <condition attribute="pfc_hideinespaientitats" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_tax_transcendence_operationid" />
+          <attribute name="pfc_operationcontext" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Operacions de transcendència tributaria" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="El meu panell" languagecode="1027" />
+  </LocalizedNames>
+  <FormId>{579fd6ea-679d-ed11-aad0-000d3adf90aa}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="dashboard">
+      <form>
+        <tabs>
+          <tab showlabel="false" verticallayout="true" id="{33209c64-565c-40e8-b470-2ddcdf72df90}">
+            <labels>
+              <label description="Pestanya" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section showlabel="false" showbar="false" columns="111" id="{faee3385-a9b8-431e-8171-645ce3e51d1d}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="1" rowspan="24" showlabel="true" id="{f9f805be-0463-48d7-bea7-9188c9c4e64e}" auto="false">
+                          <labels>
+                            <label description="Tasques" languagecode="1027" />
+                          </labels>
+                          <control id="Componenta43cfbf" uniqueid="{ae034225-23a2-1155-64b0-037a97d85540}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>task</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>20</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                              <ViewId>{34201C75-B5CC-ED11-B597-000D3ADF7052}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{6CF285AA-EB20-4277-925A-3E9735411FF0},{34201C75-B5CC-ED11-B597-000D3ADF7052}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{9E6A8B06-6D14-46E6-BBF5-95C388C6EB7A}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" id="{1c5267e2-4021-43e0-8231-2a8769ff4336}" auto="false">
+                          <labels>
+                            <label description="Tasques" languagecode="1027" />
+                          </labels>
+                          <control id="Componentff04cc9" uniqueid="{6a995b48-482a-5dbc-1404-eb8c4827eb19}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{FD500B4C-08B1-ED11-83FF-000D3ADF7228}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" id="{5b4393ea-726a-4af6-a8e8-7dda15fcb9f5}" auto="false">
+                          <labels>
+                            <label description="Tasques" languagecode="1027" />
+                          </labels>
+                          <control id="Component8706ab3" uniqueid="{98741d24-830d-d700-89cd-c45c51300354}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>pfc_query_dgt</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{E71C1D02-25B4-ED11-83FF-000D3AD9CD83}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row>
+                        <cell colspan="1" rowspan="12" showlabel="false" id="{266bb2b7-5e9b-474f-8e45-37caff21762d}" auto="false">
+                          <labels>
+                            <label description="Tasques" languagecode="1027" />
+                          </labels>
+                          <control id="Componentf3d1aaa" uniqueid="{07ae0eeb-855a-6137-6040-49e11b22bdc4}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>pfc_query</TargetEntityType>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>12</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                              <ViewId>{406FEDEF-60AC-ED11-AAD0-000D3ADF7052}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds>{D49DA7F8-B6CC-ED11-B597-000D3ADF7052},{406FEDEF-60AC-ED11-AAD0-000D3ADF7052}</ViewIds>
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{CC7C6EF2-196B-ED11-9561-000D3AB3F701}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell colspan="1" rowspan="12" showlabel="false" id="{1cc2fc1c-8efb-4562-8578-cf32fb445774}" auto="false">
+                          <labels>
+                            <label description="Tasques" languagecode="1027" />
+                          </labels>
+                          <control id="Component5ba2feb" uniqueid="{649ba005-e5a8-04a8-ba02-61e22c230257}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>pfc_query_dgt</TargetEntityType>
+                              <ChartGridMode>Chart</ChartGridMode>
+                              <EnableQuickFind>false</EnableQuickFind>
+                              <EnableViewPicker>false</EnableViewPicker>
+                              <EnableJumpBar>false</EnableJumpBar>
+                              <RecordsPerPage>10</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{C79A4CD6-AEA3-ED11-AAD1-000D3ADF796B}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{99E5CD7F-1998-ED11-AAD0-000D3ADF90AA}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                      </row>
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                      <row />
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <controlDescriptions />
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.10</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</Dashboard>

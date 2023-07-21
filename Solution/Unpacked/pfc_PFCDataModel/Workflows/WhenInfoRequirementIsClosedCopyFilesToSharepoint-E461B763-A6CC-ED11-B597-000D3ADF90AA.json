@@ -1,0 +1,3446 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedsharepointonline_c963a"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_commondataservice_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataservice_214d2"
+        },
+        "api": {
+          "name": "shared_commondataservice"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "SharepointSite (pfc_sharepointsite)": {
+          "defaultValue": "https://gencat.sharepoint.com/sites/MPFCTest",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_sharepointsite"
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_modifica_una_fila": {
+          "metadata": {
+            "operationMetadataId": "4e06b1e9-d0b8-40a6-aaea-9111114fa25a"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataservice_1",
+              "operationId": "SubscribeOnUpdatedItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataservice"
+            },
+            "parameters": {
+              "dataset": "default.cds",
+              "table": "pfc_informationrequirements",
+              "scope": "Business unit",
+              "subscriptionRequest/AttributeFilters": [
+                "statecode"
+              ]
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Condición_5": {
+          "actions": {
+            "Solicitud:_Obtener_una_fila_por_id_de_Actividad": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "f07e8d71-3243-440f-8747-cf9d5eca1e28"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_informationrequirements",
+                  "recordId": "@triggerOutputs()?['body/activityid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Análisis_del_archivo_JSON": {
+              "runAfter": {
+                "Solicitud:_Obtener_una_fila_por_id_de_Actividad": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "96c0e0a4-ae17-4689-a6a0-ca50dd1bb4ab"
+              },
+              "type": "ParseJson",
+              "inputs": {
+                "content": "@body('Solicitud:_Obtener_una_fila_por_id_de_Actividad')",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@@odata.context": {
+                      "type": "string"
+                    },
+                    "@@odata.type": {
+                      "type": "string"
+                    },
+                    "@@odata.id": {
+                      "type": "string"
+                    },
+                    "@@odata.etag": {
+                      "type": "string"
+                    },
+                    "@@odata.editLink": {
+                      "type": "string"
+                    },
+                    "pfc_seconddocument": {
+                      "type": "string"
+                    },
+                    "pfc_fourthdocument": {
+                      "type": "string"
+                    },
+                    "statecode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "statecode": {
+                      "type": "integer"
+                    },
+                    "pfc_seconddocument_name": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_regardingobjectid_value": {
+                      "type": "string"
+                    },
+                    "pfc_document": {
+                      "type": "string"
+                    },
+                    "leftvoicemail@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "leftvoicemail": {
+                      "type": "boolean"
+                    },
+                    "createdon@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "createdon@odata.type": {
+                      "type": "string"
+                    },
+                    "createdon": {
+                      "type": "string"
+                    },
+                    "isbilled@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "isbilled": {
+                      "type": "boolean"
+                    },
+                    "pfc_document_name": {
+                      "type": "string"
+                    },
+                    "pfc_thirddocument": {
+                      "type": "string"
+                    },
+                    "subject": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_ownerid_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_ownerid_value": {
+                      "type": "string"
+                    },
+                    "_pfc_accountid_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_pfc_accountid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_pfc_accountid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_pfc_accountid_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_pfc_accountid_value": {
+                      "type": "string"
+                    },
+                    "modifiedon@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "modifiedon@odata.type": {
+                      "type": "string"
+                    },
+                    "modifiedon": {
+                      "type": "string"
+                    },
+                    "ismapiprivate@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "ismapiprivate": {
+                      "type": "boolean"
+                    },
+                    "versionnumber@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "versionnumber@odata.type": {
+                      "type": "string"
+                    },
+                    "versionnumber": {
+                      "type": "integer"
+                    },
+                    "prioritycode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "prioritycode": {
+                      "type": "integer"
+                    },
+                    "_owningbusinessunit_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_owningbusinessunit_value": {
+                      "type": "string"
+                    },
+                    "timezoneruleversionnumber@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "timezoneruleversionnumber": {
+                      "type": "integer"
+                    },
+                    "isregularactivity@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "isregularactivity": {
+                      "type": "boolean"
+                    },
+                    "_modifiedby_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_modifiedby_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_modifiedby_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_modifiedby_value": {
+                      "type": "string"
+                    },
+                    "pfc_copytosharepoint@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "pfc_copytosharepoint": {
+                      "type": "boolean"
+                    },
+                    "statuscode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "statuscode": {
+                      "type": "integer"
+                    },
+                    "activitytypecode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "activitytypecode": {
+                      "type": "string"
+                    },
+                    "instancetypecode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "instancetypecode": {
+                      "type": "integer"
+                    },
+                    "_pfc_applicantid_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_pfc_applicantid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                      "type": "string"
+                    },
+                    "_pfc_applicantid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_pfc_applicantid_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_pfc_applicantid_value": {
+                      "type": "string"
+                    },
+                    "isworkflowcreated@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "isworkflowcreated": {
+                      "type": "boolean"
+                    },
+                    "deliveryprioritycode@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "deliveryprioritycode": {
+                      "type": "integer"
+                    },
+                    "_createdby_value@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "_createdby_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_createdby_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_createdby_value": {
+                      "type": "string"
+                    },
+                    "actualend@OData.Community.Display.V1.FormattedValue": {
+                      "type": "string"
+                    },
+                    "actualend@odata.type": {
+                      "type": "string"
+                    },
+                    "actualend": {
+                      "type": "string"
+                    },
+                    "processid@odata.type": {
+                      "type": "string"
+                    },
+                    "processid": {
+                      "type": "string"
+                    },
+                    "pfc_fourthdocument_name": {
+                      "type": "string"
+                    },
+                    "_owninguser_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                      "type": "string"
+                    },
+                    "_owninguser_value@odata.type": {
+                      "type": "string"
+                    },
+                    "_owninguser_value": {
+                      "type": "string"
+                    },
+                    "activityid@odata.type": {
+                      "type": "string"
+                    },
+                    "activityid": {
+                      "type": "string"
+                    },
+                    "pfc_thirddocument_name": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ownerid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ownerid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_accountid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_accountid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_applicantid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_applicantid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_socialactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_socialactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurringappointmentmaster@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurringappointmentmaster@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_QueueItem@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_QueueItem@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ownerid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ownerid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owninguser@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owninguser@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningbusinessunit@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_activity_mime_attachment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_activity_mime_attachment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_fax@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_fax@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email_hash@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_email_hash@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_task@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_task@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_phonecall@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_phonecall@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_appointment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_appointment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_letter@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_letter@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections2@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections2@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "slakpiinstance_activitypointer@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "slakpiinstance_activitypointer@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningteam@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningteam@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_BulkDeleteFailures@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_BulkDeleteFailures@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections1@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_connections1@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_AsyncOperations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_AsyncOperations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurrencerule@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_recurrencerule@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_activity_parties@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_activity_parties@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_chat@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_chat@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_FileAttachments@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activitypointer_FileAttachments@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_campaignresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation_logs@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_BulkOperation_logs@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "CreatedActivity_BulkOperationLogs@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "CreatedActivity_BulkOperationLogs@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_CampaignActivityItems@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "ActivityPointer_CampaignActivityItems@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_campaignresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_campaignresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_incident_resolution@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_incident_resolution@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_service_appointment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_service_appointment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "serviceid@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "serviceid@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_opportunity_close@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_opportunity_close@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_order_close@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_order_close@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_quote_close@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_quote_close@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_alert@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_alert@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyinvite@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyinvite@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msfp_surveyresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocliveworkitem@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocliveworkitem@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocsession@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_msdyn_ocsession@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_alertsubscription@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_alertsubscription@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_inviteredemption@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_inviteredemption@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_presentacion@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_presentacion@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_portalcomment@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_adx_portalcomment@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_answer@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_answer@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_validatedquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_validatedquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_sentquery@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_sentquery@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_receivedresponse@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_receivedresponse@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_portasignatures@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activity_pointer_pfc_portasignatures@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_lead_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebooking_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bookableresourcebookingheader_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_bulkoperation_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaign_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_campaignactivity_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contract_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlement_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_entitlementtemplate_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_incident_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_site_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "serviceid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "serviceid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_customerasset_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_playbookinstance_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_invoice_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_opportunity_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_quote_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_salesorder_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_salessuggestion_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_postalbum_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyn_swarm_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinaccount_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinactivity_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinfieldmapping_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinform_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformanswer_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformquestion_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinformsubmission_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinleadmatchingstrategy_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_linkedinuserprofile_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_ad_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_adplacement_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_invitation_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_poll_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_polloption_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollplacement_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_pollsubmission_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_publishingstatetransitionrule_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_redirect_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_shortcut_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blog_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_blogpost_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_casedeflection_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_contentaccesslevel_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_checkin_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_event_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchase_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchaseattendee_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventpurchasepass_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_eventregistration_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotel_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomallocation_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_hotelroomreservation_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_layout_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_room_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_session_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessionregistration_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sessiontrack_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speaker_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_speakerengagement_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorablearticle_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_sponsorship_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_venue_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarconfiguration_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msevtmgt_webinarprovider_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_contentsettings_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_customerjourney_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingdynamiccontentmetadata_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemaildynamiccontentmetadata_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_marketingemailtestsend_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_uicconfig_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumaccesspermission_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_communityforumalert_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_announcement_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_pfc_query_dgt_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_webpage_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_adx_website_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_leadscoremodel_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_msdyncrm_migration_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_new_interactionforemail_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgebaserecord_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_account_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdby_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdby_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_contact_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sendermailboxid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "transactioncurrencyid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owninguser_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owninguser_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "sla_activitypointer_sla_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "regardingobjectid_knowledgearticle_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedonbehalfby_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "createdonbehalfby_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "modifiedby_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "owningteam_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "owningteam_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "slainvokedid_activitypointer_sla_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "activityid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "activityid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_activity_parties@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_activity_parties@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "CampaignResponse_pfc_informationrequirements@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "CampaignResponse_pfc_informationrequirements@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_ActionCards@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_ActionCards@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_SyncErrors@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_SyncErrors@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_DuplicateMatchingRecord@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_DuplicateMatchingRecord@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_DuplicateBaseRecord@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_DuplicateBaseRecord@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_AsyncOperations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_AsyncOperations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_MailboxTrackingFolders@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_MailboxTrackingFolders@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_UserEntityInstanceDatas@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_UserEntityInstanceDatas@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_ProcessSession@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_ProcessSession@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_BulkDeleteFailures@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_BulkDeleteFailures@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_PrincipalObjectAttributeAccesses@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_PrincipalObjectAttributeAccesses@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_connections1@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_connections1@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_connections2@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_connections2@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_QueueItems@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_QueueItems@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_Annotations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_Annotations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_Feedback@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_Feedback@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_SharePointDocumentLocations@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_SharePointDocumentLocations@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_SharePointDocuments@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_SharePointDocuments@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_assignedid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_assignedid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_FileAttachments@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_informationrequirement_FileAttachments@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_document_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_document_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_seconddocument_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_seconddocument_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_thirddocument_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_thirddocument_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_fourthdocument_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_fourthdocument_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_contact_query_relationshipid_pfc_informationrequirement@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_contact_query_relationshipid_pfc_informationrequirement@odata.navigationLink": {
+                      "type": "string"
+                    },
+                    "pfc_requeriment_rel_contact_query@odata.associationLink": {
+                      "type": "string"
+                    },
+                    "pfc_requeriment_rel_contact_query@odata.navigationLink": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "Sol·licitud:_Actualizar_una_fila": {
+              "runAfter": {
+                "Condición_6": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ef84e665-5fcd-456c-a448-e546b265e156"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_informationrequirements",
+                  "recordId": "@triggerOutputs()?['body/activityid']",
+                  "item/pfc_copytosharepoint": true
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Condición_6": {
+              "actions": {
+                "Consulta:_Obtener_una_fila_por_id_de_referent": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "67d3e9fb-a021-4c57-9f5b-fb7d045c1f32"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_1",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "pfc_queries",
+                      "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Entitat:_Obtener_una_fila_por_id_de_entitat_en_consulta": {
+                  "runAfter": {
+                    "Consulta:_Obtener_una_fila_por_id_de_referent": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "57063df5-c845-4d24-b047-8b3d5a7cb9b8"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_1",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "accounts",
+                      "recordId": "@outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/_pfc_accountid_value']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Condición": {
+                  "actions": {
+                    "Sol·licitud:_Descargar_un_archivo_de_Annex_1": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "90726f57-9f63-4256-8e25-50a8223f9946"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetEntityFileImageFieldContent",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "pfc_informationrequirements",
+                          "recordId": "@triggerOutputs()?['body/activityid']",
+                          "fileImageFieldName": "pfc_document"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Crear_archivo": {
+                      "runAfter": {
+                        "Sol·licitud:_Descargar_un_archivo_de_Annex_1": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_1",
+                          "operationId": "CreateFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_entitat_en_consulta')?['body/name']}/pfc_query/@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de treball",
+                          "name": "@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_document_name']}",
+                          "body": "@body('Sol·licitud:_Descargar_un_archivo_de_Annex_1')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Entitat:_Obtener_una_fila_por_id_de_entitat_en_consulta": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "not": {
+                      "equals": [
+                        "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_document']",
+                        "@null"
+                      ]
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d19cfee3-8a84-413d-9386-389a03975b60"
+                  },
+                  "type": "If"
+                },
+                "Condición_2": {
+                  "actions": {
+                    "Sol·licitud:_Descargar_un_archivo_de_Annex_2": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "6eae1b73-2352-4e65-825f-32be5195f7e8"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetEntityFileImageFieldContent",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "pfc_informationrequirements",
+                          "recordId": "@triggerOutputs()?['body/activityid']",
+                          "fileImageFieldName": "pfc_seconddocument"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Crear_archivo_2": {
+                      "runAfter": {
+                        "Sol·licitud:_Descargar_un_archivo_de_Annex_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_1",
+                          "operationId": "CreateFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_entitat_en_consulta')?['body/name']}/pfc_query/@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de treball",
+                          "name": "@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_seconddocument_name']}",
+                          "body": "@body('Sol·licitud:_Descargar_un_archivo_de_Annex_2')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Condición": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "not": {
+                      "equals": [
+                        "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_seconddocument']",
+                        "@null"
+                      ]
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d3ea9fd1-ab4e-43cd-9c93-e78008b08c65"
+                  },
+                  "type": "If"
+                },
+                "Condición_3": {
+                  "actions": {
+                    "Sol·licitud:_Descargar_un_archivo_de_Annex_3": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "3cace205-fbdf-452d-95c7-06fde314e7db"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetEntityFileImageFieldContent",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "pfc_informationrequirements",
+                          "recordId": "@triggerOutputs()?['body/activityid']",
+                          "fileImageFieldName": "pfc_thirddocument"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Crear_archivo_3": {
+                      "runAfter": {
+                        "Sol·licitud:_Descargar_un_archivo_de_Annex_3": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_1",
+                          "operationId": "CreateFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_entitat_en_consulta')?['body/name']}/pfc_query/@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de l'ens",
+                          "name": "@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_thirddocument_name']}",
+                          "body": "@body('Sol·licitud:_Descargar_un_archivo_de_Annex_3')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Condición_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "not": {
+                      "equals": [
+                        "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_thirddocument']",
+                        "@null"
+                      ]
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "6f9c96d6-80d7-4b1e-8f7d-9c813bf8f9f3"
+                  },
+                  "type": "If"
+                },
+                "Condición_4": {
+                  "actions": {
+                    "Sol·licitud:_Descargar_un_archivo_de_Annex_4": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "33a82c11-249a-4c50-90e5-279876c5cc59"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps_1",
+                          "operationId": "GetEntityFileImageFieldContent",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "pfc_informationrequirements",
+                          "recordId": "@triggerOutputs()?['body/activityid']",
+                          "fileImageFieldName": "pfc_fourthdocument"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Crear_archivo_4": {
+                      "runAfter": {
+                        "Sol·licitud:_Descargar_un_archivo_de_Annex_4": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_sharepointonline_1",
+                          "operationId": "CreateFile",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                        },
+                        "parameters": {
+                          "dataset": "@variables('SharepointURL')",
+                          "folderPath": "account/@{outputs('Entitat:_Obtener_una_fila_por_id_de_entitat_en_consulta')?['body/name']}/pfc_query/@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']}/Documents de l'ens",
+                          "name": "@{outputs('Consulta:_Obtener_una_fila_por_id_de_referent')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_fourthdocument_name']}",
+                          "body": "@body('Sol·licitud:_Descargar_un_archivo_de_Annex_4')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Condición_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "not": {
+                      "equals": [
+                        "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_fourthdocument']",
+                        "@null"
+                      ]
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "bf7f0907-f8f1-46e9-9a40-823aa8e69c8f"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "Análisis_del_archivo_JSON": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Condición_11": {
+                    "actions": {
+                      "Obtener_una_fila_por_id_4": {
+                        "runAfter": {},
+                        "metadata": {
+                          "operationMetadataId": "c42882cb-c019-4422-990e-75aa409773bf"
+                        },
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connectionName": "shared_commondataserviceforapps_1",
+                            "operationId": "GetItem",
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "pfc_query_dgts",
+                            "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                          },
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      },
+                      "Obtener_una_fila_por_id_5": {
+                        "runAfter": {
+                          "Obtener_una_fila_por_id_4": [
+                            "Succeeded"
+                          ]
+                        },
+                        "metadata": {
+                          "operationMetadataId": "697a8aa8-7888-462c-b37b-7c5506a2e284"
+                        },
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connectionName": "shared_commondataserviceforapps_1",
+                            "operationId": "GetItem",
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                          },
+                          "parameters": {
+                            "entityName": "accounts",
+                            "recordId": "@outputs('Obtener_una_fila_por_id_4')?['body/_pfc_accountid_value']"
+                          },
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      },
+                      "Condición_7": {
+                        "actions": {
+                          "Descargar_un_archivo_o_una_imagen_5": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "90726f57-9f63-4256-8e25-50a8223f9946"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetEntityFileImageFieldContent",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_informationrequirements",
+                                "recordId": "@triggerOutputs()?['body/activityid']",
+                                "fileImageFieldName": "pfc_document"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Crear_archivo_5": {
+                            "runAfter": {
+                              "Descargar_un_archivo_o_una_imagen_5": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_sharepointonline_1",
+                                "operationId": "CreateFile",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                              },
+                              "parameters": {
+                                "dataset": "@variables('SharepointURL')",
+                                "folderPath": "account/@{outputs('Obtener_una_fila_por_id_5')?['body/name']}/pfc_query_dgt/@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']}/Documents de treball",
+                                "name": "@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_document_name']}",
+                                "body": "@body('Descargar_un_archivo_o_una_imagen_5')"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            },
+                            "runtimeConfiguration": {
+                              "contentTransfer": {
+                                "transferMode": "Chunked"
+                              }
+                            }
+                          }
+                        },
+                        "runAfter": {
+                          "Obtener_una_fila_por_id_5": [
+                            "Succeeded"
+                          ]
+                        },
+                        "expression": {
+                          "not": {
+                            "equals": [
+                              "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_document']",
+                              "@null"
+                            ]
+                          }
+                        },
+                        "metadata": {
+                          "operationMetadataId": "d19cfee3-8a84-413d-9386-389a03975b60"
+                        },
+                        "type": "If"
+                      },
+                      "Condición_8": {
+                        "actions": {
+                          "Descargar_un_archivo_o_una_imagen_6": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "6eae1b73-2352-4e65-825f-32be5195f7e8"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetEntityFileImageFieldContent",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_informationrequirements",
+                                "recordId": "@triggerOutputs()?['body/activityid']",
+                                "fileImageFieldName": "pfc_seconddocument"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Crear_archivo_6": {
+                            "runAfter": {
+                              "Descargar_un_archivo_o_una_imagen_6": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_sharepointonline_1",
+                                "operationId": "CreateFile",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                              },
+                              "parameters": {
+                                "dataset": "@variables('SharepointURL')",
+                                "folderPath": "account/@{outputs('Obtener_una_fila_por_id_5')?['body/name']}/pfc_query_dgt/@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']}/Documents de treball",
+                                "name": "@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_seconddocument_name']}",
+                                "body": "@body('Descargar_un_archivo_o_una_imagen_6')"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            },
+                            "runtimeConfiguration": {
+                              "contentTransfer": {
+                                "transferMode": "Chunked"
+                              }
+                            }
+                          }
+                        },
+                        "runAfter": {
+                          "Condición_7": [
+                            "Succeeded"
+                          ]
+                        },
+                        "expression": {
+                          "not": {
+                            "equals": [
+                              "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_seconddocument']",
+                              "@null"
+                            ]
+                          }
+                        },
+                        "metadata": {
+                          "operationMetadataId": "d3ea9fd1-ab4e-43cd-9c93-e78008b08c65"
+                        },
+                        "type": "If"
+                      },
+                      "Condición_9": {
+                        "actions": {
+                          "Descargar_un_archivo_o_una_imagen_7": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "3cace205-fbdf-452d-95c7-06fde314e7db"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetEntityFileImageFieldContent",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_informationrequirements",
+                                "recordId": "@triggerOutputs()?['body/activityid']",
+                                "fileImageFieldName": "pfc_thirddocument"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Crear_archivo_7": {
+                            "runAfter": {
+                              "Descargar_un_archivo_o_una_imagen_7": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_sharepointonline_1",
+                                "operationId": "CreateFile",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                              },
+                              "parameters": {
+                                "dataset": "@variables('SharepointURL')",
+                                "folderPath": "account/@{outputs('Obtener_una_fila_por_id_5')?['body/name']}/pfc_query_dgt/@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']}/Documents de l'ens",
+                                "name": "@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_thirddocument_name']}",
+                                "body": "@body('Descargar_un_archivo_o_una_imagen_7')"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            },
+                            "runtimeConfiguration": {
+                              "contentTransfer": {
+                                "transferMode": "Chunked"
+                              }
+                            }
+                          }
+                        },
+                        "runAfter": {
+                          "Condición_8": [
+                            "Succeeded"
+                          ]
+                        },
+                        "expression": {
+                          "not": {
+                            "equals": [
+                              "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_thirddocument']",
+                              "@null"
+                            ]
+                          }
+                        },
+                        "metadata": {
+                          "operationMetadataId": "6f9c96d6-80d7-4b1e-8f7d-9c813bf8f9f3"
+                        },
+                        "type": "If"
+                      },
+                      "Condición_10": {
+                        "actions": {
+                          "Descargar_un_archivo_o_una_imagen_8": {
+                            "runAfter": {},
+                            "metadata": {
+                              "operationMetadataId": "33a82c11-249a-4c50-90e5-279876c5cc59"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_commondataserviceforapps_1",
+                                "operationId": "GetEntityFileImageFieldContent",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                              },
+                              "parameters": {
+                                "entityName": "pfc_informationrequirements",
+                                "recordId": "@triggerOutputs()?['body/activityid']",
+                                "fileImageFieldName": "pfc_fourthdocument"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Crear_archivo_8": {
+                            "runAfter": {
+                              "Descargar_un_archivo_o_una_imagen_8": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "4b77849a-422d-456f-bcb3-fd61e8cc1c26"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connectionName": "shared_sharepointonline_1",
+                                "operationId": "CreateFile",
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                              },
+                              "parameters": {
+                                "dataset": "@variables('SharepointURL')",
+                                "folderPath": "account/@{outputs('Obtener_una_fila_por_id_5')?['body/name']}/pfc_query_dgt/@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']}/Documents de l'ens",
+                                "name": "@{outputs('Obtener_una_fila_por_id_4')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_fourthdocument_name']}",
+                                "body": "@body('Descargar_un_archivo_o_una_imagen_8')"
+                              },
+                              "authentication": "@parameters('$authentication')"
+                            },
+                            "runtimeConfiguration": {
+                              "contentTransfer": {
+                                "transferMode": "Chunked"
+                              }
+                            }
+                          }
+                        },
+                        "runAfter": {
+                          "Condición_9": [
+                            "Succeeded"
+                          ]
+                        },
+                        "expression": {
+                          "not": {
+                            "equals": [
+                              "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_fourthdocument']",
+                              "@null"
+                            ]
+                          }
+                        },
+                        "metadata": {
+                          "operationMetadataId": "bf7f0907-f8f1-46e9-9a40-823aa8e69c8f"
+                        },
+                        "type": "If"
+                      }
+                    },
+                    "runAfter": {},
+                    "else": {
+                      "actions": {
+                        "Condición_16": {
+                          "actions": {
+                            "Obtener_una_fila_por_id_6": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "b6cdbb71-6829-4826-8075-ae2550f05716"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_1",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "pfc_tax_transcendence_operations",
+                                  "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Obtener_una_fila_por_id_7": {
+                              "runAfter": {
+                                "Obtener_una_fila_por_id_6": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "1b8db1d9-0715-4706-ab56-13017542491a"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_commondataserviceforapps_1",
+                                  "operationId": "GetItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                },
+                                "parameters": {
+                                  "entityName": "accounts",
+                                  "recordId": "@outputs('Obtener_una_fila_por_id_6')?['body/_pfc_accountid_value']"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condición_12": {
+                              "actions": {
+                                "Descargar_un_archivo_o_una_imagen_9": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "edd11613-de5c-49c6-bee5-4146ddaa9114"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_1",
+                                      "operationId": "GetEntityFileImageFieldContent",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "pfc_informationrequirements",
+                                      "recordId": "@triggerOutputs()?['body/activityid']",
+                                      "fileImageFieldName": "pfc_document"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Crear_archivo_9": {
+                                  "runAfter": {
+                                    "Descargar_un_archivo_o_una_imagen_9": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "06ad837f-1d29-4f28-92c2-ed78b0809f6e"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline_1",
+                                      "operationId": "CreateFile",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "parameters": {
+                                      "dataset": "@variables('SharepointURL')",
+                                      "folderPath": "account/@{outputs('Obtener_una_fila_por_id_7')?['body/name']}/pfc_tax_transcendence_operation/@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']}/Documents de treball",
+                                      "name": "@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_document_name']}",
+                                      "body": "@body('Descargar_un_archivo_o_una_imagen_9')"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  },
+                                  "runtimeConfiguration": {
+                                    "contentTransfer": {
+                                      "transferMode": "Chunked"
+                                    }
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Obtener_una_fila_por_id_7": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "not": {
+                                  "equals": [
+                                    "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_document']",
+                                    "@null"
+                                  ]
+                                }
+                              },
+                              "metadata": {
+                                "operationMetadataId": "876225d8-c9e5-44bb-bbb2-0b985537a31b"
+                              },
+                              "type": "If"
+                            },
+                            "Condición_13": {
+                              "actions": {
+                                "Descargar_un_archivo_o_una_imagen_10": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "d60d4893-41da-4770-a124-c09aacd3d6cd"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_1",
+                                      "operationId": "GetEntityFileImageFieldContent",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "pfc_informationrequirements",
+                                      "recordId": "@triggerOutputs()?['body/activityid']",
+                                      "fileImageFieldName": "pfc_seconddocument"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Crear_archivo_10": {
+                                  "runAfter": {
+                                    "Descargar_un_archivo_o_una_imagen_10": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "d49c26d8-2544-4f2b-b306-95831a8e9380"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline_1",
+                                      "operationId": "CreateFile",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "parameters": {
+                                      "dataset": "@variables('SharepointURL')",
+                                      "folderPath": "account/@{outputs('Obtener_una_fila_por_id_7')?['body/name']}/pfc_tax_transcendence_operation/@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']}/Documents de treball",
+                                      "name": "@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']} @{body('Análisis_del_archivo_JSON')?['pfc_seconddocument_name']}",
+                                      "body": "@body('Descargar_un_archivo_o_una_imagen_10')"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  },
+                                  "runtimeConfiguration": {
+                                    "contentTransfer": {
+                                      "transferMode": "Chunked"
+                                    }
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Condición_12": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "not": {
+                                  "equals": [
+                                    "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_seconddocument']",
+                                    "@null"
+                                  ]
+                                }
+                              },
+                              "metadata": {
+                                "operationMetadataId": "606790a8-6518-4b83-bb23-74137b2c1a35"
+                              },
+                              "type": "If"
+                            },
+                            "Condición_14": {
+                              "actions": {
+                                "Descargar_un_archivo_o_una_imagen_11": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "fdae88d5-7f2c-4caa-94f3-f082e882ff16"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_1",
+                                      "operationId": "GetEntityFileImageFieldContent",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "pfc_informationrequirements",
+                                      "recordId": "@triggerOutputs()?['body/activityid']",
+                                      "fileImageFieldName": "pfc_thirddocument"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Crear_archivo_11": {
+                                  "runAfter": {
+                                    "Descargar_un_archivo_o_una_imagen_11": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "827a3be5-b2cf-443c-807f-6f107dd7b4bc"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline_1",
+                                      "operationId": "CreateFile",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "parameters": {
+                                      "dataset": "@variables('SharepointURL')",
+                                      "folderPath": "account/@{outputs('Obtener_una_fila_por_id_7')?['body/name']}/pfc_tax_transcendence_operation/@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']}/Documents de l'ens",
+                                      "name": "@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']} @{body('Análisis_del_archivo_JSON')?['pfc_thirddocument_name']}",
+                                      "body": "@body('Descargar_un_archivo_o_una_imagen_11')"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  },
+                                  "runtimeConfiguration": {
+                                    "contentTransfer": {
+                                      "transferMode": "Chunked"
+                                    }
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Condición_13": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "not": {
+                                  "equals": [
+                                    "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_thirddocument']",
+                                    "@null"
+                                  ]
+                                }
+                              },
+                              "metadata": {
+                                "operationMetadataId": "2167afd9-746f-418d-9887-be22789f1e25"
+                              },
+                              "type": "If"
+                            },
+                            "Condición_15": {
+                              "actions": {
+                                "Descargar_un_archivo_o_una_imagen_12": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "79024b40-ee99-4617-b6cd-a84d9919df5b"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_commondataserviceforapps_1",
+                                      "operationId": "GetEntityFileImageFieldContent",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                    },
+                                    "parameters": {
+                                      "entityName": "pfc_informationrequirements",
+                                      "recordId": "@triggerOutputs()?['body/activityid']",
+                                      "fileImageFieldName": "pfc_fourthdocument"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                },
+                                "Crear_archivo_12": {
+                                  "runAfter": {
+                                    "Descargar_un_archivo_o_una_imagen_12": [
+                                      "Succeeded"
+                                    ]
+                                  },
+                                  "metadata": {
+                                    "operationMetadataId": "ff4d564b-bc74-4edd-83db-221a04fb755b"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline_1",
+                                      "operationId": "CreateFile",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "parameters": {
+                                      "dataset": "@variables('SharepointURL')",
+                                      "folderPath": "account/@{outputs('Obtener_una_fila_por_id_7')?['body/name']}/pfc_tax_transcendence_operation/@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']}/Documents de l'ens",
+                                      "name": "@{outputs('Obtener_una_fila_por_id_6')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_fourthdocument_name']}",
+                                      "body": "@body('Descargar_un_archivo_o_una_imagen_12')"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  },
+                                  "runtimeConfiguration": {
+                                    "contentTransfer": {
+                                      "transferMode": "Chunked"
+                                    }
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Condición_14": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "expression": {
+                                "not": {
+                                  "equals": [
+                                    "@outputs('Solicitud:_Obtener_una_fila_por_id_de_Actividad')?['body/pfc_fourthdocument']",
+                                    "@null"
+                                  ]
+                                }
+                              },
+                              "metadata": {
+                                "operationMetadataId": "e9f4fce8-e6e0-447f-b667-5ecae77d4f19"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {},
+                          "else": {
+                            "actions": {
+                              "Obtener_una_fila_por_id_8": {
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "fbc1ff06-b194-4c6d-9afd-6f4e1e1b793f"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_commondataserviceforapps_1",
+                                    "operationId": "GetItem",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                  },
+                                  "parameters": {
+                                    "entityName": "pfc_trainingrequests",
+                                    "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              },
+                              "Obtener_una_fila_por_id_9": {
+                                "runAfter": {
+                                  "Obtener_una_fila_por_id_8": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "58ac9f55-27ff-42b9-a469-ed75cd7a615b"
+                                },
+                                "type": "OpenApiConnection",
+                                "inputs": {
+                                  "host": {
+                                    "connectionName": "shared_commondataserviceforapps_1",
+                                    "operationId": "GetItem",
+                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                  },
+                                  "parameters": {
+                                    "entityName": "accounts",
+                                    "recordId": "@outputs('Obtener_una_fila_por_id_8')?['body/_pfc_accountid_value']"
+                                  },
+                                  "authentication": "@parameters('$authentication')"
+                                }
+                              },
+                              "Condición_17": {
+                                "actions": {
+                                  "Descargar_un_archivo_o_una_imagen_13": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "57f2ee5e-9de4-4e34-925f-1f2d4dbd9491"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_commondataserviceforapps_1",
+                                        "operationId": "GetEntityFileImageFieldContent",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                      },
+                                      "parameters": {
+                                        "entityName": "pfc_informationrequirements",
+                                        "recordId": "@triggerOutputs()?['body/activityid']",
+                                        "fileImageFieldName": "pfc_document"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  },
+                                  "Crear_archivo_13": {
+                                    "runAfter": {
+                                      "Descargar_un_archivo_o_una_imagen_13": [
+                                        "Succeeded"
+                                      ]
+                                    },
+                                    "metadata": {
+                                      "operationMetadataId": "4844ab74-d38e-43bc-a042-9af4fb62815f"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline_1",
+                                        "operationId": "CreateFile",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "parameters": {
+                                        "dataset": "@variables('SharepointURL')",
+                                        "folderPath": "account/@{outputs('Obtener_una_fila_por_id_9')?['body/name']}/pfc_trainingrequest/@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']}/Documents de treball",
+                                        "name": "@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']} -@{body('Análisis_del_archivo_JSON')?['pfc_document_name']}",
+                                        "body": "@body('Descargar_un_archivo_o_una_imagen_13')"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    },
+                                    "runtimeConfiguration": {
+                                      "contentTransfer": {
+                                        "transferMode": "Chunked"
+                                      }
+                                    }
+                                  }
+                                },
+                                "runAfter": {
+                                  "Obtener_una_fila_por_id_9": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "expression": {
+                                  "not": {
+                                    "equals": [
+                                      "",
+                                      "@null"
+                                    ]
+                                  }
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "e9e6476e-a0fe-4537-9a09-a479bf3d22d6"
+                                },
+                                "type": "If"
+                              },
+                              "Condición_18": {
+                                "actions": {
+                                  "Descargar_un_archivo_o_una_imagen_14": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "88934cee-de48-4ab9-8236-b7318051cb92"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_commondataserviceforapps_1",
+                                        "operationId": "GetEntityFileImageFieldContent",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                      },
+                                      "parameters": {
+                                        "entityName": "pfc_informationrequirements",
+                                        "recordId": "@triggerOutputs()?['body/activityid']",
+                                        "fileImageFieldName": "pfc_seconddocument"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  },
+                                  "Crear_archivo_14": {
+                                    "runAfter": {
+                                      "Descargar_un_archivo_o_una_imagen_14": [
+                                        "Succeeded"
+                                      ]
+                                    },
+                                    "metadata": {
+                                      "operationMetadataId": "9c729aa5-1607-4f88-b8f7-58778028f40b"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline_1",
+                                        "operationId": "CreateFile",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "parameters": {
+                                        "dataset": "@variables('SharepointURL')",
+                                        "folderPath": "account/@{outputs('Obtener_una_fila_por_id_9')?['body/name']}/pfc_trainingrequest/@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']}/Documents de treball",
+                                        "name": "@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_seconddocument_name']}",
+                                        "body": "@body('Descargar_un_archivo_o_una_imagen_14')"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    },
+                                    "runtimeConfiguration": {
+                                      "contentTransfer": {
+                                        "transferMode": "Chunked"
+                                      }
+                                    }
+                                  }
+                                },
+                                "runAfter": {
+                                  "Condición_17": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "expression": {
+                                  "not": {
+                                    "equals": [
+                                      "",
+                                      "@null"
+                                    ]
+                                  }
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "be5bda43-3aa2-4742-a5a9-745cf1a0c64b"
+                                },
+                                "type": "If"
+                              },
+                              "Condición_19": {
+                                "actions": {
+                                  "Descargar_un_archivo_o_una_imagen_15": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "1387dbf6-c622-4a94-82d4-1ce455331b0b"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_commondataserviceforapps_1",
+                                        "operationId": "GetEntityFileImageFieldContent",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                      },
+                                      "parameters": {
+                                        "entityName": "pfc_informationrequirements",
+                                        "recordId": "@triggerOutputs()?['body/activityid']",
+                                        "fileImageFieldName": "pfc_thirddocument"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  },
+                                  "Crear_archivo_15": {
+                                    "runAfter": {
+                                      "Descargar_un_archivo_o_una_imagen_15": [
+                                        "Succeeded"
+                                      ]
+                                    },
+                                    "metadata": {
+                                      "operationMetadataId": "401d0e23-53b9-4ae8-bfc3-ba628386c241"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline_1",
+                                        "operationId": "CreateFile",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "parameters": {
+                                        "dataset": "@variables('SharepointURL')",
+                                        "folderPath": "account/@{outputs('Obtener_una_fila_por_id_9')?['body/name']}/pfc_trainingrequest/@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']}/Documents de l'ens",
+                                        "name": "@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_thirddocument_name']}",
+                                        "body": "@body('Descargar_un_archivo_o_una_imagen_15')"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    },
+                                    "runtimeConfiguration": {
+                                      "contentTransfer": {
+                                        "transferMode": "Chunked"
+                                      }
+                                    }
+                                  }
+                                },
+                                "runAfter": {
+                                  "Condición_18": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "expression": {
+                                  "not": {
+                                    "equals": [
+                                      "",
+                                      "@null"
+                                    ]
+                                  }
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "f36cce36-31ce-4e46-b447-efaf94a92388"
+                                },
+                                "type": "If"
+                              },
+                              "Condición_20": {
+                                "actions": {
+                                  "Descargar_un_archivo_o_una_imagen_16": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "8eea71b4-1a78-4359-b340-c277a3786042"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_commondataserviceforapps_1",
+                                        "operationId": "GetEntityFileImageFieldContent",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                                      },
+                                      "parameters": {
+                                        "entityName": "pfc_informationrequirements",
+                                        "recordId": "@triggerOutputs()?['body/activityid']",
+                                        "fileImageFieldName": "pfc_fourthdocument"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  },
+                                  "Crear_archivo_16": {
+                                    "runAfter": {
+                                      "Descargar_un_archivo_o_una_imagen_16": [
+                                        "Succeeded"
+                                      ]
+                                    },
+                                    "metadata": {
+                                      "operationMetadataId": "8de7109f-c866-4cc5-9f7b-031483a0291e"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline_1",
+                                        "operationId": "CreateFile",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "parameters": {
+                                        "dataset": "@variables('SharepointURL')",
+                                        "folderPath": "account/@{outputs('Obtener_una_fila_por_id_9')?['body/name']}/pfc_trainingrequest/@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']}/Documents de l'ens",
+                                        "name": "@{outputs('Obtener_una_fila_por_id_8')?['body/pfc_name']} - @{body('Análisis_del_archivo_JSON')?['pfc_fourthdocument_name']}",
+                                        "body": "@body('Descargar_un_archivo_o_una_imagen_16')"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    },
+                                    "runtimeConfiguration": {
+                                      "contentTransfer": {
+                                        "transferMode": "Chunked"
+                                      }
+                                    }
+                                  }
+                                },
+                                "runAfter": {
+                                  "Condición_19": [
+                                    "Succeeded"
+                                  ]
+                                },
+                                "expression": {
+                                  "not": {
+                                    "equals": [
+                                      "",
+                                      "@null"
+                                    ]
+                                  }
+                                },
+                                "metadata": {
+                                  "operationMetadataId": "69d4d451-e360-47a9-a3ac-aaf009bbfbca"
+                                },
+                                "type": "If"
+                              }
+                            }
+                          },
+                          "expression": {
+                            "equals": [
+                              "@triggerOutputs()?['body/_regardingobjectid_type']",
+                              "pfc_tax_transcendence_operations"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "ca66f7be-fe94-4d9f-8aa2-2bca2962e326"
+                          },
+                          "type": "If"
+                        }
+                      }
+                    },
+                    "expression": {
+                      "equals": [
+                        "@triggerOutputs()?['body/_regardingobjectid_type']",
+                        "pfc_query_dgts"
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "c10b05c1-ba5c-4492-9087-22c1b5c33a32"
+                    },
+                    "type": "If"
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@triggerOutputs()?['body/_regardingobjectid_type']",
+                  "pfc_queries"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "9e3ea280-5861-4ba7-8834-377408ba9378"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Inicializar_variable": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/statecode']",
+              1
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c6aa2f08-3d2a-45d8-9540-7575c6a3afd9"
+          },
+          "type": "If"
+        },
+        "Inicializar_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "2fa36c41-8ca6-4afc-afc1-49c96e47d500"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SharepointURL",
+                "type": "string",
+                "value": "@parameters('SharepointSite (pfc_sharepointsite)')"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

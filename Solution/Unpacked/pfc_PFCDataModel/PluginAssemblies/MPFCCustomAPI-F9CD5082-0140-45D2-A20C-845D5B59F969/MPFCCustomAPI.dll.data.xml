@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="MPFC.CustomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginAssemblyId="f9cd5082-0140-45d2-a20c-845d5b59f969" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/MPFCCustomAPI-F9CD5082-0140-45D2-A20C-845D5B59F969/MPFCCustomAPI.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="MPFC.CustomAPI.AnonymiusQueryDGT, MPFC.CustomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="322ce097-4d8d-44bb-bd69-ac2015c7c229" Name="MPFC.CustomAPI.AnonymiusQueryDGT">
+      <FriendlyName>7cd3611d-3eef-4f2c-b954-d8c21bd938c1</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.CustomAPI.AnonymousQuery, MPFC.CustomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="626f3d05-1bd1-4d01-aeff-f5566314f299" Name="MPFC.CustomAPI.AnonymousQuery">
+      <FriendlyName>74a7aa55-259f-4dd2-8c3d-fab2fcdc3633</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="MPFC.CustomAPI.CloneQuery, MPFC.CustomAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75cc2d627631382b" PluginTypeId="1f84062f-23f4-42ac-8cfe-cff2064b9ec7" Name="MPFC.CustomAPI.CloneQuery">
+      <FriendlyName>a5476015-f5ec-4958-b9f9-04cc5a87040a</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

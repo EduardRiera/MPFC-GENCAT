@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Novetats" languagecode="1027" />
+  </LocalizedNames>
+  <FormId>{0dbd1e26-6df8-ed11-8849-000d3adf90aa}</FormId>
+  <IsCustomizable>1</IsCustomizable>
+  <IsDefault>0</IsDefault>
+  <FormXml>
+    <forms type="dashboard">
+      <form>
+        <tabs>
+          <tab showlabel="false" verticallayout="true" id="{c985a44b-27ff-4ec9-a311-c13be2c592db}">
+            <labels>
+              <label description="Pestanya" languagecode="1027" />
+            </labels>
+            <columns>
+              <column width="100%">
+                <sections>
+                  <section showlabel="false" showbar="false" columns="1111" id="{39135827-b783-472a-9d79-34fba352b543}">
+                    <labels>
+                      <label description="Secció" languagecode="1027" />
+                    </labels>
+                    <rows>
+                      <row>
+                        <cell colspan="3" rowspan="12" showlabel="false" id="{3174d01c-a9cc-44b8-bd55-5d317cd5751e}" auto="false">
+                          <labels>
+                            <label description="Cursos" languagecode="1027" />
+                          </labels>
+                          <control id="Componentca6923b" uniqueid="{c295edad-8c6d-a4bb-3c5d-ac19aa6413bd}" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>msevtmgt_event</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                              <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{ab90c719-2806-c2aa-8e4d-140664b415aa}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{05192423-408e-6dad-74eb-b825ed545a5c}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{2143096b-d08c-a0d5-c41d-53b89ec4c6d0}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{dd72ee67-4b7b-eecb-271c-a877487122aa}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{05800897-a47a-0ee9-2db8-6cc3d1ce3c9d}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{a5bbb5a1-986d-97b8-9429-3edc9481be38}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{d523097e-72d2-e484-d56d-6562425e5aee}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{87b4ceea-d536-88cb-b949-525c5a3e75b8}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{b7b24e59-d16c-cb7d-04b9-2e66a74b41c0}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{e8829d00-96cb-ea5b-a904-894759b90edd}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{9e85253e-9154-ada4-511b-2577d4c9d827}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{53ac65c3-22ad-8a93-91c6-627bc3116e48}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell colspan="3" rowspan="12" showlabel="false" id="{03980369-f51b-4bf8-87b2-76976362a793}" auto="false">
+                          <labels>
+                            <label description="Cursos" languagecode="1027" />
+                          </labels>
+                          <control id="Component5ace140" uniqueid="{598d801c-7e24-3ccd-8a1d-dd71010eaab5}" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                            <parameters>
+                              <TargetEntityType>msevtmgt_event</TargetEntityType>
+                              <ChartGridMode>Grid</ChartGridMode>
+                              <EnableQuickFind>true</EnableQuickFind>
+                              <EnableViewPicker>true</EnableViewPicker>
+                              <EnableJumpBar>true</EnableJumpBar>
+                              <RecordsPerPage>8</RecordsPerPage>
+                              <HeaderColorCode />
+                              <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                              <IsUserView>false</IsUserView>
+                              <ViewIds />
+                              <AutoExpand>Fixed</AutoExpand>
+                              <VisualizationId />
+                              <IsUserChart>false</IsUserChart>
+                              <EnableChartPicker>false</EnableChartPicker>
+                              <RelationshipName />
+                            </parameters>
+                          </control>
+                        </cell>
+                        <cell id="{5a616c1e-7669-cd69-ec54-d3c80d7d623e}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{718a1300-ed73-513a-91bb-3da1149ab4a7}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{1d5da4e2-4c51-19ec-277e-98e938c4bbe1}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{e11de6e0-b016-4e48-0e05-7b498e490d0b}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{bc3c12d5-cb13-0e1c-e763-57602506e02e}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{4e386d2c-27c9-b2cb-e43a-5e340823ea7c}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{7038789e-286d-d372-5c66-48e1a2dbb333}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{ae1e8bb1-1489-844c-7422-7e85e49dd3bc}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{052c538c-354d-6936-c101-081036ea1c5c}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{3c6474e2-2569-abe7-7ea3-ae3193e61213}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{e907386b-dd14-3be1-93d0-8055ebe824e5}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                      <row>
+                        <cell id="{94032799-73b0-34a6-7174-db69626534d4}" showlabel="false">
+                          <labels>
+                            <label description="" languagecode="1027" />
+                          </labels>
+                        </cell>
+                      </row>
+                    </rows>
+                  </section>
+                </sections>
+              </column>
+            </columns>
+          </tab>
+        </tabs>
+        <controlDescriptions>
+          <controlDescription forControl="{c295edad-8c6d-a4bb-3c5d-ac19aa6413bd}">
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}">
+              <parameters>
+                <TargetEntityType>msevtmgt_event</TargetEntityType>
+                <ChartGridMode>Grid</ChartGridMode>
+                <EnableQuickFind>true</EnableQuickFind>
+                <EnableViewPicker>true</EnableViewPicker>
+                <EnableJumpBar>true</EnableJumpBar>
+                <RecordsPerPage>8</RecordsPerPage>
+                <HeaderColorCode>#EFBFBF</HeaderColorCode>
+                <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                <IsUserView>false</IsUserView>
+                <ViewIds />
+                <AutoExpand>Fixed</AutoExpand>
+                <VisualizationId>{55BE712D-7468-E711-A824-000D3A33777B}</VisualizationId>
+                <IsUserChart>false</IsUserChart>
+                <EnableChartPicker>false</EnableChartPicker>
+                <RelationshipName />
+              </parameters>
+            </customControl>
+            <customControl formFactor="0" name="MscrmControls.CalendarControl.CalendarControl">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds />
+                </data-set>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+            <customControl formFactor="1" name="MscrmControls.CalendarControl.CalendarControl">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds />
+                </data-set>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+            <customControl formFactor="2" name="MscrmControls.CalendarControl.CalendarControl">
+              <parameters>
+                <data-set name="DataSet0">
+                  <ViewId>{90C6947A-73D4-46F8-A1B9-658512390AC7}</ViewId>
+                  <StartDate0>msevtmgt_eventstartdate</StartDate0>
+                  <EndDate0>msevtmgt_eventenddate</EndDate0>
+                  <Title0>msevtmgt_name</Title0>
+                  <Description0>msevtmgt_description</Description0>
+                  <IsUserView>false</IsUserView>
+                  <TargetEntityType>msevtmgt_event</TargetEntityType>
+                  <EnableViewPicker>true</EnableViewPicker>
+                  <FilteredViewIds />
+                </data-set>
+                <IsReadOnly0 static="true" type="Enum">false</IsReadOnly0>
+                <IsReadOnly1 static="true" type="Enum">false</IsReadOnly1>
+                <IsReadOnly2 static="true" type="Enum">false</IsReadOnly2>
+                <IsReadOnly3 static="true" type="Enum">false</IsReadOnly3>
+                <IsReadOnly4 static="true" type="Enum">false</IsReadOnly4>
+                <DefaultDuration static="true" type="Whole.Duration">30</DefaultDuration>
+                <DefaultView static="true" type="Enum">month</DefaultView>
+                <AgendaViewShowDaysWithoutEvents static="true" type="Enum">false</AgendaViewShowDaysWithoutEvents>
+                <GrayOutPastDays static="true" type="Enum">false</GrayOutPastDays>
+              </parameters>
+            </customControl>
+          </controlDescription>
+        </controlDescriptions>
+      </form>
+    </forms>
+  </FormXml>
+  <IntroducedVersion>1.0.16</IntroducedVersion>
+  <IsTabletEnabled>0</IsTabletEnabled>
+</Dashboard>

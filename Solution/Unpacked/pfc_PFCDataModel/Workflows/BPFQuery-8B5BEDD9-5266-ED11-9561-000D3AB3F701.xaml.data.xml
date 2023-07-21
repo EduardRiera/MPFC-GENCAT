@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{8b5bedd9-5266-ed11-9561-000d3ab3f701}" Name="BPF Query" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BPFQuery-8B5BEDD9-5266-ED11-9561-000D3AB3F701.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>pfc_bpfquery</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>pfc_Query</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1027" description="BPF Query" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{9c614c50-f407-4e0d-addf-939926864a82}">
+      <label languagecode="1027" description="Inici" />
+    </steplabels>
+    <steplabels id="{3494aae5-c916-4c11-a7c8-c889cf2713b8}">
+      <label languagecode="1027" description="Responsable Consulta" />
+    </steplabels>
+    <steplabels id="{8119c557-6506-4573-8e77-e77972711f3c}">
+      <label languagecode="1027" description="Data acceptació" />
+    </steplabels>
+    <steplabels id="{ccf520d7-1f29-47e4-be23-5385e0ac257e}">
+      <label languagecode="1027" description="En Curs" />
+    </steplabels>
+    <steplabels id="{69040cb2-3c85-4ff7-bc04-5dc4a8e627de}">
+      <label languagecode="1027" description="Estat següent" />
+    </steplabels>
+    <steplabels id="{77a76092-8418-44a3-ac7e-d2a024185668}">
+      <label languagecode="1027" description="En Pausa" />
+    </steplabels>
+    <steplabels id="{3b7b9407-446f-48b3-bead-da7fac0e241c}">
+      <label languagecode="1027" description="Consulta finalitzada" />
+    </steplabels>
+    <steplabels id="{0379b9a5-191b-4307-8368-108c4c8d0fb5}">
+      <label languagecode="1027" description="Cancel-Lada" />
+    </steplabels>
+    <steplabels id="{1f2442c1-ad09-4497-8656-a133a8c202cf}">
+      <label languagecode="1027" description="Raó per a l'estat" />
+    </steplabels>
+    <steplabels id="{de5c878b-b3fa-4694-a203-99917a90088d}">
+      <label languagecode="1027" description="Resposta" />
+    </steplabels>
+    <steplabels id="{6c394cab-56b5-4631-ac95-04398551cd6e}">
+      <label languagecode="1027" description="Hores dedicades pel responsable" />
+    </steplabels>
+    <steplabels id="{68fdc500-15ac-47da-88fd-1a31e04f97d8}">
+      <label languagecode="1027" description="Hores dedicades pel validador" />
+    </steplabels>
+    <steplabels id="{12a56021-802f-4a39-87c1-34338fdb85a2}">
+      <label languagecode="1027" description="Data enviament" />
+    </steplabels>
+    <steplabels id="{9ff04e77-e517-4c31-9e06-59381be6ba6e}">
+      <label languagecode="1027" description="Anàlisi Resposta" />
+    </steplabels>
+    <steplabels id="{bd7618fd-7d3a-4305-88a0-a690d6089cbf}">
+      <label languagecode="1027" description="L'entitat esta informada correctament" />
+    </steplabels>
+    <steplabels id="{80fe438d-23ae-4a02-acea-428fab5115ec}">
+      <label languagecode="1027" description="Finalitzada" />
+    </steplabels>
+    <steplabels id="{66a78a84-c39c-46a4-99b7-41d70c4e03a6}">
+      <label languagecode="1027" description="Hores dedicades totals" />
+    </steplabels>
+    <steplabels id="{a902eef2-2b90-49bf-a82c-6828b974ad13}">
+      <label languagecode="1027" description="Data tancament" />
+    </steplabels>
+  </labels>
+</Workflow>

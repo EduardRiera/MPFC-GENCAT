@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{a3b2bfca-2f75-4fff-b5ad-b4660a3e86c2}" Name="BPF Sol·licitud de formació" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/BPFSollicituddeformaci-A3B2BFCA-2F75-4FFF-B5AD-B4660A3E86C2.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>pfc_bpfformationrequest</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.13</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>pfc_trainingrequest</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1027" description="BPF Sol·licitud de formació" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{a403328b-8214-4e2c-abb8-b695cc559cc0}">
+      <label languagecode="1027" description="Sol·Licitada" />
+    </steplabels>
+    <steplabels id="{a570e7f3-d649-4e01-abb8-b2db81e24d36}">
+      <label languagecode="1027" description="Responsable Formació" />
+    </steplabels>
+    <steplabels id="{fe58404a-8872-4d57-aba0-6d6176ecc7be}">
+      <label languagecode="1027" description="En Progrés" />
+    </steplabels>
+    <steplabels id="{3349f4e1-123d-4004-9442-f0919f0a23e2}">
+      <label languagecode="1027" description="Raó per a l'estat" />
+    </steplabels>
+    <steplabels id="{36fee823-6756-4076-8a53-c96f75aa7812}">
+      <label languagecode="1027" description="Finalitzada" />
+    </steplabels>
+    <steplabels id="{18fc9e18-0b98-4855-9186-eed2921322d3}">
+      <label languagecode="1027" description="Data de fi" />
+    </steplabels>
+    <steplabels id="{3f5e8e44-8089-43a6-8b47-cf406df95f2a}">
+      <label languagecode="1027" description="En Pausa" />
+    </steplabels>
+    <steplabels id="{22cc10bb-5d07-4cd5-a427-99eb550b2ca3}">
+      <label languagecode="1027" description="Data de fi" />
+    </steplabels>
+  </labels>
+</Workflow>

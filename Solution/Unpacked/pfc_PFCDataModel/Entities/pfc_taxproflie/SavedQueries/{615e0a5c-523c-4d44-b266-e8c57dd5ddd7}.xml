@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{615e0a5c-523c-4d44-b266-e8c57dd5ddd7}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_taxproflieid">
+          <cell name="pfc_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_taxproflie">
+          <attribute name="pfc_taxproflieid" />
+          <attribute name="pfc_name" />
+          <attribute name="createdon" />
+          <order attribute="pfc_name" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Visualització de cerca avançada de Perfil Tributari" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

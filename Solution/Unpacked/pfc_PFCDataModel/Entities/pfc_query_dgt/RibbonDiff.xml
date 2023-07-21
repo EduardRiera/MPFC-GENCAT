@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_query_dgt.Button.Hide" Location="AccessChecker.OpenDialog.pfc_query_dgt.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.Assign.Hide" Location="Mscrm.Form.pfc_query_dgt.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_query_dgt.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_query_dgt.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.Reports.Hide" Location="Mscrm.Form.pfc_query_dgt.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.RunScript.Hide" Location="Mscrm.Form.pfc_query_dgt.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.RunWorkflow.Hide" Location="Mscrm.Form.pfc_query_dgt.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_query_dgt.SendSelected.Hide" Location="Mscrm.Form.pfc_query_dgt.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.RunReport.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.RunScript.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.Send.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.pfc_query_dgt.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.pfc_query_dgt.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.modern.AddEmail.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.RunReport.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.RunScript.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.RunWorkflow.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_query_dgt.SendSelected.Hide" Location="Mscrm.SubGrid.pfc_query_dgt.SendSelected" />
+    <CustomAction Id="pfc.pfc_query_dgt.Button2.Button.CustomAction" Location="Mscrm.Form.pfc_query_dgt.MainTab.Collaborate.Controls._children" Sequence="33">
+      <CommandUIDefinition>
+        <Button Command="pfc.pfc_query_dgt.Command.Anonimitzar" Id="pfc.pfc_query_dgt.Button2.Button" LabelText="$LocLabels:pfc.pfc_query_dgt.Button2.Button.LabelText" Sequence="33" TemplateAlias="o1" ToolTipTitle="$LocLabels:pfc.pfc_query_dgt.Button2.Button.ToolTipTitle" ToolTipDescription="$LocLabels:pfc.pfc_query_dgt.Button2.Button.ToolTipDescription" ModernImage="$webresource:pfc_icon/anonymousQuery" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="Mscrm.Form.Flows.ManageRunFlow">
+      <EnableRules>
+        <EnableRule Id="Mscrm.IsMicrosoftFlowIntegrationEnabled" />
+        <EnableRule Id="Mscrm.DisplayFlowSingleMenu" />
+        <EnableRule Id="Mscrm.AnySelection" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.MicrosoftFlows" />
+        <DisplayRule Id="Mscrm.HideOnOutlookClient" />
+      </DisplayRules>
+      <Actions />
+    </CommandDefinition>
+    <CommandDefinition Id="pfc.pfc_query_dgt.Command.Anonimitzar">
+      <EnableRules>
+        <EnableRule Id="pfc.pfc_query_dgt.EnableRule3.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="pfc.pfc_query_dgt.DisplayRule2.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="QueryDGT.ribbon.Functions.BusinessLogic.AnonymousQuery" Library="$webresource:pfc_script/querydgt.ribbon">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="Mscrm.HideOnOutlookClient">
+        <CrmClientTypeRule Type="Outlook" InvertResult="true" />
+      </DisplayRule>
+      <DisplayRule Id="Mscrm.MicrosoftFlows">
+        <MiscellaneousPrivilegeRule PrivilegeName="Flow" />
+      </DisplayRule>
+      <DisplayRule Id="pfc.pfc_query_dgt.DisplayRule2.DisplayRule">
+        <ValueRule Value="" InvertResult="true" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="Mscrm.AnySelection">
+        <SelectionCountRule AppliesTo="SelectedEntity" />
+      </EnableRule>
+      <EnableRule Id="Mscrm.DisplayFlowSingleMenu">
+        <CustomRule FunctionName="XrmCore.Commands.Flows.displayFlowSingleMenu" Library="$webresource:Main_system_library.js" />
+      </EnableRule>
+      <EnableRule Id="Mscrm.IsMicrosoftFlowIntegrationEnabled">
+        <CustomRule FunctionName="XrmCore.Commands.Flows.isMicrosoftFlowEnabled" Library="$webresource:Main_system_library.js" />
+      </EnableRule>
+      <EnableRule Id="pfc.pfc_query_dgt.EnableRule3.EnableRule">
+        <ValueRule Field="statuscode" Value="470000007" Default="true" InvertResult="false" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="pfc.pfc_query_dgt.Button2.Button.LabelText">
+      <Titles>
+        <Title description="Anonimitzar" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.pfc_query_dgt.Button2.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Anonimitzar {0}" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.pfc_query_dgt.Button2.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Anonimitzar {0}" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

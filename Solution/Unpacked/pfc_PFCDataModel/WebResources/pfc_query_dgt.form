@@ -1,0 +1,286 @@
+var DGTQuery;
+(function (DGTQuery) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "pfc_query_dgt";
+        function OnLoad(ec) {
+            "use strict";
+            var fc = ec.getFormContext();
+            fc.data.process.addOnPreStageChange(DGTQuery.FormEvents.Onchage.BPFOnChange);
+        }
+        FormEvents.OnLoad = OnLoad;
+    })(FormEvents = DGTQuery.FormEvents || (DGTQuery.FormEvents = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var FormEvents;
+    (function (FormEvents) {
+        var Onchage;
+        (function (Onchage) {
+            function statuscode(ec) {
+                var fc = ec.getFormContext();
+                if (fc.getAttribute(DGTQuery.Constants.Fields.StatusCode).getValue() == DGTQuery.Constants.StatusCodeOS.EnCurs && (fc.data.process.getActiveStage()._stageStep.description == DGTQuery.Constants.StatesNames.Finalitzada)) {
+                    var id_1 = null;
+                    fc.data.process.getActiveProcess().getStages().forEach(function (v, i, a) {
+                        if (v._stageStep.description === DGTQuery.Constants.StatesNames.EnCurs) {
+                            id_1 = v._stageStep.id;
+                        }
+                    });
+                    fc.data.process.setStatus("active");
+                    setTimeout(function () {
+                        fc.data.process.setActiveStage(id_1);
+                        fc.data.refresh(true);
+                    }, 100);
+                }
+            }
+            Onchage.statuscode = statuscode;
+            function BPFOnChange(ec) {
+                var fc = ec.getFormContext();
+                if (fc.getAttribute(DGTQuery.Constants.Fields.StatusCode).getValue() == DGTQuery.Constants.StatusCodeOS.AnalisiRespostaDGT) {
+                    DGTQuery.Functions.BusinessLogic.CheckAmbit(ec);
+                }
+            }
+            Onchage.BPFOnChange = BPFOnChange;
+            function pfc_deliveryentitydate(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = DGTQuery.Constants.Fields.DataRecepcióPetició;
+                var endDate = DGTQuery.Constants.Fields.DataDentregaALens;
+                DGTQuery.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            Onchage.pfc_deliveryentitydate = pfc_deliveryentitydate;
+            function pfc_presentationdatedgt(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = DGTQuery.Constants.Fields.DataDentregaALens;
+                var endDate = DGTQuery.Constants.Fields.DataPresentacióDGT;
+                DGTQuery.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            Onchage.pfc_presentationdatedgt = pfc_presentationdatedgt;
+            function pfc_responsedatedgt(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = DGTQuery.Constants.Fields.DataPresentacióDGT;
+                var endDate = DGTQuery.Constants.Fields.DataRespostaDGTaLens;
+                DGTQuery.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            Onchage.pfc_responsedatedgt = pfc_responsedatedgt;
+            function pfc_closingdate(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                var startDate = DGTQuery.Constants.Fields.DataRespostaDGTaLens;
+                var endDate = DGTQuery.Constants.Fields.DatadeTancament;
+                DGTQuery.Functions.BusinessLogic.CheckDate(fc, startDate, endDate);
+            }
+            Onchage.pfc_closingdate = pfc_closingdate;
+            function pfc_accountid(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                DGTQuery.Functions.BusinessLogic.setSupervisorAndDepartamentalAgrupation(fc);
+            }
+            Onchage.pfc_accountid = pfc_accountid;
+            function pfc_interestedpeople(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+                DGTQuery.Functions.BusinessLogic.checkInterestedPeople(fc);
+            }
+            Onchage.pfc_interestedpeople = pfc_interestedpeople;
+        })(Onchage = FormEvents.Onchage || (FormEvents.Onchage = {}));
+    })(FormEvents = DGTQuery.FormEvents || (DGTQuery.FormEvents = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function CheckAmbit(ec) {
+                "use strict";
+                if (ec.getEventArgs().getDirection() === "Next") {
+                    var fc = ec.getFormContext();
+                    var filteredRecordCount = fc.getControl(DGTQuery.Constants.Grids.AmbitGrid).getGrid().getTotalRecordCount();
+                    if (filteredRecordCount <= 0) {
+                        ec.getEventArgs().preventDefault();
+                        fc.ui.setFormNotification("No hi ha àmbits vinculats a aquesta consulta", "ERROR", "Ambit");
+                    }
+                    else {
+                        fc.ui.clearFormNotification("Ambit");
+                    }
+                }
+            }
+            BusinessLogic.CheckAmbit = CheckAmbit;
+            function checkInterestedPeople(fc) {
+                var myRe = /^([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?;)*([a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)$/;
+                if (fc.getAttribute(DGTQuery.Constants.Fields.InterestedPeople).getValue() != "" && fc.getAttribute(DGTQuery.Constants.Fields.InterestedPeople).getValue() != null) {
+                    if (!myRe.test(fc.getAttribute(DGTQuery.Constants.Fields.InterestedPeople).getValue())) {
+                        fc.getControl(DGTQuery.Constants.Fields.InterestedPeople).setNotification("El format de correu electrònic és incorrecte.Només estan permesos correus electrònics vàlids separats per ';'");
+                    }
+                    else {
+                        fc.getControl(DGTQuery.Constants.Fields.InterestedPeople).clearNotification();
+                    }
+                }
+                else {
+                    fc.getControl(DGTQuery.Constants.Fields.InterestedPeople).clearNotification();
+                }
+            }
+            BusinessLogic.checkInterestedPeople = checkInterestedPeople;
+            function CheckDate(fc, startDate, endDate) {
+                if (Date.parse(fc.getAttribute(startDate).getValue()) > Date.parse(fc.getAttribute(endDate).getValue())) {
+                    fc.getControl(endDate).setNotification(DGTQuery.Constants.Message.wrongDateNotification, DGTQuery.Constants.Message.wrongDateNotification);
+                }
+                else {
+                    fc.getControl(endDate).clearNotification(DGTQuery.Constants.Message.wrongDateNotification);
+                }
+            }
+            BusinessLogic.CheckDate = CheckDate;
+            function setSupervisorAndDepartamentalAgrupation(fc) {
+                var lookupAccountId, accountId;
+                lookupAccountId = fc.getAttribute(DGTQuery.Constants.Fields.Entitat).getValue();
+                if (lookupAccountId) {
+                    accountId = lookupAccountId[0].id;
+                    Xrm.WebApi.online.retrieveMultipleRecords(DGTQuery.Constants.Entities.Entitat.LogicalName, DGTQuery.Queries.QueriesToRetrieveAccount(fc, accountId)).then(function success(result) {
+                        var lookupSupervisorId = new Array();
+                        lookupSupervisorId[0] = new Object();
+                        if (result.entities[0] && result.entities[0]._pfc_entityhead_value && result.entities[0]["_pfc_entityhead_value@OData.Community.Display.V1.FormattedValue"]) {
+                            lookupSupervisorId[0].id = result.entities[0]._pfc_entityhead_value;
+                            lookupSupervisorId[0].name = result.entities[0]["_pfc_entityhead_value@OData.Community.Display.V1.FormattedValue"];
+                            lookupSupervisorId[0].entityType = "contact";
+                            fc.getAttribute(DGTQuery.Constants.Fields.SupervisorContact).setValue(lookupSupervisorId);
+                        }
+                        var lookupDepartamentalAgrupation = new Array();
+                        lookupDepartamentalAgrupation[0] = new Object();
+                        if (result.entities[0] && result.entities[0]._pfc_departamental_agrupationid_value && result.entities[0]["_pfc_departamental_agrupationid_value@OData.Community.Display.V1.FormattedValue"]) {
+                            lookupDepartamentalAgrupation[0].id = result.entities[0]._pfc_departamental_agrupationid_value;
+                            lookupDepartamentalAgrupation[0].name = result.entities[0]["_pfc_departamental_agrupationid_value@OData.Community.Display.V1.FormattedValue"];
+                            lookupDepartamentalAgrupation[0].entityType = "pfc_departamental_agrupation";
+                            fc.getAttribute(DGTQuery.Constants.Fields.DepartamentalAgrupation).setValue(lookupDepartamentalAgrupation);
+                        }
+                    }, function error(error) {
+                        Xrm.Navigation.openAlertDialog(error.message);
+                    });
+                }
+                else {
+                    fc.getAttribute(DGTQuery.Constants.Fields.DepartamentalAgrupation).setValue(null);
+                    fc.getAttribute(DGTQuery.Constants.Fields.SupervisorContact).setValue(null);
+                }
+            }
+            BusinessLogic.setSupervisorAndDepartamentalAgrupation = setSupervisorAndDepartamentalAgrupation;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = DGTQuery.Functions || (DGTQuery.Functions = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.DataRecepcióPetició = "pfc_receiptdate";
+            Fields.DataPresentacióDGT = "pfc_presentationdatedgt";
+            Fields.DataDentregaALens = "pfc_deliveryentitydate";
+            Fields.DataRespostaDGTaLens = "pfc_responsedatedgt";
+            Fields.DatadeTancament = "pfc_closingdate";
+            Fields.Supervisor = "pfc_supervisorid";
+            Fields.SupervisorContact = "pfc_entityhead";
+            Fields.Entitat = "pfc_accountid";
+            Fields.DepartamentalAgrupation = "pfc_departamental_agrupationid";
+            Fields.InterestedPeople = "pfc_interestedpeople";
+            Fields.StatusCode = "statuscode";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var StatusCodeOS;
+        (function (StatusCodeOS) {
+            StatusCodeOS.AnalisiRespostaDGT = 470000008;
+            StatusCodeOS.EnCurs = 470000002;
+        })(StatusCodeOS = Constants.StatusCodeOS || (Constants.StatusCodeOS = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var StatesNames;
+        (function (StatesNames) {
+            StatesNames.EnCurs = "En Curs";
+            StatesNames.Finalitzada = "Finalitzada";
+        })(StatesNames = Constants.StatesNames || (Constants.StatesNames = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var Grids;
+        (function (Grids) {
+            Grids.AmbitGrid = "Subgrid_new_1";
+        })(Grids = Constants.Grids || (Constants.Grids = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var SystemUser;
+            (function (SystemUser) {
+                SystemUser.LogicalName = "systemuser";
+            })(SystemUser = Entities.SystemUser || (Entities.SystemUser = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var Entitat;
+            (function (Entitat) {
+                Entitat.LogicalName = "account";
+            })(Entitat = Entities.Entitat || (Entities.Entitat = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var Entities;
+        (function (Entities) {
+            var DepartamentalAgrupation;
+            (function (DepartamentalAgrupation) {
+                DepartamentalAgrupation.LogicalName = "pfc_departamental_agrupation";
+            })(DepartamentalAgrupation = Entities.DepartamentalAgrupation || (Entities.DepartamentalAgrupation = {}));
+        })(Entities = Constants.Entities || (Constants.Entities = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Constants;
+    (function (Constants) {
+        var Message;
+        (function (Message) {
+            Message.wrongDateNotification = "La data introduida és incorrecta.Introduiu una data més gran a la data anterior";
+            Message.successfulDateNotification = "La data és correcta";
+        })(Message = Constants.Message || (Constants.Message = {}));
+    })(Constants = DGTQuery.Constants || (DGTQuery.Constants = {}));
+})(DGTQuery || (DGTQuery = {}));
+(function (DGTQuery) {
+    var Queries;
+    (function (Queries) {
+        function QueriesToRetrieveAccount(fc, fieldValue) {
+            "use strict";
+            var fetchXml = [
+                "<fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true' no-lock='true'>\
+                <entity name='account'>\
+                    <attribute name='accountid' />\
+                    <attribute name='pfc_departamental_agrupationid' />\
+                    <attribute name='pfc_responsableid' />\
+                    <attribute name='pfc_entityhead' />\
+                    <filter>\
+                        <condition attribute='accountid' operator='eq' value='" + fieldValue + "' />\
+                    </filter>\
+                </entity>\
+            </fetch>",
+            ].join("");
+            fetchXml = "?fetchXml=" + encodeURIComponent(fetchXml);
+            return fetchXml;
+        }
+        Queries.QueriesToRetrieveAccount = QueriesToRetrieveAccount;
+    })(Queries = DGTQuery.Queries || (DGTQuery.Queries = {}));
+})(DGTQuery || (DGTQuery = {}));

@@ -1,0 +1,11 @@
+﻿function OnLoad(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var wrControl = formContext.getControl("WebResource_signatureHolder");
+    if (wrControl) {
+        wrControl.getContentWindow().then(
+            function (contentWindow) {
+                contentWindow.setClientApiContext(Xrm, formContext);
+            }
+        )
+    }
+}

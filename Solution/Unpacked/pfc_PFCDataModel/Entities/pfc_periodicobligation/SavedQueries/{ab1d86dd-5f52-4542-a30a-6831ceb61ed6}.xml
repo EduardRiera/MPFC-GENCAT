@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{ab1d86dd-5f52-4542-a30a-6831ceb61ed6}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_periodicobligationid">
+          <cell name="pfc_name" width="100" />
+          <cell name="pfc_accountid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_year" width="100" />
+          <cell name="pfc_entitytype" width="125" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_responsableid" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_periodicobligation">
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_entitytype" />
+          <attribute name="pfc_responsableid" />
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_year" />
+          <attribute name="pfc_periodicobligationid" />
+          <attribute name="pfc_name" />
+          <order attribute="pfc_name" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Obligacions periòdiques actiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

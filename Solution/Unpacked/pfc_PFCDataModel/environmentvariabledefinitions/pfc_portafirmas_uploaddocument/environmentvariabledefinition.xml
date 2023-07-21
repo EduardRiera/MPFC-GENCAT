@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="pfc_portafirmas_uploaddocument">
+  <defaultvalue>https://prod-80.eastus.logic.azure.com:443/workflows/d65999eec4a6479e80e2813d78ae19ac/triggers/manual/paths/invoke?api-version=2016-10-01&amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;sv=1.0&amp;sig=AHK5PXDkrLGlAlPadRj0GifBzA8VyVp8HDAq4PSUubg</defaultvalue>
+  <displayname default="PortaFirmas_UploadDocument">
+    <label description="PortaFirmas_UploadDocument" languagecode="1027" />
+  </displayname>
+  <introducedversion>1.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

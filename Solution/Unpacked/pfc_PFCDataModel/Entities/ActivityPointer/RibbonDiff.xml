@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.activitypointer.Button.Hide" Location="AccessChecker.OpenDialog.activitypointer.Button" />
+    <HideCustomAction HideActionId="pfc.AIBuilder.activitypointer.Flyout.Dummy.Hide" Location="AIBuilder.activitypointer.Flyout.Dummy" />
+    <HideCustomAction HideActionId="pfc.AIBuilder.activitypointer.Flyout.Hide" Location="AIBuilder.activitypointer.Flyout" />
+    <HideCustomAction HideActionId="pfc.GuidedHelp.activitypointer.Form.Hide" Location="GuidedHelp.activitypointer.Form" />
+    <HideCustomAction HideActionId="pfc.GuidedHelpactivitypointer.Grid.Hide" Location="GuidedHelpactivitypointer.Grid" />
+    <HideCustomAction HideActionId="pfc.LPLibrary.activitypointer.Form.Hide" Location="LPLibrary.activitypointer.Form" />
+    <HideCustomAction HideActionId="pfc.LPLibraryactivitypointer.Grid.Hide" Location="LPLibraryactivitypointer.Grid" />
+    <HideCustomAction HideActionId="pfc.MailApp.Form.OpenRecordOnWeb.activitypointer.Button.Hide" Location="MailApp.Form.OpenRecordOnWeb.activitypointer.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.ActionButtonForMSTeams.Hide" Location="Mscrm.Form.activitypointer.ActionButtonForMSTeams" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddAppointment.Hide" Location="Mscrm.Form.activitypointer.AddAppointment" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddCampaignResponse.Hide" Location="Mscrm.Form.activitypointer.AddCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddConnection.Hide" Location="Mscrm.Form.activitypointer.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddEmail.Hide" Location="Mscrm.Form.activitypointer.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddFax.Hide" Location="Mscrm.Form.activitypointer.AddFax" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddFile.Hide" Location="Mscrm.Form.activitypointer.AddFile" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddLetter.Hide" Location="Mscrm.Form.activitypointer.AddLetter" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddNote.Hide" Location="Mscrm.Form.activitypointer.AddNote" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddOtherActivities.Hide" Location="Mscrm.Form.activitypointer.AddOtherActivities" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddPhone.Hide" Location="Mscrm.Form.activitypointer.AddPhone" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddRecurringAppointment.Hide" Location="Mscrm.Form.activitypointer.AddRecurringAppointment" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddServiceActivity.Hide" Location="Mscrm.Form.activitypointer.AddServiceActivity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddTask.Hide" Location="Mscrm.Form.activitypointer.AddTask" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.AddToQueue.Hide" Location="Mscrm.Form.activitypointer.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Assign.Hide" Location="Mscrm.Form.activitypointer.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Convert.Case.Hide" Location="Mscrm.Form.activitypointer.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Convert.Opportunity.Hide" Location="Mscrm.Form.activitypointer.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.CopySelected.Hide" Location="Mscrm.Form.activitypointer.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.activitypointer.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.activitypointer.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.FollowButton.Hide" Location="Mscrm.Form.activitypointer.FollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.FollowButtonForYammer.Hide" Location="Mscrm.Form.activitypointer.FollowButtonForYammer" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.MailMerge.Hide" Location="Mscrm.Form.activitypointer.MailMerge" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.NewUnfollowButton.Hide" Location="Mscrm.Form.activitypointer.NewUnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.OpenActiveStage.Hide" Location="Mscrm.Form.activitypointer.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.PDFButtonId.Hide" Location="Mscrm.Form.activitypointer.PDFButtonId" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Permissions.Grant.Hide" Location="Mscrm.Form.activitypointer.Permissions.Grant" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Permissions.GrantUCI.Hide" Location="Mscrm.Form.activitypointer.Permissions.GrantUCI" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Permissions.Hide" Location="Mscrm.Form.activitypointer.Permissions" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Permissions.Sharing.Hide" Location="Mscrm.Form.activitypointer.Permissions.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.PromoteToResponse.Hide" Location="Mscrm.Form.activitypointer.PromoteToResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.QueueItemDetail.Hide" Location="Mscrm.Form.activitypointer.QueueItemDetail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.QueueItemDetailOmnichannel.Hide" Location="Mscrm.Form.activitypointer.QueueItemDetailOmnichannel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.RefreshModernButton.Hide" Location="Mscrm.Form.activitypointer.RefreshModernButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.Reports.Hide" Location="Mscrm.Form.activitypointer.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.RunScript.Hide" Location="Mscrm.Form.activitypointer.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.RunWorkflow.Hide" Location="Mscrm.Form.activitypointer.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.SendSelected.Hide" Location="Mscrm.Form.activitypointer.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.SuggestProduct.Hide" Location="Mscrm.Form.activitypointer.SuggestProduct" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.UnfollowButton.Hide" Location="Mscrm.Form.activitypointer.UnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.ViewHierarchy.Hide" Location="Mscrm.Form.activitypointer.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.activitypointer.WordTemplate.Hide" Location="Mscrm.Form.activitypointer.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.ActionButtonForMSTeams.Hide" Location="Mscrm.HomepageGrid.activitypointer.ActionButtonForMSTeams" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.AddConnection.Hide" Location="Mscrm.HomepageGrid.activitypointer.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.AddNoteToActivity.Hide" Location="Mscrm.HomepageGrid.activitypointer.AddNoteToActivity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.AddToQueue.Hide" Location="Mscrm.HomepageGrid.activitypointer.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Assign.Hide" Location="Mscrm.HomepageGrid.activitypointer.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.BulkDelete.Hide" Location="Mscrm.HomepageGrid.activitypointer.BulkDelete" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.ChangeDataSetControlButton.Hide" Location="Mscrm.HomepageGrid.activitypointer.ChangeDataSetControlButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Assign.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Delete.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Delete" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Edit.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Edit" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Expand.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Expand" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Export.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Export" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Import.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Import" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.New.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.New" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.RefreshButton.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.RefreshButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.SaveCopy.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.SaveCopy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Chart.Share.Hide" Location="Mscrm.HomepageGrid.activitypointer.Chart.Share" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Charts.Hide" Location="Mscrm.HomepageGrid.activitypointer.Charts" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Copy.Hide" Location="Mscrm.HomepageGrid.activitypointer.Copy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.CustomizeEntity.Hide" Location="Mscrm.HomepageGrid.activitypointer.CustomizeEntity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.CustomizePreviewPane.Hide" Location="Mscrm.HomepageGrid.activitypointer.CustomizePreviewPane" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Detect.Hide" Location="Mscrm.HomepageGrid.activitypointer.Detect" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.DocumentTemplate.Hide" Location="Mscrm.HomepageGrid.activitypointer.DocumentTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.ExportSelectedToExcel.Hide" Location="Mscrm.HomepageGrid.activitypointer.ExportSelectedToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.ExportToExcel.Hide" Location="Mscrm.HomepageGrid.activitypointer.ExportToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.HomepageGrid.activitypointer.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Flows.RefreshCommandBar.Hide" Location="Mscrm.HomepageGrid.activitypointer.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.FollowButton.Hide" Location="Mscrm.HomepageGrid.activitypointer.FollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Help.Hide" Location="Mscrm.HomepageGrid.activitypointer.Help" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Import.Hide" Location="Mscrm.HomepageGrid.activitypointer.Import" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.ImportDataFromExcel.Hide" Location="Mscrm.HomepageGrid.activitypointer.ImportDataFromExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.MainTab.QuickPowerBI.Button.Hide" Location="Mscrm.HomepageGrid.activitypointer.MainTab.QuickPowerBI.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.activitypointer.MBPF.ConvertTo" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Meqf.Hide" Location="Mscrm.HomepageGrid.activitypointer.Meqf" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.modern.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.activitypointer.modern.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NavigateToHomepageGrid.Hide" Location="Mscrm.HomepageGrid.activitypointer.NavigateToHomepageGrid" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewAppointment.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewAppointment" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewAppointment.modern.Appointment.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewAppointment.modern.Appointment" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewCampaignResponse.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewCampaignResponse" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewCustomActivities.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewCustomActivities" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewEmail.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewFax.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewFax" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewLetter.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewLetter" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewPhone.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewPhone" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewServiceActivity.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewServiceActivity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewTask.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewTask" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.NewUnfollowButton.Hide" Location="Mscrm.HomepageGrid.activitypointer.NewUnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.OpenActiveStage.Hide" Location="Mscrm.HomepageGrid.activitypointer.OpenActiveStage" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.OpenRecordInSidePane.Hide" Location="Mscrm.HomepageGrid.activitypointer.OpenRecordInSidePane" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.RefreshModernButton.Hide" Location="Mscrm.HomepageGrid.activitypointer.RefreshModernButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.RunReport.Hide" Location="Mscrm.HomepageGrid.activitypointer.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.RunScript.Hide" Location="Mscrm.HomepageGrid.activitypointer.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.RunWorkflow.Hide" Location="Mscrm.HomepageGrid.activitypointer.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Send.Hide" Location="Mscrm.HomepageGrid.activitypointer.Send" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.SendDirectEmail.Hide" Location="Mscrm.HomepageGrid.activitypointer.SendDirectEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.Sharing.Hide" Location="Mscrm.HomepageGrid.activitypointer.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.UnfollowButton.Hide" Location="Mscrm.HomepageGrid.activitypointer.UnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.ViewHierarchy.Hide" Location="Mscrm.HomepageGrid.activitypointer.ViewHierarchy" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.activitypointer.WordTemplate.Hide" Location="Mscrm.HomepageGrid.activitypointer.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.AddConnection.Hide" Location="Mscrm.SubGrid.activitypointer.AddConnection" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.AddEmail.Hide" Location="Mscrm.SubGrid.activitypointer.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.AddNoteToActivity.Hide" Location="Mscrm.SubGrid.activitypointer.AddNoteToActivity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.AddToQueue.Hide" Location="Mscrm.SubGrid.activitypointer.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.AdvMergeRecords.Hide" Location="Mscrm.SubGrid.activitypointer.AdvMergeRecords" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.Assign.Hide" Location="Mscrm.SubGrid.activitypointer.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.AssociateParentChildCase.Hide" Location="Mscrm.SubGrid.activitypointer.AssociateParentChildCase" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.BulkDelete.Hide" Location="Mscrm.SubGrid.activitypointer.BulkDelete" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.ChangeDataSetControlButton.Hide" Location="Mscrm.SubGrid.activitypointer.ChangeDataSetControlButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.Charts.Hide" Location="Mscrm.SubGrid.activitypointer.Charts" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.CopySelected.Hide" Location="Mscrm.SubGrid.activitypointer.CopySelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.CreateForwardEmailFromGrid.Hide" Location="Mscrm.SubGrid.activitypointer.CreateForwardEmailFromGrid" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.CreateReplyAllEmailFromGrid.Hide" Location="Mscrm.SubGrid.activitypointer.CreateReplyAllEmailFromGrid" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.CreateReplyEmailFromGrid.Hide" Location="Mscrm.SubGrid.activitypointer.CreateReplyEmailFromGrid" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.Detect.Hide" Location="Mscrm.SubGrid.activitypointer.Detect" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.DocumentTemplate.Hide" Location="Mscrm.SubGrid.activitypointer.DocumentTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.ExportSelectedToExcel.Hide" Location="Mscrm.SubGrid.activitypointer.ExportSelectedToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.ExportToExcel.Hide" Location="Mscrm.SubGrid.activitypointer.ExportToExcel" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.activitypointer.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.FolderTracking.Hide" Location="Mscrm.SubGrid.activitypointer.FolderTracking" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.FollowButton.Hide" Location="Mscrm.SubGrid.activitypointer.FollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.MailMerge.Hide" Location="Mscrm.SubGrid.activitypointer.MailMerge" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.modern.AddEmail.Hide" Location="Mscrm.SubGrid.activitypointer.modern.AddEmail" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.OpenAssociatedGridViewStandard.Hide" Location="Mscrm.SubGrid.activitypointer.OpenAssociatedGridViewStandard" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.OpenChatFromTimeline.Hide" Location="Mscrm.SubGrid.activitypointer.OpenChatFromTimeline" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.RunReport.Hide" Location="Mscrm.SubGrid.activitypointer.RunReport" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.RunScript.Hide" Location="Mscrm.SubGrid.activitypointer.RunScript" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.RunWorkflow.Hide" Location="Mscrm.SubGrid.activitypointer.RunWorkflow" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.SendSelected.Hide" Location="Mscrm.SubGrid.activitypointer.SendSelected" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.Sharing.Hide" Location="Mscrm.SubGrid.activitypointer.Sharing" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.UnfollowButton.Hide" Location="Mscrm.SubGrid.activitypointer.UnfollowButton" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.activitypointer.WordTemplate.Hide" Location="Mscrm.SubGrid.activitypointer.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.msdyn.ApplicationRibbon.activitypointer.Form.SaveAndRunRoutingRule.Button.Hide" Location="msdyn.ApplicationRibbon.activitypointer.Form.SaveAndRunRoutingRule.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.ApplicationRibbon.activitypointer.HomeGrid.RunRoutingRule.Button.Hide" Location="msdyn.ApplicationRibbon.activitypointer.HomeGrid.RunRoutingRule.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.Form.activitypointer.ApplyCadence.Button.Hide" Location="msdyn.Form.activitypointer.ApplyCadence.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.Form.activitypointer.LaunchPlaybook.Button.Hide" Location="msdyn.Form.activitypointer.LaunchPlaybook.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.HomepageGrid.activitypointer.ApplyCadence.Button.Hide" Location="msdyn.HomepageGrid.activitypointer.ApplyCadence.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.HomepageGrid.activitypointer.DisconnectSequence.Button.Hide" Location="msdyn.HomepageGrid.activitypointer.DisconnectSequence.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.HomepageGrid.activitypointer.LaunchPlaybook.Button.Hide" Location="msdyn.HomepageGrid.activitypointer.LaunchPlaybook.Button" />
+    <HideCustomAction HideActionId="pfc.msdyn.HomepageGrid.activitypointer.OpenFocusedView.Button.Hide" Location="msdyn.HomepageGrid.activitypointer.OpenFocusedView.Button" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

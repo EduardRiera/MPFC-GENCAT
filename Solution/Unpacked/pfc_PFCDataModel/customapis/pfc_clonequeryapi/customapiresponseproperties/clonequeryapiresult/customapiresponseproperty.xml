@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="clonequeryapiresult">
+  <description default="Clone Query API result">
+    <label description="Clone Query API result" languagecode="1027" />
+  </description>
+  <displayname default="Clone Query API result">
+    <label description="Clone Query API result" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Clone Query API result</name>
+  <type>12</type>
+</customapiresponseproperty>

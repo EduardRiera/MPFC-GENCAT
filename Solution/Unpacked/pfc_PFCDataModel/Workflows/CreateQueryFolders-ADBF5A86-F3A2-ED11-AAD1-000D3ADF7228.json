@@ -1,0 +1,191 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedsharepointonline_c963a"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "SharepointSite (pfc_sharepointsite)": {
+          "defaultValue": "https://gencat.sharepoint.com/sites/MPFCTest",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_sharepointsite"
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_agrega,_modifica_o_elimina_una_fila": {
+          "metadata": {
+            "operationMetadataId": "4bd153f9-e0f1-4b6f-8731-7720e7a06d47"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "pfc_query",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Inicializar_variable_Path": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "443429e9-36cb-4d40-9893-06fff9462393"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Path",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Obtener_Entitat_por_id": {
+          "runAfter": {
+            "Inicializar_variable_(SharepointURL)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b6b38ac9-92c1-4517-8cad-38af51d8d584"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "accounts",
+              "recordId": "@triggerOutputs()?['body/_pfc_accountid_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Establecer_Path": {
+          "runAfter": {
+            "Obtener_Entitat_por_id": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fe367c19-8476-41db-a6a9-aa3594d53ecc"
+          },
+          "type": "SetVariable",
+          "inputs": {
+            "name": "Path",
+            "value": "@{outputs('Obtener_Entitat_por_id')?['body/name']}/pfc_query/@{triggerOutputs()?['body/pfc_name']}"
+          }
+        },
+        "Inicializar_variable_(SharepointURL)": {
+          "runAfter": {
+            "Inicializar_variable_Path": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "47928988-17e1-461f-a07c-8b07659c099b"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SharepointURL",
+                "type": "string",
+                "value": "@parameters('SharepointSite (pfc_sharepointsite)')"
+              }
+            ]
+          }
+        },
+        "Crear_nueva_carpeta_Documentos": {
+          "runAfter": {
+            "Establecer_Path": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a22006ac-8c5b-4a4c-aa84-6071063f5ca2"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline_1",
+              "operationId": "CreateNewFolder",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "@variables('SharepointURL')",
+              "table": "57fbeece-f958-47de-b986-087d75d3c21d",
+              "parameters/path": "@{variables('Path')}/Documents de l'ens"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Crear_nueva_carpeta_Documentos_de_trabajo": {
+          "runAfter": {
+            "Crear_nueva_carpeta_Documentos": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a22006ac-8c5b-4a4c-aa84-6071063f5ca2"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline_1",
+              "operationId": "CreateNewFolder",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "@variables('SharepointURL')",
+              "table": "57fbeece-f958-47de-b986-087d75d3c21d",
+              "parameters/path": "@{variables('Path')}/Documents de treball"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

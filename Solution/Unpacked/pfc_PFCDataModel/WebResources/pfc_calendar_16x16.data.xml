@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{35f02d4c-e47a-ed11-81ad-000d3ab3f701}</WebResourceId>
+  <Name>pfc_calendar_16x16</Name>
+  <DisplayName>Calendar_16x16</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.2</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_calendar_16x1635F02D4C-E47A-ED11-81AD-000D3AB3F701</FileName>
+</WebResource>

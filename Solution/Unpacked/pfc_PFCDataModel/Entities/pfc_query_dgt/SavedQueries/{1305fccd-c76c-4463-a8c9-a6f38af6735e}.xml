@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{1305fccd-c76c-4463-a8c9-a6f38af6735e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_query_dgtid">
+          <cell name="pfc_name" width="179" />
+          <cell name="pfc_accountid" width="214" />
+          <cell name="pfc_resume" width="100" />
+          <cell name="pfc_applicantid" width="147" />
+          <cell name="statuscode" width="132" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_query_dgt">
+          <attribute name="pfc_name" />
+          <order attribute="pfc_name" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="pfc_applicantid" operator="like" value="{0}" />
+            <condition attribute="pfc_name" operator="like" value="{0}" />
+            <condition attribute="pfc_accountid" operator="like" value="{0}" />
+            <condition attribute="pfc_queryid" operator="like" value="{0}" />
+            <condition attribute="pfc_departamental_agrupationid" operator="like" value="{0}" />
+            <condition attribute="pfc_managerid" operator="like" value="{0}" />
+            <condition attribute="pfc_registercode" operator="like" value="{0}" />
+            <condition attribute="pfc_entityhead" operator="like" value="{0}" />
+          </filter>
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_applicantid" />
+          <attribute name="statuscode" />
+          <attribute name="pfc_resume" />
+          <attribute name="pfc_query_dgtid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Cerca ràpida de Consultes a DGT actius" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

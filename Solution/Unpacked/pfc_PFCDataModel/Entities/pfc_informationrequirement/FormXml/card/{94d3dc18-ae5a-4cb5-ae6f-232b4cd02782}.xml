@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{94d3dc18-ae5a-4cb5-ae6f-232b4cd02782}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab IsUserDefined="0" id="{9cb02b75-d9ad-4fdf-9a9d-64a2eb358ecd}">
+          <labels>
+            <label description="" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="25%">
+              <sections>
+                <section name="Color Strip" showlabel="false" showbar="false" IsUserDefined="0" columns="1" id="{cc47b756-d8c0-47f2-be84-a8faa72764f6}">
+                  <labels>
+                    <label description="" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{58b76500-a50d-a96a-861d-6a64d9cd95dd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Prioritat" languagecode="1027" />
+                        </labels>
+                        <control id="prioritycode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="prioritycode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="75%">
+              <sections>
+                <section name="CardHeader" showlabel="false" showbar="false" IsUserDefined="0" columns="111" id="{c69d97da-c6e3-4f80-afd1-aaff33ee03c1}">
+                  <labels>
+                    <label description="" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e9d98d77-6315-5c95-8d87-b99bdd465bca}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tema" languagecode="1027" />
+                        </labels>
+                        <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" disabled="false" />
+                      </cell>
+                      <cell id="{90d3592c-dcbb-8778-7329-446538d196bd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Última actualització" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                      <cell id="{1cb3bb49-4b48-dade-c738-67eec573578c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardDetails" showlabel="false" showbar="false" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" id="{749bce13-b3e0-4666-aa63-1aead98ecc28}">
+                  <labels>
+                    <label description="" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a83c6a7a-dab1-2301-bcbd-b51d505d7208}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Sol·licita" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_requests" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pfc_requests" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{35689ba8-8202-ae6d-47b8-8bbe25de8d40}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Resposta" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_answer" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="pfc_answer" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="CardFooter" showlabel="false" showbar="false" IsUserDefined="0" columns="1111" id="{3da4ed8c-1015-422f-be5b-d0fbf2f41ca4}">
+                  <labels>
+                    <label description="" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d802c15e-40a0-2b29-e3a0-a65a8d1976bc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Inici real" languagecode="1027" />
+                        </labels>
+                        <control id="actualstart" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="actualstart" disabled="false" />
+                      </cell>
+                      <cell id="{227bc77a-2c81-40fc-888f-87684e9080e1}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{58f9c3c0-e8d1-470d-ba0d-f60c6bbda7dc}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{c532c783-b5b2-427f-88ee-5bf5ac212103}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="CronologiaRequerimentInformació" languagecode="1027" />
+    </LocalizedNames>
+  </systemform>
+</forms>

@@ -1,0 +1,9 @@
+{
+  "environmentvariablevalues": {
+    "environmentvariablevalue": {
+      "@environmentvariablevalueid": "bd6d758e-ef26-ee11-9965-000d3adf90aa",
+      "iscustomizable": "1",
+      "value": "https://prod-80.eastus.logic.azure.com:443/workflows/d65999eec4a6479e80e2813d78ae19ac/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=AHK5PXDkrLGlAlPadRj0GifBzA8VyVp8HDAq4PSUubg"
+    }
+  }
+}

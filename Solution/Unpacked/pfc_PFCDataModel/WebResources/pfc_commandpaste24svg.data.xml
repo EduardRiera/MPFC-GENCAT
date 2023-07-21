@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{5c78a286-336b-ed11-9561-000d3ab3f701}</WebResourceId>
+  <Name>pfc_commandpaste24svg</Name>
+  <DisplayName>Command Paste 24</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>1</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_commandpaste24svg5C78A286-336B-ED11-9561-000D3AB3F701</FileName>
+</WebResource>

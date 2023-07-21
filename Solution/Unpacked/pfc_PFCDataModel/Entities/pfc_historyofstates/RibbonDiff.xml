@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_historyofstates.DocumentTemplate.Hide" Location="Mscrm.SubGrid.pfc_historyofstates.DocumentTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_historyofstates.Flows.RefreshCommandBar.Hide" Location="Mscrm.SubGrid.pfc_historyofstates.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.SubGrid.pfc_historyofstates.RunReport.Hide" Location="Mscrm.SubGrid.pfc_historyofstates.RunReport" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

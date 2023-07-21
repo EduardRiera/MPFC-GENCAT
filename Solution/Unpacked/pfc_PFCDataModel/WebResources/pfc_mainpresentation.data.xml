@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{e2f67fa4-da6b-ed11-9561-000d3ab3f701}</WebResourceId>
+  <Name>pfc_mainpresentation</Name>
+  <DisplayName>MainPresentation</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_mainpresentationE2F67FA4-DA6B-ED11-9561-000D3AB3F701</FileName>
+</WebResource>

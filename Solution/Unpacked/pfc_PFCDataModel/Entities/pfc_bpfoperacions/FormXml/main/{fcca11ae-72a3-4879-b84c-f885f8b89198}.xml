@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{fcca11ae-72a3-4879-b84c-f885f8b89198}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{b78a7623-5837-429e-b017-265613d53214}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{773e2853-1c54-43a6-a01c-6ed1a0915c51}">
+          <labels>
+            <label description="Inici" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{747d15c1-4832-9007-348a-c55ca856e789}" name="StageStep3_section1" labelid="{b9b271f3-cc6e-4842-8d11-0371cd023f40}">
+                  <labels>
+                    <label description="Inici" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5b08d9c7-9987-4860-abf9-488d0d59baf3}" showlabel="true" visible="true" labelid="{c1ec2cc4-cbbd-47cc-8033-c05737c517bd}">
+                        <labels>
+                          <label description="Responsable" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:ownerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="ownerid" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9300613a-3cdf-4daf-9266-da42ab8b22e7}" showlabel="true" visible="true" labelid="{2372347e-3b93-49ef-8f9d-1986d69991ba}">
+                        <labels>
+                          <label description="Data Assignació" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:pfc_acceptance_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_acceptance_date" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{646d6d6b-5c2e-48f7-89ef-219c8e4093d4}" name="StageStep9" locklevel="0" expanded="true" visible="false" labelid="{70e9194a-bbc9-47f5-b682-f53e5d71de46}">
+          <labels>
+            <label description="En Curs" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{038ddf2b-0d88-cb2a-0176-7a86a05bf5d3}" name="StageStep9_section1" labelid="{e8fec5b1-cd58-4743-a064-da47fc31b6ec}">
+                  <labels>
+                    <label description="En Curs" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7ab9213b-73ee-4e30-906f-85ed7ce5eaba}" showlabel="true" visible="true" labelid="{bbecadb0-a535-478a-82cc-f051af023ef7}">
+                        <labels>
+                          <label description="Estat següent" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:pfc_operationstatus" classid="{5d68b988-0661-4db2-bc3e-17598ad3be6c}" datafieldname="pfc_operationstatus" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{3eab5cb5-c642-424c-80dd-1a2166a0b28c}" name="StageStep14" locklevel="0" expanded="true" visible="false" labelid="{ee863e73-2dfd-465b-b137-3dee889bd47f}">
+          <labels>
+            <label description="En Pausa" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{19cd2efb-d705-d1f0-252f-a698f85f3e07}" name="StageStep14_section1" labelid="{f58d7d4d-0ee3-4198-b4c5-eca89aab0aa4}">
+                  <labels>
+                    <label description="En Pausa" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ecf6ea02-bf78-4f3e-be31-9cbe203d675f}" showlabel="true" visible="true" labelid="{b079932d-4be3-4c42-b604-1b7669b94ac0}">
+                        <labels>
+                          <label description="Estat" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:statuscode" classid="{5d68b988-0661-4db2-bc3e-17598ad3be6c}" datafieldname="statuscode" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{70058e69-6268-4a45-94c3-f69488118084}" name="StageStep19" locklevel="0" expanded="true" visible="false" labelid="{dc419938-9137-4933-8cc8-ca46677e0a64}">
+          <labels>
+            <label description="Finalitzada" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{75640bea-28a2-114f-01b8-45c458ce0347}" name="StageStep19_section1" labelid="{c8d6891b-41bf-4607-998e-3352972282b4}">
+                  <labels>
+                    <label description="Finalitzada" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{cab080e7-dd31-4bc2-b807-20952e4b9e55}" showlabel="true" visible="true" labelid="{ff19ed57-38c6-42c8-a45d-f3af57fd334d}">
+                        <labels>
+                          <label description="Data tancament" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:pfc_closing_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_closing_date" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{a42edc9c-589f-458e-86ef-cf96cc668544}" name="StageStep23" locklevel="0" expanded="true" visible="false" labelid="{d459f2c7-284a-407e-8ec5-ba442f078fd7}">
+          <labels>
+            <label description="Resposta" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{ab44a109-3d2d-3f31-f5a5-bf6ae76ecd58}" name="StageStep23_section1" labelid="{67e92bc6-8a1e-48d9-83c0-31b5d8b3ac5b}">
+                  <labels>
+                    <label description="Resposta" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2e873a96-ef2d-49e5-92a8-44f87b74eae9}" showlabel="true" visible="true" labelid="{08d2abef-7dcc-4162-9ba1-504b96b7079b}">
+                        <labels>
+                          <label description="Data enviament" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:pfc_sent_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_sent_date" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{29c706f8-7965-4716-962e-5e182023ba00}" name="StageStep28" locklevel="0" expanded="true" visible="false" labelid="{8592511c-2e06-496d-85e8-208bc66fdc45}">
+          <labels>
+            <label description="Finalitzada" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{5a9bb07b-e77b-1173-6fde-da722383aa42}" name="StageStep28_section1" labelid="{946e2e05-33c2-4bd5-a2ff-091d1ff8fb17}">
+                  <labels>
+                    <label description="Finalitzada" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{edb2c6ea-0ed2-4263-9608-1c1884a5a36c}" showlabel="true" visible="true" labelid="{5409d673-2a7e-4a0a-8f3f-0b4a6f522e67}">
+                        <labels>
+                          <label description="Data tancament" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions:pfc_closing_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="pfc_closing_date" disabled="false" relationship="bpf_pfc_tax_transcendence_operation_pfc_bpfoperacions" isrequired="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{620cdb5e-d7c9-e511-80d1-00155d20b011}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" preview="1" icon="1">
+        <row name="result" id="activityid" multiobjectidfield="activitytypecode">
+          <cell name="createdon" width="100" />
+          <cell name="subject" width="150" />
+          <cell name="activitytypecode" width="150" />
+          <cell name="activityadditionalparams" width="100" disableSorting="1" />
+          <cell name="statecode" width="100" />
+          <cell name="actualdurationminutes" width="100" />
+          <cell name="actualend" width="100" />
+          <cell name="actualstart" width="100" />
+          <cell name="createdby" width="100" />
+          <cell name="createdonbehalfby" width="100" />
+          <cell name="transactioncurrencyid" width="100" />
+          <cell name="deliverylastattemptedon" width="100" />
+          <cell name="senton" width="100" />
+          <cell name="deliveryprioritycode" width="100" />
+          <cell name="description" width="100" disableSorting="1" />
+          <cell name="scheduledend" width="100" />
+          <cell name="exchangerate" width="100" />
+          <cell name="modifiedon" width="100" />
+          <cell name="leftvoicemail" width="100" />
+          <cell name="modifiedby" width="100" />
+          <cell name="modifiedonbehalfby" width="100" />
+          <cell name="ownerid" width="100" />
+          <cell name="prioritycode" width="100" />
+          <cell name="stageid" width="100" />
+          <cell name="instancetypecode" width="100" />
+          <cell name="regardingobjectid" width="100" />
+          <cell name="scheduleddurationminutes" width="100" />
+          <cell name="community" width="100" />
+          <cell name="scheduledstart" width="100" />
+          <cell name="allparties" ishidden="1" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="activitypointer">
+          <attribute name="subject" />
+          <attribute name="activitytypecode" />
+          <attribute name="createdon" />
+          <attribute name="scheduledstart" />
+          <attribute name="community" />
+          <attribute name="scheduleddurationminutes" />
+          <attribute name="regardingobjectid" />
+          <attribute name="instancetypecode" />
+          <attribute name="stageid" />
+          <attribute name="prioritycode" />
+          <attribute name="ownerid" />
+          <attribute name="modifiedonbehalfby" />
+          <attribute name="modifiedby" />
+          <attribute name="leftvoicemail" />
+          <attribute name="modifiedon" />
+          <attribute name="exchangerate" />
+          <attribute name="scheduledend" />
+          <attribute name="description" />
+          <attribute name="deliveryprioritycode" />
+          <attribute name="senton" />
+          <attribute name="deliverylastattemptedon" />
+          <attribute name="transactioncurrencyid" />
+          <attribute name="createdonbehalfby" />
+          <attribute name="createdby" />
+          <attribute name="actualstart" />
+          <attribute name="actualend" />
+          <attribute name="actualdurationminutes" />
+          <attribute name="statecode" />
+          <attribute name="activityadditionalparams" />
+          <attribute name="allparties" />
+          <order attribute="modifiedon" descending="true" />
+          <attribute name="activityid" />
+          <filter type="and">
+            <filter type="or">
+              <condition attribute="activitytypecode" operator="eq" value="10756" />
+            </filter>
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Visualització de la cronologia del portal" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

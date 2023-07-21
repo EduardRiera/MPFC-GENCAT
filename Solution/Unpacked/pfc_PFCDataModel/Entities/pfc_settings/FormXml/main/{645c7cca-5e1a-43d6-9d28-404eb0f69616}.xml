@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{645c7cca-5e1a-43d6-9d28-404eb0f69616}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{f5c35174-9adf-44e1-b9d4-3b6356efee37}" IsUserDefined="1" name="General">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{7e46cc98-6a7f-44e1-b901-a04664011f31}" name="Capçalera" columns="11">
+                  <labels>
+                    <label description="Capçalera" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{dfdf0792-c7c2-48ad-a415-ef2148d79e1b}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{5cd01fb6-22c6-49c8-859a-4b4f5cf31647}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Tipus de Configuració" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_configuration_types" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="pfc_configuration_types" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ec64bbee-46ce-43ec-86e8-eccaea3f550a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nom de la configuració" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_configuration_group_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_configuration_group_name" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="General_section_3" id="f2ceaaf9-6be6-4acc-94fc-e3e707c18375" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Details" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0154d06f-b1d0-43bc-9bf1-3e43d2ba367f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nom del camp" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_field_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_field_name" disabled="false" />
+                      </cell>
+                      <cell id="{222eac4c-74c1-453d-bc7d-1e568c848383}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nom de l'esquema" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_schema_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_schema_name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{43c1140e-23a8-4107-9df8-a4005b8b9c56}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Operador" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_operator" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_operator" disabled="false" />
+                      </cell>
+                      <cell id="{321bbf25-fbd7-4cf1-af10-bfbb4253dc81}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Valor" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_value" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_value" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Administració" id="9b161144-2551-45f0-996e-a63b0e872a6e" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Administració" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="6dbe4c44-6421-4dac-a0ca-7b73d8c427c3" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Nueva sección" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{28711d0f-9f50-465a-8aaa-11b1f9f68a60}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                      <cell id="{0e4aa5a0-059c-44ca-b326-1f697cd5db9c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Autor" languagecode="1027" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{88c4d918-7500-4a38-abc9-b53605d4c095}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                      <cell id="{debe43dd-036a-4430-aa13-25a0d902d115}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modificat per" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f5200abd-00d1-4634-b76b-1c9cade226f0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Data de modificació" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{00106616-3d45-4a15-8726-df481b105bf0}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{ec78bc03-65d9-47ab-9ff0-6018f13bb389}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{f20eeec7-2a91-4d77-be6d-357e61a9155e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{ca8ef900-9605-49fb-8f8f-0c7c97f9fc62}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{85a7f801-d7dd-4d56-98b1-6b9f282427b5}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{85f04ff5-affc-4a95-a58c-3f85f6a3b5c2}" locklevel="1" colspan="1" rowspan="1">
+              <labels>
+                <label description="Codi" languagecode="1027" />
+              </labels>
+              <control id="header_pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" disabled="true" />
+            </cell>
+            <cell id="{96490537-55be-4baf-b715-b271c843d0e6}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Estat" languagecode="1027" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+            </cell>
+            <cell id="{4b518760-0c65-49a6-a3af-3006bb09029a}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Raó per a l'estat" languagecode="1027" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{318c6fbe-b9a7-49c1-a2f3-2facdc5dc6e3}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{357b4e65-12c6-4d83-8f62-dcd1a7a094aa}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{30959091-4a5a-4a78-94fe-0a4cd1b06e5f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{0009e591-77a6-475d-9f37-faa8ed480d41}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

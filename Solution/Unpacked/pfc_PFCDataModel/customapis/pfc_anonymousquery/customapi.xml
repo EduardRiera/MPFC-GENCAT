@@ -1,0 +1,18 @@
+<customapi uniquename="pfc_anonymousquery">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Process Anonymous Query">
+    <label description="Process Anonymous Query" languagecode="1027" />
+  </description>
+  <displayname default="Process Anonymous Query">
+    <label description="Process Anonymous Query" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Process Anonymous Query</name>
+  <plugintypeid>
+    <plugintypeexportkey>626f3d05-1bd1-4d01-aeff-f5566314f299</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

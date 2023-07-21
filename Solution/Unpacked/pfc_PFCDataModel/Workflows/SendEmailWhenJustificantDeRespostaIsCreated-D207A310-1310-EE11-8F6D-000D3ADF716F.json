@@ -1,0 +1,659 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_3": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedcommondataserviceforapps_55452"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "pfc_sharedoffice365_2d413"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "PortalUrl (pfc_portalurl)": {
+          "defaultValue": "https://integracio-eco-mpfc-web.powerappsportals.com/",
+          "type": "String",
+          "metadata": {
+            "schemaName": "pfc_portalurl"
+          }
+        }
+      },
+      "triggers": {
+        "Cuando_se_agrega,_modifica_o_elimina_una_fila": {
+          "metadata": {
+            "operationMetadataId": "9d3f6b06-f298-4a16-96f7-29930f57dece"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_3",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "pfc_receivedresponse",
+              "subscriptionRequest/scope": 2
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "PersonasRelacionadas:_Inicializar_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "6cf63d64-d85f-4648-a663-e15521296090"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ContactesInteresats",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Condición": {
+          "actions": {
+            "Redactar": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "254e4adb-dffa-4bc1-84a7-3ba4fd590b68"
+              },
+              "type": "Compose",
+              "inputs": "@{parameters('PortalUrl (pfc_portalurl)')}/Assistència-i-suport/"
+            },
+            "ConsultaDGT:_Obtener_una_fila_por_id": {
+              "runAfter": {
+                "Redactar_(Enlace_interessat)_": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "2aae61bd-683a-4204-8fa8-0b7b95e0b7d3"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "pfc_query_dgts",
+                  "recordId": "@triggerOutputs()?['body/_regardingobjectid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Redactar_(Enlace_interessat)_": {
+              "runAfter": {
+                "Redactar": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "f82095bb-6cf3-4aea-94b0-9de38a67d95d"
+              },
+              "type": "Compose",
+              "inputs": "@{variables('URL')}/Assist%C3%A8ncia-i-suport/consultesDGT-interessat/"
+            },
+            "Condició_Notifications_Is_Enable": {
+              "actions": {
+                "ContactesRelacionats:_Enumerar_filas": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "ff8c0b87-c634-48b3-8ef6-5f57d4aa8d43"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_3",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "contacts",
+                      "fetchXml": "<fetch>\n  <entity name=\"contact\">\n        <attribute name=\"contactid\" />\n        <attribute name=\"emailaddress1\" />\n    <link-entity name=\"pfc_contact_pfc_query_dgt\" from=\"contactid\" to=\"contactid\" intersect=\"true\">\n      <filter>\n        <condition attribute=\"pfc_query_dgtid\" operator=\"eq\" value=\"@{triggerOutputs()?['body/_regardingobjectid_value']}\" />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Obtener_email_solicitant": {
+                  "runAfter": {
+                    "ContactesRelacionats:_Enumerar_filas": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "6ef10c34-92ad-4cd2-be9e-41c1514da507"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_3",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "contacts",
+                      "recordId": "@outputs('ConsultaDGT:_Obtener_una_fila_por_id')?['body/_pfc_applicantid_value']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Aplicar_a_cada_uno": {
+                  "foreach": "@outputs('ContactesRelacionats:_Enumerar_filas')?['body/value']",
+                  "actions": {
+                    "ContactesInteresats:_Anexar_a_la_variable_de_cadena": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "791a9011-e4e9-4df4-9477-1ea994376ac5"
+                      },
+                      "type": "AppendToStringVariable",
+                      "inputs": {
+                        "name": "ContactesInteresats",
+                        "value": "@{items('Aplicar_a_cada_uno')?['emailaddress1']};"
+                      }
+                    },
+                    "Defineix_la_variable_Interesados": {
+                      "runAfter": {
+                        "ContactesInteresats:_Anexar_a_la_variable_de_cadena": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "08128b76-5cb3-4ece-aa60-4c08050fabd4"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Interesados",
+                        "value": "@true"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Obtener_email_solicitant": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "7a134e47-f568-4a92-aab6-53cb829b4825"
+                  },
+                  "type": "Foreach"
+                },
+                "Enviar_correo_electrónico_Solicitant": {
+                  "runAfter": {
+                    "Aplicar_a_cada_uno": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "2c162bea-e067-4a98-9a37-85df9f13f636"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_office365_1",
+                      "operationId": "SendEmailV2",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                    },
+                    "parameters": {
+                      "emailMessage/To": "@outputs('Obtener_email_solicitant')?['body/emailaddress1']",
+                      "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                      "emailMessage/Body": "<p><p>Bon dia,<br></p>\n<br>\nJa teniu disponible la consulta a presentar a la DGT concernent a la vostra consulta a la DGT @{outputs('ConsultaDGT:_Obtener_una_fila_por_id')?['body/pfc_name']}.<br>\n<br>\nPodeu accedir-hi des del següent enllaç:\n<br><p><a href=\"@{outputs('Redactar')}\"> Enllaç a la web</a></p><br>\n<br>\nSalutacions,<br>\nÀrea de Política Fiscal.",
+                      "emailMessage/Importance": "Normal"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Condició_Interesados_-_Personas_Relacionadas": {
+                  "actions": {
+                    "Enviar_correo_electrónico_Solicitant_2": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "2c162bea-e067-4a98-9a37-85df9f13f636"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_office365_1",
+                          "operationId": "SendEmailV2",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                        },
+                        "parameters": {
+                          "emailMessage/To": "@{variables('ContactesInteresats')}@{outputs('ConsultaDGT:_Obtener_una_fila_por_id')?['body/pfc_interestedpeople']}",
+                          "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                          "emailMessage/Body": "<p><p>Bon dia,<br></p>\n<br>\nJa teniu disponible la consulta a presentar a la DGT concernent a la vostra consulta a la DGT @{outputs('ConsultaDGT:_Obtener_una_fila_por_id')?['body/pfc_name']}.<br>\n<br>\nPodeu accedir-hi des del següent enllaç:\n<br><p><a href=\"@{outputs('Redactar_(Enlace_interessat)_')}\"> Enllaç a la web</a></p><br>\n<br>\nSalutacions,<br>\nÀrea de Política Fiscal.",
+                          "emailMessage/Importance": "Normal"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Enviar_correo_electrónico_Solicitant": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "or": [
+                      {
+                        "equals": [
+                          "@variables('Interesados')",
+                          "@true"
+                        ]
+                      },
+                      {
+                        "not": {
+                          "equals": [
+                            "@outputs('ConsultaDGT:_Obtener_una_fila_por_id')?['body/pfc_interestedpeople']",
+                            "@null"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "cbc7eb79-7e29-49ad-82fa-0c8b15adcdc1"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "ConsultaDGT:_Obtener_una_fila_por_id": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Enviar_correo_electrónico_Equipo_de_Desarrollo": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "2c162bea-e067-4a98-9a37-85df9f13f636"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_office365_1",
+                        "operationId": "SendEmailV2",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                      },
+                      "parameters": {
+                        "emailMessage/To": "@variables('Destinatarios Equipo')",
+                        "emailMessage/Subject": "@triggerOutputs()?['body/subject']",
+                        "emailMessage/Body": "<p><p>Bon dia,<br></p>\n<br>\nJa teniu disponible la consulta a presentar a la DGT concernent a la vostra consulta a la DGT @{outputs('ConsultaDGT:_Obtener_una_fila_por_id')?['body/pfc_name']}.<br>\n<br>\nPodeu accedir-hi des del següent enllaç:\n<br><p><a href=\"@{outputs('Redactar')}\"> Enllaç a la web</a></p><br>\n<br>\nSalutacions,<br>\nÀrea de Política Fiscal.",
+                        "emailMessage/Importance": "Normal"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@variables('NotificationIsEnable')",
+                  "@true"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b326c5f9-5f84-401a-b436-a47ed3c02cb0"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Àmbit_Equipos": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname']",
+              "pfc_query_dgt"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "81c9bac6-fca3-4c3d-9d15-8f10f679c36e"
+          },
+          "type": "If"
+        },
+        "Inicializar_variable_Destinatarios": {
+          "runAfter": {
+            "PersonasRelacionadas:_Inicializar_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5d0a7b56-8316-4680-b242-5e9ba6976b49"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Destinatarios",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicializar_variable_(Destinatarios_Equipo)": {
+          "runAfter": {
+            "Inicializar_variable_Destinatarios": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "85e13893-278c-4bd8-a9f7-f8f67910fdfb"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Destinatarios Equipo",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicialitza_la_variable_URL": {
+          "runAfter": {
+            "Inicializar_variable_(Destinatarios_Equipo)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ccfa42f7-3797-4cd9-bd35-559ad45d6445"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "URL",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Inicialitza_la_variable_NotificationIsEnable": {
+          "runAfter": {
+            "Inicialitza_la_variable_URL": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a22273fb-5d41-43d2-81dd-382cf13b0dba"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "NotificationIsEnable",
+                "type": "boolean",
+                "value": "@false"
+              }
+            ]
+          }
+        },
+        "Inicialitza_la_variable_Interesados": {
+          "runAfter": {
+            "Inicialitza_la_variable_NotificationIsEnable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b21c380c-9414-40f1-9f88-7185d1c38c99"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Interesados",
+                "type": "boolean",
+                "value": "@false"
+              }
+            ]
+          }
+        },
+        "Àmbit_Configuració_del_Lloc": {
+          "actions": {
+            "Obtener_Configuració_del_lloc_-_URL": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "7560178d-15ff-4a8e-a284-d30354b1cf5b"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "adx_sitesettings",
+                  "$select": "adx_name, adx_value",
+                  "$filter": "adx_name eq 'Portal/EnvioMail'"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Aplicar_a_cada_Configuració_del_Lloc_-_URL": {
+              "foreach": "@outputs('Obtener_Configuració_del_lloc_-_URL')?['body/value']",
+              "actions": {
+                "Defineix_la_variable_URL": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "2e17b863-e86c-43ba-89c7-300b6411c6ea"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "URL",
+                    "value": "@items('Aplicar_a_cada_Configuració_del_Lloc_-_URL')?['adx_value']"
+                  }
+                }
+              },
+              "runAfter": {
+                "Obtener_Configuració_del_lloc_-_URL": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1bebbf70-a159-4e50-b8a7-8f29269a3c34"
+              },
+              "type": "Foreach"
+            },
+            "Obtener_Configuració_del_lloc_-_(Notificaciones_Activas)": {
+              "runAfter": {
+                "Aplicar_a_cada_Configuració_del_Lloc_-_URL": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "57e3c392-2ccc-4ec5-b741-2d91ed31a6d3"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "adx_sitesettings",
+                  "$select": "adx_name, adx_value",
+                  "$filter": "adx_name eq 'PowerAutomate/Notifications'"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Apply_to_each_Configuració_del_lloc_-_(Notificaciones_Activas)": {
+              "foreach": "@outputs('Obtener_Configuració_del_lloc_-_(Notificaciones_Activas)')?['body/value']",
+              "actions": {
+                "Condició": {
+                  "actions": {
+                    "Defineix_la_variable_NotificationsIsEnable": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "9b643c05-4457-482a-8aa4-97b9e7298f99"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "NotificationIsEnable",
+                        "value": "@true"
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "expression": {
+                    "contains": [
+                      "@items('Apply_to_each_Configuració_del_lloc_-_(Notificaciones_Activas)')?['adx_value']",
+                      "Si"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "a9fae32f-3cc0-4664-9c27-d9731423568e"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "Obtener_Configuració_del_lloc_-_(Notificaciones_Activas)": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "f87862ad-ad06-49bd-9a33-534fe240451e"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Inicialitza_la_variable_Interesados": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "74481d2f-3780-4a1b-af10-ef7f0d280318"
+          },
+          "type": "Scope"
+        },
+        "Àmbit_Equipos": {
+          "actions": {
+            "Enumera_les_files_Equipos": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "e27431ba-cdc6-48c7-83e2-332384849583"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_3",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "teams",
+                  "$filter": "name eq 'Equip de desenvolupament'"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Apply_to_each_Equipo": {
+              "foreach": "@outputs('Enumera_les_files_Equipos')?['body/value']",
+              "actions": {
+                "Enumera_los_miembros_del_Equipo": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "3fb7080a-0cda-4c67-892b-4c6e53edd802"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_3",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "systemusers",
+                      "fetchXml": "<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"true\">\n<entity name=\"systemuser\">\n<link-entity name=\"teammembership\" from=\"systemuserid\" to=\"systemuserid\">\n<link-entity name=\"team\" from=\"teamid\" to=\"teamid\" alias=\"ac\">\n<filter type=\"and\">\n<condition attribute=\"teamid\" operator=\"eq\" value=\"@{items('Apply_to_each_Equipo')?['teamid']}\"/>\n</filter>\n</link-entity>\n</link-entity>\n</entity>\n</fetch>"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Aplicar_a_cada_miembro_del_Equipo": {
+                  "foreach": "@outputs('Enumera_los_miembros_del_Equipo')?['body/value']",
+                  "actions": {
+                    "Annexa-ho_a_la_variable_Destinatarios_Equipo": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "0f8fcc28-20f6-42c7-ae14-b613afed3789"
+                      },
+                      "type": "AppendToStringVariable",
+                      "inputs": {
+                        "name": "Destinatarios Equipo",
+                        "value": "@{items('Aplicar_a_cada_miembro_del_Equipo')?['internalemailaddress']};"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Enumera_los_miembros_del_Equipo": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "c2945385-55f9-44bc-9f3f-c0b8c9b5ef48"
+                  },
+                  "type": "Foreach"
+                }
+              },
+              "runAfter": {
+                "Enumera_les_files_Equipos": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d0503a82-407b-4674-b6a2-427b65a82eb4"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Àmbit_Configuració_del_Lloc": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "305c8e5b-92bb-4f6f-bb14-960d51636635"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

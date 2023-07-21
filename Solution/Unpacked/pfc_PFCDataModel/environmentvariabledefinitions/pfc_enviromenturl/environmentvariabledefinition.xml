@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="pfc_enviromenturl">
+  <defaultvalue>https://integracio-eco-mpfc.crm4.dynamics.com</defaultvalue>
+  <displayname default="Enviroment Url">
+    <label description="Enviroment Url" languagecode="1027" />
+  </displayname>
+  <introducedversion>1.0.13</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

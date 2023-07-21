@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b1b5b5a6-bb0a-ee11-8f6e-000d3adf7052}</formid>
+    <IntroducedVersion>1.0.16</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{b003d8a5-1eae-4a9a-bee1-3db43ad21c6a}" IsUserDefined="1" name="General" labelid="{81c3bca0-c433-431d-bb28-ee3fe5e924c0}" locklevel="0" expanded="true" showlabel="false">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{dae78bbb-4e4b-4c44-a7a9-229809f63291}" name="General" columns="11" labelid="{3ac0b345-dee8-4440-a206-c466bb3dd61d}">
+                  <labels>
+                    <label description="General" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be7b82ab-c039-4180-ac35-56ee707abe41}" locklevel="0" colspan="1" rowspan="1" labelid="{ec3fdf39-6782-411b-be78-a4ce375dfefb}" showlabel="true">
+                        <labels>
+                          <label description="Entitat/Departament" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_accountid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_accountid" disabled="false" uniqueid="{b5935045-2e72-6841-2c38-b180eb535330}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DefaultViewId>{B0AF8167-3B01-EE11-8F6E-000D3ADEA4BC}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                            <AvailableViewIds>{A9AF0AB8-861D-4CFA-92A5-C6281FED7FAB},{B0AF8167-3B01-EE11-8F6E-000D3ADEA4BC}</AvailableViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{79eaf53b-b710-42af-94a1-8cac1980fdfc}" showlabel="false" labelid="{83876fab-7674-4fe5-a0d4-4bee5f37d110}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{201b3583-70a9-4a1f-a282-2947422db40c}" locklevel="0" colspan="1" rowspan="1" showlabel="true" labelid="{2035ebae-5da6-4c36-a82c-6510dd81011b}">
+                        <labels>
+                          <label description="Càrrec a l’entitat/departament" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_companylevelid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_companylevelid" disabled="false" uniqueid="{0d6184c4-73c5-7207-056d-8d48b3ce1841}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{22141D3D-8FFC-4191-ABB7-5340EAE7DABB}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{646d4be5-f8f2-4d51-9d72-bce6ecf79ed6}" showlabel="false" labelid="{085c6384-1496-4e4c-ab44-8bf19bf3d066}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{422752ca-3d4d-c062-0b9a-ad3641e72325}" showlabel="true" locklevel="0" colspan="1" rowspan="1" labelid="{58266fd8-a7c4-4fc7-9137-aeafc1cf7439}">
+                        <labels>
+                          <label description="Denominació del lloc de treball" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_entityposition" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_entityposition" disabled="false" uniqueid="{785171de-70ab-125c-8c44-165938d99171}" />
+                      </cell>
+                      <cell locklevel="0" id="{48b6ff8c-e0cd-4436-a3fa-8c7a62950ccd}" showlabel="false" labelid="{31f30921-0623-4e94-9cdb-046d0a018a66}">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tabEditar" id="811e369c-75cc-455c-a693-bfab7c892575" IsUserDefined="0" locklevel="0" showlabel="false" expanded="true" labelid="{e78765de-5ea8-4842-9bb2-8bca8cf0de8e}">
+          <labels>
+            <label description="Editar" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="0a98893e-2707-42e2-9519-ef119846925b" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" visible="true" labelid="{0b5ad2db-1a56-49b4-8234-989770ea9ffd}">
+                  <labels>
+                    <label description="Secció nova" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e1fc520c-779c-4313-8fe1-166bbac72f0f}" locklevel="0" colspan="2" rowspan="1" showlabel="true" labelid="{1dd8bb48-49b7-40e6-8c1f-41014263acca}">
+                        <labels>
+                          <label description="Càrrec a l’entitat/departament" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_companylevelid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_companylevelid" disabled="false" uniqueid="{59ded355-7dda-11e8-19e6-227aa41ee4c3}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{22141D3D-8FFC-4191-ABB7-5340EAE7DABB}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3d00490c-d546-415d-af61-c942eed6aa01}" locklevel="0" colspan="2" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="Tipus d'usuari" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_usertype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="pfc_usertype" disabled="false" uniqueid="{ccc69354-edea-ee0d-dd3b-37633d168446}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e6ea70e-599c-5644-aee8-7499970460c2}" showlabel="true" locklevel="0" colspan="2" rowspan="1" labelid="{10544d4e-1f05-4ead-9ef8-637575ed75ef}">
+                        <labels>
+                          <label description="Denominació del lloc de treball" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_entityposition" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_entityposition" disabled="false" uniqueid="{0eb1b709-c2d8-5db4-beda-ed94d82ab743}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{a9b3753c-20f3-43ab-9a23-f9695388f6d6}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3c39e00e-ba36-4150-973d-e165cdf8c9cc}" showlabel="false" labelid="{39a06004-5ae6-4634-a230-b916e0535345}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{333d0bf5-5629-4b26-9df4-9bc52d5a1986}" showlabel="false" labelid="{f780e210-5072-47e4-bff7-58915ee1cb71}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{d23fb141-611f-4e28-b3cc-cc2a8b72f392}" showlabel="false" labelid="{06f49108-67a3-400f-b7ca-1466532dbea8}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{beb725bc-4849-47cc-88c1-f96ff3e01946}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b0400b96-29ab-4e35-9b1f-1ddb33ecb897}" showlabel="false" labelid="{530012cc-f285-4cc8-b0ed-fba996bc3976}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{a1142f20-eb63-4857-8221-fa3c50f2bdbe}" showlabel="false" labelid="{82ce43fa-c6a6-49fb-abbf-328840f93185}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{ebc3c106-6175-4219-ba7a-6eebd60b3f36}" showlabel="false" labelid="{cdd38e40-398f-42e0-a300-29a61747a10d}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1027" Text="Comú" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1027" Text="Vendes" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1027" Text="Servei" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1027" Text="Màrqueting" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1027" Text="Sessions del procés" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{930bc681-9359-4c37-a1a9-3b1aeb8d99dc}" />
+        <Role Id="{ef636e27-b637-4cea-a17b-3d846c94fe46}" />
+        <Role Id="{46cc6083-cc43-4cad-8504-6dfdfc2150af}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Contact Account - Responsable d'entitat" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

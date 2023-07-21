@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{c94b0e6c-67cd-ed11-b597-000d3adf90aa}</WebResourceId>
+  <Name>pfc_signatureHolderCSS</Name>
+  <DisplayName>SignatureHolderCSS</DisplayName>
+  <LanguageCode>1027</LanguageCode>
+  <WebResourceType>2</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/pfc_signatureHolderCSSC94B0E6C-67CD-ED11-B597-000D3ADF90AA</FileName>
+</WebResource>

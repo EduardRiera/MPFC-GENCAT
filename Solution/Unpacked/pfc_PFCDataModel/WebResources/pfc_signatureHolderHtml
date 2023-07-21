@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Buscador de portafirmas</title>
+    <link href="pfc_theme.default.edit" rel="stylesheet" type="text/css">
+    <link href="pfc_signatureHolderCSS" rel="stylesheet" type="text/css">
+    <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
+    <script type="text/javascript" src="pfc_jquery-3.4.1.min"></script>
+    <script type="text/javascript" src="pfc_Jquery.tablesorter.min"></script>
+    <script type="text/javascript" src="pfc_jquery.tablesorter.pager"></script>
+    <script type="text/javascript" src="pfc_recipientRepository"></script>
+    <script type="text/javascript" src="pfc_signatureHolderJS"></script>
+    <script>
+        // This script should be in the HTML web resource.
+        // No usage of Xrm or formContext should happen until this method is called.
+        function setClientApiContext(xrm, formContext) {
+            // Optionally set Xrm and formContext as global variables on the page.
+            window.Xrm = xrm;
+            window._formContext = formContext;
+        }
+    </script>
+</head>
+<body style=" width:98%" onload="loadEmptyGrid();SetPortaFirmasControlsEnabling();">
+    <div id="div1" class="divclass" style="width:99%">
+        <h2 class="h2class" id="labelTitle">
+            Cerca peticionaris i signants al portasignatures
+        </h2>
+        <hr style="color:#dddddd">
+        <div style="display:inline-block;width:100%;background-color:#A0A0A0">
+            <table style="width: 100%" border="0">
+                <tr style="width: 100%">
+                    <td>
+                        <table style="width:380px" border="0">
+                            <tr>
+                                <td>
+                                    <input placeholder="Cerca..." id="searchValue" style="padding:1px 2px;width:170px;" onchange="if ($('#searchValue').val().length >= 3) { SearchUsers(); }">
+                                </td>
+                                <td>
+                                    <input type="button" value="Cerca usuaris" onclick="SearchUsers();"
+                                           id="searchValueButton" style="padding:1px 2px;width:170px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="height:10px"></div>
+        <table class="tablesorter" id="mainTable" rules="rows">
+            <thead>
+                <tr>
+                    <th id="selector" width="40px">&nbsp;</th>
+                    <th id="name" width="85px">Nom</th>
+                    <th id="surname1" width="110px">Primer cognom</th>
+                    <th id="surname2" width="110px">Segon cognom</th>
+                    <th id="email" width="110px">Correu</th>
+                    <th id="entity" width="110px">Entitat</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="pager" class="pager">
+            <form>
+                <img src="pfc_signatureHolderFirstPage" class="first">
+                <img src="pfc_SignatureHolderPrevPage" class="prev">
+                <input type="text" class="pagedisplay" disabled="">
+                <img src="pfc_signatureHolderNextPage" class="next">
+                <img src="pfc_signatureHolderLastPage" class="last">
+                <select class="pagesize">
+                    <option value="20" selected="selected">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                </select>
+            </form>
+        </div>
+        <div style="height:40px"></div>
+        <div style="display:inline-block;width:100%;background-color:#A0A0A0">
+            <table style="width: 100%" border="0">
+                <tr>
+                    <td>
+                        <table style="width:380px" border="0">
+                            <tr>
+                                <td><input type="button" value="Desa com a peticionari" onclick="SaveRequester(window._formContext);" id="saveRequesterButton" style="padding:1px 2px;width:170px;" /></td>
+                                <td><input type="button" value="Desa com a signant" onclick="SaveSigner(window._formContext);" id="saveSignerButton" style="padding:1px 2px;width:170px;" /></td>
+                                <td><input type="button" value="Desa com a aprovador" onclick="SaveApprover(window._formContext);" id="saveApproverButton" style="padding:1px 2px;width:170px;" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="height:40px"></div>
+        <h2 class="h2class" id="labelTitle">Enviar document al portasignatures</h2>
+        <hr style="color:#dddddd">
+        <div style="display:inline-block;width:100%;background-color:#A0A0A0">
+            <table style="width: 100%" border="0">
+                <tr>
+                    <td>
+                        <table style="width:380px" border="0">
+                            <tr>
+                                <td><input type="button" value="Sol·licitud signatura" onclick="SendSignatureRequest(window._formContext);" id="sendButton" style="padding:1px 2px;width:170px;" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>

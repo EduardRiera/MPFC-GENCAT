@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{36989e15-d3f3-4065-84c1-9dd3b27210df}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msevtmgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="msevtmgt_eventregistrationid">
+          <cell name="msevtmgt_name" width="125" />
+          <cell name="msevtmgt_contactid" width="150" />
+          <cell name="pfc_accountid" width="100" />
+          <cell name="msevtmgt_eventid" width="300" />
+          <cell name="msevtmgt_industry" width="150" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+        <entity name="msevtmgt_eventregistration">
+          <attribute name="msevtmgt_name" />
+          <attribute name="createdon" />
+          <attribute name="msevtmgt_industry" />
+          <attribute name="msevtmgt_eventid" />
+          <attribute name="msevtmgt_contactid" />
+          <order attribute="msevtmgt_eventid" descending="false" />
+          <order attribute="msevtmgt_contactid" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_accountid" />
+          <attribute name="msevtmgt_eventregistrationid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>0.0.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Registres d'esdeveniment actius" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

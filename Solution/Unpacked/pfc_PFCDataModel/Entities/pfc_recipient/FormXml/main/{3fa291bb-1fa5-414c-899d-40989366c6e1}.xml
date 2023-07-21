@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3fa291bb-1fa5-414c-899d-40989366c6e1}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{915e2954-40f6-40a0-ab9c-03a7dca77dd4}" IsUserDefined="1" name="tabGeneralRecipient" locklevel="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{543ceabc-72c6-4f41-a270-2c5fcd775c21}" name="tabGeneralRecipientGeneralSection" columns="111" locklevel="0" labelwidth="130" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="General" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ed602b79-9d6e-46da-8f76-8a93d3768364}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nom" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_name" uniqueid="{096494dc-0040-7860-b985-101219e96b48}" disabled="true" />
+                      </cell>
+                      <cell id="{6875ccd4-841a-2cbe-a978-17a702e1e8dd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Entitat" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_entity" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_entity" disabled="true" uniqueid="{6bd3aa7a-7769-111b-1368-e0a21366011d}" />
+                      </cell>
+                      <cell id="{8661c620-c3ee-c2b2-46d2-4a41392624ac}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ordre" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_order" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="pfc_order" disabled="true" uniqueid="{81bb4157-6909-5a73-dc39-dd8675e21a32}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d057b534-a772-02ca-25ba-639419ea3b72}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Portasignature" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_portasignature" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_portasignature" disabled="true" uniqueid="{8238cc29-d4ad-5003-a5ec-26371b510908}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{91A17158-6F99-4E8C-941D-A807EF0A0213}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{ca9da310-9231-0b73-5a89-14c9289a159e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipus de destinatari" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_recipienttype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="pfc_recipienttype" disabled="true" uniqueid="{450e3e24-36e7-8a93-233c-a653ca914a41}" />
+                      </cell>
+                      <cell id="{a31bb6d4-bb31-41b2-d03a-7912436a7b1c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Correu" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_mail" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_mail" disabled="true" uniqueid="{71ddc467-d62a-b015-c113-52b5d0c73405}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tabGeneralRecipientAdminSection" showlabel="true" showbar="false" locklevel="0" id="{8c73bc5e-a065-5edd-a55b-d5dc6327a373}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Administració" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3c391ab6-0463-7b22-6342-47219aac243e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Autor" languagecode="1027" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="true" uniqueid="{2367646c-c01b-d474-c9b9-1cacbddc17aa}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{E88CA999-0B16-4AE9-B6A9-9EDC840D42D8}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{88be288a-bd96-d79e-bd45-43617724c6a1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de creació" languagecode="1027" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="true" uniqueid="{92762a8d-ee0c-40b4-3707-e9b062d38dd2}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{952464b5-8d7d-54e8-b5b5-e6aa283c4302}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Modificat per" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="true" uniqueid="{e2a520ce-d33d-bd96-5609-b0aeec7aab5c}">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                            <DisableQuickFind>false</DisableQuickFind>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DefaultViewId>{E88CA999-0B16-4AE9-B6A9-9EDC840D42D8}</DefaultViewId>
+                            <AllowFilterOff>false</AllowFilterOff>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{e22a72c9-50b1-2c78-a202-50b24d983664}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de modificació" languagecode="1027" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="true" uniqueid="{63ca6343-66d9-1545-a071-2c344ce5b65c}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ecc3a59d-c693-5213-3dd1-9e56b3891753}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Codi d'usuari" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_usercode" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="pfc_usercode" disabled="true" uniqueid="{56edee04-5044-7685-878e-e9653a768646}" />
+                      </cell>
+                      <cell id="{a6254580-70b5-10e1-51d1-92e2b414870d}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1027" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1027" Text="Comú" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1027" Text="Vendes" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1027" Text="Servei" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1027" Text="Màrqueting" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1027" Text="Sessions del procés" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

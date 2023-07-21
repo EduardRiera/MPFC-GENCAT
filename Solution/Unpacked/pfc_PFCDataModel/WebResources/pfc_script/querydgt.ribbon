@@ -1,0 +1,65 @@
+var QueryDGT;
+(function (QueryDGT) {
+    var ribbon;
+    (function (ribbon) {
+        var FormEvents;
+        (function (FormEvents) {
+            var LogicalName = "pfc_query_dgt";
+            function OnLoad(ec) {
+                "use strict";
+                var fc = ec.getFormContext();
+            }
+            FormEvents.OnLoad = OnLoad;
+        })(FormEvents = ribbon.FormEvents || (ribbon.FormEvents = {}));
+    })(ribbon = QueryDGT.ribbon || (QueryDGT.ribbon = {}));
+})(QueryDGT || (QueryDGT = {}));
+(function (QueryDGT) {
+    var ribbon;
+    (function (ribbon) {
+        var Functions;
+        (function (Functions) {
+            var BusinessLogic;
+            (function (BusinessLogic) {
+                function AnonymousQuery(fc) {
+                    var querydgtid = fc.data.entity.getId();
+                    var url = Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v9.2/pfc_anonymousquerydgt?querydgtid";
+                    this.postDataAnonymous(fc, url, querydgtid);
+                }
+                BusinessLogic.AnonymousQuery = AnonymousQuery;
+                function postDataAnonymous(fc, url, querydgtid) {
+                    var options = {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            "querydgtid": querydgtid
+                        }),
+                    };
+                    fetch(url, options).then(function (response) {
+                        response.json().then(function (response) {
+                            Xrm.Utility.openEntityForm("pfc_anonymizedrecord", response["anonymousqueryapiresult"]);
+                            var alertStrings = { confirmButtonLabel: "D'acord", text: "La consulta s'ha anonimitzat correctament.", title: "Anonimitzar consulta" };
+                            var alertOptions = { height: 120, width: 260 };
+                            Xrm.Navigation.openAlertDialog(alertStrings, alertOptions).then(function (success) {
+                                console.log("Alert dialog closed");
+                            }, function (error) {
+                                console.log(error.message);
+                            });
+                        });
+                    }).then(function (data) {
+                    }).catch(function (e) {
+                        var alertStrings = { confirmButtonLabel: "D'acord", text: "Ha ocurrido un error inesperado.", title: "Anonimitzar consulta" };
+                        var alertOptions = { height: 120, width: 260 };
+                        Xrm.Navigation.openAlertDialog(alertStrings, alertOptions).then(function (success) {
+                            console.log("Alert dialog closed");
+                        }, function (error) {
+                            console.log(error.message);
+                        });
+                    });
+                }
+                BusinessLogic.postDataAnonymous = postDataAnonymous;
+            })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+        })(Functions = ribbon.Functions || (ribbon.Functions = {}));
+    })(ribbon = QueryDGT.ribbon || (QueryDGT.ribbon = {}));
+})(QueryDGT || (QueryDGT = {}));

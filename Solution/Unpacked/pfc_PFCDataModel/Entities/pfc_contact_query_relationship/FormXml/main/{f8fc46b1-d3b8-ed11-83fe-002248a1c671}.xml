@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{f8fc46b1-d3b8-ed11-83fe-002248a1c671}</formid>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{6642671d-1a7d-464d-80eb-07597e760546}" IsUserDefined="1" labelid="{a0e2b4e4-5e41-47ed-a127-0d95cc47e7c9}" name="General">
+          <labels>
+            <label description="General" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{e0b15659-4441-43d2-beaf-21ba428a832b}" labelid="{2a6331ec-1ea1-4151-bc9b-2a3da703fd02}" name="General" visible="false">
+                  <labels>
+                    <label description="General" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{abaa29c9-8b1b-40bf-b44b-7cd056117f5c}" locklevel="1" colspan="1" rowspan="1" labelid="{781c4b96-b980-4f87-922e-e0a8c07a679c}">
+                        <labels>
+                          <label description="Codi" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="pfc_name" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d09066ed-acba-444e-ba83-361ddbc9c58f}" labelid="{d30409ef-0be5-4956-af23-9bccd0a09d15}">
+                        <labels>
+                          <label description="Propietari" languagecode="1027" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1adad1df-afc0-43b1-9c85-2fcb6412ce27}" locklevel="0" colspan="1" rowspan="1" labelid="{decab0f1-edf2-44a3-a1af-c990b9415f53}">
+                        <labels>
+                          <label description="Consulte" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_queryid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_queryid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2e0ee49b-79f9-444d-8198-23cb57ac5e59}" locklevel="0" colspan="1" rowspan="1" labelid="{6d6d102a-77cd-4456-9e6e-20cf05235590}">
+                        <labels>
+                          <label description="Contacte" languagecode="1027" />
+                        </labels>
+                        <control id="pfc_contactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="pfc_contactid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{9d83f1f2-aa1f-448f-9d7d-dffab8c610d8}" rowspan="15" colspan="1">
+                        <labels>
+                          <label description="Texto de la nota" languagecode="1027" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_3" id="09d357c5-3e56-4146-bfa3-19726bb74200" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Consulte Form" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{35e9c076-f86c-4357-b5da-6523ac206d20}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1677769327635" languagecode="1027" />
+                        </labels>
+                        <control id="QuickviewControl1677769327635" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="pfc_queryid">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="pfc_query"&gt;91e9eaa1-d1b8-ed11-83ff-000d3adf727d&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="General_section_4" id="3c311271-f055-4b4e-ba9f-8b8555c11965" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Nueva sección" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{e7c21b61-463d-4414-96b5-4ca4a472a7d3}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Requeriments d'informació" languagecode="1027" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>pfc_informationrequirement</TargetEntityType>
+                            <ViewId>{F2BC8459-310D-4E25-8845-6E3BBF35C3B4}</ViewId>
+                            <ViewIds>{86DD7B20-3D47-4EF3-A3C9-F0721482D284},{F2BC8459-310D-4E25-8845-6E3BBF35C3B4}</ViewIds>
+                            <RelationshipName>pfc_contact_query_rel_requeriment</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{571c83ba-632a-4113-983a-1fcb95b9f764}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{cff72868-ceaa-475d-be7a-402b8bf23e2c}" showlabel="false" labelid="{ac6a812f-4a18-4628-9dcc-3c050c848795}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{6e5f9446-df72-4cfb-a4bd-b70f76a4cefa}" showlabel="false" labelid="{0b7a0dc4-868a-46a7-bba1-6ce3bea1a5fc}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{3f1ee4f3-738d-43d4-a726-890dbda9ee05}" showlabel="false" labelid="{cf3fe32d-5c3d-4af9-acdb-c8f150067a75}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{e18babd8-80e6-4113-8030-5e5c113edf5e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{437a7b48-ba9c-49bc-b7e4-b3a6414e10e7}" showlabel="false" labelid="{b5ad5aeb-cef0-42be-939a-738b7ddce3ad}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{3d68b620-133a-4163-b618-ae005874fbd0}" showlabel="false" labelid="{fcc3d62a-212c-4a3e-8aaf-ecf78cd63462}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+            <cell id="{39a9ddd8-4bc7-4cf1-b75f-38e3af87d81b}" showlabel="false" labelid="{1a5311f4-450f-47b0-b83d-990edd6f0fa5}">
+              <labels>
+                <label description="" languagecode="1027" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{930bc681-9359-4c37-a1a9-3b1aeb8d99dc}" />
+        <Role Id="{ef636e27-b637-4cea-a17b-3d846c94fe46}" />
+        <Role Id="{46cc6083-cc43-4cad-8504-6dfdfc2150af}" />
+      </DisplayConditions>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Portals: View Details" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari per a aquesta entitat." languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.msevtmgt_event.Button.Hide" Location="AccessChecker.OpenDialog.msevtmgt_event.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_event.Assign.Hide" Location="Mscrm.Form.msevtmgt_event.Assign" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_event.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.msevtmgt_event.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_event.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.msevtmgt_event.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_event.Reports.Hide" Location="Mscrm.Form.msevtmgt_event.Reports" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.msevtmgt_event.WordTemplate.Hide" Location="Mscrm.Form.msevtmgt_event.WordTemplate" />
+    <HideCustomAction HideActionId="pfc.Mscrm.HomepageGrid.msevtmgt_event.MBPF.ConvertTo.Hide" Location="Mscrm.HomepageGrid.msevtmgt_event.MBPF.ConvertTo" />
+    <CustomAction Id="pfc.msevtmgt_event.Button8.Button.CustomAction" Location="Mscrm.Form.msevtmgt_event.MainTab.Save.Controls._children" Sequence="95">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:pfc.msevtmgt_event.Button8.Button.Alt" Command="pfc.msevtmgt_event.Command0.Command" Id="pfc.msevtmgt_event.Button8.Button" LabelText="$LocLabels:pfc.msevtmgt_event.Button8.Button.LabelText" Sequence="95" TemplateAlias="isv" ToolTipTitle="$LocLabels:pfc.msevtmgt_event.Button8.Button.ToolTipTitle" ToolTipDescription="$LocLabels:pfc.msevtmgt_event.Button8.Button.ToolTipDescription" ModernImage="$webresource:pfc_icon/validated" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="pfc.msevtmgt_event.Command0.Command">
+      <EnableRules />
+      <DisplayRules />
+      <Actions>
+        <JavaScriptFunction FunctionName="EventsRibbon.Functions.BusinessLogic.CreateCertificatPDF" Library="$webresource:pfc_script/eventsribbon">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="pfc.msevtmgt_event.Button8.Button.Alt">
+      <Titles>
+        <Title description="Generar certificats" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.msevtmgt_event.Button8.Button.LabelText">
+      <Titles>
+        <Title description="Generar certificats" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.msevtmgt_event.Button8.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Generar certificats" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="pfc.msevtmgt_event.Button8.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Generar certificats" languagecode="1027" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{893feec3-f7ce-ed11-b597-000d3adf7052}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_contact_accountid">
+          <cell name="pfc_contactid" width="180" />
+          <cell name="pfc_usertype" width="100" />
+          <cell name="a_aed298d8027942749df4a0bcc18ad110.emailaddress1" width="203" />
+          <cell name="pfc_companylevelid" width="167" />
+          <cell name="pfc_entityposition" width="246" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_contact_account">
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_contactid" />
+          <link-entity alias="a_aed298d8027942749df4a0bcc18ad110" name="contact" to="pfc_contactid" from="contactid" link-type="outer" visible="false">
+            <attribute name="emailaddress1" />
+          </link-entity>
+          <order attribute="pfc_contactid" descending="false" />
+          <attribute name="pfc_entityposition" />
+          <attribute name="pfc_companylevelid" />
+          <attribute name="pfc_usertype" />
+          <attribute name="pfc_contact_accountid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.13</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Portals: Contact Account: Contactes" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

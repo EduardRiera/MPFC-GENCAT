@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Portasignatures.Plugins.Action.PortaFirmasGetUsersAction: pfc_PortasignaturesGetUsers of any Entity" SdkMessageProcessingStepId="{7d8c3844-b5e2-ed11-a7c7-000d3adf7052}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>79500e85-b2e2-ed11-a7c7-000d3adea4bc</SdkMessageId>
+  <PluginTypeName>Portasignatures.Plugins.Action.PortaFirmasGetUsersAction, Portasignatures.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8c5bdd215925265f</PluginTypeName>
+  <PluginTypeId>7154a489-f42c-4d49-bb09-766e4aa0dc08</PluginTypeId>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Portasignatures.Plugins.Action.PortaFirmasGetUsersAction: pfc_PortasignaturesGetUsers of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

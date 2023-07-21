@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="pfc.AccessChecker.OpenDialog.pfc_receivedresponse.Button.Hide" Location="AccessChecker.OpenDialog.pfc_receivedresponse.Button" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_receivedresponse.AddToQueue.Hide" Location="Mscrm.Form.pfc_receivedresponse.AddToQueue" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_receivedresponse.Convert.Case.Hide" Location="Mscrm.Form.pfc_receivedresponse.Convert.Case" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_receivedresponse.Convert.Opportunity.Hide" Location="Mscrm.Form.pfc_receivedresponse.Convert.Opportunity" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_receivedresponse.Flows.RefreshCommandBar.Flows.Hide" Location="Mscrm.Form.pfc_receivedresponse.Flows.RefreshCommandBar.Flows" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_receivedresponse.Flows.RefreshCommandBar.Hide" Location="Mscrm.Form.pfc_receivedresponse.Flows.RefreshCommandBar" />
+    <HideCustomAction HideActionId="pfc.Mscrm.Form.pfc_receivedresponse.Reports.Hide" Location="Mscrm.Form.pfc_receivedresponse.Reports" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

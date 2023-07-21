@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3121b339-00f6-4a23-a1d8-22e9e9d8fbfa}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{8a925451-1585-4a73-819e-e38fa774b6a5}" IsUserDefined="1" ordinalvalue="0" solutionaction="Removed" />
+        <tab verticallayout="true" id="{6d5310d4-ff9b-4445-81cc-8ea6c19ed44d}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{dda23a24-50b0-4895-a6b0-68c18a9a71c4}" ordinalvalue="0" solutionaction="Added">
+          <labels>
+            <label description="Inclòs Al Pla De Formació" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{ce3fe604-e879-7de8-1219-c17b14574e40}" name="StageStep3_section1" labelid="{b2d471c1-c734-4700-ab8d-f230e637173b}" ordinalvalue="0">
+                  <labels>
+                    <label description="Inclòs Al Pla De Formació" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{24dd5826-498c-4cbe-ae18-06b571dbe989}" showlabel="true" visible="true" labelid="{ec42c7a3-e60a-49e2-9b85-5a345e9b185d}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Nom del curs" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_name" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="msevtmgt_name" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{24124d99-d200-b2c5-683a-8691dd74b516}" showlabel="true" visible="true" labelid="{c323c533-b03b-499e-b258-836d98771c24}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Tipus de curs" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_eventtype" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="msevtmgt_eventtype" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8866253-3e42-44f8-932d-242612ec8c2d}" showlabel="true" visible="true" labelid="{e99ab76e-1417-4773-9b00-bd8bf8175d99}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Descripció" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_description" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="msevtmgt_description" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b82f1e3d-ec68-416b-8d04-e66ecbe2c955}" showlabel="true" visible="true" labelid="{fde6a192-0dee-4ec4-80fc-788f076b1c6b}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Capacitat màxima de l'esdeveniment" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_maximumeventcapacity" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="msevtmgt_maximumeventcapacity" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a298250e-4120-88c4-b3d3-cc5a8b0e6489}" showlabel="true" visible="true" labelid="{1ce0f863-94e2-47ae-b9aa-a2dc64110a7d}" ordinalvalue="10004">
+                        <labels>
+                          <label description="Fus horari del curs" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_eventtimezone" classid="{7c624a0b-f59e-493d-9583-638d34759266}" datafieldname="msevtmgt_eventtimezone" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8ca110b0-5e94-757d-23d0-dc090ee50509}" showlabel="true" visible="true" labelid="{4fdc2124-93c2-4894-bb19-ecd4373f5c79}" ordinalvalue="10005">
+                        <labels>
+                          <label description="Data d'inici del curs" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_eventstartdate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="msevtmgt_eventstartdate" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3b371ded-05a5-44e6-57ee-5d5dd1e5c6b7}" showlabel="true" visible="true" labelid="{e13b185c-c462-41dd-b0ff-93c0e46894fb}" ordinalvalue="10006">
+                        <labels>
+                          <label description="Data final del curs" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_eventenddate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="msevtmgt_eventenddate" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{b61016c3-ecbe-6768-e94b-c9b0c5470521}" name="StageStep19" locklevel="0" expanded="true" visible="false" labelid="{e3b19c6f-d0cc-47a8-be90-97782806da89}" ordinalvalue="1" solutionaction="Added">
+          <labels>
+            <label description="En Organització" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{22437978-1f5e-8a06-d19d-190b98975c20}" name="StageStep19_section1" labelid="{525367c4-67a6-4b22-950c-7be70695ccc1}" ordinalvalue="0">
+                  <labels>
+                    <label description="En Organització" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{baedb358-2479-4ad8-a42b-034d804428f5}" showlabel="true" visible="true" labelid="{e0ade1e5-5e9c-41d5-b090-e2fdc57f1876}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Voleu reproduir en temps real aquest esdeveniment?" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_streamingenabled" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="msevtmgt_streamingenabled" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{94e0ef28-ca3a-4595-a950-9c0a7a8c4161}" showlabel="true" visible="true" labelid="{26442d2e-0689-49ad-b60e-c4b9b41c6660}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Documentació" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:pfc_documentation" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="pfc_documentation" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{67366c00-91e3-4428-8425-e3246cfd3ebf}" showlabel="true" visible="true" labelid="{2eb552ca-e9de-4b42-938f-4af84549395f}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Annexos" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:pfc_annex" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="pfc_annex" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2c4b3548-d1e5-4e13-9219-021c715a8baf}" showlabel="true" visible="true" labelid="{28f8c7d3-ede8-42cc-aa09-6c3ec4ac5ab2}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Identifica els ponents" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_identifyspeakers" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="msevtmgt_identifyspeakers" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{e0d8a080-54b1-eca8-7936-bd0c355e54c5}" name="StageStep30" locklevel="0" expanded="true" visible="false" labelid="{df019e1d-49fc-47d5-9343-e0343d3bea60}" ordinalvalue="2" solutionaction="Added">
+          <labels>
+            <label description="En Registre" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{9df02002-b048-2d56-d57a-6ab41093256d}" name="StageStep30_section1" labelid="{c265a4ae-d132-43d8-aadb-1edd09e65369}" ordinalvalue="0">
+                  <labels>
+                    <label description="En Registre" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be1d28a9-506a-906a-6b11-d213518c9d8b}" showlabel="true" visible="true" labelid="{f589106b-4a64-4294-b6ea-38ed02762d4e}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Curs actiu?" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_publishstatus" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="msevtmgt_publishstatus" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d61d62aa-896a-4ca5-b659-2e58c7768721}" showlabel="true" visible="true" labelid="{d9b446c4-c764-4e20-8191-665f2a2863c7}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Recorregut actiu?" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:pfc_journey" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="pfc_journey" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{21638333-bc8c-24e2-54ee-a44785657e49}" name="StageStep37" locklevel="0" expanded="true" visible="false" labelid="{729a4c6c-e32a-43f8-bc7e-18e2b523bf9d}" ordinalvalue="3" solutionaction="Added">
+          <labels>
+            <label description="Posterior A L’Esdeveniment" languagecode="1027" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showbar="false" columns="1" id="{a538d344-b964-ff9e-77a6-439a6e79bbcc}" name="StageStep37_section1" labelid="{bdc3d65d-e7f7-4e3e-82ce-f57082d0e894}" ordinalvalue="0">
+                  <labels>
+                    <label description="Posterior A L’Esdeveniment" languagecode="1027" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1093b596-4488-462c-abac-9aeec0a14db1}" showlabel="true" visible="true" labelid="{e71a9ceb-1a4b-408a-8dbb-0a95e1605640}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Sessió gravada" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:pfc_externalvideo" classid="{71716b6c-711e-476c-8ab8-5d11542bfb47}" datafieldname="pfc_externalvideo" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{191184b0-7391-c29a-6bd1-44cce0c8c478}" showlabel="true" visible="true" labelid="{e483a7db-6efa-4053-868d-90cfa7357f38}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Enquesta" languagecode="1027" />
+                        </labels>
+                        <control id="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99:msevtmgt_attendeeengagementreport" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="msevtmgt_attendeeengagementreport" disabled="false" relationship="bpf_msevtmgt_event_msevtmgt_bpf_9623d46752ae497989f62ac0d11dad99" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Informació" languagecode="1027" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulari d'aquesta entitat" languagecode="1027" />
+    </Descriptions>
+  </systemform>
+</forms>

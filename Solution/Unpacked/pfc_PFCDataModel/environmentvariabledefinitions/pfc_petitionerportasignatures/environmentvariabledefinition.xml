@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="pfc_petitionerportasignatures">
+  <defaultvalue>00000000T#Persona#Fictícia# #SONDES#persona.ficticia@outlook.com</defaultvalue>
+  <displayname default="Petitioner PortaSignatures">
+    <label description="Petitioner PortaSignatures" languagecode="1027" />
+  </displayname>
+  <introducedversion>1.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

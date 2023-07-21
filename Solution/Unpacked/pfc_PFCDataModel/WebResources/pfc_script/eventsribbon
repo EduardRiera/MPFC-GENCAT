@@ -1,0 +1,51 @@
+var EventsRibbon;
+(function (EventsRibbon) {
+    var FormEvents;
+    (function (FormEvents) {
+        var LogicalName = "msevtmgt_event";
+    })(FormEvents = EventsRibbon.FormEvents || (EventsRibbon.FormEvents = {}));
+})(EventsRibbon || (EventsRibbon = {}));
+(function (EventsRibbon) {
+    var Functions;
+    (function (Functions) {
+        var BusinessLogic;
+        (function (BusinessLogic) {
+            function CreateCertificatPDF(fc) {
+                var confirmStrings = {
+                    text: "El procés de generació de certificats eliminarà i tornarà a crear els certificats per a tots els contactes.Esteu d'acord?", title: "Generar certificats"
+                };
+                var confirmOptions = { height: 200, width: 450 };
+                Xrm.Navigation.openConfirmDialog(confirmStrings, confirmOptions).then(function (success) {
+                    if (success.confirmed) {
+                        EventsRibbon.Functions.BusinessLogic.certificatsTrue(fc);
+                    }
+                    else
+                        console.log("Dialog closed using Cancel button or X.");
+                });
+            }
+            BusinessLogic.CreateCertificatPDF = CreateCertificatPDF;
+            function certificatsTrue(fc) {
+                if (fc.getAttribute(EventsRibbon.Constants.Fields.CounterPDF).getValue() == null) {
+                    fc.getAttribute(EventsRibbon.Constants.Fields.CounterPDF).setValue(0);
+                }
+                if (fc.getAttribute(EventsRibbon.Constants.Fields.CounterPDF).getValue() > 100) {
+                    fc.getAttribute(EventsRibbon.Constants.Fields.CounterPDF).setValue(0);
+                }
+                else {
+                    fc.getAttribute(EventsRibbon.Constants.Fields.CounterPDF).setValue(fc.getAttribute(EventsRibbon.Constants.Fields.CounterPDF).getValue() + 1);
+                }
+                fc.data.entity.save();
+            }
+            BusinessLogic.certificatsTrue = certificatsTrue;
+        })(BusinessLogic = Functions.BusinessLogic || (Functions.BusinessLogic = {}));
+    })(Functions = EventsRibbon.Functions || (EventsRibbon.Functions = {}));
+})(EventsRibbon || (EventsRibbon = {}));
+(function (EventsRibbon) {
+    var Constants;
+    (function (Constants) {
+        var Fields;
+        (function (Fields) {
+            Fields.CounterPDF = "pfc_counterflowcertificatpdf";
+        })(Fields = Constants.Fields || (Constants.Fields = {}));
+    })(Constants = EventsRibbon.Constants || (EventsRibbon.Constants = {}));
+})(EventsRibbon || (EventsRibbon = {}));

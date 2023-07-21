@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{48fd74dc-45f4-4c84-ab1e-64fa35b43aaf}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_trainingrequestid">
+          <cell name="pfc_name" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_accountid" width="300" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_urgency" width="100" />
+          <cell name="pfc_theme" width="100" />
+          <cell name="pfc_eventid" width="300" />
+          <cell name="statuscode" width="150" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_trainingrequest">
+          <attribute name="pfc_name" />
+          <order attribute="pfc_name" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_accountid" />
+          <attribute name="statuscode" />
+          <attribute name="pfc_trainingrequestid" />
+          <attribute name="pfc_urgency" />
+          <attribute name="pfc_theme" />
+          <attribute name="pfc_eventid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.1</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Peticions de formació actiu" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

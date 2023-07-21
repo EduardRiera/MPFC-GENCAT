@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="msft_datastate" localizedName="DataState" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>0</IsCustomizable>
+  <displaynames>
+    <displayname description="DataState" languagecode="1033" />
+    <displayname description="DataState" languagecode="1027" />
+  </displaynames>
+  <options>
+    <option value="0">
+      <labels>
+        <label description="Default" languagecode="1033" />
+        <label description="Default" languagecode="1027" />
+      </labels>
+    </option>
+    <option value="1">
+      <labels>
+        <label description="Retain" languagecode="1033" />
+        <label description="Retain" languagecode="1027" />
+      </labels>
+    </option>
+  </options>
+</optionset>

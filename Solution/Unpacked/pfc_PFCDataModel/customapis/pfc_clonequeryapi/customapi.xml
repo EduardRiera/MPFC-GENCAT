@@ -1,0 +1,18 @@
+<customapi uniquename="pfc_clonequeryapi">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Process Clone Query API">
+    <label description="Process Clone Query API" languagecode="1027" />
+  </description>
+  <displayname default="Process Clone Query API">
+    <label description="Process Clone Query API" languagecode="1027" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Process Clone Query API</name>
+  <plugintypeid>
+    <plugintypeexportkey>1f84062f-23f4-42ac-8cfe-cff2064b9ec7</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

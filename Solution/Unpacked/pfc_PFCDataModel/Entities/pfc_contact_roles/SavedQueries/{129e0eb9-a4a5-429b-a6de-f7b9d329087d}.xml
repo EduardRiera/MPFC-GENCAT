@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{129e0eb9-a4a5-429b-a6de-f7b9d329087d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_code" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_contact_rolesid">
+          <cell name="pfc_code" width="300" />
+          <cell name="pfc_contactid" width="300" />
+          <cell name="pfc_accountid" width="300" />
+          <cell name="pfc_entity_role" width="277" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_contact_roles">
+          <attribute name="pfc_contact_rolesid" />
+          <attribute name="pfc_code" />
+          <order attribute="pfc_code" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="pfc_code" operator="like" value="{0}" />
+            <condition attribute="pfc_contactid" operator="like" value="{0}" />
+            <condition attribute="pfc_accountid" operator="like" value="{0}" />
+            <condition attribute="pfc_entity_role" operator="like" value="{0}" />
+          </filter>
+          <attribute name="pfc_contactid" />
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_entity_role" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Cerca ràpida de Rols de contacte actius" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

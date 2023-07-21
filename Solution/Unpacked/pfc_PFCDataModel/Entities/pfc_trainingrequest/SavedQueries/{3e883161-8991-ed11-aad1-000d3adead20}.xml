@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{3e883161-8991-ed11-aad1-000d3adead20}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pfc_name" select="1" icon="1" preview="1">
+        <row name="result" id="pfc_trainingrequestid">
+          <cell name="pfc_name" width="250" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_accountid" width="250" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="pfc_urgency" width="100" />
+          <cell name="pfc_theme" width="100" />
+          <cell name="pfc_eventid" width="300" />
+          <cell name="statuscode" width="130" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pfc_trainingrequest">
+          <attribute name="pfc_name" />
+          <order attribute="pfc_name" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pfc_accountid" />
+          <attribute name="pfc_trainingrequestid" />
+          <attribute name="pfc_urgency" />
+          <attribute name="pfc_theme" />
+          <attribute name="pfc_eventid" />
+          <attribute name="statuscode" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.10</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Actualització massiva" languagecode="1027" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
