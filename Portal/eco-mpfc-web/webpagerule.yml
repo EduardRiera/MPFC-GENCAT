@@ -1,0 +1,120 @@
+- adx_name: Restrict Read on Consultes DGT
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: 0228e1c1-05c8-ed11-b597-000d3adf7052
+  adx_webpageid: a3aaa656-d4b7-bef1-b68f-e78fc4dad172
+- adx_name: Restrict Read on Formació
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+  - aa82a28e-68c5-ed11-b597-000d3adea4bc
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: 1cab9b58-ee88-cdb3-19ba-a684bd60f3df
+  adx_webpageid: d9fd1b58-0183-1cba-4387-f4e272785b2a
+- adx_name: Restrict Read on Perfil de entitat
+  adx_right: 2
+  adx_scope: 2
+  adx_webpageaccesscontrolrule_webrole:
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: 3367c0e6-a4ef-4f23-ff26-bff8f7514148
+  adx_webpageid: ba7b681b-f9ce-ed11-b597-000d3adf7052
+- adx_name: Restrict Read on Consultes Entitat
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 2c2638ae-c8b2-ed11-83ff-0022489fa802
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: 496bd073-fcbd-5b87-114c-51545b361011
+  adx_webpageid: d15ec0c5-b9b6-ed11-83ff-000d3adf7228
+- adx_name: Restrict Read on Les meves consultes
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+  - 61ff5a93-52ee-ed11-8849-000d3adea4bc
+  - aa82a28e-68c5-ed11-b597-000d3adea4bc
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: 54fa00f2-e9ca-8388-7230-eea4c1d16983
+  adx_webpageid: fa937ca0-0129-e846-e702-72d1505e7b03
+- adx_name: Restrict Read on Assistència i suport
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - aa82a28e-68c5-ed11-b597-000d3adea4bc
+  adx_webpageaccesscontrolruleid: 6c2668aa-8444-dddb-e46e-87c3d4f93ea5
+  adx_webpageid: a18231d1-3f85-7501-96a3-1cd66292ec6b
+- adx_name: Restrict Read on Consultes tributàries
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+  - 61ff5a93-52ee-ed11-8849-000d3adea4bc
+  - aa82a28e-68c5-ed11-b597-000d3adea4bc
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: 7c7aa65c-82ff-ed11-8f6e-000d3adf727d
+- adx_name: Restrict Read on OET
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: a1643091-45cd-ed11-b597-002248a1c671
+  adx_webpageid: 98623904-45cd-ed11-b597-002248a1c671
+- adx_name: Restricted Read
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 61ff5a93-52ee-ed11-8849-000d3adea4bc
+  adx_webpageaccesscontrolruleid: b3e7739f-7ff5-ed11-8849-000d3adf90aa
+  adx_webpageid: 2aabadcd-f8d8-ed11-a7c7-000d3adf90aa
+- adx_name: Restricted Read on mkt-login
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 61ff5a93-52ee-ed11-8849-000d3adea4bc
+  adx_webpageaccesscontrolruleid: bcd3b368-24fb-ed11-8849-000d3adf7052
+  adx_webpageid: 833de149-13fb-ed11-8849-000d3adf7052
+- adx_name: Atorga el canvi als administradors
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: c66103ab-c8b2-ed11-83ff-000d3adf7228
+  adx_webpageid: 0b7497af-c8b2-ed11-83ff-000d3adf90aa
+- adx_name: Atorga el canvi al contingut
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: c76103ab-c8b2-ed11-83ff-000d3adf7228
+- adx_name: Restrict Read on Sol·licituds de formació
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+  - b93472c7-fbc6-ed11-b597-000d3adf7052
+  adx_webpageaccesscontrolruleid: cbd775ea-e2ec-4d26-21d2-a4fade021528
+  adx_webpageid: 1ce3ce1a-89de-ed11-a7c6-002248a1c671
+- adx_name: Restrict Read on Centre Subscripció
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: d02ee4db-12ce-ed11-b597-000d3adf90aa
+  adx_webpageid: b38851fd-285f-ac5b-e433-a5e8d2310271
+  statecode: 1
+  statuscode: 2
+- adx_name: Restrict Read on Novetats
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - aa82a28e-68c5-ed11-b597-000d3adea4bc
+  adx_webpageaccesscontrolruleid: d033d5ea-8bcd-ed11-b597-000d3adf90aa
+  adx_webpageid: 2096a185-a2c4-b605-3ad2-f66fa41400b9
+- adx_name: Restricted Read
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 2c2638ae-c8b2-ed11-83ff-0022489fa802
+  - 61ff5a93-52ee-ed11-8849-000d3adea4bc
+  adx_webpageaccesscontrolruleid: fcd22d5c-5c01-ee11-8f6e-000d3adb6fa9
+  adx_webpageid: 2ea5c7a4-c07a-c995-112b-b8966ee2c6d9

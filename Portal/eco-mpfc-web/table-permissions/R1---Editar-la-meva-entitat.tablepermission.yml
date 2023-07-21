@@ -1,0 +1,13 @@
+adx_append: true
+adx_appendto: true
+adx_contactrelationship: contact_customer_accounts
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: account
+adx_entityname: R1 - Editar la meva entitat
+adx_entitypermission_webrole:
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: caba92f8-fbc6-ed11-b597-000d3adf7052
+adx_read: false
+adx_scope: 756150001
+adx_write: true

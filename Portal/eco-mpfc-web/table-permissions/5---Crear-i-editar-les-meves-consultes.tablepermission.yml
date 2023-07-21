@@ -1,0 +1,13 @@
+adx_append: true
+adx_appendto: true
+adx_contactrelationship: pfc_pfc_query_applicantid_contact
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: pfc_query
+adx_entityname: 5 - Crear i editar les meves consultes
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+adx_entitypermissionid: ed05f847-71c5-ed11-b597-000d3adf727d
+adx_read: false
+adx_scope: 756150001
+adx_write: true

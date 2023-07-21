@@ -1,0 +1,514 @@
+{% assign requestId = request.params.id %}
+{% assign loggedUser = user.id %}
+<!-- Settings -->
+{% assign crmurl = settings['Event/CrmUrl'] %}
+{% assign portalRegistrationUrl = settings['Event/PortalRegistrationUrl'] %}
+{% assign defaultContactImageUrl = settings['Event/DefaultContactImageUrl'] %}
+{% assign returnUrl = request.url%}
+{% assign skipSub = 1%}
+{% assign gotoUrl = "/goto/" | add_query:'returnUrl',returnUrl | add_query:'limpiar',1 | add_query:'skipSub',skipSub %}
+
+{% fetchxml events %}
+<fetch distinct="true" no-lock="true">
+    <entity name="msevtmgt_event">
+        <attribute name="msevtmgt_name" />
+        <attribute name="msevtmgt_eventstartdate" />
+        <attribute name="msevtmgt_description" />
+        <attribute name="msevtmgt_eventenddate" />
+        <attribute name="pfc_duration" />
+        <attribute name="msevtmgt_attendeeurl" />
+        <attribute name="msevtmgt_eventimage" />
+        <attribute name="msevtmgt_publishstatus" />
+        <attribute name="pfc_externalvideo" />
+        <attribute name="pfc_documentation" />
+        <attribute name="pfc_annex" />
+        <filter>
+            <condition attribute="statuscode" operator="eq" value="1" />
+            <condition attribute="msevtmgt_istemplate" operator="eq" value="100000002" />
+            <condition attribute="msevtmgt_eventid" operator="eq" value='{{requestId}}' />
+        </filter>
+        <link-entity name="msevtmgt_speakerengagement" from="msevtmgt_event" to="msevtmgt_eventid" link-type="outer" alias="speaker">
+            <attribute name="msevtmgt_name" />
+            <filter type="and">
+                <condition attribute="msevtmgt_event" operator="eq" value='{{requestId}}' />
+            </filter>
+        </link-entity>
+        <link-entity name="msevtmgt_eventregistration" from="msevtmgt_eventid" to="msevtmgt_eventid" link-type="outer" alias="evt_registration">
+            <attribute name="msevtmgt_name" />
+            <attribute name="msevtmgt_eventregistrationid" />
+            <attribute name="createdon" />
+            <filter type="and">
+                <condition attribute="msevtmgt_eventid" operator="eq" value='{{requestId}}' />
+                <condition attribute="msevtmgt_contactid" operator="eq" value='{{loggedUser}}' />
+                <condition attribute="statecode" operator="eq" value="0" />
+            </filter>
+        </link-entity>
+        <link-entity name="msdyncrm_marketingform" from="msdyncrm_marketingformid" to="msdyncrm_marketingformid" link-type="outer" alias="bo">
+            <link-entity name="msdyncrm_formpage" from="msdyncrm_marketingformid" to="msdyncrm_marketingformid" link-type="outer" alias="fp">
+                <attribute name="msdyncrm_name" />
+                <attribute name="pfc_formpagejavascriptcode" />
+                <attribute name="msdyncrm_javascriptcode" />
+                <filter type="and">
+                    <condition attribute="msdyncrm_eventid" operator="eq" value='{{requestId}}' />
+                </filter>
+            </link-entity>
+        </link-entity>
+        <link-entity name="msevtmgt_checkin" from="msevtmgt_event" to="msevtmgt_eventid" link-type="outer" alias="re">
+            <attribute name="pfc_certificatedurl" />
+        </link-entity>
+    </entity>
+</fetch>
+{% endfetchxml %}
+
+    {% assign event = events.results.entities[0] %}
+    {% assign eventName = event.msevtmgt_name %}
+    {% assign eventName2 = event.msevtmgt_name | replace: "'", "\'" %}
+    {% assign eventStartDate = event.msevtmgt_eventstartdate %}
+    {% assign eventiCalStartDate = event.msevtmgt_eventstartdate | date: "MM-dd-yyyy %H:%m" %}
+    {% assign eventiCalEndDate = event.msevtmgt_eventenddate | date: "MM-dd-yyyy %H:%m" %}
+    {% assign eventDescription = event.msevtmgt_description %}
+    {% assign formPage = event['fp.pfc_formpagejavascriptcode'] | string %}
+    {% assign duration = event.pfc_duration %}
+    {% assign teamsUrl = event.msevtmgt_attendeeurl | string %}
+    {% assign registrationId = event['evt_registration.msevtmgt_name'] %}
+    {% assign registerCreatedOn = event['evt_registration.createdon'] %}
+    {% assign imageId = event['msevtmgt_eventimage'].id %}
+    {% assign externalVideo = event['pfc_externalvideo'] %}
+    {% assign eventRegistrationId = event['evt_registration.msevtmgt_eventregistrationid'] %}
+    {% assign eventDocumentation = event['pfc_documentation_name'] %}
+    {% assign eventAnnex = event['pfc_annex_name'] %}
+    {% assign certificationURL = event['re.pfc_certificatedurl'] %}
+
+{% fetchxml participants %}
+<fetch version="1.0" output-format="xml-platform" mapping="logical" no-lock="true" distinct="False">
+    <entity name="contact">
+        <attribute name="emailaddress1" />
+        <attribute name="fullname" />
+        <attribute name="contactid" />
+        <filter>
+            <condition attribute="statecode" operator="eq" value="0" />
+        </filter>
+        <link-entity name="msevtmgt_eventregistration" from="msevtmgt_contactid" to="contactid" link-type="inner" alias="eventregistration">
+            <attribute name="msevtmgt_eventid" />
+            <attribute name="msevtmgt_name" />
+            <attribute name="pfc_accountid" />
+            <filter type="and">
+                <condition attribute="msevtmgt_eventid" operator="eq" value="{{requestId}}" />
+                <condition attribute="statecode" operator="eq" value="0" />
+            </filter>
+        </link-entity>
+    </entity>
+</fetch>
+{% endfetchxml %}
+
+{% fetchxml files %}
+<fetch>
+    <entity name="msdyncrm_file">
+        <attribute name="msdyncrm_blobcdnuri" />
+        <filter>
+            <condition attribute="msdyncrm_fileid" operator="eq" value="{{imageId}}" />
+        </filter>
+    </entity>
+</fetch>
+{% endfetchxml %}
+
+{% assign eventImage = 'https://assets-eur.mkt.dynamics.com/534a31da-8c61-4516-8175-36db2f48be4c/digitalassets/images/ac043b55-0db1-ed11-83ff-000d3adf727d?ts=638124874434883434' %}
+{% for file in files.results.entities %}
+    {% assign eventImage = files.results.entities[0].msdyncrm_blobcdnuri %}
+{% endfor %}
+
+{% fetchxml ponents %}
+<fetch>
+    <entity name="msevtmgt_speakerengagement">
+        <attribute name="msevtmgt_event" />
+        <attribute name="msevtmgt_name" />
+        <attribute name="msevtmgt_description" />
+        <filter>
+            <condition attribute="msevtmgt_event" operator="eq" value="{{requestId}}" />
+        </filter>
+        <link-entity name="msevtmgt_speaker" from="msevtmgt_speakerid" to="msevtmgt_speaker" alias="im">
+            <attribute name="entityimageid" />
+        </link-entity>
+    </entity>
+</fetch>
+{% endfetchxml %}
+
+{% fetchxml fields %}
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true" no-lock="true">
+    <entity name="msdyncrm_marketingformfield">
+        <attribute name="msdyncrm_name" />
+        <attribute name="msdyncrm_marketingformfieldid" />
+        <filter type="or">
+            <condition attribute="msdyncrm_name" operator="eq" value="E-mail" />
+            <condition attribute="msdyncrm_name" operator="eq" value="First Name" />
+            <condition attribute="msdyncrm_name" operator="eq" value="Last Name" />
+        </filter>
+    </entity>
+</fetch>
+{% endfetchxml %}
+
+
+{% for field in fields.results.entities %}
+    {% if field.['msdyncrm_name'] == "First Name" %}
+        {% assign firstNameGuid = field.['msdyncrm_marketingformfieldid'] %}
+    {% elsif field.['msdyncrm_name'] == "Last Name" %}
+        {% assign lastNameGuid = field.['msdyncrm_marketingformfieldid'] %}
+    {% elsif field.['msdyncrm_name'] == "E-mail" %}
+        {% assign emailGuid = field.['msdyncrm_marketingformfieldid'] %}
+    {% endif %}
+{% endfor %}
+
+
+{% assign isAdminTrainingResponse = user | has_role: 'ResponsableFormacio' %}
+{% assign isAdminAccountResponse = user | has_role: 'ResponsableEntitat' %}
+{% assign isAdmin = false %}
+
+{% if isAdminTrainingResponse or isAdminAccountResponse %}
+    {% assign isAdmin = true %}
+{% endif %}
+
+{% assign mostrarForm = false %}
+{% if registrationId == null and eventStartDate > now %}
+    {% if event.msevtmgt_publishstatus.value == 100000003 %}
+        {% assign mostrarForm = true %}
+    {% endif %}
+{% endif %}
+
+{% if isAdmin %}
+    {% assign existParticipants = true %}
+    {% assign class1 = 'col-md-3' %}
+    {% assign class3 = 'col-md-3' %}
+{% else %}
+    {% assign class1 = 'col-md-6' %}
+    {% assign class3 = 'col-md-3' %}
+{% endif %}
+
+
+{% assign date1D = "now" | date: '%d' %}
+{% assign date1M = "now" | date: '%m' %}
+{% assign date1Y = "now" | date: "yyyy" %}
+{% assign date1M = "now" | date: '%M' %}
+{% assign date2iso = event.msevtmgt_eventstartdate | date_to_iso8601 %}
+
+{% capture personalUrl %}
+{{portalRegistrationUrl}}{{registrationId}},&redirectUri={{teamsUrl}}
+{% endcapture %}
+
+{% assign CookieName = loggedUser | append: request.url %}
+
+<div class="row sectionBlockLayout sectionPrimaryColor" style="display: flex; flex-wrap: wrap; height: 15px; min-height: 15px; margin: 0px; padding: 8px;"></div>
+<div data-component-theme="" class="row sectionBlockLayout text-left" style='display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px; background-image: url("{{eventImage}}"); background-position: center center; background-repeat: no-repeat; background-size: cover; '>
+    <div class="container" style="display: flex; flex-wrap: wrap;">
+        <div class="col-md-12 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; padding: 8px; margin: 20px 0px;">
+            <h1 class="siteTitle" style="text-align: center; color: var(--portalThemeColor7);">{{eventName}}</h1>
+        </div>
+    </div>
+</div>
+<div class="row sectionBlockLayout text-left" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+    <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+        <div class="{{class1}}" style="flex-grow: 1; display: flex; flex-direction: column;">
+            <h1>Resum</h1>
+            <p>{{event.results.entities[0].name}}</p>
+            <p>{{eventDescription}}</p>
+            <h1>Ponent&nbsp;</h1>
+            <div class="container event-speakers-container" style="display: block; flex-wrap: wrap; width: 100%;">
+                <div class="row speaker">
+                    {% for ponent in ponents.results.entities %}
+                    {% if ponent.['msevtmgt_description'] == null %}
+                    <div class="col-md-5" style="display: block; flex-wrap: wrap; margin: 10px; padding: 10px; flex: 40%;">
+                        <class ="speaker-container">
+                            <div class="speaker-image">
+                                {% if ponent['im.entityimageid_entityimage_url'] != null %}
+                                <img src="{{crmurl}}{{ponent['im.entityimageid_entityimage_url']}}" alt="" name="" style="display: block; width: 40px; height: 40px;" />
+                                {% else %}
+                                <img src="{{defaultContactImageUrl}}" alt="" name="" style="display: block; width: 40px; height: 40px; " />
+                                {% endif %}
+                            </div>
+                            <div class="speaker-name"><b> {{ponent['msevtmgt_name']}} </b></div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% for ponent in ponents.results.entities %}
+                    {% if ponent.['msevtmgt_description'] != null %}
+                    <div class="col-md-5" style="display: block; flex-wrap: wrap; margin: 10px; padding: 10px; flex: 40%;">
+                        <class ="speaker-container">
+                            <div class="speaker-image">
+                                {% if ponent['im.entityimageid_entityimage_url'] != null %}
+                                <img src="{{crmurl}}{{ponent['im.entityimageid_entityimage_url']}}" alt="" name="" style="display: block; width: 40px; height: 40px; " />
+                                {% else %}
+                                <img src="{{defaultContactImageUrl}}" alt="" name="" style="display: block; width: 40px; height: 40px; " />
+                                {% endif %}
+                            </div>
+                            <div class="speaker-name"><b> {{ponent['msevtmgt_name']}} </b></div>
+                            <div class="speaker-title"> {{ponent['msevtmgt_description']}} </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% if existParticipants and isAdmin %}
+        <div class="col-md-6" style="flex-grow: 1; display: flex; flex-direction: column;">
+            <div><h1>Inscripcions</h1></div>
+            <div id="distable" class="col-md-12 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; padding: 16px; margin: 0px;">
+                <table class='table' id='docTable'>
+                    <thead>
+                        <tr>
+                            <th>Nom i Cognoms</th>
+                            <th>Email</th>
+                            <th>Entitat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for participant in participants.results.entities %}
+                        {% if isAdmin and participant.['eventregistration.pfc_accountid'].name == user.parentcustomerid.name %}
+                        <tr>
+                            <td>{{participant.fullname | escape}}</td>
+                            <td>{{participant.emailaddress1 | escape}}</td>
+                            <td>{{participant.['eventregistration.pfc_accountid'].name | escape}}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+        <div class="{{class3}}" style="flex-grow: 1; display: flex; flex-direction: column;">
+            <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+            {% if registrationId == null and eventStartDate > now %}
+            {% if {{request.params['Inscription']}} == CookieName %}
+            <div style="font-size: 150%; padding-top: 40%; padding-bottom: 40%">
+                {% assign mostrarForm = false %}
+                <b>
+                    Hem rebut la vostra inscripció. L'estem processant.
+                    Podreu veure la vostra inscripció en uns minuts.
+                </b>
+            </div>
+            {% elsif mostrarForm %}
+            <h1>Registra't</h1>
+            <p>{{formPage}}</p>
+            {% endif %}
+            {% elseif registrationId != null %}
+            <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+            <h1>La teva inscripció</h1>
+            <p>
+                Dia/Hora Inici: {{eventStartDate}}
+                <br />Duració: {{duration}}min
+                <br />Nom i Cognoms: {{user.firstname}} {{user.lastname}}
+                <br />Email: {{user.emailaddress1}}
+                {% if eventStartDate > now %}
+                <div id="divLink">
+                    <a id="divLink" style="color: var(--portalThemeColor10);" href="{{personalUrl}}" target="_blank">Enllaç a la reunió</a>
+                </div>
+                <a style="color: var(--portalThemeColor10);" onclick="SetCalendar();" href="#">Descarregar iCalendar</a>
+                <br /> Data inscripció: {{registerCreatedOn}}
+                <br /> <button id="DeleteInscription" onclick="DeactivateInscription()" type="button" class="button1">Cancel·lar inscripció</button>
+            </p>
+            {% elsif eventiCalEndDate < now %}
+            {% if certificationURL != null && certificationURL != "" %}
+            <br /><a id="certificatUrl" style="color: var(--portalThemeColor10);" href="{{certificationURL}}" target="_blank">Certificat d'assistència</a>
+            {% endif %}
+            <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+            {% endif %}
+            {% endif %}
+            {% if eventStartDate < now %}
+            <h1>Sessió</h1>
+            {% if externalVideo != null %}
+            <iframe allowfullscreen="allowfullscreen" src="{{externalVideo}}" controls="controls" data-componentname="Video" style="max-width: 100%; width: 100%; height: 450px;"> </iframe>
+            {% else %}
+            <p><b> Vídeo no disponible en aquests moments </b></p>
+            {% endif %}
+            {% endif%}
+            <div>
+                {% if eventDocumentation || eventAnnex %}
+                <h1>Documentació</h1>
+                <p>
+                    {% if eventDocumentation %}
+                    <a style="color: var(--portalThemeColor10);" href="{{crmurl}}/api/data/v9.0/msevtmgt_events({{requestId}})/pfc_documentation/$value">Descarregar Documentació</a>
+                    {% endif %}
+                    {% if eventAnnex %}
+                    {% if eventDocumentation %}
+                    <br />
+                    {% endif %}
+                    <a style="color: var(--portalThemeColor10);" href="{{crmurl}}/api/data/v9.0/msevtmgt_events({{requestId}})/pfc_annex/$value">Descarregar Annexos</a>
+                    {% endif %}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        $(document).ready(function () {
+            GetToken();
+            getHours();
+            {% if request.params['Inscription'] == CookieName %}
+                startCheckRegistrer();
+            {% endif %}
+            {% if registrationId != null %}
+                delete_cookie();
+            {% endif %}
+        });
+
+        {% if mostrarForm %}
+            MsCrmMkt.MsCrmFormLoader.on('afterFormLoad', function (event) {
+                document.getElementById('{{firstNameGuid}}').value = '{{user.firstname}}';
+                document.getElementById('{{lastNameGuid}}').value = '{{user.lastname}}';
+                document.getElementById('{{emailGuid}}').value = '{{user.emailaddress1}}';
+                document.getElementById('{{firstNameGuid}}').readOnly = true;
+                document.getElementById('{{lastNameGuid}}').readOnly = true;
+                document.getElementById('{{emailGuid}}').readOnly = true;
+            });
+
+            MsCrmMkt.MsCrmFormLoader.on('afterFormSubmit', function (event) {
+                setCookie()
+                window.location.replace("{{returnUrl}}");
+            });
+        {% endif %}
+
+    function startCheckRegistrer() {
+        allDraftWorkWearSapOrder = false;
+        CheckRegister(allDraftWorkWearSapOrder);
+    }
+
+    function CheckRegister(allDraftWorkWearSapOrder) {
+        if (allDraftWorkWearSapOrder == false) {
+            setTimeout(() => {
+                let serverUrl = "/_api/msevtmgt_eventregistrations";
+                webapi.safeAjax({
+                    type: "GET",
+                    contentType: "application/json",
+                    url: serverUrl + "?$filter=_msevtmgt_eventid_value eq {{requestId}} and _msevtmgt_contactid_value eq {{loggedUser}}",
+                    success: function (res) {
+                        console.log("entra con longitud: " + res.value.length);
+                        if (res.value.length > 0) {
+                            console.log("succeed")
+                            allDraftWorkWearSapOrder = true;
+                            window.location.replace("{{request.url}}");
+                            return;
+                        } else {
+                            CheckRegister(allDraftWorkWearSapOrder);
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log(errorThrown + "textstatus " + textStatus + "xhr " + xhr);
+                    },
+                });
+            }, 60000);
+        }
+    }
+
+
+        function delete_cookie() {
+            document.cookie = 'Inscription' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
+        };
+
+        function setCookie() {
+            var expires = "";
+            var date = new Date();
+            date.setTime(date.getTime() + (5 * 60000));
+            expires = "; expires=" + date.toUTCString();
+            document.cookie = 'Inscription' + "=" + ('{{loggedUser}}{{request.url}}' || "") + expires + "; path=/";
+        };
+
+        function GetCookie(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) {
+                console.log(match[2]);
+                return true;
+            }
+            else {
+                console.log('--something went wrong---');
+                return false;
+            }
+        };
+
+        function getHours() {
+            let m = '{{date1M}}' - 1;
+            let date1 = new Date('{{date1Y}}', m, '{{date1D}}');
+            let date2 = new Date('{{date2iso}}');
+
+            const diffTime = Math.abs(date2 - date1);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            var x = document.getElementById("divLink");
+            if (x) {
+                if (diffDays <= 1) {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        };
+
+        function SetCalendar() {
+            let requestId = '{{requestId}}';
+            if (requestId) {
+                let startDate = '{{eventiCalStartDate}}';
+                let endDate = '{{eventiCalEndDate}}';
+                let utcStartDate = Date.parse(startDate).toISOString();
+                let utcEndDate = Date.parse(endDate).toISOString();
+                let eventName = '{{eventName2}}'
+                let data = "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:PUBLISH\nX-MS-OLK-FORCEINSPECTOROPEN:TRUE\nBEGIN:VEVENT\nUID:" + requestId + "\nDTSTAMP:20120315T170000Z\nORGANIZER;CN=Politica Fiscal Corporativa:MAILTO:politicafiscal.pre.atc@gencat.cat\nDTSTART:" + utcStartDate + "\nDTEND:" + utcEndDate + "\nLOCATION:\nSUMMARY:" + eventName + "\nPRIORITY:3\nBEGIN:VALARM\nDESCRIPTION:REMINDER\nTRIGGER:-PT15M\nACTION:DISPLAY\nEND:VALARM\nEND:VEVENT\nEND:VCALENDAR";
+                const link = document.createElement("a");
+                const file = new Blob([data], { type: 'text/calendar' });
+                link.href = URL.createObjectURL(file);
+                link.download = "{{eventName}}.ics";
+                link.click();
+                URL.revokeObjectURL(link.href);
+            }
+        };
+
+
+    function DeactivateInscription() {
+        const btn = document.getElementById('DeleteInscription');
+        btn.disabled = true;
+        let serverUrl = "/_api/msevtmgt_eventregistrations";
+        alert("S'està cancel·lant la vostra inscripció. Si us plau, espereu uns segons i se us redirigirà a la pàgina de formacions per poder inscriure's en una nova. Gràcies.");
+        webapi.safeAjax({
+            type: "DELETE",
+            contentType: "application/json",
+            url: serverUrl + "(" + '{{eventRegistrationId}}' + ")",
+            success: function (res) {
+                window.location.replace("/Formació/formacions");
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log(errorThrown + "textstatus " + textStatus + "xhr " + xhr);
+            },
+        });
+    };
+
+
+        function GetToken() {
+            (function (webapi, $) {
+                function safeAjax(ajaxOptions) {
+                    var deferredAjax = $.Deferred();
+
+                    shell.getTokenDeferred().done(function (token) {
+                        if (!ajaxOptions.headers) {
+                            $.extend(ajaxOptions, {
+                                headers: {
+                                    "__RequestVerificationToken": token
+                                }
+                            });
+                        } else {
+                            ajaxOptions.headers["__RequestVerificationToken"] = token;
+                        }
+                        $.ajax(ajaxOptions)
+                            .done(function (data, textStatus, jqXHR) {
+                                validateLoginSession(data, textStatus, jqXHR, deferredAjax.resolve);
+                            }).fail(deferredAjax.reject); //ajax
+                    }).fail(function () {
+                        deferredAjax.rejectWith(this, arguments);
+                    });
+                    return deferredAjax.promise();
+                }
+                webapi.safeAjax = safeAjax;
+            })
+                (window.webapi = window.webapi || {}, jQuery)
+        };
+
+</script>

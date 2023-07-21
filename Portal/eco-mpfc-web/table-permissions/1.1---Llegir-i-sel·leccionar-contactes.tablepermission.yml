@@ -1,0 +1,15 @@
+adx_append: true
+adx_appendto: true
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: contact
+adx_entityname: 1.1 - Llegir i sel·leccionar contactes
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: 7e402e82-6fc5-ed11-b597-000d3adf727d
+adx_parententitypermission: d5deb509-34ca-ed11-b596-000d3adf90aa
+adx_parentrelationship: pfc_pfc_rel_contact_account_contactid
+adx_read: true
+adx_scope: 756150003
+adx_write: true

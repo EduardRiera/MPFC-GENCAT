@@ -1,0 +1,5 @@
+- adx_inboundurl: gicar-logout
+  adx_name: gicar-logout
+  adx_redirectid: 13a8c74e-83c3-ed11-83ff-000d3adf7052
+  adx_redirecturl: https://autenticaciogicar2.extranet.gencat.cat/idp2/logoutgicar.jsp
+  adx_statuscode: 302

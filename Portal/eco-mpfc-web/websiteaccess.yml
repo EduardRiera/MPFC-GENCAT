@@ -1,0 +1,16 @@
+- adx_managecontentsnippets: false
+  adx_managesitemarkers: false
+  adx_manageweblinksets: false
+  adx_name: Permís de visualització prèvia per al portal bàsic
+  adx_previewunpublishedentities: true
+  adx_websiteaccess_webrole: []
+  adx_websiteaccessid: f0b1f0ac-c8b2-ed11-83ff-002248a2c9f5
+- adx_managecontentsnippets: true
+  adx_managesitemarkers: true
+  adx_manageweblinksets: true
+  adx_name: Permisos administratius per al portal bàsic
+  adx_previewunpublishedentities: true
+  adx_websiteaccess_webrole:
+  - 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+  - 61ff5a93-52ee-ed11-8849-000d3adea4bc
+  adx_websiteaccessid: f3b1f0ac-c8b2-ed11-83ff-002248a2c9f5

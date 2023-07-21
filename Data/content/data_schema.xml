@@ -1,0 +1,132 @@
+<entities >
+  <entity name="pfc_ambit" displayname="Àmbit" etc="11237" primaryidfield="pfc_ambitid" primarynamefield="pfc_name" disableplugins="false">
+    <fields>
+      <field displayname="Àmbit" name="pfc_ambitid" type="guid" primaryKey="true" />
+      <field displayname="Autor" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Autor (delegat)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Codi de fus horari de conversió a hora UTC" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Data de creació" name="createdon" type="datetime" />
+      <field displayname="Data de modificació" name="modifiedon" type="datetime" />
+      <field displayname="Equip propietari" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Estat" name="statecode" type="state" />
+      <field displayname="Modificat per" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modificat per (delegat)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Name" name="pfc_name" type="string" customfield="true" />
+      <field displayname="Número de seqüència d'importació" name="importsequencenumber" type="number" />
+      <field displayname="Número de versió" name="versionnumber" type="bigint" />
+      <field displayname="Número de versió de la regla de fus horari" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Propietari" name="ownerid" type="owner" />
+      <field displayname="Raó per a l'estat" name="statuscode" type="status" />
+      <field displayname="Registre creat el" name="overriddencreatedon" type="datetime" />
+      <field displayname="Unitat de negoci propietària" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Usuari propietari" name="owninguser" type="entityreference" lookupType="systemuser" />
+    </fields>
+    <relationships>
+      <relationship name="pfc_pfc_ambit_pfc_anonymizedrecord" manyToMany="true" isreflexive="false" relatedEntityName="pfc_pfc_ambit_pfc_anonymizedrecord" m2mTargetEntity="pfc_anonymizedrecord" m2mTargetEntityPrimaryKey="pfc_anonymizedrecordid" />
+      <relationship name="pfc_query_dgt_pfc_ambit" manyToMany="true" isreflexive="false" relatedEntityName="pfc_query_dgt_pfc_ambit" m2mTargetEntity="pfc_query_dgt" m2mTargetEntityPrimaryKey="pfc_query_dgtid" />
+      <relationship name="pfc_query_pfc_ambit" manyToMany="true" isreflexive="false" relatedEntityName="pfc_query_pfc_ambit" m2mTargetEntity="pfc_query" m2mTargetEntityPrimaryKey="pfc_queryid" />
+    </relationships>
+  </entity>
+  <entity name="pfc_entityambit" displayname="Àmbit d'entitat" etc="11251" primaryidfield="pfc_entityambitid" primarynamefield="pfc_name" disableplugins="false">
+    <fields>
+      <field displayname="Àmbit d'entitat" name="pfc_entityambitid" type="guid" primaryKey="true" />
+      <field displayname="Autor" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Autor (delegat)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Codi" name="pfc_codeambit" type="string" customfield="true" />
+      <field displayname="Codi de fus horari de conversió a hora UTC" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Data de creació" name="createdon" type="datetime" />
+      <field displayname="Data de modificació" name="modifiedon" type="datetime" />
+      <field displayname="Estat" name="statecode" type="state" />
+      <field displayname="Identificador de l'organització" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Modificat per" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modificat per (delegat)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Nom" name="pfc_name" type="string" customfield="true" />
+      <field displayname="Número de seqüència d'importació" name="importsequencenumber" type="number" />
+      <field displayname="Número de versió" name="versionnumber" type="bigint" />
+      <field displayname="Número de versió de la regla de fus horari" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Raó per a l'estat" name="statuscode" type="status" />
+      <field displayname="Registre creat el" name="overriddencreatedon" type="datetime" />
+    </fields>
+    <relationships>
+      <relationship name="pfc_pfc_entityambit_account" manyToMany="true" isreflexive="false" relatedEntityName="pfc_pfc_entityambit_account" m2mTargetEntity="account" m2mTargetEntityPrimaryKey="accountid" />
+    </relationships>
+  </entity>
+  <entity name="pfc_companylevel" displayname="Càrrec" etc="11246" primaryidfield="pfc_companylevelid" primarynamefield="pfc_name" disableplugins="false">
+    <fields>
+      <field displayname="Autor" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Autor (delegat)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Càrrec" name="pfc_companylevelid" type="guid" primaryKey="true" />
+      <field displayname="Codi de fus horari de conversió a hora UTC" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Data de creació" name="createdon" type="datetime" />
+      <field displayname="Data de modificació" name="modifiedon" type="datetime" />
+      <field displayname="Equip propietari" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Estat" name="statecode" type="state" />
+      <field displayname="Modificat per" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modificat per (delegat)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Nom" name="pfc_name" type="string" customfield="true" />
+      <field displayname="Número de seqüència d'importació" name="importsequencenumber" type="number" />
+      <field displayname="Número de versió" name="versionnumber" type="bigint" />
+      <field displayname="Número de versió de la regla de fus horari" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Propietari" name="ownerid" type="owner" />
+      <field displayname="Raó per a l'estat" name="statuscode" type="status" />
+      <field displayname="Registre creat el" name="overriddencreatedon" type="datetime" />
+      <field displayname="Tipus d'entitat" name="pfc_entitytype" type="optionsetvalue" customfield="true" />
+      <field displayname="Unitat de negoci propietària" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Usuari propietari" name="owninguser" type="entityreference" lookupType="systemuser" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="pfc_departamental_agrupation" displayname="Departament d'adscripció" etc="11250" primaryidfield="pfc_departamental_agrupationid" primarynamefield="pfc_name" disableplugins="false">
+    <fields>
+      <field displayname="Acrònim" name="pfc_acronym" type="string" customfield="true" />
+      <field displayname="Adreça electrònica" name="emailaddress" type="string" />
+      <field displayname="Agrupació departamental" name="pfc_departamental_agrupationid" type="guid" primaryKey="true" />
+      <field displayname="Autor" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Autor (delegat)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Codi" name="pfc_code" type="string" customfield="true" />
+      <field displayname="Codi de fus horari de conversió a hora UTC" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Data de creació" name="createdon" type="datetime" />
+      <field displayname="Data de modificació" name="modifiedon" type="datetime" />
+      <field displayname="Estat" name="statecode" type="state" />
+      <field displayname="Identificador de l'organització" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Modificat per" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modificat per (delegat)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Name" name="pfc_name" type="string" customfield="true" />
+      <field displayname="Nom curt" name="pfc_short_name" type="string" customfield="true" />
+      <field displayname="Número de seqüència d'importació" name="importsequencenumber" type="number" />
+      <field displayname="Número de versió" name="versionnumber" type="bigint" />
+      <field displayname="Número de versió de la regla de fus horari" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Ordre" name="pfc_order" type="string" customfield="true" />
+      <field displayname="Raó per a l'estat" name="statuscode" type="status" />
+      <field displayname="Registre creat el" name="overriddencreatedon" type="datetime" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="pfc_settings" displayname="Configuració" etc="11270" primaryidfield="pfc_settingsid" primarynamefield="pfc_name" disableplugins="false">
+    <fields>
+      <field displayname="Autor" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Autor (delegat)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Codi" name="pfc_name" type="string" customfield="true" />
+      <field displayname="Codi de fus horari de conversió a hora UTC" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Configuració" name="pfc_settingsid" type="guid" primaryKey="true" />
+      <field displayname="Data de creació" name="createdon" type="datetime" />
+      <field displayname="Data de modificació" name="modifiedon" type="datetime" />
+      <field displayname="Estat" name="statecode" type="state" />
+      <field displayname="Identificador de l'organització" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Modificat per" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modificat per (delegat)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Nom de la configuració" name="pfc_configuration_group_name" type="string" customfield="true" />
+      <field displayname="Nom de l'esquema" name="pfc_schema_name" type="string" customfield="true" />
+      <field displayname="Nom del camp" name="pfc_field_name" type="string" customfield="true" />
+      <field displayname="Número de seqüència d'importació" name="importsequencenumber" type="number" />
+      <field displayname="Número de versió" name="versionnumber" type="bigint" />
+      <field displayname="Número de versió de la regla de fus horari" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Operador" name="pfc_operator" type="string" customfield="true" />
+      <field displayname="Raó per a l'estat" name="statuscode" type="status" />
+      <field displayname="Registre creat el" name="overriddencreatedon" type="datetime" />
+      <field displayname="Tipus de Configuració" name="pfc_configuration_types" type="optionsetvalue" customfield="true" />
+      <field displayname="Valor" name="pfc_value" type="string" customfield="true" />
+    </fields>
+    <relationships />
+  </entity>
+</entities>

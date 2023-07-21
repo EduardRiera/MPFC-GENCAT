@@ -1,0 +1,13 @@
+adx_append: false
+adx_appendto: false
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: adx_weblinkset
+adx_entityname: adx_weblinkset
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: 6d8140c7-a4ff-ed11-8f6e-000d3adf90aa
+adx_read: true
+adx_scope: 756150000
+adx_write: false

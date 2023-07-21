@@ -1,0 +1,13 @@
+adx_accountrelationship: pfc_pfc_contact_account_accountid_account
+adx_append: true
+adx_appendto: true
+adx_create: true
+adx_delete: true
+adx_entitylogicalname: pfc_contact_account
+adx_entityname: R2 - Permetre vincular contactes a les meva entitat
+adx_entitypermission_webrole:
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: 80c3b910-04cf-ed11-b597-000d3adf7052
+adx_read: false
+adx_scope: 756150002
+adx_write: true

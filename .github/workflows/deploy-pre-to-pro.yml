@@ -1,0 +1,128 @@
+name: deploy-pre-to-pro
+run-name: Deploy ${{github.ref_name}} to PRO by @${{ github.actor }}
+#   deploy last PRE deployed release to PRO D365 environment.
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deploy-pre-to-pro:
+    runs-on: windows-latest
+    environment: PRO        
+
+    steps:
+    - name: checkout action
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        lfs: true
+
+    - name: extract-last-tag action
+      id: extract-last-tag
+      run: |
+        $tag = git describe --tags --match "PRE*" --abbrev=0
+        echo "last-tag=$tag" >> $env:GITHUB_ENV
+
+    - name: check-versions
+      shell: powershell
+      run: |
+         $COMMIT_TAGS=$(git tag --points-at HEAD)
+         
+         $VERSIONTAG =$(echo $COMMIT_TAGS | Select-String -Pattern "v[0-9]+\.[0-9]+\.[0-9]+" | Select-Object -First 1)
+         echo "version-tag=$VERSIONTAG" >> $env:GITHUB_ENV
+
+         if ($COMMIT_TAGS -like "*${{env.last-tag}}*") {
+           Write-Host "Detalls versió: $COMMIT_TAGS"
+         } else {
+           Write-Host "Aquesta versió ($COMMIT_TAGS) no coincideix amb la ultima instalada a PRE (${{env.last-tag}})."
+           exit 1
+         }
+         
+    - name: who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
+      with:
+         environment-url: ${{vars.ENVIRONMENT_URL}}
+         app-id: ${{vars.CLIENT_ID}}
+         client-secret: ${{ secrets.CLIENT_SECRET }}
+         tenant-id: ${{vars.TENANT_ID}}      
+
+    - name: backup-environment action
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      if: ${{vars.FLAGS_BACKUP == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        user-name: ${{ secrets.USER }}
+        password-secret: ${{ secrets.PASSWORD }}
+        #app-id: ${{vars.CLIENT_ID}}
+        #client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        backup-label: 'Before deploying ${{ env.version-tag }}'
+
+    - name: import-managed-solution action
+      uses: microsoft/powerplatform-actions/import-solution@v0
+      if: ${{vars.FLAGS_SOLUTION == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}      
+        solution-file: ${{vars.SOLUTION_RELEASE_FOLDER}}${{vars.SOLUTION_NAME}}.zip
+        force-overwrite: true
+        publish-changes: true
+
+    - name: import-data
+      uses: microsoft/powerplatform-actions/import-data@v0
+      if: ${{vars.FLAGS_DATA == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        data-file: "Data/Content/"
+        verbose: true
+
+    - name: upload-paportal action
+      uses: microsoft/powerplatform-actions/upload-paportal@v0
+      if: ${{vars.FLAGS_PORTAL == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}      
+        upload-path: ${{vars.PORTAL_PATH}}
+        deployment-profile: pro
+
+    - name: backup-environment action
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      if: ${{vars.FLAGS_BACKUP == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        user-name: ${{ secrets.USER }}
+        password-secret: ${{ secrets.PASSWORD }}
+        #app-id: ${{vars.CLIENT_ID}}
+        #client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        backup-label: 'After deploying ${{ steps.extract-tag.outputs.version-tag }}'
+
+    - name: generate-pro-tag action
+      run: echo "pro-tag=PRO-$(date +%Y%m%d%H%M%S)" >> $env:GITHUB_ENV
+
+    - name: set-pro-tag action  
+      run: |
+        git tag ${{env.pro-tag}}
+        git push origin ${{env.pro-tag}}
+    
+    - name: update-release-notes
+      shell: powershell
+      env:
+        GH_TOKEN: ${{ github.token }}      
+      run: |
+         $markdown = @"
+         $((gh release view ${{github.ref_name}} --json body --jq ".body") -join "`n")
+         
+         Installed on ${{env.pro-tag}} with (Backup=${{vars.FLAGS_BACKUP}}, Solution=${{vars.FLAGS_SOLUTION}}, Portal=${{vars.FLAGS_PORTAL}}, Data=${{vars.FLAGS_DATA}}) by [run ${{github.run_id}}](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+         "@
+         
+         gh release edit ${{github.ref_name}} --notes "$markdown"
+         

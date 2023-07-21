@@ -1,0 +1,12 @@
+@media(min-width: 1600px){
+    .container {
+        width: 1570px;
+    }
+}
+
+.wrapper-body{
+    min-height: calc(100% - 169px) !important;
+}
+.attachment-outer-border{
+	display:none !important;
+}

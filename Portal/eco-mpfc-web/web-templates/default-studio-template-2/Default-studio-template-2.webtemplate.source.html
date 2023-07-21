@@ -1,0 +1,26 @@
+<!-- Default studio template. Please do not modify -->
+<div id="mainContent" class="wrapper-body" role="main">
+    {% include 'Page Copy' %}
+</div>
+
+<style>
+
+@media(min-width: 1600px){
+    .container {
+        width: 1570px;
+    }
+}
+
+.wrapper-body{
+    min-height: calc(100% - 169px) !important;
+}
+.attachment-outer-border{
+	display:none !important;
+}
+
+</style>
+<script>
+    if ($("#liquid_form")){
+        $("#liquid_form").addClass("wrapper-body");
+    }
+</script>

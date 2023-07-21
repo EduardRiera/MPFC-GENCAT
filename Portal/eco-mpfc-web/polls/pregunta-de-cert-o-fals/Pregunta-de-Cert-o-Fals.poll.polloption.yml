@@ -1,0 +1,12 @@
+- adx_answer: Cert
+  adx_displayorder: 1
+  adx_name: True
+  adx_pollid: 650bafa5-c8b2-ed11-83ff-000d3adf716f
+  adx_polloptionid: 3a18c1a8-c8b2-ed11-83ff-000d3adf7ec5
+  adx_votes: 8
+- adx_answer: Fals
+  adx_displayorder: 2
+  adx_name: False
+  adx_pollid: 650bafa5-c8b2-ed11-83ff-000d3adf716f
+  adx_polloptionid: a5e9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_votes: 3

@@ -1,0 +1,12 @@
+adx_append: true
+adx_appendto: false
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: msevtmgt_event
+adx_entityname: 10 - Veure tots els events
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+adx_entitypermissionid: 3e39aa45-70c6-ed11-b597-000d3adf90aa
+adx_read: true
+adx_scope: 756150000
+adx_write: false

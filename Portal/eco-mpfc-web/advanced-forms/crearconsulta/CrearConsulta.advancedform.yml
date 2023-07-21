@@ -1,0 +1,25 @@
+adx_authenticationrequired: true
+adx_editexistingrecordpermitted: true
+adx_multiplerecordsperuserpermitted: true
+adx_name: CrearConsulta
+adx_progressindicatorenabled: true
+adx_progressindicatorignorelaststep: false
+adx_progressindicatorposition: 756150000
+adx_progressindicatorprependstepnum: false
+adx_progressindicatortype: 756150000
+adx_savechangeswarningmessage: >-
+  [
+
+    {
+
+      "LCID": 1027,
+
+      "Value": ""
+
+    }
+
+  ]
+adx_savechangeswarningonclose: true
+adx_startnewsessiononload: true
+adx_startstep: 1434390a-a7b3-ed11-83ff-000d3adf7ec5
+adx_webformid: df598ce0-a6b3-ed11-83ff-000d3adf7ec5

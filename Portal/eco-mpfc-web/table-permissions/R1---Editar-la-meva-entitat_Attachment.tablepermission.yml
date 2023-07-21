@@ -1,0 +1,14 @@
+adx_append: true
+adx_appendto: false
+adx_contactrelationship: account_primary_contact
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: annotation
+adx_entityname: R1 - Editar la meva entitat_Attachment
+adx_entitypermission_webrole: []
+adx_entitypermissionid: 19fffb8c-17cf-ed11-b597-000d3adf90aa
+adx_parententitypermission: caba92f8-fbc6-ed11-b597-000d3adf7052
+adx_parentrelationship: account_Annotations
+adx_read: false
+adx_scope: 756150003
+adx_write: false

@@ -1,0 +1,13 @@
+adx_append: true
+adx_appendto: true
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: pfc_informationrequirement
+adx_entityname: 14.2 - Llegir i editar requeriments de Sol-licitud de formació
+adx_entitypermission_webrole: []
+adx_entitypermissionid: 9bec4e4a-a7de-ed11-a7c6-000d3adf90aa
+adx_parententitypermission: 724b3ec9-83de-ed11-a7c6-002248a1c671
+adx_parentrelationship: pfc_trainingrequest_pfc_informationrequirements
+adx_read: true
+adx_scope: 756150003
+adx_write: true

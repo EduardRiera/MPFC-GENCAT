@@ -1,0 +1,13 @@
+adx_append: true
+adx_appendto: true
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: pfc_informationrequirement
+adx_entityname: R5.1 -Llegir i editar Sol·licituds de Operacions Especial Transcendencia
+adx_entitypermission_webrole: []
+adx_entitypermissionid: 10ab56d1-54cd-ed11-b597-000d3adf90aa
+adx_parententitypermission: fd2d0baf-4acd-ed11-b597-000d3adea4bc
+adx_parentrelationship: pfc_tax_transcendence_operation_pfc_informationrequirements
+adx_read: true
+adx_scope: 756150003
+adx_write: true

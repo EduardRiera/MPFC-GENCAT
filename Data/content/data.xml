@@ -1,0 +1,1496 @@
+
+<entities xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" timestamp="2023-07-12T14:16:25.0427732Z">
+  <entity name="pfc_ambit" displayname="Àmbit">
+    <records>
+      <record id="ad6f8421-a566-ed11-9561-000d3ab3f701">
+        <field name="pfc_ambitid" value="ad6f8421-a566-ed11-9561-000d3ab3f701" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:39.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="IS" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="f32f3b62-0f69-ed11-9561-000d3ab3f701">
+        <field name="pfc_ambitid" value="f32f3b62-0f69-ed11-9561-000d3ab3f701" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:39.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="IVA" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="f6cee721-63f9-ed11-8849-000d3ada4df9">
+        <field name="pfc_ambitid" value="f6cee721-63f9-ed11-8849-000d3ada4df9" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-05-23T12:12:57.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:40.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="T. propis" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="5b0023d2-bc91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="5b0023d2-bc91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:41.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DONATIUS" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="1f6587eb-bc91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="1f6587eb-bc91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:41.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="IRPF" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="bb6bc4ff-bc91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="bb6bc4ff-bc91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:42.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Altres" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="ce25f20c-bd91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="ce25f20c-bd91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:43.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="IRNR" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="ac88e718-bd91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="ac88e718-bd91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:43.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Models tributaris" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="13340f25-bd91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="13340f25-bd91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:44.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Proc. Tributaris" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="d46b7d32-bd91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="d46b7d32-bd91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:44.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="T. cedits" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="b9317f3b-bd91-ed11-aad0-000d3adf90aa">
+        <field name="pfc_ambitid" value="b9317f3b-bd91-ed11-aad0-000d3adf90aa" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="createdon" value="2023-04-28T10:27:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:45.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="T. locals" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="e5c6519d-0409-ee11-8f6e-002248a3778b">
+        <field name="pfc_ambitid" value="e5c6519d-0409-ee11-8f6e-002248a3778b" />
+        <field name="createdby" value="e65d6e32-e9de-ed11-a7c6-002248a0708a" lookupentity="systemuser" lookupentityname="Lizzete Zolezzi Garcia" />
+        <field name="createdon" value="2023-06-12T09:36:36.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:46.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Retencions" />
+        <field name="ownerid" value="e65d6e32-e9de-ed11-a7c6-002248a0708a" lookupentity="systemuser" lookupentityname="Lizzete Zolezzi Garcia" />
+        <field name="statuscode" value="1" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="e65d6e32-e9de-ed11-a7c6-002248a0708a" lookupentity="systemuser" />
+      </record>
+    </records>
+    <m2mrelationships>
+      <m2mrelationship sourceid="f32f3b62-0f69-ed11-9561-000d3ab3f701" targetentityname="pfc_query" targetentitynameidfield="pfc_queryid" m2mrelationshipname="pfc_query_pfc_ambit">
+        <targetids>
+          <targetid>5ec2091a-810a-ee11-a81c-0022489b5e01</targetid>
+          <targetid>2da02f09-8a0e-ee11-a81c-0022489cdbce</targetid>
+          <targetid>95b32d56-d614-ee11-a81c-0022489cdbce</targetid>
+          <targetid>54f571ae-b41c-ee11-a81c-0022489cdbce</targetid>
+          <targetid>13188adf-14fe-ed11-a81c-0022489cdd6d</targetid>
+          <targetid>7435d753-23fe-ed11-a81c-0022489cdd6d</targetid>
+          <targetid>bcfabd69-c6fe-ed11-a81c-0022489cdd6d</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="f6cee721-63f9-ed11-8849-000d3ada4df9" targetentityname="pfc_query_dgt" targetentitynameidfield="pfc_query_dgtid" m2mrelationshipname="pfc_query_dgt_pfc_ambit">
+        <targetids>
+          <targetid>a0a048c0-a911-ee11-a81c-0022489cdbce</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="f6cee721-63f9-ed11-8849-000d3ada4df9" targetentityname="pfc_query" targetentitynameidfield="pfc_queryid" m2mrelationshipname="pfc_query_pfc_ambit">
+        <targetids>
+          <targetid>96ca1cd6-3019-4525-9289-b1ab62ae54a5</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="1f6587eb-bc91-ed11-aad0-000d3adf90aa" targetentityname="pfc_query" targetentitynameidfield="pfc_queryid" m2mrelationshipname="pfc_query_pfc_ambit">
+        <targetids>
+          <targetid>e4729eab-c214-ee11-a81c-0022489cdbce</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="ce25f20c-bd91-ed11-aad0-000d3adf90aa" targetentityname="pfc_query_dgt" targetentitynameidfield="pfc_query_dgtid" m2mrelationshipname="pfc_query_dgt_pfc_ambit">
+        <targetids>
+          <targetid>a7f08654-6529-43be-b285-6df96ec55520</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="e5c6519d-0409-ee11-8f6e-002248a3778b" targetentityname="pfc_query" targetentitynameidfield="pfc_queryid" m2mrelationshipname="pfc_query_pfc_ambit">
+        <targetids>
+          <targetid>0e5d32f5-4b1a-ee11-a81c-0022489cdbce</targetid>
+          <targetid>7435d753-23fe-ed11-a81c-0022489cdd6d</targetid>
+        </targetids>
+      </m2mrelationship>
+    </m2mrelationships>
+  </entity>
+  <entity name="pfc_entityambit" displayname="Àmbit d'entitat">
+    <records>
+      <record id="c0a31320-1905-ee11-8f6e-000d3ada4df9">
+        <field name="pfc_entityambitid" value="c0a31320-1905-ee11-8f6e-000d3ada4df9" />
+        <field name="createdby" value="247789ef-a4de-ed11-a7c6-002248a07515" lookupentity="systemuser" lookupentityname="Marc Dosaiguas Canal" />
+        <field name="pfc_codeambit" value="IVA" />
+        <field name="createdon" value="2023-06-07T09:53:17.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:47.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="IVA" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="88a38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="88a38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="ADM" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:48.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Administraci&amp;#243; P&amp;#250;blica" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="8aa38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="8aa38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="CON" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:48.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Construcci&amp;#243; i gesti&amp;#243; immobili&amp;#224;ria" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="8ca38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="8ca38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="CUL" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:49.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Cultural" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="8ea38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="8ea38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="EDU" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:50.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Educatiu" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="90a38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="90a38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="EMP" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:50.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Empresarial" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="92a38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="92a38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="FUM" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:51.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Fundacional i mecenatge" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="94a38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="94a38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="REC" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:51.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Investigaci&amp;#243; i recerca" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="96a38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="96a38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="RES" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:52.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Resta d&amp;#39;activitats" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="98a38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="98a38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="SAN" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:52.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Sanitari" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="9aa38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="9aa38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="SOC" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:53.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Social" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="9ca38cb9-b398-ed11-aad1-000d3adeae7f">
+        <field name="pfc_entityambitid" value="9ca38cb9-b398-ed11-aad1-000d3adeae7f" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_codeambit" value="TEC" />
+        <field name="createdon" value="2023-04-28T10:27:39.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:53.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Tecnol&amp;#242;gic i comunicacions" />
+        <field name="importsequencenumber" value="25" />
+        <field name="statuscode" value="1" />
+      </record>
+    </records>
+    <m2mrelationships>
+      <m2mrelationship sourceid="c0a31320-1905-ee11-8f6e-000d3ada4df9" targetentityname="account" targetentitynameidfield="accountid" m2mrelationshipname="pfc_pfc_entityambit_account">
+        <targetids>
+          <targetid>55b0406b-1905-ee11-8f6e-000d3ada4df9</targetid>
+          <targetid>f264263e-02d2-ed11-a7c7-000d3adf727d</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="88a38cb9-b398-ed11-aad1-000d3adeae7f" targetentityname="account" targetentitynameidfield="accountid" m2mrelationshipname="pfc_pfc_entityambit_account">
+        <targetids>
+          <targetid>362437db-86f8-ed11-8849-000d3ad7c7ec</targetid>
+        </targetids>
+      </m2mrelationship>
+      <m2mrelationship sourceid="9ca38cb9-b398-ed11-aad1-000d3adeae7f" targetentityname="account" targetentitynameidfield="accountid" m2mrelationshipname="pfc_pfc_entityambit_account">
+        <targetids>
+          <targetid>362437db-86f8-ed11-8849-000d3ad7c7ec</targetid>
+        </targetids>
+      </m2mrelationship>
+    </m2mrelationships>
+  </entity>
+  <entity name="pfc_companylevel" displayname="Càrrec">
+    <records>
+      <record id="74ff0ad4-f8e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="74ff0ad4-f8e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:54.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Gerent" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000000" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="2d3ea1e7-f8e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="2d3ea1e7-f8e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:55.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Director/a" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000000" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="d35213f4-f8e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="d35213f4-f8e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:55.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Director/a econ&amp;#242;mic- financer" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000000" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="08ad2afa-f8e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="08ad2afa-f8e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:56.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Responsable &amp;#224;rea econ&amp;#242;mic-financera" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000000" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="7b694400-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="7b694400-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:56.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Gestor d’assumptes fiscals" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000000" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="dd10a806-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="dd10a806-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:57.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Cap i/o responsable del servei jur&amp;#237;dic" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000000" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="f8a2ab2c-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="f8a2ab2c-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:58.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Secretari/a General" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="1a0e1433-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="1a0e1433-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:58.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Secretari/a General – B&amp;#250;stia gen&amp;#232;rica" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="cb22833f-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="cb22833f-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:59.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Unitats d’informaci&amp;#243; i coordinaci&amp;#243; del sector p&amp;#250;blic" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="f667c545-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="f667c545-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:44:59.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Director/a de serveis" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="e6a8834c-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="e6a8834c-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:00.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Subdirector general de gesti&amp;#243; econ&amp;#242;mica/contractaci&amp;#243;/patrimoni" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="6225cd52-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="6225cd52-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:00.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Cap del Servei de Gesti&amp;#243; Econ&amp;#242;mica" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="5131d658-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="5131d658-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:01.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Servei de Gesti&amp;#243; Econ&amp;#242;mica" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="c1f4e15e-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="c1f4e15e-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:01.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Cap del Servei de Contractaci&amp;#243; i/o patrimoni" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="23d3ef64-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="23d3ef64-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:02.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Servei de contractaci&amp;#243; i/o patrimoni" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="b065f071-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="b065f071-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:02.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Subdirecci&amp;#243; general de recursos humans/ organitzaci&amp;#243;/relacions laborals/r&amp;#232;gim interior" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="66f13879-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="66f13879-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:03.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Servei de recursos humans" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="73f13879-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="73f13879-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:03.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Servei d’organitzaci&amp;#243;" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="dfc52686-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="dfc52686-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:04.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Cap del Servei de Gesti&amp;#243; d&amp;#39;Ajuts" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="c8e19f8c-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="c8e19f8c-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:04.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Cap de la secci&amp;#243; de subvencions" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="32f4b492-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="32f4b492-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:05.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Advocat/da en cap de l&amp;#39;Assessoria Jur&amp;#237;dica" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="e01c8299-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="e01c8299-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:05.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Direcci&amp;#243; General de Patrimoni" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="a87134a0-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="a87134a0-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:06.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de la Intervenci&amp;#243; – Director/a General" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="028786a7-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="028786a7-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:06.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de la Intervenci&amp;#243; – Supervisor/a Adjunta de Comptabilitat i Control" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="db37f3b3-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="db37f3b3-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:07.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de la Intervenci&amp;#243; – Coordinador/a t&amp;#232;cnic/a de control i comptabilitat" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="1d1cf5b9-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="1d1cf5b9-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:07.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de la Intervenci&amp;#243; – Interventor/a Adjunt/a per al Control d’Entitats del Sector P&amp;#250;blic" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="7f892ec2-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="7f892ec2-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:08.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de la Intervenci&amp;#243; – Supervisor/a de Comptabilitat i Control" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="097ea0c8-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="097ea0c8-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:08.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de la Intervenci&amp;#243; – Altres" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="e8a8bcce-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="e8a8bcce-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:09.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="DG de Fons Europeus" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+      <record id="067b52d5-f9e8-ed11-a7c6-000d3adea4bc">
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_companylevelid" value="067b52d5-f9e8-ed11-a7c6-000d3adea4bc" />
+        <field name="createdon" value="2023-05-02T15:05:45.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:09.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Responsable de formaci&amp;#243;" />
+        <field name="ownerid" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="statuscode" value="1" />
+        <field name="pfc_entitytype" value="470000001" />
+        <field name="owningbusinessunit" value="252b4164-e77e-ed11-81ad-000d3adf750c" lookupentity="businessunit" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="owninguser" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" />
+      </record>
+    </records>
+    <m2mrelationships />
+  </entity>
+  <entity name="pfc_departamental_agrupation" displayname="Departament d'adscripció">
+    <records>
+      <record id="7dfbd362-4db3-ed11-83ff-000d3adf7052">
+        <field name="pfc_acronym" value="EMC" />
+        <field name="pfc_departamental_agrupationid" value="7dfbd362-4db3-ed11-83ff-000d3adf7052" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="EMC" />
+        <field name="createdon" value="2023-04-28T10:27:08.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:10.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Empresa i Coneixement" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="5a405187-4db3-ed11-83ff-000d3adf7052">
+        <field name="pfc_acronym" value="TES" />
+        <field name="pfc_departamental_agrupationid" value="5a405187-4db3-ed11-83ff-000d3adf7052" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="TES" />
+        <field name="createdon" value="2023-04-28T10:27:08.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:11.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Territori i Sostenibilitat" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="2cea5f9b-4db3-ed11-83ff-000d3adf7052">
+        <field name="pfc_acronym" value="ARP" />
+        <field name="pfc_departamental_agrupationid" value="2cea5f9b-4db3-ed11-83ff-000d3adf7052" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="ARP" />
+        <field name="createdon" value="2023-04-28T10:27:08.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:11.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Agricultura, Ramaderia, Pesca i Alimentaci&amp;#243;" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="3415feb5-4db3-ed11-83ff-000d3adf7052">
+        <field name="pfc_acronym" value="VEH" />
+        <field name="pfc_departamental_agrupationid" value="3415feb5-4db3-ed11-83ff-000d3adf7052" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="VEH" />
+        <field name="createdon" value="2023-04-28T10:27:08.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:12.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de la Vicepresid&amp;#232;ncia i d&amp;#39;Economia i Hisenda" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="90cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="ACC" />
+        <field name="pfc_departamental_agrupationid" value="90cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="AG" />
+        <field name="createdon" value="2023-04-28T10:27:08.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:13.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Acci&amp;#243; Clim&amp;#224;tica, Alimentaci&amp;#243; i Agenda Rural" />
+        <field name="pfc_order" value="100" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="92cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="XGO" />
+        <field name="pfc_departamental_agrupationid" value="92cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="EX" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:13.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Acci&amp;#243; Exterior i Govern Obert" />
+        <field name="pfc_order" value="70" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="94cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="CLT" />
+        <field name="pfc_departamental_agrupationid" value="94cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="CU" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:14.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Cultura" />
+        <field name="pfc_order" value="140" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="96cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="DSO" />
+        <field name="pfc_departamental_agrupationid" value="96cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="BE" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:14.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Drets Socials" />
+        <field name="pfc_order" value="130" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="98cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="JUS" />
+        <field name="pfc_departamental_agrupationid" value="98cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="JU" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:15.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Just&amp;#237;cia" />
+        <field name="pfc_order" value="150" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="9acb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="PRE" />
+        <field name="pfc_departamental_agrupationid" value="9acb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="PR" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:15.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de la Presid&amp;#232;ncia" />
+        <field name="pfc_order" value="20" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="9ccb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="PDA" />
+        <field name="pfc_departamental_agrupationid" value="9ccb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="GO" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:16.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Pol&amp;#237;tiques Digitals i Administraci&amp;#243; P&amp;#250;blica" />
+        <field name="pfc_order" value="130" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="9ecb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="REU" />
+        <field name="pfc_departamental_agrupationid" value="9ecb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="UR" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:16.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Recerca i Universitats" />
+        <field name="pfc_order" value="90" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="a0cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="SLT" />
+        <field name="pfc_departamental_agrupationid" value="a0cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="SA" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:17.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Salut" />
+        <field name="pfc_order" value="110" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="a2cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="VPD" />
+        <field name="pfc_departamental_agrupationid" value="a2cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="PO" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:17.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Vicepresid&amp;#232;ncia i de Pol&amp;#237;tiques digitals i Territori" />
+        <field name="pfc_order" value="30" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="a4cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="ECO" />
+        <field name="pfc_departamental_agrupationid" value="a4cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="EC" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:18.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Economia i Hisenda" />
+        <field name="pfc_order" value="50" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="a6cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="EDU" />
+        <field name="pfc_departamental_agrupationid" value="a6cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="EN" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:18.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Educaci&amp;#243;" />
+        <field name="pfc_order" value="80" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="a8cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="EMT" />
+        <field name="pfc_departamental_agrupationid" value="a8cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="IU" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:19.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Empresa i Treball" />
+        <field name="pfc_order" value="40" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="aacb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="IFE" />
+        <field name="pfc_departamental_agrupationid" value="aacb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="IF" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:19.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Igualtat i Feminismes" />
+        <field name="pfc_order" value="60" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="accb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="INT" />
+        <field name="pfc_departamental_agrupationid" value="accb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="IT" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:20.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament d&amp;#39;Interior" />
+        <field name="pfc_order" value="120" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="aecb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="FN" />
+        <field name="pfc_departamental_agrupationid" value="aecb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="FN" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:20.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Fons no departamentals" />
+        <field name="pfc_order" value="900" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="b0cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="NA" />
+        <field name="pfc_departamental_agrupationid" value="b0cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="99" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:21.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="No aplica (sense agrupaci&amp;#243; departamental)" />
+        <field name="pfc_order" value="999" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="b2cb9081-c382-ed11-81ad-000d3adf7343">
+        <field name="pfc_acronym" value="OS" />
+        <field name="pfc_departamental_agrupationid" value="b2cb9081-c382-ed11-81ad-000d3adf7343" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="OS" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:21.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="&amp;#210;rgans Superiors i altres" />
+        <field name="pfc_order" value="10" />
+        <field name="statuscode" value="1" />
+      </record>
+      <record id="14e4d510-1998-ed11-aad0-002248a2c9f5">
+        <field name="pfc_acronym" value="TSF" />
+        <field name="pfc_departamental_agrupationid" value="14e4d510-1998-ed11-aad0-002248a2c9f5" />
+        <field name="createdby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_code" value="TSF" />
+        <field name="createdon" value="2023-04-28T10:27:09.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:22.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="Departament de Treball, Afers Socials i Fam&amp;#237;lies" />
+        <field name="pfc_short_name" value="Departament de Treball, Afers Socials i Fam&amp;#237;lies" />
+        <field name="statuscode" value="1" />
+      </record>
+    </records>
+    <m2mrelationships />
+  </entity>
+  <entity name="pfc_settings" displayname="Configuració">
+    <records>
+      <record id="46d8b968-3fef-ed11-8849-000d3adea4bc">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00000" />
+        <field name="pfc_settingsid" value="46d8b968-3fef-ed11-8849-000d3adea4bc" />
+        <field name="createdon" value="2023-07-10T11:45:23.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:23.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Syncro_CATENS_Team" />
+        <field name="pfc_schema_name" value="owner" />
+        <field name="pfc_field_name" value="Propietari" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="3d82c966-c09c-ed11-aad0-000d3adf90aa" />
+      </record>
+      <record id="d64d2f3e-ace2-ed11-a7c7-000d3adea4bc">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00010" />
+        <field name="pfc_settingsid" value="d64d2f3e-ace2-ed11-a7c7-000d3adea4bc" />
+        <field name="createdon" value="2023-07-10T11:45:26.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:26.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="PortaFirmas_GetUsers" />
+        <field name="pfc_field_name" value="PortaFirmas_GetUsers" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000001" />
+        <field name="pfc_value" value="https://prod-03.westeurope.logic.azure.com:443/workflows/35602f0211b74c93a73088cdb74c2cbc/triggers/manual/paths/invoke?api-version=2016-10-01&amp;amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;amp;sv=1.0&amp;amp;sig=nvGobqwEPor4bXHyv1FJDAphtedx9OteKwGnd3r7o7U" />
+      </record>
+      <record id="5743de2e-ba95-ed11-aad0-000d3adea4bc">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00001" />
+        <field name="pfc_settingsid" value="5743de2e-ba95-ed11-aad0-000d3adea4bc" />
+        <field name="createdon" value="2023-07-10T11:45:23.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:23.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Syncro_CATENS_1" />
+        <field name="pfc_schema_name" value="pfc_grade_of_participation" />
+        <field name="pfc_field_name" value="Grau de participacio" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="1-Majorit&amp;#224;ria" />
+      </record>
+      <record id="f18526a8-51cd-ed11-b597-000d3adea4bc">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00013" />
+        <field name="pfc_settingsid" value="f18526a8-51cd-ed11-b597-000d3adea4bc" />
+        <field name="createdon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Organizador_Cita" />
+        <field name="pfc_schema_name" value="organizer" />
+        <field name="pfc_field_name" value="Organitzador" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" />
+      </record>
+      <record id="f7163fef-44f5-ed11-8849-000d3adf7052">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00017" />
+        <field name="pfc_settingsid" value="f7163fef-44f5-ed11-8849-000d3adf7052" />
+        <field name="createdon" value="2023-07-10T11:45:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:29.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="PortalUrl" />
+        <field name="pfc_schema_name" value="msevtmgt_EventURL" />
+        <field name="pfc_field_name" value="Adre&amp;#231;a URL" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="https://eco-mpfc-web.powerappsportals.com/" />
+      </record>
+      <record id="c447311b-0c11-ee11-8f6d-000d3adf7052">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00006" />
+        <field name="pfc_settingsid" value="c447311b-0c11-ee11-8f6d-000d3adf7052" />
+        <field name="createdon" value="2023-07-10T11:45:25.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:25.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="SyncCatens_URL" />
+        <field name="pfc_schema_name" value="URL" />
+        <field name="pfc_field_name" value="URL" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="https://azurecatens.azurewebsites.net/api/CallCatens/codi/ENTITYCODE?code=9ENW2NsICgtJR0v0TYzk7YHmq1tbYuyHvPs/viw1kjFLzKQ7fpQMzQ==" />
+      </record>
+      <record id="e00eb8c4-e605-ee11-8f6e-000d3adf7052">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00007" />
+        <field name="pfc_settingsid" value="e00eb8c4-e605-ee11-8f6e-000d3adf7052" />
+        <field name="createdon" value="2023-07-10T11:45:25.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:25.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Aprover PortaSignatures" />
+        <field name="pfc_schema_name" value="pfc_name" />
+        <field name="pfc_field_name" value="Nom" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="00000000T#Persona#Fict&amp;#237;cia# #SONDES#persona.ficticia@outlook.com" />
+      </record>
+      <record id="8a82a7eb-11ad-ed11-aad0-000d3adf7052">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00018" />
+        <field name="pfc_settingsid" value="8a82a7eb-11ad-ed11-aad0-000d3adf7052" />
+        <field name="createdon" value="2023-07-10T11:45:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:53:07.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_configuration_group_name" value="Bustia_Correu" />
+        <field name="pfc_field_name" value="ID" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000001" />
+        <field name="pfc_value" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" />
+      </record>
+      <record id="294abbfd-11ad-ed11-aad0-000d3adf7052">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00019" />
+        <field name="pfc_settingsid" value="294abbfd-11ad-ed11-aad0-000d3adf7052" />
+        <field name="createdon" value="2023-07-10T11:45:29.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:47:05.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_configuration_group_name" value="Bustia_Correu" />
+        <field name="pfc_field_name" value="Name" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000001" />
+        <field name="pfc_value" value="Politica Fiscal Corporativa (PRE)" />
+      </record>
+      <record id="4f9872a9-13ad-ed11-aad0-000d3adf7052">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00020" />
+        <field name="pfc_settingsid" value="4f9872a9-13ad-ed11-aad0-000d3adf7052" />
+        <field name="createdon" value="2023-07-10T11:45:30.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:30.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="DGT_Link" />
+        <field name="pfc_schema_name" value="pfc_dgtlink" />
+        <field name="pfc_field_name" value="Enlla&amp;#231; DGT" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=" />
+      </record>
+      <record id="5f00e74d-0c97-ed11-aad1-000d3adf716f">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00003" />
+        <field name="pfc_settingsid" value="5f00e74d-0c97-ed11-aad1-000d3adf716f" />
+        <field name="createdon" value="2023-07-10T11:45:24.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:24.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Syncro_CATENS_3" />
+        <field name="pfc_schema_name" value="pfc_membership_administration" />
+        <field name="pfc_field_name" value="Administraci&amp;#243; d&amp;#39;adscripci&amp;#243;" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="1-Administraci&amp;#243; de la Generalitat de Catalunya" />
+      </record>
+      <record id="7c9da897-0c97-ed11-aad1-000d3adf716f">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00002" />
+        <field name="pfc_settingsid" value="7c9da897-0c97-ed11-aad1-000d3adf716f" />
+        <field name="createdon" value="2023-07-10T11:45:23.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:23.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Syncro_CATENS_2" />
+        <field name="pfc_schema_name" value="pfc_registrationstatus" />
+        <field name="pfc_field_name" value="Estat registral" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="3-Prebaixa" />
+      </record>
+      <record id="97328676-1297-ed11-aad1-000d3adf716f">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00004" />
+        <field name="pfc_settingsid" value="97328676-1297-ed11-aad1-000d3adf716f" />
+        <field name="createdon" value="2023-07-10T11:45:24.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:24.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Syncro_CATENS_3" />
+        <field name="pfc_schema_name" value="pfc_catalogentitytype" />
+        <field name="pfc_field_name" value="Tipus d&amp;#39;ens cat&amp;#224;leg" />
+        <field name="pfc_operator" value="in" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="6-Consorcis,2-Fundacions" />
+      </record>
+      <record id="1aee54d8-1e97-ed11-aad1-000d3adf716f">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00005" />
+        <field name="pfc_settingsid" value="1aee54d8-1e97-ed11-aad1-000d3adf716f" />
+        <field name="createdon" value="2023-07-10T11:45:24.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:24.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Syncro_CATENS_3" />
+        <field name="pfc_schema_name" value="pfc_grade_of_participation" />
+        <field name="pfc_field_name" value="Grau de participacio" />
+        <field name="pfc_operator" value="in" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="2-Minorit&amp;#224;ria,3-Parit&amp;#224;ria" />
+      </record>
+      <record id="89d71225-ccfe-ed11-8f6e-000d3adf727d">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00008" />
+        <field name="pfc_settingsid" value="89d71225-ccfe-ed11-8f6e-000d3adf727d" />
+        <field name="createdon" value="2023-07-10T11:45:25.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:25.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Signant PortaSignatures" />
+        <field name="pfc_schema_name" value="pfc_name" />
+        <field name="pfc_field_name" value="Nom" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="00000000T#Persona#Fict&amp;#237;cia# #SONDES#persona.ficticia@outlook.com" />
+      </record>
+      <record id="a5ce5137-ccfe-ed11-8f6e-000d3adf727d">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00009" />
+        <field name="pfc_settingsid" value="a5ce5137-ccfe-ed11-8f6e-000d3adf727d" />
+        <field name="createdon" value="2023-07-10T11:45:26.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:26.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Petitioner PortaSignatures" />
+        <field name="pfc_schema_name" value="pfc_name" />
+        <field name="pfc_field_name" value="Nom" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="00000000T#Persona#Fict&amp;#237;cia# #SONDES#persona.ficticia@outlook.com" />
+      </record>
+      <record id="79138403-52cd-ed11-b597-000d3adf7ec5">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00014" />
+        <field name="pfc_settingsid" value="79138403-52cd-ed11-b597-000d3adf7ec5" />
+        <field name="createdon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Propietario_Cita" />
+        <field name="pfc_schema_name" value="owner" />
+        <field name="pfc_field_name" value="Propietari" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" />
+      </record>
+      <record id="2e4dc321-52cd-ed11-b597-000d3adf7ec5">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00015" />
+        <field name="pfc_settingsid" value="2e4dc321-52cd-ed11-b597-000d3adf7ec5" />
+        <field name="createdon" value="2023-07-10T11:45:28.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:28.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Organizador_Email" />
+        <field name="pfc_schema_name" value="From" />
+        <field name="pfc_field_name" value="De" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" />
+      </record>
+      <record id="3e4f81c0-52cd-ed11-b597-000d3adf7ec5">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00016" />
+        <field name="pfc_settingsid" value="3e4f81c0-52cd-ed11-b597-000d3adf7ec5" />
+        <field name="createdon" value="2023-07-10T11:45:28.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:28.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Propiertario_Email" />
+        <field name="pfc_schema_name" value="owner" />
+        <field name="pfc_field_name" value="Propietari" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" />
+      </record>
+      <record id="70306e0b-46e5-ed11-a7c7-000d3adf90aa">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00011" />
+        <field name="pfc_settingsid" value="70306e0b-46e5-ed11-a7c7-000d3adf90aa" />
+        <field name="createdon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="PortaFirmas_UploadDocument" />
+        <field name="pfc_field_name" value="PortaFirmas_UploadDocument" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000001" />
+        <field name="pfc_value" value="https://prod-164.westeurope.logic.azure.com:443/workflows/d4d2baeac63442b888669b490ed77ad0/triggers/manual/paths/invoke?api-version=2016-10-01&amp;amp;sp=%2Ftriggers%2Fmanual%2Frun&amp;amp;sv=1.0&amp;amp;sig=tRpo6PjDOfr9f3-vR9yaVdq_45F7gLUXpOfcGEiaC3I" />
+      </record>
+      <record id="73c4e680-47e5-ed11-a7c7-000d3adf90aa">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00012" />
+        <field name="pfc_settingsid" value="73c4e680-47e5-ed11-a7c7-000d3adf90aa" />
+        <field name="createdon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:45:27.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_configuration_group_name" value="Portafirmas_Callback" />
+        <field name="pfc_field_name" value="Portafirmas_Callback" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000001" />
+        <field name="pfc_value" value="ADPUJ1XDKI" />
+      </record>
+      <record id="0b63e1ca-8df5-ed11-8849-002248a3778b">
+        <field name="createdby" value="6b8bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Antonio Gómez Rojas" />
+        <field name="pfc_name" value="C-00021" />
+        <field name="pfc_settingsid" value="0b63e1ca-8df5-ed11-8849-002248a3778b" />
+        <field name="createdon" value="2023-07-10T11:45:30.0000000Z" />
+        <field name="modifiedon" value="2023-07-10T11:46:53.0000000Z" />
+        <field name="statecode" value="0" />
+        <field name="organizationid" value="c6a7e8b5-9ede-ed11-a80b-000d3a64d053" lookupentity="organization" lookupentityname="preproduccio-eco-mpfc" />
+        <field name="modifiedby" value="548bb531-e9de-ed11-a7c6-000d3ad7c7ec" lookupentity="systemuser" lookupentityname="Politica Fiscal Corporativa (PREPROD)" />
+        <field name="pfc_configuration_group_name" value="bustia_correu" />
+        <field name="pfc_schema_name" value="internalemailaddress" />
+        <field name="pfc_field_name" value="Correu electr&amp;#242;nic principal" />
+        <field name="pfc_operator" value="eq" />
+        <field name="statuscode" value="470000001" />
+        <field name="pfc_configuration_types" value="470000000" />
+        <field name="pfc_value" value="politicafiscal.pre.atc@gencat.cat" />
+      </record>
+    </records>
+    <m2mrelationships />
+  </entity>
+</entities>

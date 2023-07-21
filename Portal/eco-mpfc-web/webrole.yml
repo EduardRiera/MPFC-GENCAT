@@ -1,0 +1,32 @@
+- adx_anonymoususersrole: true
+  adx_authenticatedusersrole: false
+  adx_name: Usuaris anònims
+  adx_webroleid: 2a2638ae-c8b2-ed11-83ff-0022489fa802
+- adx_anonymoususersrole: false
+  adx_authenticatedusersrole: false
+  adx_name: Usuaris autenticats
+  adx_webroleid: 2c2638ae-c8b2-ed11-83ff-0022489fa802
+  statecode: 1
+  statuscode: 2
+- adx_anonymoususersrole: false
+  adx_authenticatedusersrole: false
+  adx_name: Administradors
+  adx_webroleid: 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+- adx_anonymoususersrole: false
+  adx_authenticatedusersrole: true
+  adx_name: Authenticated Users
+  adx_webroleid: 61ff5a93-52ee-ed11-8849-000d3adea4bc
+- adx_anonymoususersrole: false
+  adx_authenticatedusersrole: false
+  adx_description: El conjunt de permisos que els contactes de les entitats tenen per defecte
+  adx_name: UsuarisNormals
+  adx_webroleid: aa82a28e-68c5-ed11-b597-000d3adea4bc
+- adx_anonymoususersrole: false
+  adx_authenticatedusersrole: false
+  adx_description: Aquest rol el tindran només aquell contactes que l'APFC identifiqui com a responsable d'entitat. A part de fer el mateix que fan els usuaris auntenticats, podran donar d'alta, modificar i desvincular contactes de l'entitat, veure totes les consultes, consultes DGT, formacions que aquests contactes han reallitzat, vinculat a la entitat, i actualitzar dades mestres de la entitat.
+  adx_name: ResponsableEntitat
+  adx_webroleid: b93472c7-fbc6-ed11-b597-000d3adf7052
+- adx_anonymoususersrole: false
+  adx_authenticatedusersrole: false
+  adx_name: ResponsableFormacio
+  adx_webroleid: e305782e-4a04-ee11-8f6e-000d3adf7052

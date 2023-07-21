@@ -1,0 +1,15 @@
+adx_append: true
+adx_appendto: true
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: pfc_companylevel
+adx_entityname: 15 - Llegir i sel·leccionar Càrrec
+adx_entitypermission_webrole:
+- 2c2638ae-c8b2-ed11-83ff-0022489fa802
+- 4f490faf-c8b2-ed11-83ff-000d3adf7ec5
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: e2236e47-83df-ed11-a7c6-000d3adf7052
+adx_read: true
+adx_scope: 756150000
+adx_write: true

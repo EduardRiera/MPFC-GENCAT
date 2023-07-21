@@ -1,0 +1,67 @@
+name: export-dev-into-main
+run-name: Push ${{vars.SOLUTION_NAME }} from DEV to MAIN by @${{ github.actor }}
+# Export solution from DEV D365 environment
+#  unpack it and commit into main branch
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  export-dev-into-main:
+    runs-on: windows-latest
+    environment: MAIN    
+
+    steps:
+    - name: checkout action
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        lfs: true
+
+    - name: who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+
+    - name: export-managed-solution action
+      uses: microsoft/powerplatform-actions/export-solution@v0
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        solution-name: ${{vars.SOLUTION_NAME }}
+        solution-output-file: ${{vars.SOLUTION_RELEASE_FOLDER}}/${{vars.SOLUTION_NAME}}.zip
+        managed: true
+        overwrite: true
+
+    - name: export-ummanaged-solution action
+      uses: microsoft/powerplatform-actions/export-solution@v0
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        solution-name: ${{vars.SOLUTION_NAME}}
+        solution-output-file: ${{vars.SOLUTION_EXPORTED_FOLDER}}/${{vars.SOLUTION_NAME}}.zip
+        overwrite: true
+
+    - name: unpack-solution action
+      uses: microsoft/powerplatform-actions/unpack-solution@v0
+      with:
+        solution-file: ${{vars.SOLUTION_EXPORTED_FOLDER}}/${{vars.SOLUTION_NAME}}.zip
+        solution-folder: ${{vars.SOLUTION_DETAIL_FOLDER}}/${{vars.SOLUTION_NAME}}
+        solution-type: 'Unmanaged'
+        overwrite-files: true
+
+    - name: git-commit-and-push
+      run: |
+        git config --global user.email "no-reply@github.com"
+        git config --global user.name "GitHub Actions"
+        git add --all 
+        git commit -m "Exporting ${{vars.SOLUTION_NAME }} from ${{vars.ENVIRONMENT_URL}}."
+        git push

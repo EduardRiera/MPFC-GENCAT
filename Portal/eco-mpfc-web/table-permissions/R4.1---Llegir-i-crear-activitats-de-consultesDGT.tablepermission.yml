@@ -1,0 +1,13 @@
+adx_append: true
+adx_appendto: true
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: activitypointer
+adx_entityname: R4.1 - Llegir i crear activitats de consultesDGT
+adx_entitypermission_webrole: []
+adx_entitypermissionid: a438d148-cfc7-ed11-b597-000d3adea4bc
+adx_parententitypermission: 63242e0f-6bc7-ed11-b597-000d3adf7052
+adx_parentrelationship: pfc_query_dgt_ActivityPointers
+adx_read: true
+adx_scope: 756150003
+adx_write: false

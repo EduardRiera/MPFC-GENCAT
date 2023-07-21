@@ -1,0 +1,12 @@
+adx_append: true
+adx_appendto: true
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: contact
+adx_entityname: 3 - Editar el propi contacte
+adx_entitypermission_webrole:
+- 61ff5a93-52ee-ed11-8849-000d3adea4bc
+adx_entitypermissionid: 8f258eeb-6fc5-ed11-b597-000d3adf727d
+adx_read: false
+adx_scope: 756150004
+adx_write: true

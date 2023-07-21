@@ -1,0 +1,53 @@
+adx_appendquerystring: false
+adx_associatecurrentportaluser: true
+adx_attachfile: false
+adx_attachfileallowmultiple: false
+adx_attachfilerequired: false
+adx_attachfilerestrictaccept: false
+adx_autogeneratesteps: false
+adx_captcharequired: false
+adx_entityformid: 6f906703-38c8-ed11-b597-000d3adea4bc
+adx_entityname: pfc_contact_account
+adx_entitypermissionsenabled: true
+adx_forceallfieldsrequired: true
+adx_formname: 'Portals: Contact Account'
+adx_geolocation_displaymap: false
+adx_geolocation_enabled: false
+adx_geolocation_maptype: 756150000
+adx_hideformonsuccess: true
+adx_instructions: >-
+  [
+
+    {
+
+      "LCID": 1027,
+
+      "Value": "<b>Acceptació</b>\n<div>En vincular-se a aquest/a departament/entitat confirma que en forma part i dóna permís als responsables del departament/entitat a veure les seves dades d’alta. Aquests responsables podran revocar el seu accés en qualsevol moment. </div>\n<br>"
+
+    }
+
+  ]
+adx_mode: 100000000
+adx_name: PerfilUsuari-CrearContacteEntitat
+adx_onsuccess: 756150000
+adx_populatereferenceentitylookupfield: true
+adx_portaluserlookupattributeisactivityparty: false
+adx_recommendedfieldsrequired: false
+adx_recordsourceallowcreateonnull: false
+adx_redirecturlappendentityidquerystring: false
+adx_redirectwebpage: 8537efd8-ebc0-ed11-83ff-000d3adea4bc
+adx_referenceentitylogicalname: account
+adx_referenceentityrelationshipname: pfc_pfc_contact_account_accountid_account
+adx_referenceentityshowreadonlyform: false
+adx_referenceentitysourcetype: 756150000
+adx_referencequerystringisprimarykey: true
+adx_referencequerystringname: id
+adx_renderwebresourcesinline: false
+adx_setentityreference: false
+adx_showcaptchaforauthenticatedusers: false
+adx_showownerfields: false
+adx_showunsupportedfields: false
+adx_tabname: General
+adx_targetentityportaluserlookupattribute: pfc_contactid
+adx_tooltipenabled: false
+adx_validationsummarylinksenabled: true

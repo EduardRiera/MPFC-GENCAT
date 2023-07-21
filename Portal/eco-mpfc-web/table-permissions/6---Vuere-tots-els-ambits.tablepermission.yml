@@ -1,0 +1,12 @@
+adx_append: true
+adx_appendto: true
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: pfc_ambit
+adx_entityname: 6 - Vuere tots els ambits
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+adx_entitypermissionid: f8227cf6-76c5-ed11-b597-000d3adea4bc
+adx_read: true
+adx_scope: 756150000
+adx_write: false

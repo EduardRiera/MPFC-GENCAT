@@ -1,0 +1,544 @@
+body {
+            background: /* @outer-background */
+            #e0e0e0/* @outer-background */
+            ;
+        }
+    
+        form {
+            background-color: /* @inner-background */
+            #F1F1F1/* @inner-background */
+            ;
+        }
+
+        form button {
+            background-color: /* @color1 */
+            #dfdfdf/* @color1 */
+            ;
+        }
+
+        input {
+            color: /* @body-text-color */
+            #000000/* @body-text-color */
+            ;
+            background-color: /* @color4 */
+            #ffffff/* @color4 */
+            ;
+        }
+
+        select {
+            color: /* @body-text-color */
+            #000000/* @body-text-color */
+            ;
+            background-color: /* @color4 */
+            #ffffff/* @color4 */
+            ;
+        }
+        
+        .grey-background {
+            background: /* @inner-background */
+            #f1f1f1/* @inner-background */
+            ;
+            color: /* @body-text-color */ 
+            #000000 /* @body-text-color */
+            ;
+        }
+        
+        .container {
+            width: 100%;
+        }
+        
+        .promotional {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .promotional .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+        
+        .promotional .navSection .container {
+            background: /* @color5 */
+            #000000/* @color5 */
+            ;
+        }
+        
+        .promotional .navSection nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        
+        .promotional .navSection nav ul li {
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .promotional .navSection .container {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .promotional .navSection .logo {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        
+        .promotional .navSection .navigationBar {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        
+        .promotional .navSection .navigationBar div {
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+            font-size: /* @body-text-size */
+            18px/* @body-text-size */
+            ;
+            margin: 0;
+        }
+        
+        .promotional .navSection .navigationBar div a {
+            text-decoration: none;
+            color: /* @body-text-color */
+            #ffffff/* @body-text-color */
+            ;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+            font-size: /* @body-text-size */
+            18px/* @body-text-size */
+            ;
+        }
+
+        .promotional .articles .flexContainerFather {
+            background: /* @color2 */
+            #f4f3f3/* @color2 */
+            ;
+        }
+
+        .promotional .articles .flexContainer {
+            display: block;
+        }
+        
+        .promotional .articles .flexItem {
+            width: 100%;
+        }
+        
+        .promotional .articles .textContainer {
+            background: /* @color2 */
+            #f4f3f3/* @color2 */
+            ;
+            display: block;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+        }
+        
+        .promotional .articles .textContainer .title {
+            color: /* @body-text-color */
+            #000000/* @body-text-color */
+            ;
+            font-size: 240%;
+        }
+        
+        .promotional .articles .textContainer .text {
+            color: /* @body-text-color */
+            #666666/* @body-text-color */
+            ;
+            font-size: 120%;
+            padding-bottom: 30px;
+        }
+        
+        .promotional .articles .flexContainer img {
+            margin: 0 auto;
+        }
+        
+        .promotional .subscribeForm {
+            color: /* @body-text-color */
+            #ffffff/* @body-text-color */
+            ;
+        }
+
+        .promotional .subscribeForm .container {
+            background: /* @hero-image */
+            url( https://mktdplp102cdn.azureedge.net/public/1.91.2019.0/static/forms/images/placeholders/1280x512.png )/* @hero-image */
+            no-repeat center;
+            background-size: cover;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .title,
+        .promotional .subscribeForm .flexContainerFather .subTitle {
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .title p,
+        .promotional .subscribeForm .flexContainerFather .subTitle p {
+            text-align: center;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .titles {
+            padding: 0 10px;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .title {
+            font-size: 433%;
+            line-height: normal;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .title p {
+            margin-bottom: 0px;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .subTitle {
+            font-size: 133%;
+        }
+        
+        .promotional .subscribeForm .flexContainerFather .form-content {
+            padding: 0 10px;
+        }
+        
+        .promotional .news {
+            padding-top: 43px;
+            padding-bottom: 57px;
+            background: /* @inner-background */
+            #ffffff/* @inner-background */
+            ;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+            color: /* @body-text-color */
+            #000000/* @body-text-color */
+            ;
+        }
+        
+        .promotional .news .articleText p {
+            font-size: 93%;
+            line-height: 18px;
+        }
+        
+        .promotional .news h3 {
+            padding-bottom: 15px;
+            font-size: 173%;
+        }
+        
+        .promotional .news h3 img {
+            margin-right: 10px;
+        }
+        
+        .promotional .news .title {
+            color: /* @body-text-color */
+            #000000/* @body-text-color */
+            ;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+            font-size: 267%;
+            line-height: normal; 
+        }      
+        .promotional .news .subTitle {        
+            color: /* @body-text-color */
+            #666666/* @body-text-color */
+            ;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+            font-size: 133%;
+            margin-bottom: 50px;
+        }
+        
+        .promotional footer {
+            color: /* @body-text-color */
+            #ffffff/* @body-text-color */
+            ;
+        }
+        
+        .promotional footer p {
+            margin: 0;
+        }
+        
+        .promotional footer .socialContainer {
+            background: /* @color3 */
+            #00bff3/* @color3 */
+            ;
+            padding: 45px 0;
+        }
+        
+        .promotional footer .socialContainer .title p {
+            font-size: 300%;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+        }
+        
+        .promotional footer .socialContainer .subTitle p {
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+            font-size: 93%;
+        }
+        
+        .promotional footer .socialContainer .socialIcons {
+            margin-top: 30px;
+        }
+        
+        .promotional footer .copyRightContainer {
+            background: /* @color5 */
+            #000000/* @color5 */
+            ;
+            padding: 30px 10px;
+        }
+        
+        .promotional footer .copyRightContainer p {
+            font-size: 93%;
+            font-family: /* @font-family */
+            "Segoe UI"/* @font-family */
+            ;
+        }
+        
+        @media all and (min-width: 640px) {
+            .promotional .articles .flexContainerFather {
+                padding-top: 0 !important;
+            }
+            .promotional .articles .flexContainerFather .flexContainer {
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+            .promotional .articles .flexContainerFather .textContainer {
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                width: 50%;
+                margin: 0 auto;
+            }
+            .promotional .articles .flexContainerFather .textBlock .title {
+                font-size: 240%;
+                text-align: left;
+                line-height: normal;
+            }
+            .promotional .articles .flexContainerFather .textBlock .text {
+                text-align: left;
+            }
+            .promotional .articles .flexContainerFather .flexContainer {
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+            .promotional .articles .flexContainerFather .item1,
+            .promotional .articles .flexContainerFather .item2 {
+                width: 50%;
+                -webkit-flex-grow: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+            }
+            .promotional .articles .flexContainerFather .flexInverseOrder .item1 {
+                -webkit-order: 2;
+                -ms-flex-order: 2;
+                order: 2;
+            }
+            .promotional .articles .flexContainerFather .flexInverseOrder .item2 {
+                -webkit-order: 1;
+                -ms-flex-order: 1;
+                order: 1;
+            }
+            .promotional .news h3 {
+                font-size: 153%;
+            }
+            .promotional .news .gutter {
+                margin-left: 6%;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .promotional .navSection nav ul {
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+            .promotional .navSection .logo {
+                padding-left: 50px;
+                -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                margin-bottom: 0;
+            }
+            .promotional .navSection .navigationBar {
+                -webkit-justify-content: flex-end;
+                -ms-flex-pack: end;
+                justify-content: flex-end;
+            }
+            .promotional .flexContainer {
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+            .promotional .item1,
+            .promotional .item2 {
+                width: 50%;
+                -webkit-flex-grow: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+            }
+            .promotional .flexInverseOrder .item1 {
+                -webkit-order: 2;
+                -ms-flex-order: 2;
+                order: 2;
+            }
+            .promotional .flexInverseOrder .item2 {
+                -webkit-order: 1;
+                -ms-flex-order: 1;
+                order: 1;
+            }
+            .promotional .articles {
+                padding-bottom: 0px;
+            }
+            .promotional .articles .textContainer {
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                -ms-grid-row-align: center;
+                align-items: center;
+            }
+            .promotional .articles .textContainer .textBlock {
+                margin: 0 auto;
+                max-width: 80%;
+            }
+            .promotional .articles .textContainer .textBlock .title {
+                font-size: 320%;
+                text-align: left;
+            }
+            .promotional .articles .textContainer .textBlock .text {
+                font-size: 160%;
+                text-align: left;
+            }
+            .promotional .subscribeForm .flexContainerFather,
+            .promotional .navSection .flexContainerFather {
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+            .promotional .subscribeForm .flexContainerFather .flexItem,
+            .promotional .navSection .flexContainerFather .flexItem {
+                width: 50%;
+            }
+            .promotional .subscribeForm .titles {
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                padding-right: 0px !important;
+                padding-left: 50px !important;
+            }
+            .promotional .subscribeForm .title p,
+            .promotional .subscribeForm .subTitle p {
+                text-align: left !important;
+            }
+            .promotional .subscribeForm .title p {
+                font-size: 180%;
+            }
+            .promotional .subscribeForm .subTitle p {
+                font-size: 160%;
+            }
+            .promotional .news {
+                padding-top: 83px;
+                padding-bottom: 97px;
+            }
+            .promotional .news .gutter {
+                margin-left: 6%;
+            }
+            .promotional .news .title {
+                font-size: 400%;
+            }
+            .promotional .news .subTitle {
+                font-size: 160%;
+                margin-bottom: 100px;
+            }
+            .promotional footer .socialContainer .title p {
+                font-size: 400%;
+            }
+            .promotional footer .socialContainer .subTitle p {
+                font-size: /* @body-text-size */
+                18px/* @body-text-size */
+                ;
+            }
+            .promotional footer .socialContainer .socialIcons {
+                margin-top: 30px;
+            }
+            .promotional footer .copyRightContainer {
+                padding: 40px;
+            }
+            .promotional footer .copyRightContainer p {
+                font-size: /* @body-text-size */
+                18px/* @body-text-size */
+                ;
+            }
+        }
+        
+        @media (max-width: 1280px) {
+            .promotional .container {
+                width: 100%;
+            }
+        }

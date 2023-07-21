@@ -1,0 +1,14 @@
+- adx_adddescription: false
+  adx_attributelogicalname: statecode
+  adx_descriptionposition: 100000000
+  adx_entityform: 562da58e-a5cc-ed11-b597-000d3adf7052
+  adx_entityformforcreate: 562da58e-a5cc-ed11-b597-000d3adf7052
+  adx_entityformmetadataid: b736b4e6-a5cc-ed11-b597-000d3adf7052
+  adx_fieldisrequired: false
+  adx_ignoredefaultvalue: false
+  adx_onsavetype: 100000000
+  adx_onsavevalue: 1
+  adx_randomizeoptionsetvalues: false
+  adx_setvalueonsave: true
+  adx_type: 100000000
+  adx_useattributedescriptionproperty: true

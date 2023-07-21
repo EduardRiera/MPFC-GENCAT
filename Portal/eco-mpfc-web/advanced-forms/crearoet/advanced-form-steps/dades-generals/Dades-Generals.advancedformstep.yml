@@ -1,0 +1,55 @@
+adx_allowmultiplefiles: false
+adx_appendquerystring: false
+adx_associatecurrentportaluser: true
+adx_attachfile: false
+adx_attachfilerequired: false
+adx_attachfilerestrictaccept: false
+adx_autogeneratesteps: false
+adx_captcharequired: false
+adx_createautonumber: false
+adx_editexistingrecordpermitted: false
+adx_entitypermissionsenabled: true
+adx_forceallfieldsrequired: false
+adx_formname: 'Portals: Formulari de OET de diversos passos'
+adx_geolocation_displaymap: false
+adx_geolocation_enabled: false
+adx_geolocation_maptype: 756150000
+adx_hideformonsuccess: true
+adx_instructions: >-
+  [
+
+    {
+
+      "LCID": 1027,
+
+      "Value": ""
+
+    }
+
+  ]
+adx_loguser: false
+adx_mode: 100000000
+adx_movepreviouspermitted: true
+adx_multiplerecordsperuserpermitted: false
+adx_name: Dades Generals
+adx_nextstep: c6cb445f-00e9-ed11-a7c6-000d3adf7052
+adx_populatereferenceentitylookupfield: false
+adx_portaluserlookupattributeisactivityparty: false
+adx_recommendedfieldsrequired: false
+adx_redirecturlappendentityidquerystring: false
+adx_referenceentityshowreadonlyform: false
+adx_referenceentitysourcetype: 100000001
+adx_referencequerystringisprimarykey: true
+adx_renderwebresourcesinline: false
+adx_setentityreference: false
+adx_showcaptchaforauthenticatedusers: false
+adx_showownerfields: false
+adx_showunsupportedfields: false
+adx_tabname: tab_3
+adx_targetentitylogicalname: pfc_tax_transcendence_operation
+adx_targetentityportaluserlookupattribute: pfc_applicantid
+adx_tooltipenabled: false
+adx_type: 100000001
+adx_validationsummarylinksenabled: true
+adx_webform: 8508d580-42cd-ed11-b597-002248a1c671
+adx_webformstepid: c7d872ac-42cd-ed11-b597-002248a1c671

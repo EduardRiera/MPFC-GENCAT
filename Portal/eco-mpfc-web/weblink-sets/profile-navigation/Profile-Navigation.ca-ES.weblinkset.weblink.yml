@@ -1,0 +1,46 @@
+- adx_disablepagevalidation: false
+  adx_displayimageonly: false
+  adx_displayorder: 3
+  adx_displaypagechildlinks: false
+  adx_name: Centre de Subscripció
+  adx_openinnewwindow: false
+  adx_pageid: 96be6d41-ccff-ed11-8f6e-000d3adf90aa
+  adx_publishingstateid: d5352aac-c8b2-ed11-83ff-000d3adf70e3
+  adx_robotsfollowlink: true
+  adx_weblinkid: 19847e09-8b00-ee11-8f6e-000d3adf7052
+  adx_weblinksetid: e7b1f0ac-c8b2-ed11-83ff-002248a2c9f5
+- adx_disablepagevalidation: false
+  adx_displayimageonly: false
+  adx_displayorder: 1
+  adx_displaypagechildlinks: false
+  adx_name: La meva Entitat
+  adx_openinnewwindow: false
+  adx_pageid: ba7b681b-f9ce-ed11-b597-000d3adf7052
+  adx_publishingstateid: d5352aac-c8b2-ed11-83ff-000d3adf70e3
+  adx_robotsfollowlink: true
+  adx_weblinkid: 8f6905e1-cffe-ed11-8f6e-000d3adf90aa
+  adx_weblinksetid: e7b1f0ac-c8b2-ed11-83ff-002248a2c9f5
+- adx_disablepagevalidation: false
+  adx_displayimageonly: false
+  adx_displayorder: 4
+  adx_displaypagechildlinks: false
+  adx_name: Canvi d'Entitat
+  adx_openinnewwindow: false
+  adx_pageid: 4493b58f-0bef-ed11-8849-000d3adf7052
+  adx_publishingstateid: d5352aac-c8b2-ed11-83ff-000d3adf70e3
+  adx_robotsfollowlink: true
+  adx_weblinkid: a7f9cd45-0def-ed11-8849-000d3adf7052
+  adx_weblinksetid: e7b1f0ac-c8b2-ed11-83ff-002248a2c9f5
+- adx_disablepagevalidation: false
+  adx_displayimageonly: false
+  adx_displayorder: 1
+  adx_displaypagechildlinks: false
+  adx_name: El meu perfil
+  adx_openinnewwindow: false
+  adx_pageid: 1ebc857c-5bf5-ed11-8849-000d3adf90aa
+  adx_publishingstateid: d5352aac-c8b2-ed11-83ff-000d3adf70e3
+  adx_robotsfollowlink: true
+  adx_weblinkid: d8352aac-c8b2-ed11-83ff-000d3adf70e3
+  adx_weblinksetid: e7b1f0ac-c8b2-ed11-83ff-002248a2c9f5
+  statecode: 1
+  statuscode: 2

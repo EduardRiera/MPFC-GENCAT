@@ -1,0 +1,14 @@
+adx_append: true
+adx_appendto: true
+adx_create: true
+adx_delete: true
+adx_entitylogicalname: pfc_contact_account
+adx_entityname: 3.1 - Veure les entitats associades al meu contacte
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+adx_entitypermissionid: a18eae55-36c8-ed11-b597-000d3adf727d
+adx_parententitypermission: 8f258eeb-6fc5-ed11-b597-000d3adf727d
+adx_parentrelationship: pfc_pfc_rel_contact_account_contactid
+adx_read: true
+adx_scope: 756150003
+adx_write: true

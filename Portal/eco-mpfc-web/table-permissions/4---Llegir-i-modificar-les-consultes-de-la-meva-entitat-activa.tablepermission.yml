@@ -1,0 +1,13 @@
+adx_accountrelationship: pfc_pfc_query_accountid_account
+adx_append: true
+adx_appendto: true
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: pfc_query
+adx_entityname: 4 - Llegir i modificar les consultes de la meva entitat activa
+adx_entitypermission_webrole:
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+adx_entitypermissionid: 07c3a31e-71c5-ed11-b597-000d3adf727d
+adx_read: true
+adx_scope: 756150002
+adx_write: false

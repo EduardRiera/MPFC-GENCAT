@@ -1,0 +1,18 @@
+body {
+    font-family: /* @font-family */ Verdana, /* @font-family */ Arial,
+        /* @font-family */ sans-serif /* @font-family */;
+    font-size: /* @body-text-size */ 14px /* @body-text-size */;
+    color: /* @body-text-color */ #000 /* @body-text-color */;
+}
+
+[data-layout="true"] {
+    margin: 0 auto;
+    max-width: /* @layout-max-width */
+    600px /* @layout-max-width */
+    ;
+}
+@media only screen and (max-width: 768px) {
+    .columnContainer {
+        width: 100% !important;
+    }
+}

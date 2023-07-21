@@ -1,0 +1,16 @@
+- adx_adddescription: false
+  adx_attributelogicalname: parent_contactid
+  adx_descriptionposition: 100000000
+  adx_entityform: fce3000b-46ea-ed11-8849-000d3adea4bc
+  adx_entityformforcreate: fce3000b-46ea-ed11-8849-000d3adea4bc
+  adx_entityformmetadataid: 23cb146c-46ea-ed11-8849-000d3adea4bc
+  adx_fieldisrequired: false
+  adx_ignoredefaultvalue: true
+  adx_onsavefromattribute: parentcustomerid
+  adx_onsavetype: 100000002
+  adx_prepopulatefromattribute: parentcustomerid
+  adx_prepopulatetype: 100000002
+  adx_randomizeoptionsetvalues: false
+  adx_setvalueonsave: true
+  adx_type: 100000000
+  adx_useattributedescriptionproperty: true

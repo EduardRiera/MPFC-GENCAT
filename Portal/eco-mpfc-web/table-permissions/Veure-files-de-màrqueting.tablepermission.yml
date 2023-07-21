@@ -1,0 +1,14 @@
+adx_append: false
+adx_appendto: false
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: msdyncrm_file
+adx_entityname: Veure files de màrqueting
+adx_entitypermission_webrole:
+- 2c2638ae-c8b2-ed11-83ff-0022489fa802
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: 139481b6-9fda-ed11-a7c7-000d3adf90aa
+adx_read: true
+adx_scope: 756150000
+adx_write: false

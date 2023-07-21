@@ -1,0 +1,289 @@
+- adx_name: Suscripcion/Email
+  adx_sitesettingid: 07f201f3-96f0-ed11-8849-000d3adf7052
+  adx_value: 7d3fe4d4-feef-ed11-8849-000d3adea4bc
+- adx_name: Suscripcion/Telephone
+  adx_sitesettingid: 0aeada8d-a7f0-ed11-8849-000d3adf7052
+  adx_value: 7d50387e-f9ef-ed11-8849-000d3adf7052
+- adx_description: Configuració del lloc que controla la profunditat de la jerarquia de la pàgina web que es clona en una llengua compatible acabada d’afegir. Els conjunts d’enllaços web i els fragments de contingut es clonaran en la llengua acabada d’afegir quan es clonin les pàgines web.
+  adx_name: MultiLanguage/MaximumDepthToClone
+  adx_sitesettingid: 124e26ab-c8b2-ed11-83ff-000d3adf7052
+  adx_value: 3
+- adx_name: Suscripcion/AccountId
+  adx_sitesettingid: 12a34eb4-10f0-ed11-8849-000d3adf7052
+  adx_value: a706f4ca-faef-ed11-8849-000d3adf7052
+- adx_name: Authentication/SAML2/SAML_1/AssertionConsumerServiceUrl
+  adx_sitesettingid: 144057e9-50c3-ed11-83ff-000d3adf727d
+  adx_value: https://integracio-eco-mpfc-web.powerappsportals.com/signin-saml_1
+- adx_name: Authentication/OpenAuth/Facebook/AppSecret
+  adx_sitesettingid: 22f0afa9-c8b2-ed11-83ff-000d3adf727d
+  importsequencenumber: 5
+- adx_name: Authentication/OpenAuth/Microsoft/ClientId
+  adx_sitesettingid: 23f0afa9-c8b2-ed11-83ff-000d3adf727d
+  importsequencenumber: 5
+- adx_description: Habilita o inhabilita l'Azure AD com a proveïdor d'identitat extern. Per defecte està definit en true.
+  adx_name: Authentication/Registration/AzureADLoginEnabled
+  adx_sitesettingid: 24f0afa9-c8b2-ed11-83ff-000d3adf727d
+  adx_value: false
+  importsequencenumber: 3
+- adx_name: Authentication/SAML2/SAML_1/RegistrationClaimsMapping
+  adx_sitesettingid: 25ced3c3-51c3-ed11-83ff-000d3adf7052
+  adx_value: firstname=urn:oid:2.5.4.42,lastname=urn:oid:2.5.4.4,pfc_nif=urn:oid:1.3.6.1.4.1.5923.1.1.1.6
+- adx_name: Authentication/OpenAuth/Twitter/ConsumerSecret
+  adx_sitesettingid: 25f0afa9-c8b2-ed11-83ff-000d3adf727d
+  importsequencenumber: 5
+- adx_name: Authentication/Registration/ExternalLoginEnabled
+  adx_sitesettingid: 26f0afa9-c8b2-ed11-83ff-000d3adf727d
+  adx_value: true
+  importsequencenumber: 3
+- adx_name: Suscripcion/GICAR
+  adx_sitesettingid: 27670f0c-97f0-ed11-8849-000d3adf7052
+  adx_value: e516039f-faef-ed11-8849-000d3adf7052
+- adx_name: Authentication/Registration/InvitationEnabled
+  adx_sitesettingid: 27f0afa9-c8b2-ed11-83ff-000d3adf727d
+  adx_value: true
+  importsequencenumber: 3
+- adx_name: Webapi/contact/enabled
+  adx_sitesettingid: 28a0435f-9206-ee11-8f6e-000d3adea4bc
+  adx_value: True
+- adx_name: Site/EnableDefaultHtmlEncoding
+  adx_sitesettingid: 2bab03e8-0b09-ee11-8f6e-000d3adf7052
+  adx_value: false
+- adx_name: Event/DefaultContactImageUrl
+  adx_sitesettingid: 2bd50a24-edc3-ed11-83ff-000d3adf727d
+  adx_value: https://assets-eur.mkt.dynamics.com/534a31da-8c61-4516-8175-36db2f48be4c/digitalassets/images/b1d37a8d-22c3-ed11-83ff-000d3adea4bc?ts=638144756748141455
+- adx_name: Authentication/UserManager/UserValidator/RequireUniqueEmail
+  adx_sitesettingid: 2ca49e42-f9b2-ed11-83ff-000d3adf7ec5
+  adx_value: false
+- adx_name: Portal/EnvioMail
+  adx_sitesettingid: 35d3f9e0-6200-ee11-8f6e-000d3ada4df9
+  adx_value: https://integracio-eco-mpfc-web.powerappsportals.com/
+- adx_name: Authentication/SAML2/SAML_1/AllowContactMappingWithEmail
+  adx_sitesettingid: 43576de7-50c3-ed11-83ff-000d3adf90aa
+  adx_value: true
+- adx_description: Un valor true o false. Si es defineix en true, el compte local es marcarà com a obsolet. L'usuari del portal haurà de migrar a un compte que no estigui obsolet.
+  adx_name: Authentication/Registration/LocalLoginDeprecated
+  adx_sitesettingid: 4918c1a8-c8b2-ed11-83ff-000d3adf7ec5
+  adx_value: False
+- adx_name: Search/Enabled
+  adx_sitesettingid: 4a18c1a8-c8b2-ed11-83ff-000d3adf7ec5
+  adx_value: false
+- adx_name: Profile/ForceSignUp
+  adx_sitesettingid: 4b18c1a8-c8b2-ed11-83ff-000d3adf7ec5
+  adx_value: false
+- adx_name: Event/FormLastnameGuid
+  adx_sitesettingid: 4b9a326c-edc3-ed11-83ff-000d3adf727d
+  adx_value: e1dfc514-f301-4cb2-855a-4c8fa8331207
+- adx_description: 'Per aplicar gruixos i filtres addicionals, substituïu la consulta per a la cerca al lloc. @Consulta és el text de consulta que un usuari especifica. Referència de la sintaxi de consulta Lucene: http://lucene.apache.org/core/old_versioned_docs/versions/2_9_1/queryparsersyntax.html'
+  adx_name: search/query
+  adx_sitesettingid: 4c18c1a8-c8b2-ed11-83ff-000d3adf7ec5
+  adx_value: +(@Query) _title:(@Query) _logicalname:knowledgearticle~0.9^0.3 _logicalname:annotation~0.9^0.25 _logicalname:adx_webpage~0.9^0.2 -_logicalname:adx_webfile~0.9 adx_partialurl:(@Query) _logicalname:adx_blogpost~0.9^0.1 -_logicalname:adx_communityforumthread~0.9
+- adx_name: Event/Url
+  adx_sitesettingid: 4ed78f98-e8c3-ed11-83ff-000d3adb6fa9
+  adx_value: https://integracio-eco-mpfc.crm4.dynamics.com
+- adx_description: Impedeix l'ús del portal als menors sense consentiment patern. Per defecte, està definit com a false.
+  adx_name: Authentication/Registration/DenyMinorsWithoutParentalConsent
+  adx_sitesettingid: 4f5768ad-c8b2-ed11-83ff-000d3adea4bc
+  adx_value: false
+- adx_name: Authentication/SAML2/SAML_1/AuthenticationType
+  adx_sitesettingid: 551caee6-50c3-ed11-83ff-002248a1c671
+  adx_value: https://autenticaciogicar2.extranet.gencat.cat/idp2/shibboleth
+- adx_name: Authentication/Registration/LoginButtonAuthenticationType
+  adx_sitesettingid: 56afa22d-51f5-ed11-8849-000d3adf90aa
+  adx_value: https://login.windows.net/3b9427dc-d30e-43bc-8c06-ff7253676fec/
+  statecode: 1
+  statuscode: 2
+- adx_name: Event/FormNameGuid
+  adx_sitesettingid: 59f4f45d-edc3-ed11-83ff-000d3adf727d
+  adx_value: 3f746946-34b4-442c-a677-e232cdd2bc40
+- adx_name: HTTP/X-Content-Type-Options
+  adx_sitesettingid: 5a64fa2f-70ee-ed11-8849-000d3adf90aa
+  adx_value: nosniff
+- adx_name: Authentication/SAML2/SAML_1/LoginClaimsMapping
+  adx_sitesettingid: 6364305e-b9c8-ed11-b597-000d3adf727d
+  adx_value: firstname=urn:oid:2.5.4.42,lastname=urn:oid:2.5.4.4,emailaddress1=email,pfc_nif=urn:oid:1.3.6.1.4.1.5923.1.1.1.6
+- adx_description: Un valor true o false. Si es defineix com a true, el portal mostrarà els termes i les condicions del lloc i els usuaris han d'acceptar els termes i les condicions perquè se'ls considerin autenticats i puguin utilitzar el lloc.
+  adx_name: Authentication/Registration/TermsAgreementEnabled
+  adx_sitesettingid: 64da6ca9-c8b2-ed11-83ff-000d3adf796b
+  adx_value: true
+- adx_name: Search/IndexNotesAttachments
+  adx_sitesettingid: 65da6ca9-c8b2-ed11-83ff-000d3adf796b
+  adx_value: false
+- adx_name: Authentication/SAML2/SAML_1/ServiceProviderRealm
+  adx_sitesettingid: 701ac2e9-50c3-ed11-83ff-000d3adea4bc
+  adx_value: https://integracio-eco-mpfc-web.powerappsportals.com
+- adx_name: Event/FormDNIGuid
+  adx_sitesettingid: 7b57aa4a-40e0-ed11-a7c6-000d3adf90aa
+  adx_value: 48262a61-3be0-ed11-a7c6-000d3adf90aa
+- adx_description: Defineix si la plantilla web de la capçalera emmagatzema els resultats a la memòria cau.
+  adx_name: Header/OutputCache/Enabled
+  adx_sitesettingid: 7f8ee0ab-c8b2-ed11-83ff-000d3adf716f
+  adx_value: false
+- adx_name: Authentication/OpenAuth/Microsoft/ClientSecret
+  adx_sitesettingid: 808ee0ab-c8b2-ed11-83ff-000d3adf716f
+  importsequencenumber: 5
+- adx_description: "Quantitat de temps que l'adreça IP haurà d'esperar si es produeixen Authentication/LoginThrottling/MaxInvaildAttemptsFromIPAddress dins del temps definit per Authentication/LoginThrottling/MaxAttemptsTimeLimitTimeSpan. Valor per defecte: 00:10:00 (10 minuts)"
+  adx_name: Authentication/LoginThrottling/IpAddressTimeoutTimeSpan
+  adx_sitesettingid: 827c5bad-c8b2-ed11-83ff-000d3adf72a2
+  adx_value: 00:10:00
+- adx_description: Defineix si la plantilla web del peu de pàgina emmagatzema els resultats a la memòria cau.
+  adx_name: Footer/OutputCache/Enabled
+  adx_sitesettingid: 828ee0ab-c8b2-ed11-83ff-000d3adf716f
+  adx_value: false
+- adx_description: Impedeix l'ús del portal als menors. Per defecte, està definit com a false.
+  adx_name: Authentication/Registration/DenyMinors
+  adx_sitesettingid: 837c5bad-c8b2-ed11-83ff-000d3adf72a2
+  adx_value: false
+- adx_name: ThemeFeature
+  adx_sitesettingid: 838ee0ab-c8b2-ed11-83ff-000d3adf716f
+  adx_value: '{"status":"enable","selectedThemeId":"0e87b0cb-83a0-4d04-8843-aa97796c4d87","siteSettingId":"838ee0ab-c8b2-ed11-83ff-000d3adf716f","version":"V2"}'
+- adx_name: Event/CrmUrl
+  adx_sitesettingid: 854f060c-7df4-ed11-8849-000d3adf7052
+  adx_value: https://integracio-eco-mpfc.crm4.dynamics.com
+- adx_name: SuscriptionCenter/ConditionsAcceptance
+  adx_sitesettingid: 85755822-cbf3-ed11-8849-000d3adf7052
+  adx_value: '#d508da9e-c6f3-ed11-8849-000d3adf7052_1'
+- adx_name: Suscripcion/LastName
+  adx_sitesettingid: 91116d29-9df0-ed11-8849-000d3adea4bc
+  adx_value: e1dfc514-f301-4cb2-855a-4c8fa8331207
+- adx_name: Event/PortalRegistrationUrl
+  adx_sitesettingid: 970aa3a2-e9c3-ed11-83ff-000d3adb6fa9
+  adx_value: https://8b5e5b318a6a413a95220dcc8563634a.svc.dynamics.com/EvtMgmt/api/v2.0/checkin/stream?eventRegistrationId=
+- adx_name: Authentication/Registration/LoginButtonAuthenticationType
+  adx_sitesettingid: a14994a1-7cc3-ed11-83ff-000d3adead20
+  adx_value: https://autenticaciogicar2.extranet.gencat.cat/idp2/shibboleth
+- adx_description: "El nombre per defecte d'intents d'inici de sessió sense autenticar que es poden realitzar des d'una adreça IP abans que l'adreça IP es bloquegi durant Authentication/LoginThrottling/IpAddressTimeoutTimeSpan si els intents es fan dins del temps definit per Authentication/LoginThrottling/MaxAttemptsTimeLimitTimeSpan. Valor per defecte: 1000"
+  adx_name: Authentication/LoginThrottling/MaxInvaildAttemptsFromIPAddress
+  adx_sitesettingid: a23063a7-c8b2-ed11-83ff-000d3adf72a2
+  adx_value: 1000
+- adx_description: Determina si la cerca per facetes s'utilitza per a aquest portal.
+  adx_name: Search/FacetedView
+  adx_sitesettingid: a33063a7-c8b2-ed11-83ff-000d3adf72a2
+  adx_value: True
+- adx_name: Webapi/error/innererror
+  adx_sitesettingid: a36eb010-b1c4-ed11-83ff-000d3adea4bc
+  adx_value: True
+- adx_name: Site/EnableCustomPluginError
+  adx_sitesettingid: a90b3133-00d9-ed11-a7c7-000d3adf90aa
+  adx_value: true
+- adx_name: Webapi/msevtmgt_eventregistration/enabled
+  adx_sitesettingid: b60845af-b0c4-ed11-83ff-000d3adea4bc
+  adx_value: true
+- adx_name: Authentication/SAML2/SAML_1/MetadataAddress
+  adx_sitesettingid: b756e2e7-50c3-ed11-83ff-000d3adf7228
+  adx_value: https://autenticaciogicar2.extranet.gencat.cat/idp2/shibboleth
+- adx_name: Authentication/Registration/Enabled
+  adx_sitesettingid: b76103ab-c8b2-ed11-83ff-000d3adf7228
+  adx_value: true
+  importsequencenumber: 5
+- adx_name: SuscriptionCenter/Jurisprudència
+  adx_sitesettingid: b8479915-15f0-ed11-8849-000d3adf90aa
+  adx_value: 8bfbb730-9eb6-ed11-83fe-002248a1c671
+- adx_name: Authentication/OpenAuth/Twitter/ConsumerKey
+  adx_sitesettingid: b86103ab-c8b2-ed11-83ff-000d3adf7228
+  importsequencenumber: 5
+- adx_description: Si s'habilita aquesta configuració, totes les activitats del client es mostraran a l'escala de temps del portal.
+  adx_name: CustomerSupport/DisplayAllUserActivitiesOnTimeline
+  adx_sitesettingid: b96103ab-c8b2-ed11-83ff-000d3adf7228
+  adx_value: false
+- adx_description: Configuració del lloc que determina si s'inclou el codi d'idioma a l'adreça URL del portal.
+  adx_name: MultiLanguage/DisplayLanguageCodeInURL
+  adx_sitesettingid: b9e9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_value: False
+- adx_name: Search/IndexQueryName
+  adx_sitesettingid: bb6103ab-c8b2-ed11-83ff-000d3adf7228
+  adx_value: Portal Search
+- adx_description: "El prefix especificat aquí s'utilitzarà per filtrar el text de les notes, la qual cosa us permetrà controlar les notes exposades al portal, per exemple: *WEB*"
+  adx_name: KnowledgeManagement/NotesFilter
+  adx_sitesettingid: bbe9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_value: '*WEB*'
+- adx_name: PWAFeature
+  adx_sitesettingid: bce9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_value: '{"status":"disable"}'
+- adx_name: Authentication/Registration/EmailConfirmationEnabled
+  adx_sitesettingid: bde9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_value: true
+  importsequencenumber: 3
+- adx_description: Un valor true o false. Si es defineix en true, el camp Últim inici de sessió correcte del contacte de l'usuari del portal s'actualitzarà amb la data i l'hora en la qual ha iniciat la sessió correctament.
+  adx_name: Authentication/LoginTrackingEnabled
+  adx_sitesettingid: bee9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_value: true
+- adx_description: Aquesta configuració controla si els fitxers adjunts es visualitzaran als articles de la Knowledge Base
+  adx_name: KnowledgeManagement/DisplayNotes
+  adx_sitesettingid: bfe9cfa7-c8b2-ed11-83ff-000d3adead20
+  adx_value: false
+- adx_description: >-
+    Una col·lecció d'opcions de filtre de nom lògic de cerca. Si es defineix aquí un valor, s'afegiran opcions de filtre desplegables per a la cerca a tot el lloc.
+
+
+    Aquest valor ha de tenir el format de parelles de nom/valor; el nom i el valor han d'estar separats per dos punts i les parelles separades per un punt i coma. Per exemple:"Forums:adx_communityforum,adx_communityforumthread,adx_communityforumpost;Blogs:adx_blog,adx_blogpost,adx_blogpostcomment".
+  adx_name: search/filters
+  adx_sitesettingid: c4355cac-c8b2-ed11-83ff-000d3adb6fa9
+- adx_description: Un valor de data/hora en format GMT per representar la data d'entrada en vigor dels termes i condicions publicats actualment. Si el consentiment dels termes està habilitat, als usuaris del portal que no hagin acceptat els termes després d'aquesta data se'ls sol·licitarà que els acceptin quan tornin a iniciar la sessió. Si la data no es proporciona i el consentiment dels termes està habilitat, els termes es presentaran cada vegada que els usuaris del portal iniciïn la sessió.
+  adx_name: Authentication/Registration/TermsPublicationDate
+  adx_sitesettingid: c5355cac-c8b2-ed11-83ff-000d3adb6fa9
+  adx_value: 01/05/2023
+- adx_name: Authentication/Registration/OpenRegistrationEnabled
+  adx_sitesettingid: c84236a8-c8b2-ed11-83ff-0022489fa802
+  adx_value: true
+  importsequencenumber: 3
+- adx_description: 'Session time out functionality. Default: 00:15:00 (15 mins)'
+  adx_name: Authentication/ApplicationCookie/ExpireTimeSpan
+  adx_sitesettingid: c8d0701d-62ee-ed11-8849-000d3adf7052
+  adx_value: 00:15:00
+- adx_description: Defineix si el portal pot redirigir o no l'usuari a la pàgina de perfil després d'un inici de sessió correcte. Per defecte està definit en true.
+  adx_name: Authentication/Registration/ProfileRedirectEnabled
+  adx_sitesettingid: c94236a8-c8b2-ed11-83ff-0022489fa802
+  adx_value: true
+  importsequencenumber: 3
+- adx_name: HTTP/X-Frame-Options
+  adx_sitesettingid: ca37dba8-c8b2-ed11-83ff-000d3adf90aa
+  adx_value: SAMEORIGIN
+- adx_name: Profile/ShowMarketingOptionsPanel
+  adx_sitesettingid: ca4236a8-c8b2-ed11-83ff-0022489fa802
+  adx_value: True
+- adx_name: OnlineDomains
+  adx_sitesettingid: cb37dba8-c8b2-ed11-83ff-000d3adf90aa
+  adx_value: sharepoint.com;microsoftonline.com
+- adx_description: S'utilitza per agrupar un conjunt d'entitats en una entrada de la visualització de faceta de tipus de registre.
+  adx_name: Search/RecordTypeFacetsEntities
+  adx_sitesettingid: cb4236a8-c8b2-ed11-83ff-0022489fa802
+  adx_value: Downloads:annotation,adx_webfile
+- adx_name: Authentication/OpenAuth/LinkedIn/ConsumerKey
+  adx_sitesettingid: cc37dba8-c8b2-ed11-83ff-000d3adf90aa
+- adx_name: Authentication/Registration/LocalLoginEnabled
+  adx_sitesettingid: cd37dba8-c8b2-ed11-83ff-000d3adf90aa
+  adx_value: false
+- adx_name: Authentication/OpenAuth/LinkedIn/ConsumerSecret
+  adx_sitesettingid: cf37dba8-c8b2-ed11-83ff-000d3adf90aa
+- adx_name: PowerAutomate/Notifications
+  adx_sitesettingid: d5f6a0a4-3114-ee11-8f6d-000d3adea4bc
+  adx_value: No
+- adx_name: Authentication/SAML2/SAML_1/Caption
+  adx_sitesettingid: da8b4de6-50c3-ed11-83ff-000d3adf7052
+  adx_value: GICAR PRO
+- adx_name: Authentication/SAML2/SAML_1/ValidateAudience
+  adx_sitesettingid: db8b4de6-50c3-ed11-83ff-000d3adf7052
+  adx_value: false
+- adx_name: Webapi/msevtmgt_eventregistration/fields
+  adx_sitesettingid: dd4583f2-b0c4-ed11-83ff-000d3adea4bc
+  adx_value: '*'
+- adx_description: "Quantitat de temps que Authentication/LoginThrottling/MaxInvaildAttemptsFromIPAddress ha de respectar abans que l'adreça IP hagi d'esperar Authentication/LoginThrottling/IpAddressTimeoutTimeSpan. Valor per defecte: 00:03:00 (3 minuts)"
+  adx_name: Authentication/LoginThrottling/MaxAttemptsTimeLimitTimeSpan
+  adx_sitesettingid: deeae0aa-c8b2-ed11-83ff-000d3ad9cd83
+  adx_value: 00:03:00
+- adx_name: Event/FormEmailGuid
+  adx_sitesettingid: e0701b83-edc3-ed11-83ff-000d3adf727d
+  adx_value: 7f685ebb-7c54-4cff-a1bc-772562d25c38
+- adx_name: Authentication/OpenAuth/Facebook/AppId
+  adx_sitesettingid: e0b1f0ac-c8b2-ed11-83ff-002248a2c9f5
+  importsequencenumber: 5
+- adx_description: After session timeout where user will redirected to
+  adx_name: Authentication/ApplicationCookie/LoginPath
+  adx_sitesettingid: e7196730-62ee-ed11-8849-000d3adf7052
+  adx_value: /SignIn
+- adx_name: Webapi/contact/fields
+  adx_sitesettingid: eea30273-9206-ee11-8f6e-000d3adea4bc
+  adx_value: '*'
+- adx_name: SuscripcionCenter/Novetats
+  adx_sitesettingid: fcd7d027-15f0-ed11-8849-000d3adf90aa
+  adx_value: 5391ba06-63b3-ed11-83ff-000d3adf7052

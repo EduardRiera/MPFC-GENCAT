@@ -1,0 +1,147 @@
+name: deploy-release-to-pre
+run-name: Deploy ${{github.ref_name}} to PRE by @${{ github.actor }}
+#   deploy the published release to PRE D365 environment
+
+on:
+  release:
+      types: [published]
+    
+permissions:
+  contents: write
+  
+jobs:
+  deploy-release-to-pre:
+    runs-on: windows-latest
+    environment: PRE        
+
+    steps:
+    - name: checkout action
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        lfs: true
+
+    - name: who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+
+    - name: check-unmanaged-solution action
+      uses: microsoft/powerplatform-actions/check-solution@v0
+      if: ${{vars.FLAGS_CHECK == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        path: "${{vars.SOLUTION_EXPORTED_FOLDER}}/${{vars.SOLUTION_NAME}}.zip"
+        geo: "Europe"
+        checker-logs-artifact-name: check-solution-log
+        fail-on-analysis-error: false
+
+    - name: download-log
+      uses: actions/download-artifact@v2
+      if: ${{vars.FLAGS_CHECK == 1}}
+      with:
+        name: check-solution-log
+        path: check-solution-log
+
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      if: ${{vars.FLAGS_CHECK == 1}}
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: check-solution-log
+        category: powerplatform-check
+        
+    - name: backup-environment action
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      if: ${{vars.FLAGS_BACKUP == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        user-name: ${{ secrets.USER }}
+        password-secret: ${{ secrets.PASSWORD }}
+        #app-id: ${{vars.CLIENT_ID}}
+        #client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        backup-label: 'Before deploying ${{github.ref_name}}'
+
+    - name: import-managed-solution action
+      uses: microsoft/powerplatform-actions/import-solution@v0
+      if: ${{vars.FLAGS_SOLUTION == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        solution-file: ${{vars.SOLUTION_NAME}}
+        force-overwrite: true
+        publish-changes: true
+
+    - name: upload-paportal action
+      uses: microsoft/powerplatform-actions/upload-paportal@v0
+      if: ${{vars.FLAGS_PORTAL == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        upload-path: ${{vars.PORTAL_PATH}}
+        deployment-profile: pre
+
+    - name: import-data
+      uses: microsoft/powerplatform-actions/import-data@v0
+      if: ${{vars.FLAGS_DATA == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        app-id: ${{vars.CLIENT_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        data-file: "Data/Content/"
+        verbose: true
+
+    - name: backup-environment action
+      uses: microsoft/powerplatform-actions/backup-environment@v0
+      if: ${{vars.FLAGS_BACKUP == 1}}
+      with:
+        environment-url: ${{vars.ENVIRONMENT_URL}}
+        user-name: ${{ secrets.USER }}
+        password-secret: ${{ secrets.PASSWORD }}
+        #app-id: ${{vars.CLIENT_ID}}
+        #client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{vars.TENANT_ID}}
+        backup-label: 'After deploying ${{github.ref_name}}'
+
+    - name: generate-pre-tag action
+      run: echo "pre-tag=PRE-$(date +%Y%m%d%H%M%S)" >> $env:GITHUB_ENV
+
+    - name: set-pre-tag action  
+      run: |
+        git tag ${{env.pre-tag}}
+        git push origin ${{env.pre-tag}}
+        
+    - name: update-release-notes
+      shell: powershell
+      env:
+        GH_TOKEN: ${{ github.token }}      
+      run: |
+         $markdown = @"
+         # Release ${{github.ref_name}}
+         
+         ## Included Plugins
+         Fichero | Nombre | Version 
+         --- | --- | ---
+         $((Get-ChildItem -Path "${{vars.SOLUTION_DETAIL_FOLDER}}/${{vars.SOLUTION_NAME}}/PluginAssemblies" -Recurse -Filter *.dll | 
+            ForEach-Object {
+              $dll = Get-ItemProperty -Path $_.FullName -Name VersionInfo
+              "{0}|{1}|{2}" -f $_.Name, $dll.VersionInfo.InternalName, $dll.VersionInfo.FileVersion
+            }) -join "`n")
+         
+         Installed on ${{env.pre-tag}} with (Backup=${{vars.FLAGS_BACKUP}}, Solution=${{vars.FLAGS_SOLUTION}}, Portal=${{vars.FLAGS_PORTAL}}, Data=${{vars.FLAGS_DATA}}) by [run ${{github.run_id}}](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+         "@
+
+         gh release edit ${{github.ref_name}} --notes "$markdown"
+

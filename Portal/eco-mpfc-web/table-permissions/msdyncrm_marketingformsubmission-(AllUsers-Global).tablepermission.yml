@@ -1,0 +1,16 @@
+adx_append: false
+adx_appendto: false
+adx_create: false
+adx_delete: false
+adx_entitylogicalname: msdyncrm_marketingformsubmission
+adx_entityname: msdyncrm_marketingformsubmission (AllUsers Global)
+adx_entitypermission_webrole:
+- 61ff5a93-52ee-ed11-8849-000d3adea4bc
+- 84a9981f-ed62-e611-80da-00155d209103
+- aa82a28e-68c5-ed11-b597-000d3adea4bc
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+- e305782e-4a04-ee11-8f6e-000d3adf7052
+adx_entitypermissionid: 5dff85c1-aa11-ee11-8f6d-000d3adea4bc
+adx_read: true
+adx_scope: 756150000
+adx_write: false

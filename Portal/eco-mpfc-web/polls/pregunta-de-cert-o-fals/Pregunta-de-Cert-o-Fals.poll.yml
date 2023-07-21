@@ -1,0 +1,5 @@
+adx_active: false
+adx_name: Pregunta de Cert o Fals
+adx_pollid: 650bafa5-c8b2-ed11-83ff-000d3adf716f
+adx_question: <p>Aquest és un exemple que mostra els resultats d'una pregunta de “Cert” o “Fals”.</p>
+adx_submitbuttonlabel: Enviament

@@ -1,0 +1,43 @@
+<div data-form-block-id="786cab14-f2fa-ed11-8849-000d3adea4bc" style="display:none"></div> 
+<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007"></script> 
+<div id="dQlH9nIFv3qn7y82NXvR6l0_Lm4lgoXdDOVnUwkj3yHw"></div>
+<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
+<div class="d365-mkt-config" style="display:none" data-website-id="QlH9nIFv3qn7y82NXvR6l0_Lm4lgoXdDOVnUwkj3yHw" data-hostname="f1ea0ac05d9d4df08a80e5c551a6ac2d.svc.dynamics.com"></div>
+
+<script type="text/javascript">
+    MsCrmMkt.MsCrmFormLoader.on('afterFormLoad', function () {      
+        document.getElementById('7d3fe4d4-feef-ed11-8849-000d3adea4bc').value = '{{user.emailaddress1}}';
+        document.getElementById('e1dfc514-f301-4cb2-855a-4c8fa8331207').value = '{{user.lastname}}';
+        debugger;
+        var exist = GetCookie("autologin");
+        if(!exist)
+        {
+            var expires = "";
+            var date = new Date();
+            date.setTime(date.getTime() + (1*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+
+            document.cookie = "autologin" + "=" + ('{{user.emailaddress1}}' || "")+ expires + "; path=/";
+            $("form").submit();
+        }
+    });
+
+    {% assign returnURL = request.params.returnURL | default:"/" %}
+    MsCrmMkt.MsCrmFormLoader.on('afterFormSubmit', function () {      
+        window.location.replace('{{returnURL | escape}}');
+    });
+
+    function GetCookie(name) 
+    {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) {
+        console.log(match[2]);
+        return true;
+      }
+      else{
+           console.log('--something went wrong---');
+           return false;
+      }
+   }
+   
+</script>

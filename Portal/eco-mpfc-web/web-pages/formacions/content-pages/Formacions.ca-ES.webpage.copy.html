@@ -1,0 +1,71 @@
+{% assign requestId = user.id %}
+{% fetchxml events %}
+<fetch distinct="true" no-lock="true">
+    <entity name="msevtmgt_event">
+        <attribute name="msevtmgt_eventenddate" />
+        <attribute name="msevtmgt_readableeventid" />
+        <attribute name="msevtmgt_name" />
+        <attribute name="msevtmgt_eventstartdate" />
+        <attribute name="msevtmgt_publishstatus" />
+        <attribute name="msevtmgt_eventid" />
+        <filter>
+            <condition attribute="statuscode" operator="eq" value="1" />
+            <condition attribute="msevtmgt_istemplate" operator="eq" value="100000002" />
+            <condition attribute="msevtmgt_publishstatus" operator="ne" value="100000000" />
+        </filter>
+        <order attribute="msevtmgt_eventstartdate" />
+        <link-entity name="msevtmgt_eventregistration" from="msevtmgt_eventid" to="msevtmgt_eventid" link-type="outer" visible="true" alias="ct">
+            <attribute name="msevtmgt_contactid" />
+            <attribute name="msevtmgt_name" />
+            <filter>
+                <condition attribute="msevtmgt_contactid" operator="eq" value="{{requestId}}" />
+                <condition attribute="statecode" operator="eq" value="0" />
+            </filter>
+        </link-entity>
+    </entity>
+</fetch>
+{% endfetchxml %}
+<div class="row sectionBlockLayout sectionPrimaryColor text-left" style="display: flex; flex-wrap: wrap; height: 15px; padding: 8px; margin: 0px;">
+    <div class="container" style="display: flex; flex-wrap: wrap;">
+    </div>
+</div>
+<div class="row sectionBlockLayout text-left" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 361px;">
+    <div class="container" style="display: flex; flex-wrap: wrap;">
+        <div class="col-md-12 columnBlockLayout" style="flex-grow: 1; min-width: 300px; display: flex; flex-direction: column;">
+            <h1>Formacions</h1>
+            <p>A continuació es mostren les formacions que podrà realitzar properament així com els enregistraments de les formacions ja realitzades.</p>
+        </div>
+    </div>
+</div>
+<div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; margin: 0px; text-align: center; min-height: auto; padding: 8px;">
+    <div class="container" style="display: flex; flex-wrap: wrap;">
+        {% for event in events.results.entities %}
+        <div class="card mx-auto mb-4">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a style=font-size:25px; title={{ event.msevtmgt_name }} aria-label={{ event.msevtmgt_name }} href="/event?id={{event.msevtmgt_eventid}}"> {{ event.msevtmgt_name }} </a>
+            </div>
+            {% if event['ct.msevtmgt_name'] != null %}REGISTRADO
+            {% else %}NO REGISTRADO
+            {% endif %}
+            {% if event.msevtmgt_eventstartdate > now and event.msevtmgt_publishstatus.value == 100000003 %}
+            <div class="card-footer text-dark text-center" style="background-color: #6aa84f;">
+                {{ event.msevtmgt_eventstartdate | date: 'dd/MM/yyyy HH:mm'}} {{"-"}} {{event.msevtmgt_eventenddate | date: 'HH:mm' }} {{ event['ct.msevtmgt_contactid']}}
+                {% elsif event['ct.msevtmgt_name'] != null and event.msevtmgt_eventstartdate < now %}
+                <div class="card-footer text-dark text-center" style="background-color: #f3f6f4;">
+                    {{ event.msevtmgt_eventstartdate | date: 'dd/MM/yyyy HH:mm'}} {{"-"}} {{event.msevtmgt_eventenddate | date: 'HH:mm' }} {{ event['ct.msevtmgt_contactid']}}
+                    {% elsif event.msevtmgt_eventstartdate > now and event.msevtmgt_publishstatus.value != '100000003' %}
+                    <div class="card-footer text-dark text-center" style="background-color: #FFFACD;">
+                        {{ event.msevtmgt_eventstartdate | date: 'dd/MM/yyyy HH:mm'}} {{"-"}} {{event.msevtmgt_eventenddate | date: 'HH:mm' }} {{ event['ct.msevtmgt_contactid']}}
+                        {% elsif event['ct.msevtmgt_name'] == null and event.msevtmgt_eventstartdate < now %}
+                        <div class="card-footer text-dark text-center" style="background-color: #f3f6f4;">
+                            {{ event.msevtmgt_eventstartdate | date: 'dd/MM/yyyy HH:mm'}} {{"-"}} {{event.msevtmgt_eventenddate | date: 'HH:mm' }} {{ event['ct.msevtmgt_contactid']}}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+		</div>
+	</div>	
+</div>	

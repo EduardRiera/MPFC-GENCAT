@@ -1,0 +1,13 @@
+adx_accountrelationship: contact_customer_accounts
+adx_append: true
+adx_appendto: true
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: contact
+adx_entityname: R3 - Crear contactes de la meva entitat
+adx_entitypermission_webrole:
+- b93472c7-fbc6-ed11-b597-000d3adf7052
+adx_entitypermissionid: 2e6f85e3-5dc7-ed11-b597-000d3adea4bc
+adx_read: false
+adx_scope: 756150002
+adx_write: true
