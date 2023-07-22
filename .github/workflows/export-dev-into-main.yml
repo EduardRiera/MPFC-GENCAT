@@ -68,6 +68,3 @@ jobs:
         git commit -m "Exporting ${{vars.SOLUTION_NAME }} from ${{vars.ENVIRONMENT_URL}}."
         git push
 
-    - name: check-pac-cli-usage
-      run: |
-        pac auth list
