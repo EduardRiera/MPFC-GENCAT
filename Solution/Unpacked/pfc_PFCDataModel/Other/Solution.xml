@@ -608,13 +608,13 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="incident" displayName="Cas" solution="msdynce_Service (9.0.5.56)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Entitat" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="incident" displayName="Cas" solution="msdynce_Service (9.0.5.56)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
@@ -692,13 +692,13 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdyn_customerasset" displayName="Actiu del client" solution="msdyn_AssetCommon (1.0.26.9)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Entitat" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdyn_customerasset" displayName="Actiu del client" solution="msdyn_AssetCommon (1.0.26.9)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l'experiència interactiva" parentDisplayName="Entitat" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
@@ -710,7 +710,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdyn_iotdevice" displayName="Dispositiu d'IoT" solution="IoTConnector (1.8.9.7)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Entitat" />
       </MissingDependency>
@@ -739,8 +739,8 @@
         <Dependent type="1" schemaName="account" displayName="Entitat" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_orgchartnode" displayName="Entitat del node d'organigrama de Microsoft" solution="msdyn_LinkedInExtensions (9.0.23055.10020)">
-          <package>msdyn_SalesIntegrationsAddOns (9.0.23062.10001)</package>
+        <Required type="1" schemaName="msdyn_orgchartnode" displayName="Entitat del node d'organigrama de Microsoft" solution="msdyn_LinkedInExtensions (9.0.23055.10080)">
+          <package>msdyn_SalesIntegrationsAddOns (9.0.23064.10001)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Entitat" />
       </MissingDependency>
@@ -1323,7 +1323,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="10" schemaName="msdyn_account_msdyn_customerasset_Account" displayName="msdyn_account_msdyn_customerasset_Account" parentSchemaName="account" parentDisplayName="Entitat" solution="msdyn_AssetCommon (1.0.26.9)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l'experiència interactiva" parentDisplayName="Entitat" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
@@ -2168,7 +2168,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="defaultpricelevelid" displayName="Llista de preus" parentSchemaName="account" parentDisplayName="Entitat" solution="msdynce_ProductManagement (9.0.4.0066)">
-          <package>msdynce_ProductManagementAnchor (9.0.23062.10001)</package>
+          <package>msdynce_ProductManagementAnchor (9.0.23064.10001)</package>
         </Required>
         <Dependent type="60" displayName="Informació default" parentDisplayName="Entitat" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
@@ -4825,19 +4825,19 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="Representant del servei d'atenció al client" solution="msdynce_Service (9.0.5.56)" id="{3256fb77-1dab-43a1-9541-4b7049d9ec38}" parentId="{ecfd0b44-5720-45e3-ae68-417ddb0fb654}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="Accés a l'aplicació de servei d'atenció al client" solution="msdynce_Customerservicehub (9.0.5.0056)" id="{3dac4d9e-568c-e611-80d4-00155d42a122}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="Cap del representant del servei d'atenció al client" solution="msdynce_Service (9.0.5.56)" id="{aab89c4b-28af-47ab-a98a-2345f4b3a0c3}" parentId="{1808b939-dd07-4ca7-aa99-ddd2734378f1}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
@@ -4879,7 +4879,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Actius de client actius" displayName="Actius de client actius" parentSchemaName="msdyn_customerasset" parentDisplayName="Actiu del client" solution="msdyn_AssetCommon (1.0.26.9)" id="{6ecb03a4-acda-44ae-83e3-c60ba8338dbb}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l'experiència interactiva" parentDisplayName="Entitat" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
@@ -4945,7 +4945,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Casos actius" displayName="Casos actius" parentSchemaName="incident" parentDisplayName="Cas" solution="msdynce_Service (9.0.5.56)" id="{00000000-0000-0000-00aa-000010001032}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
@@ -4987,7 +4987,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Els meus casos actius" displayName="Els meus casos actius" parentSchemaName="incident" parentDisplayName="Cas" solution="msdynce_Service (9.0.5.56)" id="{00000000-0000-0000-00aa-000010001028}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
@@ -5405,7 +5405,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Visualització associada d'actius de client amb alertes" displayName="Visualització associada d'actius de client amb alertes" parentSchemaName="msdyn_customerasset" parentDisplayName="Actiu del client" solution="msdyn_ConnectedCustomerService (9.0.20115.1027)" id="{38cc036f-fbfe-e911-a81c-000d3ac2c6cb}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l'experiència interactiva" parentDisplayName="Entitat" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
@@ -5560,7 +5560,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="59" schemaName="Casos actius per agent" displayName="Casos actius per agent" parentSchemaName="incident" parentDisplayName="Cas" solution="msdynce_Service (9.0.5.56)" id="{4143b74e-4a07-4d01-9ffe-2cdcaa4208fd}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
@@ -5793,7 +5793,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Escriptori digital de comptes" parentDisplayName="Entitat" solution="msdynce_Service (9.0.5.56)" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Escriptori digital de comptes" parentDisplayName="Entitat" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}" />
       </MissingDependency>
@@ -5923,8 +5923,8 @@
         <Dependent type="60" displayName="Informació" parentDisplayName="Registre d'entrada" id="{ef02d8f7-c2ef-40ba-9195-a78da88993f3}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" solution="msdynce_ServicePatch201911 (9.0.23062.1005)" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+        <Required type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" solution="msdynce_ServicePatch201911 (9.0.23064.1018)" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}">
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l’experiència de diverses sessions" parentDisplayName="Entitat" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
@@ -5951,7 +5951,7 @@
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
           <package>msdynce_AppCommonAnchor (9.0.23062.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Informació default" parentDisplayName="Entitat" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
+        <Dependent type="60" displayName="Compte per a l'experiència interactiva" parentDisplayName="Entitat" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
@@ -5993,7 +5993,7 @@
         <Required type="61" schemaName="AppCommon/Contact/Contact_main_system_library.js" displayName="AppCommon/Contact/Contact_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
           <package>msdynce_AppCommonAnchor (9.0.23062.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Portals: Canvi d'entitat" parentDisplayName="Contacte" id="{df5f5ac4-05ef-ed11-8849-000d3adf7228}" />
+        <Dependent type="60" displayName="Portals: Create Contact" parentDisplayName="Contacte" id="{f1d0f86e-43bf-ed11-83ff-000d3adea4bc}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msa_adx_Sitesetting_medium" displayName="msa_adx_Sitesetting_medium" solution="MicrosoftPortalDependencies (9.3.2209.2)">
@@ -6019,7 +6019,7 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msdyn_/ConnectedCustomerService/Account/AccountForm.js" displayName="msdyn_/ConnectedCustomerService/Account/AccountForm.js" solution="msdyn_ConnectedCustomerService (9.0.20115.1027)">
-          <package>msdynce_ServiceAnchor (9.0.23062.1005)</package>
+          <package>msdynce_ServiceAnchor (9.0.23064.1018)</package>
         </Required>
         <Dependent type="60" displayName="Compte per a l'experiència interactiva" parentDisplayName="Entitat" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
@@ -6356,7 +6356,7 @@
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.23062.10005)</package>
         </Required>
-        <Dependent type="60" displayName="Portals: Condicions Acceptance" parentDisplayName="Contacte" id="{dd8f253c-cfc3-ed11-83ff-000d3adf727d}" />
+        <Dependent type="60" displayName="Informació detallada" parentDisplayName="Contacte" id="{9040028c-51b8-ed11-83ff-000d3adf7228}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
@@ -6374,7 +6374,7 @@
         <Required type="61" schemaName="Sales/Contact/Contact_main_system_library.js" displayName="Sales/Contact/Contact_main_system_library.js" solution="msdynce_SalesPatch201904 (9.0.1912.1007)">
           <package>msdynce_SalesAnchor (9.0.23062.10005)</package>
         </Required>
-        <Dependent type="60" displayName="Portals: Condicions Acceptance" parentDisplayName="Contacte" id="{dd8f253c-cfc3-ed11-83ff-000d3adf727d}" />
+        <Dependent type="60" displayName="Portals: Create Contact" parentDisplayName="Contacte" id="{f1d0f86e-43bf-ed11-83ff-000d3adea4bc}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="66" schemaName="CI.Controls.CallSummaryControlTwin" displayName="CI.Controls.CallSummaryControlTwin" solution="msdyn_Conversation_Intelligence (9.0.1.794)">
