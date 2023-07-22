@@ -19,13 +19,15 @@ jobs:
         fetch-depth: 0
         lfs: true
 
-    - name: who-am-i action
+    - name: download-pac-cli
+      if: false
       uses: microsoft/powerplatform-actions/who-am-i@v0
-      with:
-        environment-url: ${{vars.ENVIRONMENT_URL}}
-        app-id: ${{vars.CLIENT_ID}}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{vars.TENANT_ID}}
+
+    - name: set-pac-cli-path
+      shell: pwsh
+      run: |
+        Set-Location "..\..\_actions\microsoft\powerplatform-actions\v0\dist\pac\tools"
+        (Get-Location).Path | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append   
 
     - name: export-managed-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
@@ -65,3 +67,7 @@ jobs:
         git add --all 
         git commit -m "Exporting ${{vars.SOLUTION_NAME }} from ${{vars.ENVIRONMENT_URL}}."
         git push
+
+    - name: check-pac-cli-usage
+      run: |
+        pac auth list
