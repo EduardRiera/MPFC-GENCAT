@@ -57,6 +57,7 @@ jobs:
         # Path to SARIF file relative to the root of the repository
         sarif_file: check-solution-log
         category: powerplatform-check
+        ref: refs/heads/main
         
     - name: backup-environment action
       uses: microsoft/powerplatform-actions/backup-environment@v0
