@@ -58,6 +58,7 @@ jobs:
         sarif_file: check-solution-log
         category: powerplatform-check
         ref: refs/heads/main
+        sha: ${{github.sha}}
         
     - name: backup-environment action
       uses: microsoft/powerplatform-actions/backup-environment@v0
