@@ -50,11 +50,14 @@ jobs:
         name: check-solution-log
         path: Solution\Unpacked
 
-    # - name: set-pre-tag action  
-    #  run: |
-    #    $a=Get-Item -Path ".\check-solution-log\*.sarif"
-    #    ($a | Get-Content) -replace 'old_string', 'new_string' | Set-Content 
-
+    - name: set-pre-tag action  
+      run: |
+        $a=Get-Item -Path ".\check-solution-log\*.sarif"
+        ($a | Get-Content) -replace '"uri": "/pfcPFCDataModel', '"uri": "Solution/Unpacked/pfcPFCDataModel' | Set-Content -Path ".\check-solution-log\$($a.Name)" 
+        $a=Get-Item -Path ".\check-solution-log\*.sarif"
+        $a
+        $a | Get-Content | select -First 1000
+        
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
       if: ${{vars.FLAGS_CHECK == 1}}
