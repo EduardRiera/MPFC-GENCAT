@@ -53,7 +53,7 @@ jobs:
     - name: set-pre-tag action  
       run: |
         $a=Get-Item -Path ".\check-solution-log\*.sarif"
-        ($a | Get-Content) -replace '"uri": "/pfcPFCDataModel', '"uri": "${{vars.SOLUTION_DETAIL_FOLDER}}pfcPFCDataModel' | Set-Content -Path "${{vars.SOLUTION_DETAIL_FOLDER}}\unpacked.sarif" 
+        ($a | Get-Content) -replace '"uri": "/pfcPFCDataModel', '"uri": "${{vars.SOLUTION_DETAIL_FOLDER}}${{vars.SOLUTION_NAME}}' | Set-Content -Path "${{vars.SOLUTION_DETAIL_FOLDER}}\unpacked.sarif" 
         $a=Get-Item -Path "${{vars.SOLUTION_DETAIL_FOLDER}}\unpacked.sarif"
         $a
         $a | Get-Content | select -First 1000
