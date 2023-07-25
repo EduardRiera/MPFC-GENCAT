@@ -38,7 +38,7 @@ jobs:
         app-id: ${{vars.CLIENT_ID}}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{vars.TENANT_ID}}
-        path: "${{vars.SOLUTION_DETAIL_FOLDER}}"
+        path: "${{vars.SOLUTION_EXPORTED_FOLDER}}/${{vars.SOLUTION_NAME}}.zip"
         geo: "Europe"
         checker-logs-artifact-name: check-solution-log
         fail-on-analysis-error: false
