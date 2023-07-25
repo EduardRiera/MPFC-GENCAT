@@ -48,14 +48,19 @@ jobs:
       if: ${{vars.FLAGS_CHECK == 1}}
       with:
         name: check-solution-log
-        path: check-solution-log
+        path: Solution\Unpacked
+
+    # - name: set-pre-tag action  
+    #  run: |
+    #    $a=Get-Item -Path ".\check-solution-log\*.sarif"
+    #    ($a | Get-Content) -replace 'old_string', 'new_string' | Set-Content 
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
       if: ${{vars.FLAGS_CHECK == 1}}
       with:
         # Path to SARIF file relative to the root of the repository
-        sarif_file: check-solution-log
+        sarif_file: Solution\Unpacked
         category: powerplatform-check
         ref: refs/heads/main
         sha: ${{github.sha}}
