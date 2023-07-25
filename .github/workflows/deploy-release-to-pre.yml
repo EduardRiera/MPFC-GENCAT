@@ -48,12 +48,12 @@ jobs:
       if: ${{vars.FLAGS_CHECK == 1}}
       with:
         name: check-solution-log
-        path: Solution\Unpacked
+        path: check-solution-log
 
     - name: set-pre-tag action  
       run: |
         $a=Get-Item -Path ".\check-solution-log\*.sarif"
-        ($a | Get-Content) -replace '"uri": "/pfcPFCDataModel', '"uri": "Solution/Unpacked/pfcPFCDataModel' | Set-Content -Path ".\check-solution-log\$($a.Name)" 
+        ($a | Get-Content) -replace '"uri": "/${{vars.SOLUTION_NAME}}', '"uri": "${{vars.SOLUTION_DETAIL_FOLDER}}${{vars.SOLUTION_NAME}}' | Set-Content -Path ".\check-solution-log\$($a.Name)" 
         $a=Get-Item -Path ".\check-solution-log\*.sarif"
         $a
         $a | Get-Content | select -First 1000
